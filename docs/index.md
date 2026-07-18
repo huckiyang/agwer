@@ -19,14 +19,23 @@ agents):
 
 | measure | question it answers |
 |---|---|
-| **RIR** — Recoverable Information Ratio (ρ) | *How much of the 1-best→oracle gap did the correction close?* ρ>1 beats the n-best oracle; ρ<0 is the damage regime. |
-| **HER** — Harmful Edit Rate | *Of the edits actually made, what fraction broke a correct token?* Isolates over-correction. |
+| **RIR**: Recoverable Information Ratio (ρ) | *How much of the 1-best→oracle gap did the correction close?* ρ>1 beats the n-best oracle; ρ<0 is the damage regime. |
+| **HER**: Harmful Edit Rate | *Of the edits actually made, what fraction broke a correct token?* Isolates over-correction. |
 | **o_nb / o_cp** | The two HyPoradise oracles: best single hypothesis (reranking bound) / best token recombination (correction bound). |
 
 ## Installation
 
+With [uv](https://docs.astral.sh/uv/):
+
 ```bash
-pip install agwer        # or: uv add agwer
+uv add agwer             # as a project dependency
+uv pip install agwer     # into the active environment
+```
+
+Or with pip (Python >= 3.9):
+
+```bash
+pip install agwer
 ```
 
 ## Usage

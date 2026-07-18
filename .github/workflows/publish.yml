@@ -1,0 +1,27 @@
+name: publish
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  pypi:
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write      # OIDC — PyPI Trusted Publishing, no API token
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: run tests before publishing
+        run: |
+          uv venv --python 3.12
+          uv pip install -e . pytest
+          uv run --no-sync pytest tests/ -q
+      - name: build sdist + wheel
+        run: uv build
+      - name: validate metadata
+        run: uvx twine check dist/*
+      - name: publish to PyPI (trusted publishing)
+        run: uv publish

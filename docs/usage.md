@@ -1,5 +1,12 @@
 # Usage
 
+## Installation
+
+```bash
+uv add agwer          # uv (recommended)
+pip install agwer     # pip, Python >= 3.9
+```
+
 ## Classic measures
 
 `wer`, `mer`, `wil`, `wip`, `cer` accept a string or a list of strings for

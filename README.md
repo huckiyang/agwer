@@ -25,8 +25,17 @@ agents):
 
 ## Installation
 
+With [uv](https://docs.astral.sh/uv/):
+
 ```bash
-pip install agwer        # or: uv add agwer
+uv add agwer             # as a project dependency
+uv pip install agwer     # into the active environment
+```
+
+Or with pip (Python >= 3.9):
+
+```bash
+pip install agwer
 ```
 
 ## Usage
