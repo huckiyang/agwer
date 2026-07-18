@@ -69,3 +69,19 @@ helpful, each broken token harmful, spurious insertions harmful).
 !!! note "Report your normalizer"
     Normalization moves WER by whole points on the same data. It is part of
     the metric — always report which normalizer you used.
+
+## Entity F1 and Word Hallucination Rate
+
+`entity_f1(reference, hypothesis, entities=... | predicate=...)` scores only
+the information-carrying tokens (amounts, codes, names) with the same
+alignment engine as WER, returning recall, precision, f1, and entity_wer.
+`agwer.numeric_tokens` is a ready-made predicate for digits and spelled
+numbers.
+
+`word_hallucination_rate(references, outputs, hypotheses)` measures made-up
+text with occurrence-bounded source attribution. It accepts a 1-best string
+or an n-best list per utterance and decomposes into novel hallucinations
+(invented words), repetition hallucinations (autoregressive loops over heard
+words, the failure documented in arXiv:2408.16180), passed-through ASR
+errors (not hallucination), and generative recoveries (correct words no
+hypothesis contained).

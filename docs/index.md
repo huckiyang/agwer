@@ -1,10 +1,8 @@
 # AgWER: Agent-oriented Word Error Rate
 
 [![PyPI](https://img.shields.io/pypi/v/agwer)](https://pypi.org/project/agwer/)
-[![Python](https://img.shields.io/pypi/pyversions/agwer)](https://pypi.org/project/agwer/)
 [![ci](https://img.shields.io/github/actions/workflow/status/huckiyang/agwer/ci.yml?branch=main&label=ci)](https://github.com/huckiyang/agwer/actions/workflows/ci.yml)
 [![Platforms](https://img.shields.io/badge/platforms-CPU%20%7C%20Apple%20Silicon%20native-blue)](#apple-silicon)
-[![Speed](https://img.shields.io/badge/1M%20utterances-5.2s%20on%20M--series-brightgreen)](#performance)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Docs](https://img.shields.io/badge/docs-huckiyang.github.io%2Fagwer-8A2BE2)](https://huckiyang.github.io/agwer/)
 
@@ -146,6 +144,37 @@ out.her                  # 0.0     and broke nothing
 that exists nowhere in the hypothesis list. Plain WER, reranking metrics, and
 even oracle bounds cannot see this. RIR was built to measure it.
 
+### Entity F1 and Word Hallucination Rate
+
+Two failure modes that plain WER cannot name. First, entity errors hide
+inside acceptable WER: one substituted amount in a 21-word transfer request
+is a comfortable 4.8% WER and a broken transaction. `entity_f1` scores an
+explicit token subset with the same alignment engine as WER:
+
+```python
+m = agwer.entity_f1(ref, hyp, entities={"five", "hundred"})
+m["recall"], m["f1"]                      # 0.5, the layer WER hid
+agwer.entity_f1(refs, hyps, predicate=agwer.numeric_tokens)   # digits and spelled numbers
+```
+
+Second, LLM correctors make text up, and the two mechanisms differ. A
+corrector can invent a word the ASR never produced, or it can loop
+autoregressively and repeat words it really heard (one system in
+[arXiv:2408.16180](https://arxiv.org/abs/2408.16180) repeats a real segment
+eleven times, so a vocabulary check sees nothing wrong).
+`word_hallucination_rate` uses occurrence-bounded attribution to catch both,
+works with a single 1-best or a full n-best list, and never penalizes
+copying an ASR error or a correct generative recovery:
+
+```python
+m = agwer.word_hallucination_rate(refs, outputs, onebest_or_nbest)
+m["whr"]                          # hallucinated tokens / output tokens
+m["novel_hallucinations"]         # invented words
+m["repetition_hallucinations"]    # autoregressive loops over heard words
+m["passed_through_errors"]        # copied ASR errors: not hallucination
+m["generative_tokens"]            # correct words no hypothesis contained
+```
+
 HER comes in two granularities. `her_granularity="utterance"` (the default)
 is the accounting behind the paper's reported values, and `"token"` follows
 the formal per-edit definition. A sentence where the corrector fixes one
@@ -215,6 +244,8 @@ python -m agwer.bench --workers 8
 ```
 
 ### Apple Silicon
+
+[![Speed](https://img.shields.io/badge/1M%20utterances-5.2s%20on%20M--series-brightgreen)](#performance)
 
 agwer is **native on Apple Silicon out of the box**, with no separate
 install: pip and uv select the arm64 wheel automatically, and RapidFuzz

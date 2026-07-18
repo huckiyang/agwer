@@ -18,6 +18,8 @@ Built on jiwer/RapidFuzz. Quickstart::
 """
 
 from agwer.edits import EditCounts, classify_tokens, classify_utterance
+from agwer.entity import entity_f1, numeric_tokens
+from agwer.hallucination import word_hallucination_rate
 from agwer.measures import (
     cer,
     compositional_oracle_wer,
@@ -36,7 +38,7 @@ from agwer.normalizers import BasicTextNormalizer, EnglishTextNormalizer
 from agwer.process import AgenticOutput, oracle_select, process_agentic
 from agwer.transforms import default_normalize
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 __all__ = [
     "wer",
@@ -44,6 +46,9 @@ __all__ = [
     "wil",
     "wip",
     "cer",
+    "entity_f1",
+    "numeric_tokens",
+    "word_hallucination_rate",
     "evaluate",
     "rir",
     "rho",
