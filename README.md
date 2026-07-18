@@ -1,4 +1,4 @@
-# agwer — agentic WER
+# AgWER: Agent oriented WER
 
 **agwer** is a simple and fast Python package to evaluate speech recognition
 and voice agents. It is **self-contained**: one dependency
