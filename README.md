@@ -6,16 +6,17 @@
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
 [![Docs](https://img.shields.io/badge/docs-huckiyang.github.io%2Fagwer-8A2BE2)](https://huckiyang.github.io/agwer/)
 
-**agwer** is a simple and fast Python package to evaluate speech recognition
+**agwer** is a simple and efficient Python package to evaluate speech recognition
 and voice agents. A 40 KB wheel, and it imports in under 20 ms with fast CPU and native Apple Silicon on M-series supports.
 
 agwer supports the classic ASR similarity measures and the agentic ones:
 
-1. word error rate (WER), plus match error rate (MER), word information
-   lost/preserved (WIL/WIP), and sentence error rate (SER)
+1. word error rate (WER) and sentence error rate (SER)
 2. character error rate (CER)
-3. Recoverable Information Ratio (RIR, the paper's ρ)
-4. Harmful Edit Rate (HER)
+3. recoverable information ratio (RIR)
+4. harmful edit rate (HER)
+5. name entity F1 score (NF1)
+6. word hallucination rate (WHR)
 
 The agentic measures (3 and 4) evaluate systems that read $n$-best hypotheses
 and decide *when to edit and when to abstain*, such as LLM error correctors
