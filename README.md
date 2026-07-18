@@ -211,7 +211,7 @@ agwer.wer(ref, hyp, normalize=agwer.EnglishTextNormalizer())  # 0.0
 | `BasicTextNormalizer()` | language-agnostic: symbols, brackets, optional diacritic folding |
 | `EnglishTextNormalizer()` | the Whisper English normalizer: spelled numbers to digits, currency, contractions, British to American spelling; `cached=True` adds an LRU for agent loops |
 
-The Whisper normalizers are with behavior pinned **byte-identical** to the original by golden
+The Whisper normalizers have their behavior pinned **byte-identical** to the original by golden
 tests. Report which normalizer you used; it is part of the metric.
 
 ### CLI
