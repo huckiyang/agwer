@@ -9,7 +9,7 @@ pip install agwer     # pip, Python >= 3.9
 
 ## Classic measures
 
-`wer`, `mer`, `wil`, `wip`, `cer` accept a string or a list of strings for
+`wer`, `mer`, `wil`, `wip`, `cer`, `ser` accept a string or a list of strings for
 both arguments. Lists are pooled corpus-level (total errors / total reference
 words), matching jiwer's semantics (validated bit-identical, pinned in tests).
 

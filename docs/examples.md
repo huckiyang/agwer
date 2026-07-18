@@ -11,7 +11,7 @@ do is prove itself correct:
 ```console
 $ pip install "agwer[test]"
 $ python -m pytest --pyargs agwer -q
-68 passed in 0.27s
+101 passed in 0.38s
 ```
 
 ## 2. First measurements
@@ -66,7 +66,27 @@ often the source actually said it:
 Two of the eight output tokens exceed the source budget: repetition
 hallucinations, not invented words.
 
-## 5. Evaluate a corrector end to end
+## 5. Score a multi-speaker meeting
+
+Speaker-attributed transcripts carry arbitrary speaker labels. `cpwer`
+finds the label permutation with the fewest word errors (the MeetEval
+definition, validated against it on a golden fixture):
+
+```pycon
+>>> ref = {"alice": "let us start with the quarterly numbers",
+...        "bob": "sounds good i will share my screen"}
+>>> hyp = {"spk0": "sounds good i will share my screen",
+...        "spk1": "let us start with the quality numbers"}
+>>> agwer.cpwer(ref, hyp)
+0.07142857142857142
+>>> agwer.cp_statistics(ref, hyp)["assignment"]
+[('alice', 'spk1'), ('bob', 'spk0')]
+```
+
+One word wrong out of fourteen once the labels are matched; the
+permuted labels themselves cost nothing.
+
+## 6. Evaluate a corrector end to end
 
 Real data: three real Whisper 5-best decodes from the HyPoradise benchmark
 (WSJ), each with the verbatim output of a real LLM corrector. The three
@@ -120,7 +140,7 @@ was already perfect, and the corrector split *"painewebber"* into two words.
 30-utterance WSJ set these corrections come from, this corrector scores
 ρ = 2.0 with HER = 0.29.
 
-## 6. The same evaluation from the shell
+## 7. The same evaluation from the shell
 
 Put one utterance per line in a JSONL file with `reference`, `corrected`,
 and `nbest` (or `onebest`) fields, and the `agwer` command prints the full

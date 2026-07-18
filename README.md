@@ -7,7 +7,8 @@
 [![Docs](https://img.shields.io/badge/docs-huckiyang.github.io%2Fagwer-8A2BE2)](https://huckiyang.github.io/agwer/)
 
 **agwer** is a simple and efficient Python package to evaluate speech recognition
-and voice agents. A 40 KB wheel, and it imports in under 20 ms with fast CPU and native Apple Silicon on M-series supports.
+and voice agents. A 40 KB wheel that imports in under 20 ms, fast on CPU and
+native on Apple Silicon M-series.
 
 agwer supports the classic ASR similarity measures and the agentic ones:
 
@@ -45,7 +46,7 @@ The test suite ships inside the package, so any install can verify itself:
 
 ```bash
 pip install "agwer[test]"
-python -m pytest --pyargs agwer     # 68 tests, a few seconds
+python -m pytest --pyargs agwer     # 101 tests, a few seconds
 ```
 
 ## Usage
@@ -64,7 +65,7 @@ agwer.wer(ref, asr_decoded)   # 0.0526, one broken word in nineteen
 
 All measures accept a single string or a list of strings. Lists are pooled
 corpus-level (total errors over total reference words), and `mer`, `wil`,
-`wip`, `cer` work the same way:
+`wip`, `cer`, `ser` work the same way:
 
 ```python
 import agwer
@@ -159,9 +160,13 @@ is a comfortable 4.8% WER and a broken transaction. `entity_f1` scores an
 explicit token subset with the same alignment engine as WER:
 
 ```python
+ref = "okay so please transfer five hundred dollars to the savings account before friday and send me a confirmation text right away"
+hyp = "okay so please transfer nine hundred dollars to the savings account before friday and send me a confirmation text right away"
+
+agwer.wer(ref, hyp)                                   # 0.0476, looks fine
 m = agwer.entity_f1(ref, hyp, entities={"five", "hundred"})
-m["recall"], m["f1"]                      # 0.5, the layer WER hid
-agwer.entity_f1(refs, hyps, predicate=agwer.numeric_tokens)   # digits and spelled numbers
+m["recall"], m["entity_wer"]                          # 0.5, 0.5: it is not fine
+agwer.entity_f1(ref, hyp, predicate=agwer.numeric_tokens)  # ready-made subset: digits and spelled numbers
 ```
 
 Second, LLM correctors make text up, and the two mechanisms differ. A
@@ -174,13 +179,19 @@ works with a single 1-best or a full n-best list, and never penalizes
 copying an ASR error or a correct generative recovery:
 
 ```python
-m = agwer.word_hallucination_rate(refs, outputs, onebest_or_nbest)
-m["whr"]                          # hallucinated tokens / output tokens
-m["novel_hallucinations"]         # invented words
-m["repetition_hallucinations"]    # autoregressive loops over heard words
-m["passed_through_errors"]        # copied ASR errors: not hallucination
-m["generative_tokens"]            # correct words no hypothesis contained
+m = agwer.word_hallucination_rate(
+    ["cancel my nine a m meeting"],                   # references
+    ["cancel my nine a m meeting meeting meeting"],   # corrector outputs
+    ["cancel my nine a m meeting"])                   # hypotheses (1-best or n-best)
+
+m["whr"]                          # 0.25: two of eight output tokens hallucinated
+m["repetition_hallucinations"]    # 2, an autoregressive loop over a heard word
+m["novel_hallucinations"]         # 0, nothing invented outright
 ```
+
+The decomposition also reports `passed_through_errors` (copied ASR errors,
+not hallucination) and `generative_tokens` (correct words no hypothesis
+contained, the ρ > 1 mechanism).
 
 HER comes in two granularities. `her_granularity="utterance"` (the default)
 is the accounting behind the paper's reported values, and `"token"` follows
@@ -279,20 +290,22 @@ agwer is **native on Apple Silicon**, with no separate
 install: pip and uv select the arm64 wheel automatically, and RapidFuzz
 ships compiled `arm64-darwin` extensions, so the C++ edit-distance core runs
 natively on M-series machines. `workers=` then scales the whole pipeline
-across performance cores (see the table above). 
+across performance cores (see the table above).
 
 - Planned next is an optional `agwer[mlx]` extra for embedding-based *semantic* metrics on the Apple GPU
-via [MLX](https://github.com/ml-explore/mlx). i.e., Semantic inference is the one place extra hardware genuinely helps; edit distance does not need it.
+via [MLX](https://github.com/ml-explore/mlx): semantic inference is the one place extra hardware genuinely helps; edit distance does not need it.
 
 ## Compatibility & reproducibility
 
 Measure semantics match [jiwer](https://github.com/jitsi/jiwer), validated
-bit-identical on a 600-corpus golden set pinned in `tests/`.
+bit-identical on a 600-corpus golden set pinned in the package test suite.
 
 agwer gratefully builds on and learns from these projects:
 
-* [RapidFuzz](https://github.com/rapidfuzz/RapidFuzz), C++ / [FuzzyMatch](https://github.com/ordo-one/FuzzyMatch) swift edit distance
-
+* [RapidFuzz](https://github.com/rapidfuzz/RapidFuzz) provides the C++
+  bit-parallel edit-distance engine, agwer's only dependency;
+  [FuzzyMatch](https://github.com/ordo-one/FuzzyMatch) shows the same
+  design done right in Swift.
 * [jiwer](https://github.com/jitsi/jiwer) defined the measure semantics and
   the easy, friendly API style this package follows.
 * [OpenAI Whisper](https://github.com/openai/whisper) created the English
