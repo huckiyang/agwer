@@ -1,16 +1,5 @@
 # Benchmarks
 
-## At a glance
-
-![Engine comparison: normal sentences and one 64,000-word agent dictation session](images/bench_engines.svg)
-
-agwer is the fastest engine in both regimes, and the gap widens exactly
-where agents live: long dictation sessions. On Apple Silicon the same
-count-additive design then scales across performance cores with
-`workers=N`, with results bit-identical to a single worker:
-
-![CPU vs Apple Silicon: 2M-word session corpus and 1M-utterance agentic evaluation](images/bench_silicon.svg)
-
 All numbers on this page are measured, not estimated. The harness lives in
 our development repository; the data is real: NVIDIA Canary 1-best decodes
 of AMI meeting speech (5,469 segments, 22.2% corpus WER) from the Voice
@@ -124,3 +113,14 @@ Reproduce the in-package benchmark on your own machine:
 ```bash
 python -m agwer.bench --workers 8
 ```
+
+## The same numbers as charts
+
+![Engine comparison: normal sentences and one 64,000-word agent dictation session](images/bench_engines.svg)
+
+agwer is the fastest engine in both regimes, and the gap widens exactly
+where agents live: long dictation sessions. On Apple Silicon the same
+count-additive design then scales across performance cores with
+`workers=N`, with results bit-identical to a single worker:
+
+![CPU vs Apple Silicon: 2M-word session corpus and 1M-utterance agentic evaluation](images/bench_silicon.svg)
