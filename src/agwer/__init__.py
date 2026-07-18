@@ -19,13 +19,18 @@ Built on jiwer/RapidFuzz. Quickstart::
 
 from agwer.edits import EditCounts, classify_tokens, classify_utterance
 from agwer.measures import (
+    cer,
     compositional_oracle_wer,
     evaluate,
     her,
+    mer,
     oracle_hypotheses,
     oracle_wer,
     rho,
     rir,
+    wer,
+    wil,
+    wip,
 )
 from agwer.normalizers import BasicTextNormalizer, EnglishTextNormalizer
 from agwer.process import AgenticOutput, oracle_select, process_agentic
@@ -34,6 +39,11 @@ from agwer.transforms import default_normalize
 __version__ = "0.1.0"
 
 __all__ = [
+    "wer",
+    "mer",
+    "wil",
+    "wip",
+    "cer",
     "evaluate",
     "rir",
     "rho",

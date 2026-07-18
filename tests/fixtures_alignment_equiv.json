@@ -1,0 +1,318 @@
+{
+ "cases": [
+  [
+   "w9 w25 w3 w4 w34 w6",
+   "w9 w32 w26 w5 w6",
+   "w36 w14 w3 w4 w37 w6"
+  ],
+  [
+   "w33 w16 w23",
+   "w32 w16 w7 w23",
+   "w33 w31 w16"
+  ],
+  [
+   "w1 w4 w39",
+   "w1 w4",
+   "w1 w4 w39"
+  ],
+  [
+   "w39 w24 w39 w9 w38 w5 w13 w2 w29",
+   "w39 w11 w39 w9 w0 w5 w13 w2 w29",
+   "w39 w19 w1 w9 w38 w5 w36 w2 w29"
+  ],
+  [
+   "w8 w18 w26 w36 w18 w17 w15 w5 w34",
+   "w8 w29 w18 w26 w36 w17 w15 w5 w34",
+   "w8 w18 w26 w14 w18 w17 w15 w5"
+  ],
+  [
+   "w38 w25 w30 w10 w28 w25 w14 w39 w33 w4 w23",
+   "w38 w13 w25 w8 w30 w10 w28 w25 w14 w29 w39 w33 w37 w23",
+   "w38 w15 w25 w30 w9 w28 w24 w14 w32 w39 w33 w4 w23"
+  ],
+  [
+   "w6",
+   "w6",
+   "w6"
+  ],
+  [
+   "w26 w4 w17 w25 w23 w25 w33 w18 w7 w16 w28",
+   "w26 w36 w17 w38 w25 w23 w15 w25 w33 w38 w7 w16 w28",
+   "w19 w25 w23 w25 w33 w18 w7 w16 w28"
+  ],
+  [
+   "w4 w25 w1 w10",
+   "w30 w1 w10",
+   "w4 w25 w1 w10"
+  ],
+  [
+   "w12",
+   "w12",
+   "w12"
+  ],
+  [
+   "w0 w36 w12",
+   "w0 w36",
+   "w0 w7 w36 w32 w12"
+  ],
+  [
+   "w3 w36",
+   "w3 w15",
+   "w36 w5"
+  ],
+  [
+   "w20 w6 w18 w29 w34",
+   "w6 w25 w18 w4 w34",
+   "w25 w15 w18 w26 w34"
+  ],
+  [
+   "w31 w20 w38 w15 w18 w17 w22 w3 w36",
+   "w31 w2 w36 w15 w33 w37 w17 w3 w36",
+   "w31 w20 w38 w15 w18 w17 w22 w3 w36"
+  ],
+  [
+   "w33 w14 w39 w36 w26 w25 w15 w17 w22 w9",
+   "w33 w14 w29 w39 w16 w26 w25 w15 w9 w36",
+   "w33 w14 w39 w36 w26 w25 w15 w17 w14 w9"
+  ],
+  [
+   "w4 w35",
+   "w4 w35",
+   "w4 w35"
+  ],
+  [
+   "w23 w18",
+   "w23 w18",
+   "w23 w25 w18"
+  ],
+  [
+   "w28 w1 w2 w12 w20 w20 w9 w0 w5 w0",
+   "w28 w1 w2 w20 w20 w9 w21 w0 w5 w0",
+   "w28 w1 w4 w12 w20 w20 w9 w0 w5 w0"
+  ],
+  [
+   "w18 w2 w27",
+   "w18 w2 w3",
+   "w18 w2 w27 w9"
+  ],
+  [
+   "w28 w21 w10 w29 w32 w23 w33 w23 w11 w27",
+   "w28 w21 w23 w10 w24 w32 w35 w14 w33 w23 w11 w2",
+   "w28 w21 w10 w29 w32 w23 w33 w23 w11 w27"
+  ],
+  [
+   "w17 w10 w23 w17 w37 w17 w16 w11",
+   "w17 w10 w23 w17 w0 w37 w17 w16 w11 w1",
+   "w17 w28 w10 w23 w17 w19 w37 w6 w17 w12 w11"
+  ],
+  [
+   "w32 w18 w32 w26 w3 w33",
+   "w32 w18 w38 w32 w26 w19",
+   "w32 w18 w15 w25 w3 w38"
+  ],
+  [
+   "w30 w31 w38 w1 w3 w36 w23 w21",
+   "w30 w28 w31 w38 w1 w35 w3 w23 w20",
+   "w30 w31 w38 w1 w29 w30 w9 w3 w21"
+  ],
+  [
+   "w24 w7 w38 w38 w9 w22",
+   "w24 w13 w38 w38 w27 w9 w22",
+   "w24 w35 w7 w28 w38 w9 w22"
+  ]
+ ],
+ "token_her": [
+  {
+   "helpful": 2,
+   "harmful": 1,
+   "missed": 2,
+   "kept_correct": 1,
+   "insertions_1best": 0,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 1,
+   "harmful": 1,
+   "missed": 0,
+   "kept_correct": 1,
+   "insertions_1best": 1,
+   "insertions_corrected": 1
+  },
+  {
+   "helpful": 1,
+   "harmful": 0,
+   "missed": 0,
+   "kept_correct": 2,
+   "insertions_1best": 0,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 1,
+   "harmful": 2,
+   "missed": 1,
+   "kept_correct": 5,
+   "insertions_1best": 0,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 2,
+   "harmful": 2,
+   "missed": 0,
+   "kept_correct": 6,
+   "insertions_1best": 1,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 2,
+   "harmful": 2,
+   "missed": 0,
+   "kept_correct": 8,
+   "insertions_1best": 3,
+   "insertions_corrected": 2
+  },
+  {
+   "helpful": 0,
+   "harmful": 0,
+   "missed": 0,
+   "kept_correct": 1,
+   "insertions_1best": 0,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 3,
+   "harmful": 2,
+   "missed": 1,
+   "kept_correct": 7,
+   "insertions_1best": 2,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 2,
+   "harmful": 0,
+   "missed": 0,
+   "kept_correct": 2,
+   "insertions_1best": 0,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 0,
+   "harmful": 0,
+   "missed": 0,
+   "kept_correct": 1,
+   "insertions_1best": 0,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 1,
+   "harmful": 2,
+   "missed": 0,
+   "kept_correct": 2,
+   "insertions_1best": 0,
+   "insertions_corrected": 2
+  },
+  {
+   "helpful": 0,
+   "harmful": 1,
+   "missed": 1,
+   "kept_correct": 0,
+   "insertions_1best": 0,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 0,
+   "harmful": 0,
+   "missed": 3,
+   "kept_correct": 2,
+   "insertions_1best": 0,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 5,
+   "harmful": 0,
+   "missed": 0,
+   "kept_correct": 5,
+   "insertions_1best": 1,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 4,
+   "harmful": 0,
+   "missed": 1,
+   "kept_correct": 6,
+   "insertions_1best": 1,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 0,
+   "harmful": 0,
+   "missed": 0,
+   "kept_correct": 2,
+   "insertions_1best": 0,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 0,
+   "harmful": 1,
+   "missed": 0,
+   "kept_correct": 2,
+   "insertions_1best": 0,
+   "insertions_corrected": 1
+  },
+  {
+   "helpful": 2,
+   "harmful": 1,
+   "missed": 0,
+   "kept_correct": 8,
+   "insertions_1best": 1,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 1,
+   "harmful": 1,
+   "missed": 0,
+   "kept_correct": 2,
+   "insertions_1best": 0,
+   "insertions_corrected": 1
+  },
+  {
+   "helpful": 5,
+   "harmful": 0,
+   "missed": 0,
+   "kept_correct": 7,
+   "insertions_1best": 2,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 0,
+   "harmful": 2,
+   "missed": 0,
+   "kept_correct": 7,
+   "insertions_1best": 2,
+   "insertions_corrected": 3
+  },
+  {
+   "helpful": 2,
+   "harmful": 2,
+   "missed": 1,
+   "kept_correct": 2,
+   "insertions_1best": 1,
+   "insertions_corrected": 0
+  },
+  {
+   "helpful": 2,
+   "harmful": 2,
+   "missed": 1,
+   "kept_correct": 4,
+   "insertions_1best": 2,
+   "insertions_corrected": 1
+  },
+  {
+   "helpful": 1,
+   "harmful": 1,
+   "missed": 0,
+   "kept_correct": 4,
+   "insertions_1best": 1,
+   "insertions_corrected": 1
+  }
+ ]
+}

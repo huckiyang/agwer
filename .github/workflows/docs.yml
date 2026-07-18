@@ -1,0 +1,16 @@
+name: docs
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: sync index with README
+        run: cp README.md docs/index.md
+      - name: build and deploy to gh-pages
+        run: uvx --with mkdocs-material mkdocs gh-deploy --force

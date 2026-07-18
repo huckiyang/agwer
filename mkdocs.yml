@@ -1,0 +1,19 @@
+site_name: agwer
+site_description: Agentic WER metrics for speech recognition and voice agents
+repo_url: https://github.com/huckiyang/agwer
+repo_name: huckiyang/agwer
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: deep purple
+      toggle: { icon: material/brightness-7, name: dark mode }
+    - scheme: slate
+      primary: deep purple
+      toggle: { icon: material/brightness-4, name: light mode }
+  features: [navigation.sections, content.code.copy]
+nav:
+  - Home: index.md
+  - Usage: usage.md
+  - CLI: cli.md
+markdown_extensions: [admonition, pymdownx.superfences, tables]

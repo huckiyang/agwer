@@ -23,15 +23,24 @@ In both cases::
 
 and HER is ``None`` when the corrector made no consequential edits
 (the act/abstain reading: a corrector that always abstains has no HER).
+
+Alignment runs on RapidFuzz Levenshtein opcodes over word tokens (split on
+spaces, empty tokens dropped) - the same C++ alignment jiwer uses internally,
+so classifications are equivalent (pinned by the alignment-equivalence
+fixture in tests/).
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
 
-import jiwer
+from rapidfuzz.distance import Levenshtein
 
 __all__ = ["EditCounts", "classify_utterance", "classify_tokens"]
+
+
+def _toks(s: str) -> list:
+    return [t for t in s.split(" ") if t]
 
 
 @dataclass
@@ -67,11 +76,17 @@ class EditCounts:
         }
 
 
-def _safe_wer(reference: str, hypothesis: str) -> float:
-    """Single-pair WER with defined empty-string behavior (wer('','') == 0)."""
-    if reference == "" and hypothesis == "":
-        return 0.0
-    return jiwer.wer(reference, hypothesis)
+def _pair_wer(reference: str, hypothesis: str) -> float:
+    """Single-pair WER: word edit errors / reference length.
+
+    Conventions: wer('', '') == 0; with an empty reference and a non-empty
+    hypothesis the raw error (insertion) count is returned.
+    """
+    ref, hyp = _toks(reference), _toks(hypothesis)
+    errors = Levenshtein.distance(ref, hyp)
+    if len(ref) == 0:
+        return float(errors)
+    return errors / len(ref)
 
 
 def classify_utterance(reference: str, onebest: str, corrected: str) -> dict:
@@ -80,8 +95,8 @@ def classify_utterance(reference: str, onebest: str, corrected: str) -> dict:
     All three strings are assumed to be already normalized.
     """
     edited = onebest != corrected
-    wer_ob = _safe_wer(reference, onebest)
-    wer_co = _safe_wer(reference, corrected)
+    wer_ob = _pair_wer(reference, onebest)
+    wer_co = _pair_wer(reference, corrected)
     if not edited:
         category = "no_edit"
     elif wer_co < wer_ob:
@@ -104,21 +119,17 @@ def _ref_token_hits(reference: str, hypothesis: str) -> tuple[list, int]:
     Returns (ok, n_insertions) where ok[i] is True iff reference token i is
     matched exactly (an ``equal`` alignment span) in the hypothesis.
     """
-    # jiwer-compatible token counting (split on " ", drop empties) so index
-    # bookkeeping matches the alignment's delimiter exactly (a tab/newline is
-    # part of a token, not a separator).
-    n_ref = len([t for t in reference.split(" ") if t])
-    if n_ref == 0:
-        return [], len([t for t in hypothesis.split(" ") if t])
-    out = jiwer.process_words([reference], [hypothesis])
-    ok = [False] * n_ref
+    ref, hyp = _toks(reference), _toks(hypothesis)
+    if not ref:
+        return [], len(hyp)
+    ok = [False] * len(ref)
     n_ins = 0
-    for chunk in out.alignments[0]:
-        if chunk.type == "equal":
-            for i in range(chunk.ref_start_idx, chunk.ref_end_idx):
+    for op in Levenshtein.opcodes(ref, hyp):
+        if op.tag == "equal":
+            for i in range(op.src_start, op.src_end):
                 ok[i] = True
-        elif chunk.type == "insert":
-            n_ins += chunk.hyp_end_idx - chunk.hyp_start_idx
+        elif op.tag == "insert":
+            n_ins += op.dest_end - op.dest_start
     return ok, n_ins
 
 

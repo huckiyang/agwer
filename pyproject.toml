@@ -1,14 +1,13 @@
 [project]
 name = "agwer"
 version = "0.1.0"
-description = "Agentic WER: evaluate ASR error correctors with the Recoverable Information Ratio (RIR) and Harmful Edit Rate (HER), on top of jiwer"
+description = "Agentic WER: WER/MER/WIL/WIP/CER plus RIR, HER, and n-best oracles for evaluating ASR error correctors and voice agents. Self-contained, single dependency (RapidFuzz)."
 readme = "README.md"
 authors = [
     { name = "Huck Yang" },
 ]
 requires-python = ">=3.9"
 dependencies = [
-    "jiwer>=4.0",
     "rapidfuzz>=3.6",
 ]
 license = "Apache-2.0"
