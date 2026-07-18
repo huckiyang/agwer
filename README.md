@@ -79,30 +79,48 @@ agwer.cer(refs, hyps)     # 0.0116, corpus CER
 
 ### Evaluating a corrector or voice agent
 
-With $n$-best input, one call computes everything. This is a **real Whisper
-5-best decode** from the MIT-licensed HyPoradise benchmark (WSJ): a 23-word
-dictated stock quote where the ASR merges the spelled ticker and garbles the
-fractions. The spelled form *"i b m"* survives in **no** hypothesis:
+With *n*-best input, one call computes everything. Real data end to end:
+three **real Whisper 5-best decodes** from the MIT-licensed HyPoradise
+benchmark (WSJ), each with the **verbatim output of a real LLM corrector**.
+The three utterances show the three things a corrector can do: restore a
+word from another hypothesis, fix a reading that every hypothesis got wrong,
+and break a name that was already right.
 
 ```python
-ref = "i b m fell one and seven eighths to one hundred twenty and three eighths on more than two point five million shares"
+refs = [
+    "quote obviously we were disappointed we did not get a larger award",
+    "he retired as a partner in nineteen eighty three and as counsel in nineteen eighty six",
+    "a senior painewebber official said the firm hopes the job can be cut through attrition since the turnover in such positions tends to be high",
+]
 
-nbest = [[   # real Whisper 5-best; nbest[i][0] is the 1-best
-    "ibm fell one seven eight to one hundred and twenty three eight on more than two point five million shares",
-    "ibm fell one point seven eight to one hundred and twenty point three eight on more than two point five million shares",
-    "ibm fell one and seven eighths to one hundred and twenty and three eighths on more than two point five million shares",
-    "ibm fell one point seven eights to one hundred and twenty point three eights on more than two point five million shares",
-    "ibm fell one seven eighths to one hundred and twenty three eighths on more than two point five million shares",
-]]
-corrected = [ref]   # a corrector that resolves the ticker and fractions from context
+year = ("he retired as a partner in one thousand, nine hundred and eighty-three "
+        "and as counsel in one thousand, nine hundred and eighty-six")
+firm = ("official said the firm hopes the job can be cut through attrition "
+        "since the turnover in such positions tends to be high")
+nbest = [   # real Whisper 5-best lists; nbest[i][0] is the 1-best
+    ["obviously we were disappointed if we did not get a larger award",
+     "quote obviously we were disappointed we did not get a larger award",
+     "obviously we were disappointed if we did not get a larger award",
+     "quote obviously we were disappointed we did not get a larger award",
+     "quote obviously we were disappointed we did not get a larger award"],
+    [year] * 5,   # all five hypotheses agree on the wrong year reading
+    [f"a senior {x} {firm}" for x in
+     ["painewebber", "payne weber", "payne weber", "paine webber", "pain weber"]],
+]
 
-out = agwer.evaluate([ref], corrected, nbest=nbest)
-out.wer_1best            # 0.3478  the raw ASR broke a third of the quote
-out.wer_oracle           # 0.1739  o_nb: the best single hypothesis still has 4 errors
-out.wer_compositional    # 0.1304  o_cp: no token recombination can spell "i b m"
-out.wer_corrected        # 0.0
-out.rir                  # 2.0     twice the n-best headroom: generative correction
-out.her                  # 0.0     and nothing broken
+lm_corrected = [   # the LLM corrector's verbatim outputs
+    "quote obviously we were disappointed we did not get a larger award",
+    "he retired as a partner in nineteen eighty three and as counsel in nineteen eighty six",
+    "a senior paine webber official said the firm hopes the job can be cut through attrition since the turnover in such positions tends to be high",
+]
+
+out = agwer.evaluate(refs, lm_corrected, nbest=nbest)
+out.wer_1best            # 0.2264  the raw ASR
+out.wer_oracle           # 0.1887  o_nb: the best any reranker could reach
+out.wer_compositional    # 0.0377  o_cp: recombining n-best tokens cannot write "nineteen"
+out.wer_corrected        # 0.0377
+out.rir                  # 5.0     five times the reranking headroom: generative correction
+out.her                  # 0.3333  one of the three consequential edits broke a correct name
 ```
 
 Real decodes also show why reranking alone cannot save a voice agent. In
@@ -111,41 +129,26 @@ back as *"leaving **afternoon**"* in **all five** hypotheses. The query's
 meaning flips, every reranker is helpless, and only a corrector (and agwer's
 oracles) can see it.
 
-### Vibe-coding dictation: when the agent beats every hypothesis (ρ > 1)
+### When the corrector beats every hypothesis (ρ > 1)
 
-Dictating to a coding agent is the hardest case, because package names and
-code terms are exactly what ASR mangles. Here the 1-best hears *"you v pip
-install ag where"* and *"pie test"*, and the package name `agwer` appears in
-**no** hypothesis. No reranker, and not even the compositional oracle, can
-fully recover the command. The coding agent can, because it knows the package
-from context:
+Look at the second utterance above. All five hypotheses read the year the
+same wrong way, so the reranking oracle equals the 1-best and offers zero
+headroom. Recombining *n*-best tokens cannot help either, because the word
+*"nineteen"* appears nowhere in the list. The corrector still writes
+*"nineteen eighty three"*, the dictation convention it knows from context.
+Supplying truth that exists in no hypothesis is *generative* correction. It
+is why ρ can exceed 1, and it is exactly what plain WER, reranking metrics,
+and oracle bounds cannot see. RIR was built to measure it.
 
-```python
-ref = ("open a terminal run uv pip install agwer then write a pytest that checks "
-       "the word error rate of the two transcripts stays below five percent")
+Dictating to a coding agent has the same structure: package names and code
+terms (`uv`, `pytest`, `agwer`) are exactly the tokens ASR breaks and
+exactly the ones the agent can restore from context.
 
-nbest = [[  # 26-word dictation; ASR breaks the technical terms
-    "open a terminal run you v pip install ag where then write a pie test that checks "
-    "the word error rate of the two transcripts stays below five percent",
-    "open a terminal run uv pip install a g wear then write a pytest that checks "
-    "the word error rate of the two transcripts stays below five percent",
-    "open a terminal run you've pip installed ag where then write a pie test that checks "
-    "the word error rate of the two transcript stays below five percent",
-]]
-corrected = [ref]   # the agent reconstructs 'uv pip install agwer' and 'pytest'
-
-out = agwer.evaluate([ref], corrected, nbest=nbest)
-out.wer_1best            # 0.2308  the raw ASR broke almost a quarter of the command
-out.wer_oracle           # 0.1154  the best single hypothesis still has 3 errors
-out.wer_compositional    # 0.0385  even recombining all tokens cannot spell 'agwer'
-out.wer_corrected        # 0.0
-out.rir                  # 2.0     recovered twice the n-best headroom
-out.her                  # 0.0     and broke nothing
-```
-
-ρ > 1 is the signature of *generative* correction: the agent supplied truth
-that exists nowhere in the hypothesis list. Plain WER, reranking metrics, and
-even oracle bounds cannot see this. RIR was built to measure it.
+On the full 30-utterance WSJ set these corrections come from, the corrector
+scores ρ = 2.0 with HER = 0.29: it recovers twice the *n*-best headroom, and
+roughly two of every seven consequential edits still break something. That
+pair of numbers, not WER alone, is the act/abstain profile agwer exists to
+report.
 
 ### Entity F1 and Word Hallucination Rate
 

@@ -68,48 +68,74 @@ hallucinations, not invented words.
 
 ## 5. Evaluate a corrector end to end
 
-A real Whisper 5-best decode from the HyPoradise benchmark (WSJ): the ASR
-merges the spelled ticker *"i b m"* and garbles the fractions, and the
-spelled form survives in **no** hypothesis. The corrector resolves both from
-context:
+Real data: three real Whisper 5-best decodes from the HyPoradise benchmark
+(WSJ), each with the verbatim output of a real LLM corrector. The three
+utterances show the three things a corrector can do: restore a word from
+another hypothesis, fix a reading that every hypothesis got wrong, and break
+a name that was already right:
 
-```pycon
->>> ref = "i b m fell one and seven eighths to one hundred twenty and three eighths on more than two point five million shares"
->>> nbest = [[
-...     "ibm fell one seven eight to one hundred and twenty three eight on more than two point five million shares",
-...     "ibm fell one point seven eight to one hundred and twenty point three eight on more than two point five million shares",
-...     "ibm fell one and seven eighths to one hundred and twenty and three eighths on more than two point five million shares",
-...     "ibm fell one point seven eights to one hundred and twenty point three eights on more than two point five million shares",
-...     "ibm fell one seven eighths to one hundred and twenty three eighths on more than two point five million shares",
-... ]]
->>> out = agwer.evaluate([ref], [ref], nbest=nbest)
->>> out.wer_1best, out.wer_oracle, out.wer_compositional
-(0.34782608695652173, 0.17391304347826086, 0.13043478260869565)
->>> out.rir, out.her
-(2.0, 0.0)
+```python
+refs = [
+    "quote obviously we were disappointed we did not get a larger award",
+    "he retired as a partner in nineteen eighty three and as counsel in nineteen eighty six",
+    "a senior painewebber official said the firm hopes the job can be cut through attrition since the turnover in such positions tends to be high",
+]
+
+year = ("he retired as a partner in one thousand, nine hundred and eighty-three "
+        "and as counsel in one thousand, nine hundred and eighty-six")
+firm = ("official said the firm hopes the job can be cut through attrition "
+        "since the turnover in such positions tends to be high")
+nbest = [   # real Whisper 5-best lists; nbest[i][0] is the 1-best
+    ["obviously we were disappointed if we did not get a larger award",
+     "quote obviously we were disappointed we did not get a larger award",
+     "obviously we were disappointed if we did not get a larger award",
+     "quote obviously we were disappointed we did not get a larger award",
+     "quote obviously we were disappointed we did not get a larger award"],
+    [year] * 5,   # all five hypotheses agree on the wrong year reading
+    [f"a senior {x} {firm}" for x in
+     ["painewebber", "payne weber", "payne weber", "paine webber", "pain weber"]],
+]
+
+lm_corrected = [   # the LLM corrector's verbatim outputs
+    "quote obviously we were disappointed we did not get a larger award",
+    "he retired as a partner in nineteen eighty three and as counsel in nineteen eighty six",
+    "a senior paine webber official said the firm hopes the job can be cut through attrition since the turnover in such positions tends to be high",
+]
+
+out = agwer.evaluate(refs, lm_corrected, nbest=nbest)
+out.wer_1best            # 0.2264  the raw ASR
+out.wer_oracle           # 0.1887  o_nb: the best any reranker could reach
+out.wer_compositional    # 0.0377  o_cp: recombining n-best tokens cannot write "nineteen"
+out.wer_corrected        # 0.0377
+out.rir                  # 5.0     five times the reranking headroom: generative correction
+out.her                  # 0.3333  one of the three consequential edits broke a correct name
 ```
 
-ρ = 2.0: the correction recovered twice the *n*-best headroom, because it
-supplied truth ("i b m") that exists nowhere in the hypothesis list. That
-generative signature is exactly what RIR was built to measure. And HER = 0.0
-says the corrector's one consequential edit broke nothing.
+The second utterance is the generative case: all five hypotheses read the
+year the same wrong way, so reranking is powerless (o_nb equals the 1-best
+there), and no token recombination can produce *"nineteen"* — yet the
+corrector writes it. The third utterance is the price of acting: the 1-best
+was already perfect, and the corrector split *"painewebber"* into two words.
+ρ and HER report both sides of that act/abstain trade at once. On the full
+30-utterance WSJ set these corrections come from, this corrector scores
+ρ = 2.0 with HER = 0.29.
 
 ## 6. The same evaluation from the shell
 
 Put one utterance per line in a JSONL file with `reference`, `corrected`,
 and `nbest` (or `onebest`) fields, and the `agwer` command prints the full
-report:
+report. With the three utterances above:
 
 ```console
 $ agwer results.jsonl
-n utterances     : 1
-WER 1-best       : 34.78%
-WER corrected    : 0.00%
-WER oracle (o_nb): 17.39%
-WER compos.(o_cp): 13.04%
-RIR (rho)        : 2.000   [>1 beats the n-best oracle]
-HER (utterance): 0.000
-edits            : helpful=1 harmful=0 neutral=0 missed=0 no_edit=0
+n utterances     : 3
+WER 1-best       : 22.64%
+WER corrected    : 3.77%
+WER oracle (o_nb): 18.87%
+WER compos.(o_cp): 3.77%
+RIR (rho)        : 5.000   [>1 beats the n-best oracle]
+HER (utterance): 0.333
+edits            : helpful=2 harmful=1 neutral=0 missed=0 no_edit=0
 ```
 
 `--her-granularity token` switches to the formal per-edit accounting,
