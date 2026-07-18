@@ -53,12 +53,12 @@ The simplest use case is computing the word error rate of a dictated
 utterance:
 
 ```python
-from agwer import wer
+import agwer
 
 ref  = "please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the design team"
 asr_decoded = "please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the desire team"
 
-wer(ref, asr_decoded)   # 0.0526, one broken word in nineteen
+agwer.wer(ref, asr_decoded)   # 0.0526, one broken word in nineteen
 ```
 
 All measures accept a single string or a list of strings. Lists are pooled
