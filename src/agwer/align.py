@@ -42,13 +42,36 @@ def tokenize_all(strings: Sequence[str]) -> list:
     return [[t for t in s.split(" ") if t] for s in strings]
 
 
+# Auto-banding: above _BAND_MIN elements the distance runs banded
+# (Ukkonen-style band via rapidfuzz score_hint, O(d*n/64) instead of
+# O(n*m/64)). The hint only chooses the starting band; rapidfuzz doubles it
+# until the true distance fits, so results are exact for ANY hint (pinned by
+# tests down to rapidfuzz 3.6). The starting band is a length-difference
+# floor plus an error-rate prior: 1/4 of the reference for word tokens, 1/8
+# for character strings (character error rates run about half of word error
+# rates). Measured: 2-4x on 16k+ word documents, ~10x on long-document CER,
+# no change below the gate; a pathological corpus far above the prior
+# (~90% error) pays up to ~1.3x for the doubling.
+_BAND_MIN = 256
+
+
+def _distance(r, h) -> int:
+    n, m = len(r), len(h)
+    if n <= _BAND_MIN:
+        return Levenshtein.distance(r, h)
+    hint = max(m - n if m > n else n - m,
+               n >> (3 if isinstance(r, str) else 2))
+    return Levenshtein.distance(r, h, score_hint=hint)
+
+
 def pair_errors(refs, hyps) -> list:
     """Edit errors (S+D+I) for each pair; C-level distance, no alignment.
 
     Pass token lists for word-level errors or raw strings for
-    character-level errors (spaces count as characters).
+    character-level errors (spaces count as characters). Long inputs run
+    banded automatically (see ``_BAND_MIN`` above); results are exact.
     """
-    return [Levenshtein.distance(r, h) for r, h in zip(refs, hyps)]
+    return [_distance(r, h) for r, h in zip(refs, hyps)]
 
 
 def pooled_counts(refs: Sequence[str], hyps: Sequence[str],

@@ -46,33 +46,42 @@ Dictating to a coding agent produces the hardest scoring workload: one
 continuous session-length document instead of many short utterances. This
 benchmark scores a single seeded synthetic session (package names and
 commands mixed with English glue, technical terms split into heard words,
-~20% WER) as one document. Versions here: agwer 0.4.1, jiwer 4.0.0; WER
+~20% WER) as one document. Versions here: agwer 0.4.2, jiwer 4.0.0; WER
 agreement between agwer and jiwer is asserted bit-identical before any
 timing; median of 5 runs on the same M-series machine.
 
-| session length | fastwer (C++ DP) | jiwer | **agwer** | vs jiwer | vs fastwer |
+| session length | fastwer (C++ DP) | jiwer | agwer 0.4.1 | **agwer 0.4.2 (auto-banded)** | vs jiwer |
 |---|---|---|---|---|---|
-| 1,000 words | 1.3 ms | 0.35 ms | **0.11 ms** | 3.2× | 12× |
-| 4,000 words | 21.2 ms | 1.94 ms | **0.83 ms** | 2.3× | 26× |
-| 16,000 words | 498 ms | 15.7 ms | **9.9 ms** | 1.6× | 50× |
-| 64,000 words | 9,181 ms | 185 ms | **153 ms** | 1.2× | 60× |
+| 1,000 words | 1.3 ms | 0.34 ms | 0.11 ms | **0.09 ms** | 3.8× |
+| 4,000 words | 21.3 ms | 1.91 ms | 0.83 ms | **0.46 ms** | 4.2× |
+| 16,000 words | 498 ms | 15.6 ms | 9.9 ms | **3.5 ms** | 4.4× |
+| 64,000 words | 9,163 ms | 188 ms | 153 ms | **36.9 ms** | 5.1× |
+
+Character error rate on the same 64,000-word session (~345k characters):
+**agwer 433 ms vs jiwer 4,151 ms (9.6×)**, values identical.
 
 Three observations:
 
 1. **Quadratic DP is disqualified at session length.** A long dictation
-   session (64,000 words) costs fastwer 9.2 seconds per scoring call, 60×
-   agwer; the bit-parallel engines stay well under 200 ms. If your
+   session (64,000 words) costs fastwer 9.2 seconds per scoring call, 248×
+   agwer; the bit-parallel engines stay far under 200 ms. If your
    evaluation loop rescores after every agent edit, that difference is the
    difference between interactive and not.
-2. **agwer's fast path is why it leads jiwer.** Since 0.4.1, `wer()`
-   computes the C-level bit-parallel distance directly and never
-   materializes an alignment; jiwer builds one per call. The lead is
-   largest at interactive lengths (3.2× at 1,000 words) and converges as
-   the shared C kernel dominates (1.2× at 64,000).
+2. **The 0.4.2 auto-band is where the widening lead comes from.** Above
+   256 elements, agwer starts the distance computation in an
+   Ukkonen-style band sized by an error-rate prior (a quarter of the
+   reference for words, an eighth for characters) instead of the full DP
+   width; the band doubles until the true distance provably fits, so every
+   result stays exact — pinned by tests from 0% to 100% error rates. Real
+   transcripts sit far below the prior, so the band rarely doubles, and
+   the work drops from O(n·m/64) to O(d·n/64). A pathological corpus
+   (~90% error) pays about 1.3× over the unbanded path; typical ASR
+   corpora gain 2–10×. Below the gate, short utterances take the exact
+   same code path as before.
 3. **Fleets of sessions scale across Apple Silicon cores.** Scoring 2,000
-   such sessions (2M words) with `evaluate()`: 611 ms single worker,
-   **155 ms with `workers=8`** (3.9×), against 1,049 ms for jiwer on the
-   same corpus — 6.8× end to end. The count-additive design merges chunk
+   such sessions (2M words) with `evaluate()`: 479 ms single worker,
+   **140 ms with `workers=8`**, against 1,047 ms for jiwer on the same
+   corpus — 7.5× end to end. The count-additive design merges chunk
    results exactly, so the parallel numbers are bit-identical to serial.
 
 ## agwer on CPU and Apple Silicon

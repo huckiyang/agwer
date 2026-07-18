@@ -38,7 +38,7 @@ from agwer.hallucination import word_hallucination_rate
 from agwer.normalizers import BasicTextNormalizer, EnglishTextNormalizer
 from agwer.text import default_normalize
 
-__version__ = "0.4.1"
+__version__ = "0.4.2"
 
 __all__ = [
     "wer",
