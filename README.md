@@ -1,4 +1,4 @@
-# AgWER: Agent oriented WER
+# AgWER: Agent oriented Word Erorr Rate 
 
 **agwer** is a simple and fast Python package to evaluate speech recognition
 and voice agents. It is **self-contained**: one dependency
