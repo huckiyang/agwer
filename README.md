@@ -266,7 +266,7 @@ place extra hardware genuinely helps; edit distance does not need it.
 Measure semantics match [jiwer](https://github.com/jitsi/jiwer), validated
 bit-identical on a 600-corpus golden set pinned in `tests/`.
 
-agwer gratefully builds on three projects:
+agwer gratefully builds on and learns from these projects:
 
 * [RapidFuzz](https://github.com/rapidfuzz/RapidFuzz), C++ / [FuzzyMatch](https://github.com/ordo-one/FuzzyMatch) swift edit distance
 
