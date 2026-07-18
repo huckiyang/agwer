@@ -46,10 +46,10 @@ utterance:
 ```python
 from agwer import wer
 
-reference  = "please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the design team"
-hypothesis = "please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the desire team"
+ref  = "please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the design team"
+asr_decoded = "please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the desire team"
 
-wer(reference, hypothesis)   # 0.0526 — one broken word in nineteen
+wer(ref, asr_decoded)   # 0.0526 one broken word in nineteen
 ```
 
 All measures accept a single string or a list of strings; lists are pooled
@@ -64,8 +64,8 @@ refs = ["send the revised contract to the legal team before the board meeting on
 hyps = ["send the revised contract to the legal team before the bored meeting on friday afternoon",
         "remind me to pick up the prescription from the pharmacy after the dentist appointment"]
 
-agwer.wer(refs, hyps)     # 0.0345 — corpus WER
-agwer.cer(refs, hyps)     # 0.0116 — corpus CER
+agwer.wer(refs, hyps)     # 0.0345: corpus WER
+agwer.cer(refs, hyps)     # 0.0116: corpus CER
 ```
 
 ### Evaluating a corrector / voice agent
