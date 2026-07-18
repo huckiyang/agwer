@@ -7,7 +7,7 @@
 [![Docs](https://img.shields.io/badge/docs-huckiyang.github.io%2Fagwer-8A2BE2)](https://huckiyang.github.io/agwer/)
 
 **agwer** is a simple and fast Python package to evaluate speech recognition
-and voice agents. A 40 KB wheel, and it imports in under 20 ms with fast CPU and native Apple Silicon supports for M-Chips.
+and voice agents. A 40 KB wheel, and it imports in under 20 ms with fast CPU and native Apple Silicon on M-series supports.
 
 agwer supports the classic ASR similarity measures and the agentic ones:
 
