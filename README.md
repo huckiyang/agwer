@@ -92,6 +92,42 @@ out.wer_oracle           # o_nb: best single hypothesis
 out.wer_compositional    # o_cp: best token recombination (o_cp <= o_nb)
 ```
 
+### Vibe-coding dictation: when the agent beats every hypothesis (ρ > 1)
+
+Dictating to a coding agent is the hardest case: package names and code terms
+are exactly what ASR mangles. Here the 1-best hears *"you v pip install ag
+where"* and *"pie test"* — and the package name `agwer` appears in **no**
+hypothesis, so no reranker and not even the compositional oracle can fully
+recover the command. The coding agent can, because it knows the package from
+context:
+
+```python
+ref = ("open a terminal run uv pip install agwer then write a pytest that checks "
+       "the word error rate of the two transcripts stays below five percent")
+
+nbest = [[  # 26-word dictation; ASR breaks the technical terms
+    "open a terminal run you v pip install ag where then write a pie test that checks "
+    "the word error rate of the two transcripts stays below five percent",
+    "open a terminal run uv pip install a g wear then write a pytest that checks "
+    "the word error rate of the two transcripts stays below five percent",
+    "open a terminal run you've pip installed ag where then write a pie test that checks "
+    "the word error rate of the two transcript stays below five percent",
+]]
+corrected = [ref]   # the agent reconstructs 'uv pip install agwer' and 'pytest'
+
+out = agwer.evaluate([ref], corrected, nbest=nbest)
+out.wer_1best            # 0.2308 -> the raw ASR broke almost a quarter of the command
+out.wer_oracle           # 0.1154 -> the best single hypothesis still has 3 errors
+out.wer_compositional    # 0.0385 -> even recombining all tokens cannot spell 'agwer'
+out.wer_corrected        # 0.0
+out.rir                  # 2.0    -> recovered TWICE the n-best headroom: generative
+out.her                  # 0.0    -> and broke nothing
+```
+
+ρ > 1 is the signature of *generative* correction — the agent supplied truth
+that exists nowhere in the hypothesis list. This is what plain WER, reranking
+metrics, and even oracle bounds cannot see, and what RIR was built to measure.
+
 HER comes in two granularities — `her_granularity="utterance"` (default;
 the accounting behind the paper's reported values) and `"token"` (the formal
 per-edit definition). A sentence where the corrector fixes one token and
