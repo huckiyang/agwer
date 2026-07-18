@@ -6,12 +6,17 @@ theme:
   name: material
   palette:
     - scheme: default
-      primary: deep purple
+      primary: white
+      accent: blue
       toggle: { icon: material/brightness-7, name: dark mode }
     - scheme: slate
-      primary: deep purple
+      primary: black
+      accent: blue
       toggle: { icon: material/brightness-4, name: light mode }
-  features: [navigation.sections, content.code.copy]
+  font: false          # system SF-style stack via extra.css
+  features: [navigation.sections, navigation.tabs, content.code.copy]
+extra_css:
+  - stylesheets/extra.css
 nav:
   - Home: index.md
   - Usage: usage.md

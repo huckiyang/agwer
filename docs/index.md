@@ -31,12 +31,16 @@ pip install agwer        # or: uv add agwer
 
 ## Usage
 
-The simplest use-case is computing the word error rate between two strings:
+The simplest use-case is computing the word error rate of a dictated
+utterance:
 
 ```python
 from agwer import wer
 
-error = wer("hello world", "hello duck")   # 0.5
+reference  = "please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the design team"
+hypothesis = "please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the desire team"
+
+wer(reference, hypothesis)   # 0.0526 — one broken word in nineteen
 ```
 
 All measures accept a single string or a list of strings; lists are pooled
@@ -46,27 +50,35 @@ corpus-level (total errors / total reference words), and `mer`, `wil`, `wip`,
 ```python
 import agwer
 
-refs = ["the cat sat", "hello world"]
-hyps = ["the cat sad", "hello world"]
-agwer.wer(refs, hyps)     # corpus WER
-agwer.cer(refs, hyps)     # corpus CER
+refs = ["send the revised contract to the legal team before the board meeting on friday afternoon",
+        "remind me to pick up the prescription from the pharmacy after the dentist appointment"]
+hyps = ["send the revised contract to the legal team before the bored meeting on friday afternoon",
+        "remind me to pick up the prescription from the pharmacy after the dentist appointment"]
+
+agwer.wer(refs, hyps)     # 0.0345 — corpus WER
+agwer.cer(refs, hyps)     # 0.0116 — corpus CER
 ```
 
 ### Evaluating a corrector / voice agent
 
-With $n$-best input, one call computes everything:
+With $n$-best input, one call computes everything. Long dictations are where
+correction matters — a single homophone in a 21-word command ("forth floor")
+is the difference between the right room and a support ticket:
 
 ```python
-nbest = [                       # nbest[i][0] is the ASR 1-best
-    ["the cat sad", "the cat sat"],
-    ["hello world", "hello word"],
-]
-corrected = ["the cat sat", "hello world"]   # your corrector's output
+refs = ["move my three thirty meeting with the product team to thursday and book the large conference room on the fourth floor"]
+nbest = [[   # nbest[i][0] is the ASR 1-best
+    "move my three thirty meeting with the product team to thursday and book the large conference room on the forth floor",
+    "move my three thirty meeting with the product team to thursday and book the large conference room on the fourth floor",
+    "move my three thirty meeting with the protect team to thursday and book the large conference room on the forth floor",
+]]
+corrected = ["move my three thirty meeting with the product team to thursday and book the large conference room on the fourth floor"]
 
 out = agwer.evaluate(refs, corrected, nbest=nbest)
-out.wer_corrected        # 0.0
-out.rir                  # 1.0  -> closed the n-best gap exactly
-out.her                  # None -> no harmful edits (always-abstain has no HER)
+out.wer_1best            # 0.0476 -> the raw ASR broke one word
+out.wer_corrected        # 0.0    -> the agent fixed it
+out.rir                  # 1.0    -> closed the 1-best-to-oracle gap exactly
+out.her                  # 0.0    -> and broke nothing while doing it
 out.wer_oracle           # o_nb: best single hypothesis
 out.wer_compositional    # o_cp: best token recombination (o_cp <= o_nb)
 ```
@@ -83,9 +95,16 @@ Normalization is the main reason WER numbers are incomparable across papers.
 Every entry point takes `normalize=` (any `Callable[[str], str]`); agwer
 ships the standards:
 
+A dictation agent that says amounts out loud looks 87% wrong against the
+written form — until you normalize:
+
 ```python
-agwer.wer("it costs $22.50", "it costs twenty two dollars and fifty cents",
-          normalize=agwer.EnglishTextNormalizer())   # 0.0
+ref = "the invoice total came to $1,250.75 after the 15% discount was applied on march 3rd"
+hyp = ("the invoice total came to one thousand two hundred fifty dollars "
+       "and seventy five cents after the fifteen percent discount was applied on march third")
+
+agwer.wer(ref, hyp)                                          # 0.867 (!)
+agwer.wer(ref, hyp, normalize=agwer.EnglishTextNormalizer())  # 0.0
 ```
 
 | normalizer | what |

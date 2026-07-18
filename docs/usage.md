@@ -9,9 +9,12 @@ words), matching jiwer's semantics (validated bit-identical, pinned in tests).
 ```python
 import agwer
 
-agwer.wer("hello world", "hello duck")          # 0.5
-agwer.wer(["a b", "c d"], ["a b", "c x"])       # 0.25 (pooled)
-agwer.cer("hello", "hallo")                     # 0.2
+reference  = "please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the design team"
+hypothesis = "please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the desire team"
+
+agwer.wer(reference, hypothesis)                # 0.0526 — one broken word in nineteen
+agwer.wer(["a b", "c d"], ["a b", "c x"])       # 0.25 (pooled corpus-level)
+agwer.cer(reference, hypothesis)                # character error rate
 ```
 
 By default strings are scored exactly as given. Pass any

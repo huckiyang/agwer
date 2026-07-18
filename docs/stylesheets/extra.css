@@ -1,0 +1,145 @@
+/* AgWER docs — Apple design language (70%) over Material structure (30%).
+   Palette and type conventions follow apple.com: ink #1d1d1f, secondary
+   #6e6e73, hairlines #d2d2d7, surface #f5f5f7, accent #0071e3. */
+
+:root {
+  --agwer-ink: #1d1d1f;
+  --agwer-ink-2: #6e6e73;
+  --agwer-hairline: #d2d2d7;
+  --agwer-hairline-2: #e5e5ea;
+  --agwer-surface: #f5f5f7;
+  --agwer-accent: #0071e3;
+  --md-primary-fg-color: #ffffff;
+  --md-accent-fg-color: var(--agwer-accent);
+  --md-typeset-a-color: #0066cc;
+}
+
+/* ---- type: SF-style system stack, tight display headers ---- */
+body, .md-typeset {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+               "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--agwer-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.md-typeset { font-size: 0.82rem; line-height: 1.6; }
+.md-typeset h1 {
+  color: var(--agwer-ink);
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  font-size: 2.1em;
+}
+.md-typeset h2 {
+  color: var(--agwer-ink);
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  border-bottom: 1px solid var(--agwer-hairline-2);
+  padding-bottom: 0.3em;
+}
+.md-typeset h3 { color: var(--agwer-ink); font-weight: 600; letter-spacing: -0.012em; }
+.md-typeset code, .md-typeset pre, .md-typeset kbd {
+  font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+/* ---- frosted, hairlined header (apple.com nav) ---- */
+.md-header {
+  background: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  color: var(--agwer-ink);
+  border-bottom: 1px solid var(--agwer-hairline);
+  box-shadow: none;
+}
+.md-header__title, .md-header .md-icon { color: var(--agwer-ink); }
+.md-tabs { background: transparent; color: var(--agwer-ink); border-bottom: 1px solid var(--agwer-hairline-2); }
+.md-tabs__link { color: var(--agwer-ink-2); }
+.md-tabs__link--active, .md-tabs__link:hover { color: var(--agwer-ink); }
+
+/* ---- search: rounded, surface-gray (30% Material behavior kept) ---- */
+.md-search__form {
+  background: var(--agwer-surface);
+  border-radius: 10px;
+}
+.md-search__input { color: var(--agwer-ink); }
+.md-search__input::placeholder { color: var(--agwer-ink-2); }
+
+/* ---- code blocks: soft gray cards with hairline, 12px radius ---- */
+.md-typeset pre > code {
+  background: var(--agwer-surface);
+  border: 1px solid var(--agwer-hairline-2);
+  border-radius: 12px;
+  padding: 0.9em 1.1em;
+}
+.md-typeset code {
+  background: var(--agwer-surface);
+  border-radius: 6px;
+  padding: 0.1em 0.4em;
+  color: var(--agwer-ink);
+}
+.md-clipboard { color: var(--agwer-ink-2); }
+
+/* ---- tables: rounded cards, hairlines, no heavy stripes ---- */
+.md-typeset table:not([class]) {
+  border: 1px solid var(--agwer-hairline-2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: none;
+  font-size: 0.78rem;
+}
+.md-typeset table:not([class]) th {
+  background: var(--agwer-surface);
+  color: var(--agwer-ink-2);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+.md-typeset table:not([class]) td { border-top: 1px solid var(--agwer-hairline-2); }
+
+/* ---- links & buttons: Apple blue, quiet until hover ---- */
+.md-typeset a { color: #0066cc; text-decoration: none; }
+.md-typeset a:hover { color: var(--agwer-accent); text-decoration: underline; }
+.md-typeset .md-button--primary {
+  background: var(--agwer-accent);
+  border: none;
+  border-radius: 980px;    /* apple pill */
+  padding: 0.45em 1.4em;
+}
+
+/* ---- sidebar / nav: quiet secondary ink ---- */
+.md-nav__link { color: var(--agwer-ink-2); }
+.md-nav__link--active, .md-nav__link:hover { color: var(--agwer-accent); }
+.md-nav__title { color: var(--agwer-ink); font-weight: 600; }
+
+/* ---- admonitions: hairline cards, accent bar ---- */
+.md-typeset .admonition, .md-typeset details {
+  border: 1px solid var(--agwer-hairline-2);
+  border-left: 3px solid var(--agwer-accent);
+  border-radius: 12px;
+  box-shadow: none;
+  background: #ffffff;
+}
+.md-typeset .admonition-title { background: var(--agwer-surface); }
+
+/* ---- footer: surface gray, hairline ---- */
+.md-footer { background: var(--agwer-surface); color: var(--agwer-ink-2); }
+.md-footer-meta { background: var(--agwer-surface); }
+.md-footer * { color: var(--agwer-ink-2) !important; }
+
+/* ---- dark scheme: apple dark (true black surfaces, same accent) ---- */
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #000000;
+  --md-default-fg-color: #f5f5f7;
+  --md-default-fg-color--light: #a1a1a6;
+  --md-typeset-a-color: #2997ff;
+  --agwer-surface: #1d1d1f;
+  --agwer-hairline: #424245;
+  --agwer-hairline-2: #333336;
+  --agwer-ink: #f5f5f7;
+  --agwer-ink-2: #a1a1a6;
+}
+[data-md-color-scheme="slate"] .md-header {
+  background: rgba(22, 22, 23, 0.8);
+  border-bottom: 1px solid var(--agwer-hairline);
+}
+[data-md-color-scheme="slate"] .md-typeset a { color: #2997ff; }
