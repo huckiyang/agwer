@@ -1,5 +1,13 @@
 # AgWER: Agent-oriented Word Error Rate
 
+[![PyPI](https://img.shields.io/pypi/v/agwer)](https://pypi.org/project/agwer/)
+[![Python](https://img.shields.io/pypi/pyversions/agwer)](https://pypi.org/project/agwer/)
+[![ci](https://img.shields.io/github/actions/workflow/status/huckiyang/agwer/ci.yml?branch=main&label=ci)](https://github.com/huckiyang/agwer/actions/workflows/ci.yml)
+[![Platforms](https://img.shields.io/badge/platforms-CPU%20%7C%20Apple%20Silicon%20native-blue)](#apple-silicon)
+[![Speed](https://img.shields.io/badge/1M%20utterances-5.2s%20on%20M--series-brightgreen)](#performance)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-huckiyang.github.io%2Fagwer-8A2BE2)](https://huckiyang.github.io/agwer/)
+
 **agwer** is a simple and fast Python package to evaluate speech recognition
 and voice agents. It is **self-contained**: one dependency
 ([RapidFuzz](https://github.com/rapidfuzz/RapidFuzz), C++ edit distance), a
