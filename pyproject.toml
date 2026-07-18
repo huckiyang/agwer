@@ -1,6 +1,6 @@
 [project]
 name = "agwer"
-version = "0.4.0"
+version = "0.4.1"
 description = "Agentic WER: WER/MER/WIL/WIP/CER plus RIR, HER, and n-best oracles for evaluating ASR error correctors and voice agents. Self-contained, single dependency (RapidFuzz)."
 readme = "README.md"
 authors = [

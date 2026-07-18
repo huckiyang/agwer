@@ -16,9 +16,8 @@ from __future__ import annotations
 
 from typing import Callable, Iterable, Optional, Sequence, Union
 
-from rapidfuzz.distance import Levenshtein
-
-from agwer.transforms import default_normalize
+from agwer.align import equal_flags, tokenize
+from agwer.text import default_normalize
 
 __all__ = ["entity_f1", "numeric_tokens"]
 
@@ -36,22 +35,6 @@ _SPELLED = {
 def numeric_tokens(token: str) -> bool:
     """Digits and spelled numbers: the default information-carrying subset."""
     return any(c.isdigit() for c in token) or token in _SPELLED
-
-
-def _toks(s: str) -> list:
-    return [t for t in s.split(" ") if t]
-
-
-def _flags(ref_tok: list, hyp_tok: list) -> tuple[list, list]:
-    ref_ok = [False] * len(ref_tok)
-    hyp_ok = [False] * len(hyp_tok)
-    for op in Levenshtein.opcodes(ref_tok, hyp_tok):
-        if op.tag == "equal":
-            for i in range(op.src_start, op.src_end):
-                ref_ok[i] = True
-            for j in range(op.dest_start, op.dest_end):
-                hyp_ok[j] = True
-    return ref_ok, hyp_ok
 
 
 def entity_f1(
@@ -86,8 +69,8 @@ def entity_f1(
 
     ref_total = ref_hit = hyp_total = hyp_hit = 0
     for r, h in zip(refs, hyps):
-        rt, ht = _toks(norm(r)), _toks(norm(h))
-        r_ok, h_ok = _flags(rt, ht)
+        rt, ht = tokenize(norm(r)), tokenize(norm(h))
+        r_ok, h_ok, _ = equal_flags(rt, ht)
         for tok, ok in zip(rt, r_ok):
             if pred(tok):
                 ref_total += 1

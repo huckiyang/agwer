@@ -1,7 +1,8 @@
-"""Core processing for agentic WER metrics.
+"""Agentic metrics: RIR (rho), HER, and the oracle bounds.
 
-One call — :func:`process_agentic` — computes everything the Voice Memory
-paper's evaluation needs from (references, n-best lists, corrected outputs):
+One call — :func:`process_agentic` (alias :func:`evaluate`) — computes
+everything the Voice Memory paper's evaluation needs from (references,
+n-best lists, corrected outputs):
 
 * corpus WER of the 1-best, the n-best oracle, the compositional oracle,
   and the corrected output,
@@ -9,20 +10,19 @@ paper's evaluation needs from (references, n-best lists, corrected outputs):
 * the Harmful Edit Rate (HER) with its edit decomposition,
 * optional per-utterance rows for error analysis.
 
-Performance design: word-level edit distances are computed directly with
-RapidFuzz (the same C++ engine jiwer uses), batched over the whole corpus, so
-the full agentic evaluation costs a handful of batch calls rather than
-per-utterance Python round-trips. Corpus WER is the global error ratio
-(total edit errors / total reference words) and is bit-identical to
-``jiwer.wer`` on the same tokenization.
+Performance design: word-level edit distances come from the alignment core
+(:mod:`agwer.align`), batched over the whole corpus, so the full agentic
+evaluation costs a handful of batch calls rather than per-utterance Python
+round-trips. Corpus WER is the global error ratio (total edit errors /
+total reference words) and is bit-identical to jiwer on the same
+tokenization.
 
 Every quantity agwer aggregates is *count-additive*, so large corpora can be
-split across processes and merged exactly: pass ``workers=N`` to
-:func:`process_agentic` / :func:`agwer.evaluate`. Chunks are processed in
-separate Python processes (one per worker, ``spawn`` start method), which
-parallelizes the normalization/tokenization-dominated pipeline across
-performance cores — worthwhile from roughly 100k utterances up; below that
-the process startup outweighs the gain.
+split across processes and merged exactly: pass ``workers=N``. Chunks run in
+separate Python processes (``spawn`` start method), which parallelizes the
+normalization/tokenization-dominated pipeline across performance cores —
+worthwhile from roughly 100k utterances up; below that the process startup
+outweighs the gain.
 """
 
 from __future__ import annotations
@@ -34,12 +34,22 @@ from dataclasses import dataclass, field
 from multiprocessing import get_context
 from typing import Callable, Optional, Sequence
 
-from rapidfuzz.distance import Levenshtein
-
+from agwer.align import pair_errors, tokenize_all
 from agwer.edits import EditCounts, classify_tokens
-from agwer.transforms import apply_normalize, default_normalize
+from agwer.text import apply_normalize, default_normalize
 
-__all__ = ["AgenticOutput", "process_agentic", "oracle_select"]
+__all__ = [
+    "AgenticOutput",
+    "process_agentic",
+    "evaluate",
+    "oracle_select",
+    "rir",
+    "rho",
+    "her",
+    "oracle_wer",
+    "oracle_hypotheses",
+    "compositional_oracle_wer",
+]
 
 _EPS = 1e-9
 
@@ -75,22 +85,6 @@ class AgenticOutput:
 
 # --------------------------------------------------------------- primitives
 
-def _tokens(strings: Sequence[str]) -> list[list[str]]:
-    """jiwer-compatible tokenization: split on spaces, drop empty tokens."""
-    return [[t for t in s.split(" ") if t] for s in strings]
-
-
-def _pair_errors(refs_tok: list, hyps_tok: list) -> list[int]:
-    """Word edit errors (S+D+I) for each (ref, hyp) pair.
-
-    A plain loop over rapidfuzz's C-backed distance: profiling (see the
-    efficiency review in ENGINEERING_PLAN 3.7) showed the edit distance is
-    ~2% of evaluate() runtime, and a numpy/cpdist batch path was worth
-    <=3 ms per 100k utterances -- not its complexity.
-    """
-    return [Levenshtein.distance(r, h) for r, h in zip(refs_tok, hyps_tok)]
-
-
 def _ratio(errors: int, ref_words: int) -> float:
     """Global error ratio; identical to jiwer's corpus WER."""
     if ref_words == 0:
@@ -106,15 +100,17 @@ def _item_wer(errors: int, ref_len: int) -> float:
 
 
 def _oracle_pick(
-    refs_tok: list, nbest_norm: list[list[str]]
-) -> tuple[list[str], list[int]]:
+    refs_tok: list, nbest_norm: list
+) -> tuple:
     """Per-utterance minimum-error hypothesis; one flat batch call for all
     (ref, candidate) pairs so ragged n-best lists are fine."""
     flat_refs, flat_hyps = [], []
     for ref_tok, hyps in zip(refs_tok, nbest_norm):
         flat_refs.extend([ref_tok] * len(hyps))
         flat_hyps.append(hyps)
-    flat_err = _pair_errors(flat_refs, _tokens([h for hs in flat_hyps for h in hs]))
+    flat_err = pair_errors(
+        flat_refs, tokenize_all([h for hs in flat_hyps for h in hs])
+    )
     picked, picked_err, pos = [], [], 0
     for hyps in nbest_norm:
         errs = flat_err[pos:pos + len(hyps)]
@@ -125,7 +121,7 @@ def _oracle_pick(
     return picked, picked_err
 
 
-def _compositional_errors(refs_tok: list, nbest_norm: list) -> list[int]:
+def _compositional_errors(refs_tok: list, nbest_norm: list) -> list:
     """Per-utterance minimum errors when composing ANY sequence from the
     tokens occurring in the n-best list (HyPoradise o_cp): each reference
     token whose word appears in no hypothesis costs exactly one error
@@ -143,7 +139,7 @@ def oracle_select(
     references: Sequence[str],
     nbest: Sequence[Sequence[str]],
     normalize: Optional[Callable[[str], str]] = default_normalize,
-) -> list[str]:
+) -> list:
     """Per-utterance best hypothesis (fewest word errors) from each n-best list.
 
     Defines the reranking ceiling: no hypothesis selection can beat it.
@@ -156,7 +152,7 @@ def oracle_select(
         )
     if any(len(h) == 0 for h in nbest):
         raise ValueError("every n-best list must contain at least one hypothesis")
-    refs_tok = _tokens(apply_normalize(references, normalize))
+    refs_tok = tokenize_all(apply_normalize(references, normalize))
     nbest_norm = [apply_normalize(hyps, normalize) for hyps in nbest]
     picked, _ = _oracle_pick(refs_tok, nbest_norm)
     return picked
@@ -178,10 +174,10 @@ def _chunk_sums(args: tuple) -> dict:
     ob_raw = onebest if onebest is not None else [h[0] for h in nbest]
     ob_n = apply_normalize(ob_raw, normalize)
 
-    refs_tok = _tokens(refs_n)
+    refs_tok = tokenize_all(refs_n)
     ref_lens = [len(t) for t in refs_tok]
-    err_ob = _pair_errors(refs_tok, _tokens(ob_n))
-    err_co = _pair_errors(refs_tok, _tokens(corr_n))
+    err_ob = pair_errors(refs_tok, tokenize_all(ob_n))
+    err_co = pair_errors(refs_tok, tokenize_all(corr_n))
 
     err_or = err_cp = None
     if nbest is not None:
@@ -189,7 +185,7 @@ def _chunk_sums(args: tuple) -> dict:
         err_cp = sum(_compositional_errors(refs_tok, nbest_norm))
     if oracle is not None:
         oracle_n = apply_normalize(oracle, normalize)
-        err_or = sum(_pair_errors(refs_tok, _tokens(oracle_n)))
+        err_or = sum(pair_errors(refs_tok, tokenize_all(oracle_n)))
     elif nbest is not None:
         _, picked_err = _oracle_pick(refs_tok, nbest_norm)
         err_or = sum(picked_err)
@@ -336,14 +332,14 @@ def process_agentic(
     wer_1best = _ratio(sum(c["err_ob"] for c in chunks), ref_words)
     wer_corrected = _ratio(sum(c["err_co"] for c in chunks), ref_words)
 
-    wer_oracle = headroom = rir = wer_compositional = None
+    wer_oracle = headroom = rir_val = wer_compositional = None
     if chunks[0]["err_cp"] is not None:
         wer_compositional = _ratio(sum(c["err_cp"] for c in chunks), ref_words)
     if chunks[0]["err_or"] is not None:
         wer_oracle = _ratio(sum(c["err_or"] for c in chunks), ref_words)
         headroom = wer_1best - wer_oracle
         if abs(headroom) > _EPS:
-            rir = (wer_1best - wer_corrected) / headroom
+            rir_val = (wer_1best - wer_corrected) / headroom
 
     counts = _merge_counts(chunks, her_granularity)
     items = None
@@ -356,9 +352,97 @@ def process_agentic(
         wer_corrected=wer_corrected,
         wer_oracle=wer_oracle,
         headroom=headroom,
-        rir=rir,
+        rir=rir_val,
         her=counts.her,
         edits=counts,
         wer_compositional=wer_compositional,
         items=items,
     )
+
+
+evaluate = process_agentic
+
+
+# ----------------------------------------------------------- one-liners
+
+def rir(
+    references: Sequence[str],
+    corrected: Sequence[str],
+    nbest: Optional[Sequence[Sequence[str]]] = None,
+    onebest: Optional[Sequence[str]] = None,
+    oracle: Optional[Sequence[str]] = None,
+    normalize: Optional[Callable[[str], str]] = default_normalize,
+) -> Optional[float]:
+    """Recoverable Information Ratio (rho), Voice Memory paper Eq. (1).
+
+        rho = (WER_1best - WER_corrected) / (WER_1best - WER_oracle)
+
+    rho = 1 exactly closes the 1-best-to-oracle gap; rho < 0 is the damage
+    regime (correcting is worse than keeping the 1-best); rho > 1 means the
+    corrector recovered tokens present in no hypothesis and beat the oracle
+    bound. Returns ``None`` when there is no headroom (oracle == 1-best).
+    """
+    return process_agentic(
+        references, corrected, nbest=nbest, onebest=onebest, oracle=oracle,
+        normalize=normalize,
+    ).rir
+
+
+rho = rir  # the paper's symbol
+
+
+def her(
+    references: Sequence[str],
+    onebest: Sequence[str],
+    corrected: Sequence[str],
+    normalize: Optional[Callable[[str], str]] = default_normalize,
+    granularity: str = "utterance",
+) -> Optional[float]:
+    """Harmful Edit Rate: of the corrector's consequential edits, the fraction
+    that broke a correct token (over-correction).
+
+    ``granularity="utterance"`` reproduces the paper's reported values;
+    ``granularity="token"`` follows the paper's formal per-edit definition.
+    Returns ``None`` when the corrector made no consequential edits.
+    """
+    return process_agentic(
+        references, corrected, onebest=onebest, normalize=normalize,
+        her_granularity=granularity,
+    ).her
+
+
+def oracle_hypotheses(
+    references: Sequence[str],
+    nbest: Sequence[Sequence[str]],
+    normalize: Optional[Callable[[str], str]] = default_normalize,
+) -> list:
+    """Per-utterance minimum-error hypothesis from each n-best list."""
+    return oracle_select(references, nbest, normalize=normalize)
+
+
+def oracle_wer(
+    references: Sequence[str],
+    nbest: Sequence[Sequence[str]],
+    normalize: Optional[Callable[[str], str]] = default_normalize,
+) -> float:
+    """Corpus WER of the n-best oracle o_nb (the reranking lower bound)."""
+    onebest = [h[0] for h in nbest]
+    return process_agentic(
+        references, onebest, nbest=nbest, normalize=normalize
+    ).wer_oracle
+
+
+def compositional_oracle_wer(
+    references: Sequence[str],
+    nbest: Sequence[Sequence[str]],
+    normalize: Optional[Callable[[str], str]] = default_normalize,
+) -> float:
+    """Corpus WER of the compositional oracle o_cp (HyPoradise Sec. 5.2): the
+    WER achievable composing any sequence from the tokens occurring in the
+    n-best list -- the upper bound of *correction* using in-list elements.
+    Always <= oracle_wer. Each reference token absent from every hypothesis
+    costs one error; everything else is recoverable for free."""
+    onebest = [h[0] for h in nbest]
+    return process_agentic(
+        references, onebest, nbest=nbest, normalize=normalize
+    ).wer_compositional

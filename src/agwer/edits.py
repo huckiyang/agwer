@@ -34,13 +34,9 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 
-from rapidfuzz.distance import Levenshtein
+from agwer.align import equal_flags, pair_errors, tokenize
 
 __all__ = ["EditCounts", "classify_utterance", "classify_tokens"]
-
-
-def _toks(s: str) -> list:
-    return [t for t in s.split(" ") if t]
 
 
 @dataclass
@@ -82,8 +78,8 @@ def _pair_wer(reference: str, hypothesis: str) -> float:
     Conventions: wer('', '') == 0; with an empty reference and a non-empty
     hypothesis the raw error (insertion) count is returned.
     """
-    ref, hyp = _toks(reference), _toks(hypothesis)
-    errors = Levenshtein.distance(ref, hyp)
+    ref, hyp = tokenize(reference), tokenize(hypothesis)
+    errors = pair_errors([ref], [hyp])[0]
     if len(ref) == 0:
         return float(errors)
     return errors / len(ref)
@@ -119,17 +115,8 @@ def _ref_token_hits(reference: str, hypothesis: str) -> tuple[list, int]:
     Returns (ok, n_insertions) where ok[i] is True iff reference token i is
     matched exactly (an ``equal`` alignment span) in the hypothesis.
     """
-    ref, hyp = _toks(reference), _toks(hypothesis)
-    if not ref:
-        return [], len(hyp)
-    ok = [False] * len(ref)
-    n_ins = 0
-    for op in Levenshtein.opcodes(ref, hyp):
-        if op.tag == "equal":
-            for i in range(op.src_start, op.src_end):
-                ok[i] = True
-        elif op.tag == "insert":
-            n_ins += op.dest_end - op.dest_start
+    ref, hyp = tokenize(reference), tokenize(hypothesis)
+    ok, _, n_ins = equal_flags(ref, hyp)
     return ok, n_ins
 
 

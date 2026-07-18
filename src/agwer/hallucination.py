@@ -35,27 +35,12 @@ from __future__ import annotations
 from collections import Counter
 from typing import Callable, Optional, Sequence, Union
 
-from rapidfuzz.distance import Levenshtein
-
-from agwer.transforms import default_normalize
+from agwer.align import equal_flags, tokenize
+from agwer.text import default_normalize
 
 __all__ = ["word_hallucination_rate"]
 
 Hypotheses = Union[Sequence[str], Sequence[Sequence[str]]]
-
-
-def _toks(s: str) -> list:
-    return [t for t in s.split(" ") if t]
-
-
-def _out_flags(ref_tok: list, out_tok: list) -> list:
-    """Per-output-token correctness from the minimal word alignment."""
-    ok = [False] * len(out_tok)
-    for op in Levenshtein.opcodes(ref_tok, out_tok):
-        if op.tag == "equal":
-            for j in range(op.dest_start, op.dest_end):
-                ok[j] = True
-    return ok
 
 
 def word_hallucination_rate(
@@ -92,16 +77,16 @@ def word_hallucination_rate(
         hyps = [hyp] if isinstance(hyp, str) else list(hyp)
         if not hyps:
             raise ValueError("every utterance needs at least one hypothesis")
-        ref_tok = _toks(norm(ref))
-        out_tok = _toks(norm(out))
+        ref_tok = tokenize(norm(ref))
+        out_tok = tokenize(norm(out))
         # support budget: max occurrences of each word in any one hypothesis
         budget: Counter = Counter()
         for h in hyps:
-            for w, c in Counter(_toks(norm(h))).items():
+            for w, c in Counter(tokenize(norm(h))).items():
                 if c > budget[w]:
                     budget[w] = c
 
-        ok = _out_flags(ref_tok, out_tok)
+        _, ok, _ = equal_flags(ref_tok, out_tok)
         out_total += len(out_tok)
         c_out = Counter(out_tok)
         wrong = Counter(t for t, k in zip(out_tok, ok) if not k)

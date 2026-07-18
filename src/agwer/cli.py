@@ -19,8 +19,8 @@ import argparse
 import json
 import sys
 
-from agwer.measures import evaluate
-from agwer.transforms import default_normalize
+from agwer.agentic import evaluate
+from agwer.text import default_normalize
 
 
 def _load_jsonl(path: str) -> list[dict]:

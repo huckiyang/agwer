@@ -9,7 +9,9 @@ hypotheses with two measures from the Voice Memory paper:
 * HER: Harmful Edit Rate — of the corrector's edits, the fraction that broke a
   correct token (over-correction).
 
-Built on jiwer/RapidFuzz. Quickstart::
+Self-contained on RapidFuzz; one alignment core (:mod:`agwer.align`) feeds
+every metric, so tokenization and alignment semantics cannot drift between
+them. Quickstart::
 
     import agwer
 
@@ -17,29 +19,26 @@ Built on jiwer/RapidFuzz. Quickstart::
     print(out.rir, out.her, out.wer_corrected)
 """
 
-from agwer.edits import EditCounts, classify_tokens, classify_utterance
-from agwer.entity import entity_f1, numeric_tokens
-from agwer.hallucination import word_hallucination_rate
-from agwer.measures import (
-    cer,
+from agwer.agentic import (
+    AgenticOutput,
     compositional_oracle_wer,
     evaluate,
     her,
-    mer,
     oracle_hypotheses,
+    oracle_select,
     oracle_wer,
+    process_agentic,
     rho,
     rir,
-    ser,
-    wer,
-    wil,
-    wip,
 )
+from agwer.classic import cer, mer, ser, wer, wil, wip
+from agwer.edits import EditCounts, classify_tokens, classify_utterance
+from agwer.entity import entity_f1, numeric_tokens
+from agwer.hallucination import word_hallucination_rate
 from agwer.normalizers import BasicTextNormalizer, EnglishTextNormalizer
-from agwer.process import AgenticOutput, oracle_select, process_agentic
-from agwer.transforms import default_normalize
+from agwer.text import default_normalize
 
-__version__ = "0.4.0"
+__version__ = "0.4.1"
 
 __all__ = [
     "wer",
