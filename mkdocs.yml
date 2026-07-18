@@ -1,4 +1,5 @@
 site_name: agwer
+site_url: https://huckiyang.github.io/agwer/
 site_description: Agentic WER metrics for speech recognition and voice agents
 repo_url: https://github.com/huckiyang/agwer
 repo_name: huckiyang/agwer

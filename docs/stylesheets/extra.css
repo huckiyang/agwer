@@ -143,3 +143,10 @@ body, .md-typeset {
   border-bottom: 1px solid var(--agwer-hairline);
 }
 [data-md-color-scheme="slate"] .md-typeset a { color: #2997ff; }
+
+/* ---- flat 3-page site: the left sidebar only repeats the active tab, so
+   hide it on desktop (tabs are the navigation there). Below 76.25em the
+   tabs collapse into the drawer, where the nav is needed, so keep it. ---- */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary { display: none; }
+}
