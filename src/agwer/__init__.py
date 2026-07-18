@@ -30,6 +30,7 @@ from agwer.measures import (
     oracle_wer,
     rho,
     rir,
+    ser,
     wer,
     wil,
     wip,
@@ -38,7 +39,7 @@ from agwer.normalizers import BasicTextNormalizer, EnglishTextNormalizer
 from agwer.process import AgenticOutput, oracle_select, process_agentic
 from agwer.transforms import default_normalize
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 
 __all__ = [
     "wer",
@@ -46,6 +47,7 @@ __all__ = [
     "wil",
     "wip",
     "cer",
+    "ser",
     "entity_f1",
     "numeric_tokens",
     "word_hallucination_rate",

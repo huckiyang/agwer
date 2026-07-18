@@ -13,8 +13,8 @@ and voice agents. It is **self-contained**: one dependency
 
 It supports the classic ASR similarity measures and the agentic ones:
 
-1. word error rate (WER), plus match error rate (MER) and word information
-   lost/preserved (WIL/WIP)
+1. word error rate (WER), plus match error rate (MER), word information
+   lost/preserved (WIL/WIP), and sentence error rate (SER)
 2. character error rate (CER)
 3. Recoverable Information Ratio (RIR, the paper's ρ)
 4. Harmful Edit Rate (HER)
@@ -42,6 +42,13 @@ Or with pip (Python >= 3.9):
 
 ```bash
 pip install agwer
+```
+
+The test suite ships inside the package, so any install can verify itself:
+
+```bash
+pip install "agwer[test]"
+python -m pytest --pyargs agwer     # 68 tests, a few seconds
 ```
 
 ## Usage

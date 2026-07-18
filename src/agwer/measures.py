@@ -21,7 +21,7 @@ from rapidfuzz.distance import Levenshtein
 from agwer.process import AgenticOutput, oracle_select, process_agentic
 from agwer.transforms import apply_normalize, default_normalize
 
-__all__ = ["wer", "mer", "wil", "wip", "cer",
+__all__ = ["wer", "mer", "wil", "wip", "cer", "ser",
            "evaluate", "rir", "rho", "her",
            "oracle_wer", "oracle_hypotheses", "compositional_oracle_wer"]
 
@@ -93,6 +93,26 @@ def wil(reference: Strings, hypothesis: Strings,
         normalize: Optional[Callable[[str], str]] = None) -> float:
     """Word information lost: 1 - WIP."""
     return 1.0 - wip(reference, hypothesis, normalize)
+
+
+def ser(reference: Strings, hypothesis: Strings,
+        normalize: Optional[Callable[[str], str]] = None) -> float:
+    """Sentence (utterance) error rate: the fraction of utterances whose
+    token sequence differs from the reference at all. The strictest
+    utterance-level measure; standard in ASR reporting."""
+    refs, hyps = _as_list(reference), _as_list(hypothesis)
+    if len(refs) != len(hyps):
+        raise ValueError(
+            f"reference ({len(refs)}) and hypothesis ({len(hyps)}) "
+            "must have the same length"
+        )
+    refs = apply_normalize(refs, normalize)
+    hyps = apply_normalize(hyps, normalize)
+    wrong = sum(
+        1 for r, h in zip(refs, hyps)
+        if [t for t in r.split(" ") if t] != [t for t in h.split(" ") if t]
+    )
+    return wrong / len(refs) if refs else 0.0
 
 
 def cer(reference: Strings, hypothesis: Strings,

@@ -70,3 +70,17 @@ def test_token_her_alignment_equivalence_fixture():
     fix = json.load(open(FIX))
     for (r, o, c), expected in zip(fix["cases"], fix["token_her"]):
         assert agwer.classify_tokens(r, o, c) == expected
+
+
+def test_ser_counts_any_error_once():
+    refs = ["a b c", "d e f", "g h i", "j k l"]
+    hyps = ["a b c", "d x f", "g h i j", "j k l"]
+    assert agwer.ser(refs, hyps) == pytest.approx(0.5)   # 2 of 4 utterances wrong
+    assert agwer.ser("a b", "a b") == 0.0
+    assert agwer.ser("a b", "a c") == 1.0
+
+
+def test_ser_respects_normalization():
+    assert agwer.ser("Hello, World!", "hello world") == 1.0
+    assert agwer.ser("Hello, World!", "hello world",
+                     normalize=agwer.default_normalize) == 0.0
