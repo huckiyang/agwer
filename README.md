@@ -211,8 +211,7 @@ agwer.wer(ref, hyp, normalize=agwer.EnglishTextNormalizer())  # 0.0
 | `BasicTextNormalizer()` | language-agnostic: symbols, brackets, optional diacritic folding |
 | `EnglishTextNormalizer()` | the Whisper English normalizer: spelled numbers to digits, currency, contractions, British to American spelling; `cached=True` adds an LRU for agent loops |
 
-The Whisper normalizers are vendored (MIT, © 2022 OpenAI, attribution
-included) with behavior pinned **byte-identical** to the original by golden
+The Whisper normalizers are with behavior pinned **byte-identical** to the original by golden
 tests. Report which normalizer you used; it is part of the metric.
 
 ### CLI
@@ -252,14 +251,14 @@ python -m agwer.bench --workers 8
 
 [![Speed](https://img.shields.io/badge/1M%20utterances-5.2s%20on%20M--series-brightgreen)](#performance)
 
-agwer is **native on Apple Silicon out of the box**, with no separate
+agwer is **native on Apple Silicon**, with no separate
 install: pip and uv select the arm64 wheel automatically, and RapidFuzz
 ships compiled `arm64-darwin` extensions, so the C++ edit-distance core runs
 natively on M-series machines. `workers=` then scales the whole pipeline
-across performance cores (see the table above). Planned next is an optional
-`agwer[mlx]` extra for embedding-based *semantic* metrics on the Apple GPU
-via [MLX](https://github.com/ml-explore/mlx). Semantic inference is the one
-place extra hardware genuinely helps; edit distance does not need it.
+across performance cores (see the table above). 
+
+- Planned next is an optional `agwer[mlx]` extra for embedding-based *semantic* metrics on the Apple GPU
+via [MLX](https://github.com/ml-explore/mlx). i.e., Semantic inference is the one place extra hardware genuinely helps; edit distance does not need it.
 
 ## Compatibility & reproducibility
 
