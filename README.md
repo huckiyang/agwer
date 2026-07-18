@@ -70,27 +70,37 @@ agwer.cer(refs, hyps)     # 0.0116: corpus CER
 
 ### Evaluating a corrector / voice agent
 
-With $n$-best input, one call computes everything. Long dictations are where
-correction matters — a single homophone in a 21-word command ("forth floor")
-is the difference between the right room and a support ticket:
+With $n$-best input, one call computes everything. This is a **real Whisper
+5-best decode** from the HyPoradise benchmark (WSJ, MIT-licensed): a 23-word
+dictated stock quote where the ASR merges the spelled ticker and garbles the
+fractions — *"i b m"* survives in **no** hypothesis:
 
 ```python
-refs = ["move my three thirty meeting with the product team to thursday and book the large conference room on the fourth floor"]
-nbest = [[   # nbest[i][0] is the ASR 1-best
-    "move my three thirty meeting with the product team to thursday and book the large conference room on the forth floor",
-    "move my three thirty meeting with the product team to thursday and book the large conference room on the fourth floor",
-    "move my three thirty meeting with the protect team to thursday and book the large conference room on the forth floor",
-]]
-corrected = ["move my three thirty meeting with the product team to thursday and book the large conference room on the fourth floor"]
+ref = "i b m fell one and seven eighths to one hundred twenty and three eighths on more than two point five million shares"
 
-out = agwer.evaluate(refs, corrected, nbest=nbest)
-out.wer_1best            # 0.0476 -> the raw ASR broke one word
-out.wer_corrected        # 0.0    -> the agent fixed it
-out.rir                  # 1.0    -> closed the 1-best-to-oracle gap exactly
-out.her                  # 0.0    -> and broke nothing while doing it
-out.wer_oracle           # o_nb: best single hypothesis
-out.wer_compositional    # o_cp: best token recombination (o_cp <= o_nb)
+nbest = [[   # real Whisper 5-best; nbest[i][0] is the 1-best
+    "ibm fell one seven eight to one hundred and twenty three eight on more than two point five million shares",
+    "ibm fell one point seven eight to one hundred and twenty point three eight on more than two point five million shares",
+    "ibm fell one and seven eighths to one hundred and twenty and three eighths on more than two point five million shares",
+    "ibm fell one point seven eights to one hundred and twenty point three eights on more than two point five million shares",
+    "ibm fell one seven eighths to one hundred and twenty three eighths on more than two point five million shares",
+]]
+corrected = [ref]   # a corrector that resolves the ticker and fractions from context
+
+out = agwer.evaluate([ref], corrected, nbest=nbest)
+out.wer_1best            # 0.3478 -> the raw ASR broke a third of the quote
+out.wer_oracle           # 0.1739 -> o_nb: the best single hypothesis still has 4 errors
+out.wer_compositional    # 0.1304 -> o_cp: no token recombination can spell "i b m"
+out.wer_corrected        # 0.0
+out.rir                  # 2.0    -> twice the n-best headroom: generative correction
+out.her                  # 0.0    -> and nothing broken
 ```
+
+Real decodes also show why reranking alone cannot save a voice agent: in
+another HyPoradise utterance the command *"leaving **after noon**"* comes back
+as *"leaving **afternoon**"* in **all five** hypotheses — the query's meaning
+flips, every reranker is helpless, and only a corrector (and agwer's oracles)
+can see it.
 
 ### Vibe-coding dictation: when the agent beats every hypothesis (ρ > 1)
 
