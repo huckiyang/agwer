@@ -182,14 +182,39 @@ agwer results.jsonl --json --her-granularity token
 
 ## Performance
 
-Batched RapidFuzz hot path; benchmarks ship in the package:
+Batched RapidFuzz hot path, and every aggregate agwer computes is
+**count-additive**, so large corpora parallelize *exactly* (identical
+results for any worker count): `evaluate(..., workers=8)`.
+
+Typical performance on Apple Silicon (M-series, 14 cores) — full agentic
+evaluation (WER×3 + both oracles + RIR + HER) of 5-best corpora:
+
+| scenario | time |
+|---|---|
+| 10k utterances (single-threaded) | ~0.2 s |
+| 100k utterances (single-threaded) | 2.6 s |
+| 100k utterances (8 workers) | **0.48 s** (5.5×) |
+| 1M utterances (single-threaded) | 27.9 s |
+| 1M utterances (8 workers) | **5.2 s** (5.4×) |
+
+Workers pay process startup, so they win from roughly 100k utterances up; on
+macOS/Windows call from a `if __name__ == "__main__"` guard, as with any
+multiprocessing. Reproduce on your machine:
 
 ```bash
-python -m agwer.bench
+python -m agwer.bench --workers 8
 ```
 
-~0.2 s for a full agentic evaluation (WER×3 + both oracles + RIR + HER) of a
-10,000-utterance × 5-best corpus on a laptop; classic corpus WER in ~20 ms.
+### Apple Silicon
+
+agwer is **native on Apple Silicon out of the box** — no separate install:
+pip/uv select the arm64 wheel automatically, and RapidFuzz ships compiled
+`arm64-darwin` extensions, so the C++ edit-distance core runs natively on
+M-series. `workers=` then scales the whole pipeline across performance
+cores (table above). Planned next: an optional `agwer[mlx]` extra for
+embedding-based *semantic* metrics on the Apple Neural Engine / GPU via
+[MLX](https://github.com/ml-explore/mlx) — semantics inference is the one
+place extra hardware genuinely helps; edit distance does not need it.
 
 ## Compatibility & reproducibility
 

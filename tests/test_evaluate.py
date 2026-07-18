@@ -84,3 +84,41 @@ def test_all_empty_corpus_wer_is_zero():
     assert out.wer_corrected == pytest.approx(0.0)
     assert out.wer_1best == pytest.approx(0.0)
     assert out.her is None
+
+
+def test_workers_merge_is_exact():
+    # every aggregate is count-additive, so any worker count is bit-identical
+    import random
+    rng = random.Random(3)
+    vocab = [f"w{i}" for i in range(50)]
+    refs, nbest, corrected = [], [], []
+    for _ in range(240):
+        ref = " ".join(rng.choice(vocab) for _ in range(rng.randint(1, 12)))
+        refs.append(ref)
+        nbest.append([" ".join(rng.choice([t, rng.choice(vocab)])
+                               for t in ref.split()) for _ in range(3)])
+        corrected.append(" ".join(rng.choice([t, rng.choice(vocab)])
+                                  for t in ref.split()))
+    a = agwer.evaluate(refs, corrected, nbest=nbest)
+    b = agwer.evaluate(refs, corrected, nbest=nbest, workers=2)
+    assert a.as_dict() == b.as_dict()
+    # token granularity + items too
+    at = agwer.evaluate(refs, corrected, nbest=nbest,
+                        her_granularity="token", return_items=True)
+    bt = agwer.evaluate(refs, corrected, nbest=nbest,
+                        her_granularity="token", return_items=True, workers=3)
+    assert at.as_dict() == bt.as_dict()
+    assert at.items == bt.items
+
+
+def test_workers_with_cached_normalizer_and_lambda():
+    # cached normalizers pickle transparently (fresh cache per worker)
+    norm = agwer.EnglishTextNormalizer(cached=True)
+    a = agwer.evaluate(["A b!"] * 4, ["a b"] * 4, onebest=["a x"] * 4, normalize=norm)
+    b = agwer.evaluate(["A b!"] * 4, ["a b"] * 4, onebest=["a x"] * 4,
+                       normalize=norm, workers=2)
+    assert a.as_dict() == b.as_dict()
+    # lambdas cannot cross process boundaries: clear error
+    with pytest.raises(ValueError, match="picklable"):
+        agwer.evaluate(["a b"] * 4, ["a b"] * 4, onebest=["a x"] * 4,
+                       normalize=lambda s: s, workers=2)

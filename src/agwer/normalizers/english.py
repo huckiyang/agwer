@@ -513,6 +513,8 @@ class EnglishTextNormalizer:
     """
 
     def __init__(self, cached: bool = False, cache_size: int = 65536):
+        self._cached = cached
+        self._cache_size = cache_size
         self.ignore_patterns = re.compile(r"\b(hmm|mm|mhm|mmm|uh|um)\b")
         self.replacers = [
             (re.compile(pattern), replacement)
@@ -604,3 +606,12 @@ class EnglishTextNormalizer:
 
     def __call__(self, s: str) -> str:
         return self._impl(s)
+
+    # The LRU wrapper is not picklable; reconstruct it on unpickle so cached
+    # normalizers work transparently with evaluate(workers=N) — each worker
+    # simply starts with a fresh cache.
+    def __getstate__(self):
+        return {"cached": self._cached, "cache_size": self._cache_size}
+
+    def __setstate__(self, state):
+        self.__init__(cached=state["cached"], cache_size=state["cache_size"])

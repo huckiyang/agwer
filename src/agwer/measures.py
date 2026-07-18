@@ -114,6 +114,7 @@ def evaluate(
     normalize: Optional[Callable[[str], str]] = default_normalize,
     her_granularity: str = "utterance",
     return_items: bool = False,
+    workers: int = 1,
 ) -> AgenticOutput:
     """Compute all agentic metrics for a corpus. See :func:`process_agentic`."""
     return process_agentic(
@@ -125,6 +126,7 @@ def evaluate(
         normalize=normalize,
         her_granularity=her_granularity,
         return_items=return_items,
+        workers=workers,
     )
 
 

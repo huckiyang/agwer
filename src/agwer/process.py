@@ -14,13 +14,24 @@ RapidFuzz (the same C++ engine jiwer uses), batched over the whole corpus, so
 the full agentic evaluation costs a handful of batch calls rather than
 per-utterance Python round-trips. Corpus WER is the global error ratio
 (total edit errors / total reference words) and is bit-identical to
-``jiwer.wer`` on the same tokenization. Token-granularity HER needs full
-alignments and uses ``jiwer.process_words`` per pair.
+``jiwer.wer`` on the same tokenization.
+
+Every quantity agwer aggregates is *count-additive*, so large corpora can be
+split across processes and merged exactly: pass ``workers=N`` to
+:func:`process_agentic` / :func:`agwer.evaluate`. Chunks are processed in
+separate Python processes (one per worker, ``spawn`` start method), which
+parallelizes the normalization/tokenization-dominated pipeline across
+performance cores — worthwhile from roughly 100k utterances up; below that
+the process startup outweighs the gain.
 """
 
 from __future__ import annotations
 
+import math
+import pickle
+from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass, field
+from multiprocessing import get_context
 from typing import Callable, Optional, Sequence
 
 from rapidfuzz.distance import Levenshtein
@@ -80,13 +91,11 @@ def _pair_errors(refs_tok: list, hyps_tok: list) -> list[int]:
     return [Levenshtein.distance(r, h) for r, h in zip(refs_tok, hyps_tok)]
 
 
-def _corpus_wer(errors: Sequence[int], ref_lens: Sequence[int]) -> float:
+def _ratio(errors: int, ref_words: int) -> float:
     """Global error ratio; identical to jiwer's corpus WER."""
-    total_ref = sum(ref_lens)
-    total_err = sum(errors)
-    if total_ref == 0:
-        return 0.0 if total_err == 0 else float("inf")
-    return total_err / total_ref
+    if ref_words == 0:
+        return 0.0 if errors == 0 else float("inf")
+    return errors / ref_words
 
 
 def _item_wer(errors: int, ref_len: int) -> float:
@@ -153,56 +162,17 @@ def oracle_select(
     return picked
 
 
-# ------------------------------------------------------------------- driver
+# --------------------------------------------------------- chunk computation
 
-def process_agentic(
-    references: Sequence[str],
-    corrected: Sequence[str],
-    nbest: Optional[Sequence[Sequence[str]]] = None,
-    onebest: Optional[Sequence[str]] = None,
-    oracle: Optional[Sequence[str]] = None,
-    normalize: Optional[Callable[[str], str]] = default_normalize,
-    her_granularity: str = "utterance",
-    return_items: bool = False,
-) -> AgenticOutput:
-    """Compute RIR, HER, and the underlying WERs for a corpus.
+def _chunk_sums(args: tuple) -> dict:
+    """Compute one chunk's additive ingredients (module-level: picklable).
 
-    Args:
-        references: ground-truth transcripts.
-        corrected: the corrector's outputs (the system under evaluation).
-        nbest: per-utterance n-best hypothesis lists; ``nbest[i][0]`` must be
-            the 1-best. When given, the 1-best and the oracle are derived
-            from it.
-        onebest: 1-best hypotheses; required when ``nbest`` is not given.
-        oracle: precomputed oracle hypotheses (optional; otherwise selected
-            from ``nbest``). Without ``nbest`` and ``oracle``, RIR is ``None``
-            and only HER (+WERs) is computed.
-        normalize: text normalizer applied to every string
-            (default: paper-compatible :func:`agwer.default_normalize`;
-            pass ``None`` to score raw strings).
-        her_granularity: ``"utterance"`` (paper-reported values) or
-            ``"token"`` (the paper's formal per-edit definition).
-        return_items: attach per-utterance rows to ``.items``.
+    Everything returned is a sum or a count, so chunk results merge exactly.
     """
-    if her_granularity not in ("utterance", "token"):
-        raise ValueError("her_granularity must be 'utterance' or 'token'")
-    if nbest is None and onebest is None:
-        raise ValueError("provide either nbest (with nbest[i][0] the 1-best) or onebest")
-    n = len(references)
-    if len(corrected) != n:
-        raise ValueError(
-            f"references ({n}) and corrected ({len(corrected)}) "
-            "must have the same length"
-        )
-    if nbest is not None and len(nbest) != n:
-        raise ValueError(f"references ({n}) and nbest ({len(nbest)}) must match")
-    if onebest is not None and len(onebest) != n:
-        raise ValueError(f"references ({n}) and onebest ({len(onebest)}) must match")
-    if n == 0:
-        raise ValueError("empty corpus")
-    if nbest is not None and any(len(h) == 0 for h in nbest):
-        raise ValueError("every n-best list must contain at least one hypothesis")
+    (references, corrected, nbest, onebest, oracle, normalize,
+     her_granularity, return_items, offset) = args
 
+    n = len(references)
     refs_n = apply_normalize(references, normalize)
     corr_n = apply_normalize(corrected, normalize)
     ob_raw = onebest if onebest is not None else [h[0] for h in nbest]
@@ -212,24 +182,17 @@ def process_agentic(
     ref_lens = [len(t) for t in refs_tok]
     err_ob = _pair_errors(refs_tok, _tokens(ob_n))
     err_co = _pair_errors(refs_tok, _tokens(corr_n))
-    wer_1best = _corpus_wer(err_ob, ref_lens)
-    wer_corrected = _corpus_wer(err_co, ref_lens)
 
-    wer_oracle = headroom = rir = wer_compositional = None
+    err_or = err_cp = None
     if nbest is not None:
         nbest_norm = [apply_normalize(hyps, normalize) for hyps in nbest]
-        wer_compositional = _corpus_wer(
-            _compositional_errors(refs_tok, nbest_norm), ref_lens)
+        err_cp = sum(_compositional_errors(refs_tok, nbest_norm))
     if oracle is not None:
         oracle_n = apply_normalize(oracle, normalize)
-        wer_oracle = _corpus_wer(_pair_errors(refs_tok, _tokens(oracle_n)), ref_lens)
+        err_or = sum(_pair_errors(refs_tok, _tokens(oracle_n)))
     elif nbest is not None:
         _, picked_err = _oracle_pick(refs_tok, nbest_norm)
-        wer_oracle = _corpus_wer(picked_err, ref_lens)
-    if wer_oracle is not None:
-        headroom = wer_1best - wer_oracle
-        if abs(headroom) > _EPS:
-            rir = (wer_1best - wer_corrected) / headroom
+        err_or = sum(picked_err)
 
     counts = EditCounts(granularity=her_granularity)
     items = [] if return_items else None
@@ -258,8 +221,134 @@ def process_agentic(
             counts.harmful += row["harmful"]
             counts.missed += row["missed"]
         if return_items:
-            items.append({"index": i, "reference": refs_n[i], "onebest": ob_n[i],
-                          "corrected": corr_n[i], **row})
+            items.append({"index": offset + i, "reference": refs_n[i],
+                          "onebest": ob_n[i], "corrected": corr_n[i], **row})
+
+    return {
+        "n": n,
+        "ref_words": sum(ref_lens),
+        "err_ob": sum(err_ob),
+        "err_co": sum(err_co),
+        "err_or": err_or,
+        "err_cp": err_cp,
+        "counts": counts,
+        "items": items,
+    }
+
+
+def _merge_counts(chunks: list, granularity: str) -> EditCounts:
+    merged = EditCounts(granularity=granularity)
+    for c in chunks:
+        for f in ("helpful", "harmful", "neutral", "missed", "no_edit"):
+            setattr(merged, f, getattr(merged, f) + getattr(c["counts"], f))
+    return merged
+
+
+# ------------------------------------------------------------------- driver
+
+def process_agentic(
+    references: Sequence[str],
+    corrected: Sequence[str],
+    nbest: Optional[Sequence[Sequence[str]]] = None,
+    onebest: Optional[Sequence[str]] = None,
+    oracle: Optional[Sequence[str]] = None,
+    normalize: Optional[Callable[[str], str]] = default_normalize,
+    her_granularity: str = "utterance",
+    return_items: bool = False,
+    workers: int = 1,
+) -> AgenticOutput:
+    """Compute RIR, HER, and the underlying WERs for a corpus.
+
+    Args:
+        references: ground-truth transcripts.
+        corrected: the corrector's outputs (the system under evaluation).
+        nbest: per-utterance n-best hypothesis lists; ``nbest[i][0]`` must be
+            the 1-best. When given, the 1-best and the oracle are derived
+            from it.
+        onebest: 1-best hypotheses; required when ``nbest`` is not given.
+        oracle: precomputed oracle hypotheses (optional; otherwise selected
+            from ``nbest``). Without ``nbest`` and ``oracle``, RIR is ``None``
+            and only HER (+WERs) is computed.
+        normalize: text normalizer applied to every string
+            (default: paper-compatible :func:`agwer.default_normalize`;
+            pass ``None`` to score raw strings).
+        her_granularity: ``"utterance"`` (paper-reported values) or
+            ``"token"`` (the paper's formal per-edit definition).
+        return_items: attach per-utterance rows to ``.items``.
+        workers: number of processes. Results are identical for any value
+            (count-additive merge); >1 pays process startup, so it wins from
+            roughly 100k utterances up. The ``normalize`` callable must be
+            picklable (module-level functions and all agwer normalizers are;
+            lambdas are not). On macOS/Windows call from a
+            ``if __name__ == "__main__"`` guard, as with any multiprocessing.
+    """
+    if her_granularity not in ("utterance", "token"):
+        raise ValueError("her_granularity must be 'utterance' or 'token'")
+    if nbest is None and onebest is None:
+        raise ValueError("provide either nbest (with nbest[i][0] the 1-best) or onebest")
+    n = len(references)
+    if len(corrected) != n:
+        raise ValueError(
+            f"references ({n}) and corrected ({len(corrected)}) "
+            "must have the same length"
+        )
+    if nbest is not None and len(nbest) != n:
+        raise ValueError(f"references ({n}) and nbest ({len(nbest)}) must match")
+    if onebest is not None and len(onebest) != n:
+        raise ValueError(f"references ({n}) and onebest ({len(onebest)}) must match")
+    if oracle is not None and len(oracle) != n:
+        raise ValueError(f"references ({n}) and oracle ({len(oracle)}) must match")
+    if n == 0:
+        raise ValueError("empty corpus")
+    if nbest is not None and any(len(h) == 0 for h in nbest):
+        raise ValueError("every n-best list must contain at least one hypothesis")
+
+    workers = max(1, min(int(workers), n))
+    if workers == 1:
+        chunks = [_chunk_sums((references, corrected, nbest, onebest, oracle,
+                               normalize, her_granularity, return_items, 0))]
+    else:
+        size = math.ceil(n / workers)
+        jobs = []
+        for start in range(0, n, size):
+            end = min(start + size, n)
+            jobs.append((
+                list(references[start:end]),
+                list(corrected[start:end]),
+                [list(h) for h in nbest[start:end]] if nbest is not None else None,
+                list(onebest[start:end]) if onebest is not None else None,
+                list(oracle[start:end]) if oracle is not None else None,
+                normalize, her_granularity, return_items, start,
+            ))
+        try:
+            with ProcessPoolExecutor(
+                max_workers=workers, mp_context=get_context("spawn")
+            ) as pool:
+                chunks = list(pool.map(_chunk_sums, jobs))
+        except (pickle.PicklingError, TypeError, AttributeError) as e:
+            raise ValueError(
+                "workers>1 requires a picklable normalize callable "
+                "(module-level functions and agwer normalizers work; "
+                "lambdas and closures do not)"
+            ) from e
+
+    ref_words = sum(c["ref_words"] for c in chunks)
+    wer_1best = _ratio(sum(c["err_ob"] for c in chunks), ref_words)
+    wer_corrected = _ratio(sum(c["err_co"] for c in chunks), ref_words)
+
+    wer_oracle = headroom = rir = wer_compositional = None
+    if chunks[0]["err_cp"] is not None:
+        wer_compositional = _ratio(sum(c["err_cp"] for c in chunks), ref_words)
+    if chunks[0]["err_or"] is not None:
+        wer_oracle = _ratio(sum(c["err_or"] for c in chunks), ref_words)
+        headroom = wer_1best - wer_oracle
+        if abs(headroom) > _EPS:
+            rir = (wer_1best - wer_corrected) / headroom
+
+    counts = _merge_counts(chunks, her_granularity)
+    items = None
+    if return_items:
+        items = [row for c in chunks for row in c["items"]]
 
     return AgenticOutput(
         n=n,

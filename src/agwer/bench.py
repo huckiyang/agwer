@@ -65,6 +65,7 @@ def median_time(fn, repeats: int = 5) -> float:
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="python -m agwer.bench")
     ap.add_argument("--sizes", nargs="+", type=int, default=[1000, 10000])
+    ap.add_argument("--workers", type=int, default=1)
     ap.add_argument("--seed", type=int, default=0)
     args = ap.parse_args(argv)
 
@@ -81,7 +82,8 @@ def main(argv=None) -> int:
         corr_n = [agwer.default_normalize(c) for c in corrected]
 
         t_eval = median_time(
-            lambda r=refs, c=corrected, nb=nbest: agwer.evaluate(r, c, nbest=nb))
+            lambda r=refs, c=corrected, nb=nbest: agwer.evaluate(
+                r, c, nbest=nb, workers=args.workers))
         t_tok = median_time(
             lambda r=refs, c=corrected, nb=nbest: agwer.evaluate(
                 r, c, nbest=nb, her_granularity="token"))

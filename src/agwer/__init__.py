@@ -36,7 +36,7 @@ from agwer.normalizers import BasicTextNormalizer, EnglishTextNormalizer
 from agwer.process import AgenticOutput, oracle_select, process_agentic
 from agwer.transforms import default_normalize
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 __all__ = [
     "wer",
