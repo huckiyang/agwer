@@ -21,6 +21,7 @@ extra_css:
 nav:
   - Home: index.md
   - Usage: usage.md
+  - Example session: examples.md
   - Benchmarks: benchmarks.md
   - CLI: cli.md
 markdown_extensions: [admonition, pymdownx.superfences, tables]

@@ -33,6 +33,16 @@ agwer.wer("Hello, World!", "hello world", normalize=agwer.default_normalize)  # 
 
 ## Agentic evaluation
 
+The agentic measures evaluate systems that read *n*-best hypotheses and
+decide *when to edit and when to abstain*, such as LLM error correctors and
+dictation agents:
+
+| measure | question it answers |
+|---|---|
+| **RIR**: Recoverable Information Ratio (ρ) | *How much of the gap between the 1-best and the oracle did the correction close?* ρ>1 beats the n-best oracle; ρ<0 is the damage regime. |
+| **HER**: Harmful Edit Rate | *Of the edits actually made, what fraction broke a correct token?* Isolates over-correction. |
+| **o_nb / o_cp** | The two HyPoradise oracles: best single hypothesis (the reranking bound) and best token recombination (the correction bound). |
+
 `evaluate()` takes references, the corrector's outputs, and the n-best lists
 (`nbest[i][0]` must be the ASR 1-best):
 

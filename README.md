@@ -15,18 +15,15 @@ agwer supports the classic ASR similarity measures and the agentic ones:
 2. character error rate (CER)
 3. recoverable information ratio (RIR)
 4. harmful edit rate (HER)
-5. name entity F1 score (NF1)
+5. named entity F1 score (NF1)
 6. word hallucination rate (WHR)
 
-The agentic measures (3 and 4) evaluate systems that read $n$-best hypotheses
+The agentic measures (3 and 4) evaluate systems that read *n*-best hypotheses
 and decide *when to edit and when to abstain*, such as LLM error correctors
-and dictation agents:
-
-| measure | question it answers |
-|---|---|
-| **RIR**: Recoverable Information Ratio (ρ) | *How much of the gap between the 1-best and the oracle did the correction close?* ρ>1 beats the n-best oracle; ρ<0 is the damage regime. |
-| **HER**: Harmful Edit Rate | *Of the edits actually made, what fraction broke a correct token?* Isolates over-correction. |
-| **o_nb / o_cp** | The two HyPoradise oracles: best single hypothesis (the reranking bound) and best token recombination (the correction bound). |
+and dictation agents. The [metric guide](https://huckiyang.github.io/agwer/usage/)
+explains what question each measure answers, and the
+[example session](https://huckiyang.github.io/agwer/examples/) walks through a
+complete evaluation from install to CLI.
 
 ## Installation
 
