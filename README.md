@@ -219,15 +219,8 @@ place extra hardware genuinely helps; edit distance does not need it.
 ## Compatibility & reproducibility
 
 Measure semantics match [jiwer](https://github.com/jitsi/jiwer) (validated
-bit-identical on 600-corpus goldens, pinned in `tests/`), and the default
-agentic settings reproduce the Voice Memory paper's published evaluation
-(golden-pinned in `tests/test_paper_reference.py`).
+bit-identical on 600-corpus goldens, pinned in `tests/`). 
 
-## Citation
-
-If you use RIR/ρ or HER, please cite the Voice Memory paper
-(*Exploring Voice Memory for Agentic Speech Recognition*, under review, 2026 —
-citation entry will be updated at camera-ready) and this package.
 
 ## License
 
