@@ -8,14 +8,13 @@ and voice agents. It is **self-contained**: one dependency
 It supports the classic ASR similarity measures:
 
 1. word error rate (WER)
-2. match error rate (MER)
-3. word information lost (WIL)
-4. word information preserved (WIP)
-5. character error rate (CER)
+2. character error rate (CER)
+3. (RIR)
+4. (HER)
 
 plus the **agentic** measures for systems that read $n$-best hypotheses and
 decide *when to edit and when to abstain* (LLM error correctors, dictation
-agents), introduced in the *Voice Memory* paper:
+agents)
 
 | measure | question it answers |
 |---|---|
