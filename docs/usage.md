@@ -80,6 +80,20 @@ helpful, each broken token harmful, spurious insertions harmful).
     Normalization moves WER by whole points on the same data. It is part of
     the metric — always report which normalizer you used.
 
+## Multi-speaker ASR: cpWER
+
+`cpwer(reference, hypothesis)` scores speaker-attributed transcripts with
+the concatenated minimum-permutation WER (the MeetEval definition,
+arXiv:2307.11394): utterances are concatenated per speaker, and the speaker
+permutation with the fewest word errors is solved exactly. Inputs are
+`{speaker: text}` dicts (text may be a list of utterances) or plain lists.
+No timestamps are needed; order utterances by start time upstream if
+needed. `cp_statistics()` adds the full accounting: errors, reference
+words, the speaker `assignment`, and missed / false-alarm / scored speaker
+counts. Validated against meeteval on an 87-case golden fixture and 13 to
+16 times faster on meeting-sized inputs; for time-constrained variants
+(tcpWER) and ORC / MIMO, use [MeetEval](https://github.com/fgnt/meeteval).
+
 ## Entity F1 and Word Hallucination Rate
 
 `entity_f1(reference, hypothesis, entities=... | predicate=...)` scores only

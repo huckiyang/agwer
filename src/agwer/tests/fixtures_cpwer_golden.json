@@ -1,0 +1,1696 @@
+[
+ {
+  "ref": {
+   "0": "a b c",
+   "1": "d e f"
+  },
+  "hyp": {
+   "0": "a b c",
+   "1": "d e f"
+  },
+  "errors": 0,
+  "length": 6,
+  "error_rate": 0.0,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "0": "a b c",
+   "1": "d e f"
+  },
+  "hyp": {
+   "0": "d e f",
+   "1": "a b c"
+  },
+  "errors": 0,
+  "length": 6,
+  "error_rate": 0.0,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "0": "a b c",
+   "1": "d e f"
+  },
+  "hyp": {
+   "0": "a b c"
+  },
+  "errors": 3,
+  "length": 6,
+  "error_rate": 0.5,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "0": "a b c"
+  },
+  "hyp": {
+   "0": "a b c",
+   "1": "d e f"
+  },
+  "errors": 3,
+  "length": 3,
+  "error_rate": 1.0,
+  "missed_speaker": 0,
+  "falarm_speaker": 1,
+  "scored_speaker": 1
+ },
+ {
+  "ref": {
+   "0": "a b",
+   "1": "c d"
+  },
+  "hyp": {
+   "0": "x y z",
+   "1": "c d e f"
+  },
+  "errors": 5,
+  "length": 4,
+  "error_rate": 1.25,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "0": "a b c",
+   "1": " "
+  },
+  "hyp": {
+   "0": "a b c"
+  },
+  "errors": 0,
+  "length": 3,
+  "error_rate": 0.0,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "A": [
+    "hello world",
+    "how are you"
+   ],
+   "B": "fine thanks"
+  },
+  "hyp": {
+   "x": "fine thanks",
+   "y": [
+    "hello world",
+    "how are you"
+   ]
+  },
+  "errors": 0,
+  "length": 7,
+  "error_rate": 0.0,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "r0": "",
+   "r1": "w17 w15 w14 w8 w47 w6 w43 w47 w57 w34 w5 w37 w27 w2 w1 w5 w13 w14 w32 w38 w1 w35 w12",
+   "r2": "w41 w44 w34 w26 w14 w28 w37 w17 w51 w55 w0 w48 w51 w10 w44 w27 w21 w17 w9 w13 w48 w21",
+   "r3": "w5 w24 w6",
+   "r4": "w54 w22 w38 w16 w51 w2 w46 w29 w34 w7 w59",
+   "r5": "w5 w35 w18 w53 w40 w39 w56 w55 w23 w36 w12 w45"
+  },
+  "hyp": {
+   "h0": "w2 w42"
+  },
+  "errors": 70,
+  "length": 71,
+  "error_rate": 0.9859154929577465,
+  "missed_speaker": 5,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "r0": "w54 w14",
+   "r1": "w6 w24 w17 w29 w40 w53 w23 w10 w23 w22 w13 w42 w17 w44 w59 w43 w41 w4 w38 w40 w10 w34 w46 w15 w10 w29 w24"
+  },
+  "hyp": {
+   "h0": "w59 w40 w44 w35 w14 w43 w20 w53",
+   "h1": "w49 w3 w14 w52 w2 w51 w20 w25 w17 w4 w13 w58 w36 w56 w45 w20 w13 w41 w31 w25 w56 w58 w41 w29",
+   "h2": "w16 w8 w15 w47"
+  },
+  "errors": 36,
+  "length": 29,
+  "error_rate": 1.2413793103448276,
+  "missed_speaker": 0,
+  "falarm_speaker": 1,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "r0": "w47 w37 w27 w57 w37 w25 w23 w14",
+   "r1": "w32 w31 w5 w48",
+   "r2": "w55",
+   "r3": "w9 w40 w10",
+   "r4": "w43 w27 w38 w4 w24 w24 w38 w29 w33 w16 w35 w55 w0 w43 w46 w7 w43 w56 w34 w48 w17 w49 w41 w21 w7"
+  },
+  "hyp": {
+   "h0": "w27 w10 w29 w0 w46 w56 w46 w16 w32",
+   "h1": "w11 w32 w58 w6 w55 w40 w19 w53 w40 w32 w38 w12 w9 w23 w48 w10 w34 w49 w59 w33 w58 w0 w38 w20",
+   "h2": "w1 w7 w59 w23 w56 w53 w51 w19 w15 w3 w15 w56 w36 w5 w5",
+   "h3": "w31 w52 w4 w48 w34 w49 w8 w8 w42 w30 w35 w10 w16 w33 w55 w38 w27 w13 w59 w34 w48 w46 w44",
+   "h4": "w45 w19 w25 w42 w41 w23"
+  },
+  "errors": 74,
+  "length": 41,
+  "error_rate": 1.8048780487804879,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "r0": "w7 w15 w14 w4 w21 w1 w37 w35 w14 w37 w14 w0 w4 w45",
+   "r1": "w3 w14 w4 w57 w2 w55 w21 w4 w32 w15 w17 w42 w31 w13 w34 w8 w46 w59 w56 w36",
+   "r2": "w30 w15 w50 w30 w51 w26 w12 w6 w6 w42 w27 w22 w27 w26 w29 w55 w46 w3",
+   "r3": "w41 w41 w6 w3 w25 w46 w21 w51 w55 w6 w15 w12 w12 w34 w28 w8 w27 w11 w17 w29 w15"
+  },
+  "hyp": {
+   "h0": "w59 w4 w28 w51 w55 w54 w35 w6 w3 w41 w34 w53 w0 w5 w59 w48 w54 w15 w10 w26 w31 w30 w13 w55 w25 w57 w3",
+   "h1": "w24 w0 w24 w16 w59",
+   "h2": "w50 w29 w18 w27 w44 w46 w50 w35 w42 w45 w31 w9 w12 w18 w13 w3 w37 w47 w34 w3 w47 w20 w3 w3 w37",
+   "h3": "w32 w58 w54 w33 w10 w3 w32 w5 w54 w11 w4 w38 w4 w43 w55",
+   "h4": "w25 w7 w56 w36 w15 w37 w38"
+  },
+  "errors": 83,
+  "length": 73,
+  "error_rate": 1.1369863013698631,
+  "missed_speaker": 0,
+  "falarm_speaker": 1,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "r0": "w26 w42"
+  },
+  "hyp": {
+   "h0": "w36 w33 w20 w59 w16 w13 w42 w45 w20 w15 w16 w25 w8 w42 w41 w19 w29 w20",
+   "h1": "w48 w59 w4 w0 w29 w39 w36 w6 w4 w34 w13 w32 w16 w8 w59 w22 w56 w4 w56 w15 w23 w18 w10 w28 w53 w34 w45 w19 w39",
+   "h2": "w41 w33 w0 w42 w52 w35 w19 w59 w42 w6 w56 w8 w16 w7 w56 w6 w47 w35 w9 w17 w18 w38 w13 w45 w21",
+   "h3": "w43 w40 w54 w16 w32 w31",
+   "h4": "w57 w58 w54 w3 w5 w40 w27 w53"
+  },
+  "errors": 85,
+  "length": 2,
+  "error_rate": 42.5,
+  "missed_speaker": 0,
+  "falarm_speaker": 4,
+  "scored_speaker": 1
+ },
+ {
+  "ref": {
+   "r0": "",
+   "r1": "w49 w8 w40 w16 w10 w47 w28 w35 w45 w27",
+   "r2": "w0 w7 w4 w56 w44 w57 w9 w34 w2 w53 w23 w37 w35 w9 w27 w8 w2"
+  },
+  "hyp": {
+   "h0": "w23 w57 w59 w50 w55 w2 w57 w22 w13"
+  },
+  "errors": 26,
+  "length": 27,
+  "error_rate": 0.9629629629629629,
+  "missed_speaker": 2,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "r0": "w6 w22 w49 w35 w56 w55 w26 w39 w47 w9 w59 w59 w15 w55 w10 w51 w51 w11 w56 w26 w1",
+   "r1": "w47 w59 w21 w50 w59",
+   "r2": "w51 w42 w55 w47 w51 w15 w17 w10 w50 w44 w6 w24 w55",
+   "r3": "w54",
+   "r4": "w14 w12 w52 w58 w29 w22 w19 w52 w50 w55 w14 w14 w1 w42 w12",
+   "r5": "w21 w17 w55 w4 w49 w17 w22 w41 w32 w25 w43 w53"
+  },
+  "hyp": {
+   "h0": "w21 w1 w7 w56 w16 w11 w37 w16 w2 w6 w38 w27 w22 w46 w50 w20 w27",
+   "h1": "w32 w7 w24 w57 w36 w12 w16 w2 w45 w27 w0 w33 w59 w51 w34 w43 w46 w47 w47"
+  },
+  "errors": 68,
+  "length": 67,
+  "error_rate": 1.0149253731343284,
+  "missed_speaker": 4,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "r0": "w27 w4 w42 w58 w21 w39 w20 w42 w54 w7 w46",
+   "r1": "w19 w32 w19 w42 w26 w20 w25 w44 w18 w35 w8 w12 w26 w42 w24 w43 w47 w57 w11 w39 w36 w19 w25 w35 w53 w0 w19 w18",
+   "r2": "w27 w50 w37 w38 w41 w20",
+   "r3": "w28 w28 w43 w13 w32 w30 w50 w57 w50 w47 w10 w42 w5 w18",
+   "r4": "w42 w40 w39 w21 w5 w52 w48 w15 w43 w19 w14 w51 w12 w9 w1 w2",
+   "r5": "w30 w39 w54 w49 w4 w29 w26"
+  },
+  "hyp": {
+   "h0": "w40 w36 w12 w45 w44 w24 w31 w25 w15 w9 w41 w44 w0 w57 w48 w55 w49 w56 w6 w49 w27 w14 w11 w51 w44 w33 w29 w3",
+   "h1": "w15 w58 w54 w7 w29 w8 w51 w29 w42 w33 w35 w38 w20 w48 w57 w28 w39"
+  },
+  "errors": 83,
+  "length": 82,
+  "error_rate": 1.0121951219512195,
+  "missed_speaker": 4,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "r0": "w53 w58 w35 w28 w57 w10 w47 w55 w30 w28 w16 w48 w15",
+   "r1": "w40 w17 w49 w49 w33 w31 w40 w15 w17 w28 w4 w45 w18 w15 w17 w21 w20 w57 w34 w5 w8 w9 w14 w24 w44 w9",
+   "r2": "w13 w4 w26 w26 w21 w34 w29 w26 w3 w13 w53 w26 w24 w57 w49 w37 w44 w1 w54 w56 w48 w36",
+   "r3": "w30 w0 w22 w19 w48 w24 w54 w57 w53 w26 w34 w47",
+   "r4": "w34 w51 w38 w57 w14 w31 w14 w17 w27 w31 w1 w24 w21 w42 w43 w51 w25 w46 w10 w53 w29 w58 w8",
+   "r5": "w34 w1 w58 w25 w37 w36 w42 w1 w5 w41 w27 w8 w55 w29 w11 w3 w16 w24 w20"
+  },
+  "hyp": {
+   "h0": "w29 w20 w21 w48 w56 w24",
+   "h1": "w48 w53 w26 w16 w53 w5 w30 w1",
+   "h2": "w34 w3 w22 w14 w41 w4 w49 w41 w2 w48 w1 w15 w12 w53 w1 w39 w9 w15 w8 w30 w42 w7 w36",
+   "h3": "w13 w29 w44 w16 w49 w23 w10 w38 w38 w47 w45 w7 w49 w52 w10 w19 w6 w37 w1 w59 w19 w36 w43 w58 w24 w25 w45 w12 w4 w37",
+   "h4": "w53 w40 w15 w6 w44 w49 w19 w54 w43 w38 w51 w7 w50 w36 w50 w2 w22 w34 w27 w42 w23 w4"
+  },
+  "errors": 112,
+  "length": 115,
+  "error_rate": 0.9739130434782609,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "r0": "w0 w54 w26 w52 w31 w6 w27 w23 w40 w57",
+   "r1": "w29 w45 w9 w27 w11 w46 w33 w41 w17 w39 w51 w58 w34 w49 w30 w29 w27 w52 w46 w37 w17 w20 w54 w15 w53 w59",
+   "r2": "w17 w56",
+   "r3": "w15 w48 w29 w36 w39 w42 w24 w21 w1 w31 w54 w20 w11 w31",
+   "r4": "w22 w51 w16 w21 w17 w56"
+  },
+  "hyp": {
+   "h0": "w44 w56 w17 w35 w0 w33 w12 w5 w15 w46 w26 w31 w35 w48 w15 w44 w30 w41 w45",
+   "h1": "w28 w50 w1 w5 w18 w14 w25 w44 w15 w19 w42 w37 w23 w30 w35",
+   "h2": "w22 w27 w47 w35 w21 w22 w44 w29 w17 w19 w16 w14 w7 w46 w12 w20",
+   "h3": "w47 w34 w48",
+   "h4": "w11 w12 w13 w47 w30 w17 w46 w37 w48 w33 w38 w18 w6 w53 w12 w18 w14 w23 w11 w19 w0 w45",
+   "h5": "w8 w17 w2 w3 w35 w18 w44 w8 w40 w55 w48 w31 w6 w55 w0 w36 w18"
+  },
+  "errors": 89,
+  "length": 58,
+  "error_rate": 1.5344827586206897,
+  "missed_speaker": 0,
+  "falarm_speaker": 1,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "r0": "w21 w11 w3 w16 w55 w30 w7 w52 w4 w25 w31 w4 w36 w40",
+   "r1": "w3 w9 w9 w51 w36 w19 w5 w15 w7 w35 w48 w26 w38 w38 w50 w39 w14 w49 w33 w24 w28",
+   "r2": "w28 w19 w55 w37 w27 w19 w36 w39 w3 w39 w47 w6 w48 w13 w40 w13 w16 w42 w5 w10 w15 w11 w35 w4 w10 w0 w26 w28 w44",
+   "r3": "w30 w18 w2 w14 w18 w45 w18 w44 w55 w29 w4 w43 w14 w59 w16 w50 w50 w40 w37"
+  },
+  "hyp": {
+   "h0": "w51 w59 w12 w27 w7 w34 w14 w41 w9 w58 w17 w52 w9 w4 w3 w10 w50 w19 w38 w47 w52",
+   "h1": "w58 w18 w28 w7 w29 w44 w19 w44 w25 w17 w32 w34 w31 w28 w5 w38 w2 w56",
+   "h2": "w47 w20 w38 w16 w1 w5 w14 w43 w53 w55 w36 w37 w1",
+   "h3": "w43 w52 w17 w36 w2 w48 w48 w11 w30 w33 w41 w28 w58 w17 w11 w37 w27 w40 w52 w31 w5 w30 w22 w26"
+  },
+  "errors": 78,
+  "length": 83,
+  "error_rate": 0.9397590361445783,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "r0": "w6 w54 w10 w21 w26 w44 w31 w18 w42 w25 w52 w48 w35 w2 w29 w5 w20 w16 w20 w7 w49",
+   "r1": "w55 w32 w52 w0 w42 w55 w34 w29 w26 w3 w12 w33",
+   "r2": "w39 w48 w31 w40 w28 w48 w3 w13 w17 w35 w8"
+  },
+  "hyp": {
+   "h0": "w18 w28 w56 w44 w31 w7 w1 w40 w38 w51 w15 w45 w10 w19 w35 w0 w35 w26 w5 w14 w53 w58 w7 w29 w7 w41 w53 w9 w31",
+   "h1": "w45 w18 w32 w45 w17 w26 w53 w30 w30 w15 w29 w35 w9 w24 w12 w58 w38 w32 w47 w56 w8 w55 w4 w17 w49 w50 w54 w26 w21",
+   "h2": "w50 w32 w17 w52 w0 w18 w46 w19 w53 w37 w37 w42 w31 w55 w9 w28 w34 w30 w22 w21 w35 w48 w34 w24 w29 w59 w20 w55 w12"
+  },
+  "errors": 75,
+  "length": 44,
+  "error_rate": 1.7045454545454546,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "r0": "w24 w14 w54 w49 w26 w2 w20 w47 w30 w45 w58 w51 w24 w24 w42 w50 w52 w41",
+   "r1": "w31 w2 w8 w32",
+   "r2": "w37 w21 w55 w6 w55 w54 w28 w6 w33 w58 w29 w0 w46 w9 w26 w55 w41 w9 w4 w30 w50 w16 w21 w39 w44 w25 w41 w5 w54 w21",
+   "r3": "w43 w54 w34 w24 w20 w40 w45 w56 w48 w31 w55 w34 w2 w39 w4 w15 w40 w43 w58 w18 w14 w47 w5 w27 w6 w48 w40",
+   "r4": "w55 w6 w28 w10 w44 w19 w57 w1 w2 w20 w50 w3 w18 w22 w23 w27 w9 w15 w33 w26 w36 w43",
+   "r5": "w11 w10 w11 w5 w39 w55 w24 w39 w43 w15 w31 w58 w37 w9 w14 w29 w40 w16 w29 w16 w42 w0 w57 w51 w29"
+  },
+  "hyp": {
+   "h0": "w18 w43 w34 w10 w4 w28 w22 w37 w19 w40 w27 w44 w16 w29 w54 w19 w12 w24 w54 w30 w6 w15 w24 w36 w22 w36 w18 w44",
+   "h1": "w1 w53 w42 w25 w17 w0 w36 w55 w43"
+  },
+  "errors": 123,
+  "length": 126,
+  "error_rate": 0.9761904761904762,
+  "missed_speaker": 4,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "r0": "w38 w47 w31 w53 w57 w57 w18 w49 w51 w14 w38 w51 w22 w14 w40 w12 w39 w16 w43 w48 w46 w49 w42 w43 w53 w8 w40 w6 w57",
+   "r1": "w41 w2 w19 w50 w28 w2 w37 w23 w46 w8 w5 w58 w18 w20 w47 w26 w11 w12 w8 w50",
+   "r2": "w56 w23 w33 w32 w58 w17 w53 w10 w16 w58 w52 w30 w51 w18 w47 w55 w21",
+   "r3": "w7 w29 w4 w9 w48 w14 w55 w43 w46 w43 w25 w54 w51 w35 w23 w5 w50 w25 w0 w16 w34 w7 w29 w23 w43",
+   "r4": "w43 w16 w37 w24 w52 w40 w23 w6 w43 w14 w30 w1 w39 w56 w35 w20 w58 w39 w14 w41 w4 w40 w52",
+   "r5": "w58 w44 w19 w41 w26 w7 w8 w2 w2 w19 w31 w7 w6 w15"
+  },
+  "hyp": {
+   "h0": "w34 w8 w24 w29 w23 w42 w47 w44 w34 w26 w37 w47 w46 w9 w56 w26 w41 w6 w53 w31 w39 w26 w17 w2 w44 w23 w13 w28"
+  },
+  "errors": 128,
+  "length": 128,
+  "error_rate": 1.0,
+  "missed_speaker": 5,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "r0": "w23 w6 w43 w23 w34 w57 w41 w22 w3 w25 w17 w12 w7 w54 w52 w29 w5 w42 w13 w41 w40 w38 w1 w3 w50 w21 w15",
+   "r1": "w50 w36 w13 w4",
+   "r2": "w48 w35 w13 w37 w13 w52 w55 w14 w21 w49 w9 w50 w57 w38 w0 w17 w54 w9 w8 w34 w16 w51 w11 w7 w42 w55",
+   "r3": ""
+  },
+  "hyp": {
+   "h0": "w0 w22 w50 w50",
+   "h1": "w37 w20 w1 w11 w16 w3 w8"
+  },
+  "errors": 53,
+  "length": 57,
+  "error_rate": 0.9298245614035088,
+  "missed_speaker": 2,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "r0": "w7 w47 w4 w30 w28 w49 w23 w32 w37 w6 w28 w32 w14 w39 w2 w46",
+   "r1": "w58 w55 w42 w33 w19 w29 w41 w1 w3 w30 w54 w25 w27 w43 w6 w31 w45 w58 w28 w4 w57 w5 w20 w38 w9",
+   "r2": "w8 w17",
+   "r3": "w40 w37 w35 w45 w20 w24 w38 w33 w18 w29 w32 w38 w27 w6 w50 w44 w7 w54 w41",
+   "r4": "w56 w49 w35 w46 w55 w13 w27 w28 w56 w14 w26 w21 w52 w29 w25 w26 w46 w6 w20 w27",
+   "r5": "w42 w16 w23 w9 w43 w59 w30 w4 w5 w53"
+  },
+  "hyp": {
+   "h0": "w5 w27",
+   "h1": "w47 w47 w23",
+   "h2": "w8 w35 w3 w37 w35 w35 w21 w42 w7 w26 w22 w55 w42 w48 w27 w55 w58 w46 w3 w18 w38 w19 w22 w6 w36",
+   "h3": "w13 w9 w42 w30 w14 w54 w6 w22 w54 w35 w23 w7 w48 w17 w36 w14"
+  },
+  "errors": 88,
+  "length": 92,
+  "error_rate": 0.9565217391304348,
+  "missed_speaker": 2,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "r0": "w52 w39 w39 w43 w41 w35 w1 w38 w59 w42 w53 w44 w17 w1 w11 w17 w44 w48 w19 w58 w21 w22 w0 w11",
+   "r1": "w9 w36 w42 w25 w4 w9 w47 w40 w1 w5 w47 w33 w13 w24 w26 w29 w21 w10 w23 w19 w46 w20 w49 w36 w38 w5 w56",
+   "r2": "w9",
+   "r3": "w48 w39 w3 w43 w5"
+  },
+  "hyp": {
+   "h0": "w28 w42 w27 w31 w38 w28 w26 w17",
+   "h1": "w48 w32 w7 w22 w27 w7",
+   "h2": "w43 w43 w37 w31 w33 w42 w19 w2 w14",
+   "h3": "w38 w3 w0 w13 w19 w13 w49 w8 w48 w16 w18 w20",
+   "h4": "w0 w31 w47"
+  },
+  "errors": 62,
+  "length": 57,
+  "error_rate": 1.087719298245614,
+  "missed_speaker": 0,
+  "falarm_speaker": 1,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "r0": "w24 w34 w45 w14",
+   "r1": "w35 w53 w42 w51 w22 w4 w25 w55 w47 w2 w27 w1 w29 w58 w4 w55",
+   "r2": "w36 w27 w36 w25 w45 w40 w26 w18 w7 w25",
+   "r3": ""
+  },
+  "hyp": {
+   "h0": "w20 w10 w51 w39 w29 w53 w44 w58 w23 w5 w27 w54 w6 w15 w27 w37 w25 w33 w5 w25 w55 w19 w47 w21 w14 w21 w49 w10 w4 w32",
+   "h1": "w7 w33 w32 w12 w57 w49 w22 w22 w46 w52 w41 w52 w9 w15 w6 w9 w16 w12 w11 w38"
+  },
+  "errors": 49,
+  "length": 30,
+  "error_rate": 1.6333333333333333,
+  "missed_speaker": 2,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "r0": "w11 w49",
+   "r1": "w31 w29 w48 w36 w48 w37 w28 w43 w59 w56 w36 w41 w40 w39 w20 w55 w40 w20 w9 w28"
+  },
+  "hyp": {
+   "h0": "w30 w28",
+   "h1": "w19 w50 w17 w37 w3 w22 w32 w4 w19 w29 w28 w2 w3 w23 w53 w18 w4 w41 w55 w54",
+   "h2": "w39 w38",
+   "h3": "w24 w29 w37 w35 w50 w47 w57 w2 w28 w58 w51 w36 w41 w12 w20 w38",
+   "h4": "w32 w9 w3 w28 w6 w51 w57 w53 w21 w45 w5 w32 w41 w11 w2",
+   "h5": "w45 w28 w28 w33 w33 w39 w10"
+  },
+  "errors": 61,
+  "length": 22,
+  "error_rate": 2.772727272727273,
+  "missed_speaker": 0,
+  "falarm_speaker": 4,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "r0": "w18 w24 w26 w49 w21 w43 w38 w3 w50 w40 w41 w21 w4 w21 w6 w35 w43 w24 w18 w16 w46 w54 w42 w58 w38 w55 w9 w21 w5",
+   "r1": "w42 w9 w58 w22 w19 w41 w44 w42 w25 w8 w38 w45 w5 w19 w35 w24 w41 w50",
+   "r2": "w52 w8 w42 w44 w53 w47 w43 w58 w33 w5"
+  },
+  "hyp": {
+   "h0": "w42 w27 w32 w23 w1 w23 w19 w11 w13 w21 w49 w31 w12 w14 w8 w9 w4 w18 w54 w50",
+   "h1": "w32 w49 w34",
+   "h2": "w47 w56 w33 w2 w42 w21 w56 w49 w39 w8 w38 w24 w9 w10 w11 w53 w44 w49 w39 w51 w57 w10 w46 w28 w2 w26"
+  },
+  "errors": 56,
+  "length": 57,
+  "error_rate": 0.9824561403508771,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "r0": "w15 w28 w39 w18 w48 w47 w50 w28 w14 w34 w15 w19 w51 w50 w30 w57 w53 w12 w23 w43 w36 w28 w29",
+   "r1": "w18 w49 w24 w32 w33 w26 w10 w52 w12 w51 w38 w8 w55 w16 w3 w41 w30 w55 w23 w35 w59 w6 w45 w54",
+   "r2": "w54 w7 w18 w5 w48 w10 w17 w28 w57 w32 w9 w53 w27 w5 w58 w14"
+  },
+  "hyp": {
+   "h0": "w28 w56 w22 w59 w1 w26 w3 w25 w32 w23 w15 w24 w5 w23 w14 w1 w20 w59 w6 w53 w45 w41 w21 w50 w9 w8",
+   "h1": "w18",
+   "h2": "w53 w30 w44 w53 w8 w48 w45 w30 w28 w39 w0 w57 w5 w1 w16 w13 w53 w9 w35 w46 w38 w33 w27 w7 w49 w18 w15 w19 w7",
+   "h3": "w15",
+   "h4": "w40 w50 w39 w29 w4 w7 w53 w57 w31 w38 w34 w1 w40",
+   "h5": "w36 w15 w45 w9 w18 w27 w0 w39 w22 w15 w36 w26 w11 w42 w42 w5"
+  },
+  "errors": 83,
+  "length": 63,
+  "error_rate": 1.3174603174603174,
+  "missed_speaker": 0,
+  "falarm_speaker": 3,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "r0": "w33 w34",
+   "r1": "w50 w32 w35 w1 w24 w55 w30 w2 w40 w24 w23 w16 w47 w1 w22 w50",
+   "r2": "w22 w15",
+   "r3": "w42 w40 w6 w49 w37 w47 w48 w21 w8 w2 w22 w34 w21 w52 w41 w11 w53 w49 w43 w29 w44 w30 w40",
+   "r4": "w51 w8 w4 w45 w49"
+  },
+  "hyp": {
+   "h0": "w29 w2 w18 w12 w2 w50 w12 w56 w2 w20 w59 w19 w32 w25 w52 w34 w30 w16 w2 w48 w41 w12 w18 w22 w55 w49 w3 w55 w41 w21",
+   "h1": "w7 w51 w23 w27 w56 w25 w47 w28",
+   "h2": "w24 w21 w11 w31 w44 w31 w23 w59 w51 w33 w17 w51 w5 w46 w27 w5 w27 w38 w52 w11 w34 w18 w20 w6 w5 w20 w42 w18"
+  },
+  "errors": 65,
+  "length": 48,
+  "error_rate": 1.3541666666666667,
+  "missed_speaker": 2,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "r0": "w45 w27 w10 w44 w28 w22 w28 w2 w46 w55 w58 w22 w39 w27 w17 w40 w50 w3 w4",
+   "r1": "w40 w25 w23 w32 w51 w47 w43 w10 w1 w9 w54 w38 w43 w50 w28 w2 w8 w4 w15 w49 w41",
+   "r2": "w23 w24 w36 w2 w38 w9 w43 w28 w23 w23 w28"
+  },
+  "hyp": {
+   "h0": "w4 w36 w8 w33 w23 w25 w20 w41 w17 w15 w7 w1 w47 w11 w31 w33 w24 w58 w35 w7 w16 w49 w16 w45",
+   "h1": "w13 w39 w18 w44 w58 w31 w12 w7 w8 w54 w4 w28 w11 w57",
+   "h2": "w28 w5 w51 w43 w54 w20 w42 w22 w45 w4 w35 w34 w18 w57 w19 w54 w10 w45 w45 w59 w44 w40",
+   "h3": "w50 w23 w32 w14 w7"
+  },
+  "errors": 61,
+  "length": 51,
+  "error_rate": 1.196078431372549,
+  "missed_speaker": 0,
+  "falarm_speaker": 1,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "r0": "w50 w31 w1 w23 w35 w36 w23",
+   "r1": "w51 w35 w8 w39 w56 w5 w4 w19 w25 w45 w46 w30 w33 w26"
+  },
+  "hyp": {
+   "h0": "w26 w52 w36 w4 w8 w20 w41 w4 w28 w29 w43 w33 w22 w8 w56 w53 w49 w35 w40 w37 w11 w49 w8 w27",
+   "h1": "w58 w55 w3 w53 w7 w33 w9 w19 w10 w10 w20 w59 w45 w14 w22 w33"
+  },
+  "errors": 37,
+  "length": 21,
+  "error_rate": 1.7619047619047619,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "r0": "w12 w40 w35 w17 w8 w40 w19 w39",
+   "r1": "w5 w32 w41 w10 w37 w37 w9 w10 w42 w39 w46 w57 w38 w21 w53 w59 w36",
+   "r2": "w52"
+  },
+  "hyp": {
+   "h0": "w1 w5 w2 w41 w49 w36 w16 w41 w13 w49 w36 w26 w39 w40 w1 w31 w56 w40 w34 w18 w41 w19 w30 w15 w51 w51 w43"
+  },
+  "errors": 33,
+  "length": 26,
+  "error_rate": 1.2692307692307692,
+  "missed_speaker": 2,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "r0": "w4 w44 w3 w10 w28 w26 w30 w29 w13 w21 w38 w9 w20 w55",
+   "r1": "w20 w46 w55 w22 w25 w8 w48 w23 w32 w35 w6 w20 w15 w29 w7 w17 w28 w15 w9 w6 w3 w18",
+   "r2": "w24 w55 w39 w26 w15 w55 w57 w10 w52 w20 w59 w36 w46 w20 w12 w48 w10 w31 w32 w29 w31 w56 w19 w31 w1 w5 w25 w32 w29 w15",
+   "r3": "w37 w22 w3 w3 w18 w31"
+  },
+  "hyp": {
+   "h0": "w56 w53 w41 w43 w30 w18 w34 w0 w54 w6 w27 w8 w56 w16 w46 w23 w48 w25 w23",
+   "h1": "w25",
+   "h2": "w36"
+  },
+  "errors": 69,
+  "length": 72,
+  "error_rate": 0.9583333333333334,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "r0": "w35 w18 w4 w24 w32 w28 w48 w35 w17 w52 w39",
+   "r1": "w39 w7 w8 w6 w25 w23 w50 w21 w35 w23 w48 w9 w12 w38 w32 w25 w32 w2 w2 w2 w8",
+   "r2": "w21 w51 w30 w33 w29 w9 w38 w57 w32 w8 w20 w59 w39 w20 w10 w25 w39 w47 w53 w19 w37 w21",
+   "r3": "w53 w32 w34 w31 w45 w36 w19 w30 w52 w1 w23 w21 w43 w7 w26 w37",
+   "r4": "w50 w57 w46 w55 w44 w40 w1 w38 w30"
+  },
+  "hyp": {
+   "h0": "w41 w50 w49 w37 w36 w14 w46 w3",
+   "h1": "w30 w10 w33 w40 w46 w39 w49 w53 w24 w9 w52 w43 w15 w2 w36 w44 w7 w12"
+  },
+  "errors": 77,
+  "length": 79,
+  "error_rate": 0.9746835443037974,
+  "missed_speaker": 3,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "r0": "w26 w9 w26 w44 w13 w26 w32 w49 w39 w58"
+  },
+  "hyp": {
+   "h0": "w55 w54 w47 w46 w3 w45 w8 w33 w13 w35 w20 w42 w30 w33 w24",
+   "h1": "w11 w29 w58 w34 w21 w34 w22 w43 w49 w55",
+   "h2": "w43 w41 w51 w44 w16 w39 w30 w12 w15 w17 w35 w19 w14 w19 w49 w18 w45 w13 w44 w45 w31 w20 w30",
+   "h3": "w35 w59 w59 w50 w46 w17 w18 w7 w36 w43 w34"
+  },
+  "errors": 57,
+  "length": 10,
+  "error_rate": 5.7,
+  "missed_speaker": 0,
+  "falarm_speaker": 3,
+  "scored_speaker": 1
+ },
+ {
+  "ref": {
+   "r0": "w22 w49 w51 w9 w18 w2 w18 w45 w5 w22 w59 w28 w41 w16 w47 w30 w13 w12 w52 w34 w17 w59 w35 w44 w17 w8",
+   "r1": "w39 w47 w37",
+   "r2": "w15 w3 w42 w57 w33 w14 w40",
+   "r3": "w3 w6 w26 w21 w45 w30 w6"
+  },
+  "hyp": {
+   "h0": "w49 w8 w0 w35 w59 w10 w26 w41 w59 w56 w56 w30 w30 w41 w12 w48 w18 w20 w18 w41 w3",
+   "h1": "w49 w5 w41 w36 w14 w34 w47 w46 w54 w59 w2 w58 w58 w11 w26 w56 w53 w11 w59 w58 w2 w53 w25 w50 w31 w11 w59 w47 w55",
+   "h2": "w18 w56 w2 w0 w19 w36 w38 w6 w59 w21 w18 w29 w41 w34 w33 w31 w56 w8 w54 w32 w29 w17 w12 w51 w7 w21 w10 w46 w29",
+   "h3": "w16 w45 w11 w0 w47 w21 w50 w18 w36 w43 w48 w12 w11 w39 w54 w40 w57 w25 w52 w27"
+  },
+  "errors": 93,
+  "length": 43,
+  "error_rate": 2.1627906976744184,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "r0": "w25 w42",
+   "r1": "w11 w8 w30",
+   "r2": "w59 w15 w0 w16 w24 w15 w28 w48 w17 w21",
+   "r3": "w37 w46 w36 w0 w16 w41 w23 w44 w15",
+   "r4": "w42"
+  },
+  "hyp": {
+   "h0": "w29 w19 w10",
+   "h1": "w43 w32 w59 w57 w56 w45 w49 w19 w44 w7 w40 w58",
+   "h2": "w18 w23 w39 w14 w14 w8 w30 w9 w29 w47 w38 w23 w26 w44 w35 w58 w30 w48 w34 w51 w42 w52 w13 w48 w15 w43 w48 w38 w55 w50"
+  },
+  "errors": 44,
+  "length": 25,
+  "error_rate": 1.76,
+  "missed_speaker": 2,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "r0": "w33 w45 w23 w4 w58 w36 w7 w3 w53 w35 w57 w32 w12 w36"
+  },
+  "hyp": {
+   "h0": "w9 w10 w20 w54 w33 w28 w7 w43 w13 w45 w37 w31 w5 w57 w32 w28 w51",
+   "h1": "w29",
+   "h2": "w32 w26 w29 w36",
+   "h3": "w35",
+   "h4": "w43 w51 w19 w46 w1 w25 w16 w52 w0 w47 w13 w37 w4 w2"
+  },
+  "errors": 34,
+  "length": 14,
+  "error_rate": 2.4285714285714284,
+  "missed_speaker": 0,
+  "falarm_speaker": 4,
+  "scored_speaker": 1
+ },
+ {
+  "ref": {
+   "r0": "w4 w34 w3 w59 w57 w4 w59 w30 w2 w18 w26 w11 w49 w8 w49 w41 w46 w41 w26 w23 w57 w24",
+   "r1": "w55 w58 w58 w24 w24 w5 w43 w42 w55 w34 w8 w41 w55 w22",
+   "r2": "w11 w34 w25",
+   "r3": "w8 w46 w14 w53 w0 w48 w1 w19 w29 w43 w46 w34 w27 w34 w24 w52"
+  },
+  "hyp": {
+   "h0": "w15 w29 w22 w9 w17 w12 w59",
+   "h1": "w46 w48 w7 w2 w51 w42 w26 w39 w49 w59 w56 w56 w1 w15 w13 w4 w6 w38 w2 w28 w38 w43 w45 w55 w3 w15 w47 w2",
+   "h2": "w28 w14 w34 w13 w48 w55 w49 w3 w8 w32 w18 w14"
+  },
+  "errors": 58,
+  "length": 55,
+  "error_rate": 1.0545454545454545,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "r0": "w36 w38 w49 w43 w52 w20 w15 w19 w56 w9",
+   "r1": "w33 w14 w26 w19 w17 w3 w35 w37 w56 w47 w58 w11 w40 w43 w27 w35 w31 w3 w22 w41 w42",
+   "r2": "w50 w33 w20 w44 w26 w26 w9 w19 w24 w11 w48 w34",
+   "r3": "w15 w54 w14 w19 w54 w45 w9 w51 w29 w58 w3 w35 w26 w26 w35",
+   "r4": "w8 w24 w15 w16 w13 w21 w41 w5 w59 w28 w54 w23 w5 w34 w46 w53",
+   "r5": "w3 w17 w24 w43 w38 w38"
+  },
+  "hyp": {
+   "h0": "w55",
+   "h1": "w12 w51",
+   "h2": "w37 w46 w42 w35 w13 w30 w13 w55 w58 w21 w19 w58 w0 w13 w59 w12 w47 w7 w47 w48 w30 w58 w15 w44",
+   "h3": "w45 w13 w25 w58 w15 w35 w20 w49 w18 w24 w29 w34 w41 w22 w19 w16 w23 w32 w56",
+   "h4": "w29 w6 w51 w46 w30 w48 w53 w20 w58 w13 w23 w20 w26 w2 w36"
+  },
+  "errors": 83,
+  "length": 80,
+  "error_rate": 1.0375,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "r0": "w1 w16 w35 w59",
+   "r1": "w37 w46 w26 w18 w9 w12 w21 w14 w24 w36 w53 w15 w31 w35 w41 w43 w21 w16"
+  },
+  "hyp": {
+   "h0": "w52 w31 w46 w41 w47 w31 w29 w10 w46 w50 w22 w10 w8 w46 w34 w31 w11 w58 w56 w34 w41 w3 w33 w2",
+   "h1": "w54 w4 w52 w42 w3 w48 w0 w26 w8 w53 w40 w14 w4 w45 w9 w0 w13 w32 w29 w23 w3 w39 w40 w42 w59 w39",
+   "h2": "w30 w42 w31 w1 w0 w34 w35 w26 w0 w1 w33 w46 w17 w34 w18 w1 w32 w52 w44 w43 w27 w51 w58 w11 w6 w58 w6 w33 w9",
+   "h3": "w12 w39 w33 w16 w52 w22 w17",
+   "h4": "w25 w5 w23 w25 w29 w36 w15 w44 w14 w19 w43 w52 w54 w5 w41 w54 w41 w48 w2 w5 w25 w24 w24 w35 w30",
+   "h5": "w40"
+  },
+  "errors": 107,
+  "length": 22,
+  "error_rate": 4.863636363636363,
+  "missed_speaker": 0,
+  "falarm_speaker": 4,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "r0": "w5 w31 w54 w27 w41"
+  },
+  "hyp": {
+   "h0": "w21 w36 w54 w6 w57 w33 w58 w2 w14 w13 w57 w55 w44 w56 w36 w30 w17 w2 w59 w4 w43 w59 w17 w57 w34",
+   "h1": "w42 w2 w11 w59 w54 w20 w1 w13 w37 w9 w48 w52 w45 w52 w25 w59 w4 w19",
+   "h2": "w36 w15 w36 w53 w54",
+   "h3": "w43 w57 w34 w21 w24 w48 w47 w8 w50 w44 w46 w5",
+   "h4": "w47 w22 w3 w6 w27 w14 w53 w4 w21 w38 w49 w39 w38 w25 w49 w20",
+   "h5": ""
+  },
+  "errors": 75,
+  "length": 5,
+  "error_rate": 15.0,
+  "missed_speaker": 0,
+  "falarm_speaker": 5,
+  "scored_speaker": 1
+ },
+ {
+  "ref": {
+   "r0": "w28 w31 w14 w22 w35 w24 w27 w11 w43 w37 w42 w24 w5 w49 w39 w18 w51 w15 w45 w4 w5 w17 w9 w24 w45",
+   "r1": "w40 w9 w47 w24 w20 w23 w6 w5 w0 w19 w28 w23 w48 w17 w6 w8 w5 w11 w27 w28 w35 w35 w32 w26 w6",
+   "r2": "",
+   "r3": "w22 w35",
+   "r4": "w38 w38",
+   "r5": "w20 w55 w24 w0 w18 w26 w24 w49 w5 w46 w57 w35 w57 w15 w36 w33 w10 w43 w24 w10 w8 w17 w19 w17 w31"
+  },
+  "hyp": {
+   "h0": "w4 w10 w27 w17",
+   "h1": "w19 w30 w50 w4 w23 w16 w15 w46 w40 w31 w38 w39 w12",
+   "h2": "w6 w8 w19 w0 w25 w21 w53 w39 w24 w51 w55 w21 w28 w21"
+  },
+  "errors": 73,
+  "length": 79,
+  "error_rate": 0.9240506329113924,
+  "missed_speaker": 3,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "r0": "w8 w19 w20 w38 w44 w12 w30 w20 w11 w25 w20 w18 w47 w44 w40 w31 w36 w50 w15",
+   "r1": "w24 w17 w52 w50 w25 w23 w7 w59 w36 w12",
+   "r2": "w34 w11 w43 w49 w35 w1 w46 w29 w45 w13 w28 w51 w18 w53 w44 w4 w52 w54",
+   "r3": "w50 w26 w43 w31 w8 w40 w19 w15 w16 w42 w9 w45 w27 w50 w24 w4 w28 w38 w30 w37 w25 w34 w32 w59 w58"
+  },
+  "hyp": {
+   "h0": "w44 w26 w34 w2 w50 w23 w44 w57 w51 w34 w38 w40 w58 w5 w6 w49 w15 w42 w42 w22 w10 w41 w39 w2 w36 w41 w43",
+   "h1": "w25 w48 w21 w50 w27 w6 w0 w6 w16 w14 w32 w47 w33 w35 w37 w44 w36 w14 w28 w23",
+   "h2": "w29 w49 w43 w37 w44 w32 w9 w22 w1 w30 w6 w18",
+   "h3": "w58 w5 w7 w53 w46 w9 w22 w19 w21 w29 w50 w13 w33",
+   "h4": "w22 w30 w6 w28 w46 w44 w28 w20 w4 w19 w2 w51 w45 w7 w1",
+   "h5": "w21 w41 w6 w43 w51 w10 w59 w47 w15 w33 w11 w35 w10 w21 w35 w27 w29 w14 w51 w25 w40 w11 w11 w40 w42 w27 w25"
+  },
+  "errors": 109,
+  "length": 72,
+  "error_rate": 1.5138888888888888,
+  "missed_speaker": 0,
+  "falarm_speaker": 2,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "r0": "w56 w12 w28 w37 w27 w24 w0 w45 w13 w13 w17 w48 w45 w51 w50 w4 w36 w6 w51"
+  },
+  "hyp": {
+   "h0": "w34 w11 w23 w20 w12 w29 w7 w16 w42 w55 w31 w33 w40 w20 w38 w24 w39 w25 w37 w7 w22 w22 w54 w29 w39 w11 w52",
+   "h1": "w45 w51 w19 w58 w39 w37 w5 w43 w8 w20 w7 w15 w19 w7 w11 w23 w44 w9 w32 w24 w26",
+   "h2": "w8 w36 w24 w27 w11 w31 w40 w34 w44 w58 w41 w59 w11 w35 w10 w31 w18 w8 w11",
+   "h3": "w53 w28 w39 w3 w55 w22 w0 w31 w8 w12",
+   "h4": "w24 w35 w32 w41 w31 w26 w43 w31 w26 w45 w53 w28 w31 w10 w5 w36 w1 w50 w48 w14 w18 w2 w17 w14 w34 w18",
+   "h5": "w49 w29 w36 w47 w49"
+  },
+  "errors": 106,
+  "length": 19,
+  "error_rate": 5.578947368421052,
+  "missed_speaker": 0,
+  "falarm_speaker": 5,
+  "scored_speaker": 1
+ },
+ {
+  "ref": {
+   "r0": "w7 w36 w7 w17 w49 w34 w52 w23 w34 w52 w48 w2 w48 w46 w28 w34",
+   "r1": "w27 w6 w47 w53 w41 w48",
+   "r2": "w19 w55 w2 w28 w16 w22 w55",
+   "r3": "w5 w28 w55 w7 w49 w51 w15 w13 w51 w47 w37 w44 w22 w55 w45 w39 w40 w27 w10 w39 w8 w50 w13 w52 w13 w51"
+  },
+  "hyp": {
+   "h0": "w36",
+   "h1": "w34 w17 w38 w34 w10 w20 w45 w18 w18 w36 w17",
+   "h2": "w54 w32 w57 w43 w52 w6 w8 w48 w50 w26 w58 w3 w17 w55 w41 w8 w44 w55 w8 w15 w9 w45 w20 w53 w15 w48 w53 w43 w25 w31",
+   "h3": "w36 w40 w17 w40",
+   "h4": "w24 w28 w4 w40 w50 w56 w49 w5 w25 w32 w47 w17 w44"
+  },
+  "errors": 63,
+  "length": 55,
+  "error_rate": 1.1454545454545455,
+  "missed_speaker": 0,
+  "falarm_speaker": 1,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "r0": "w31 w20 w37 w0 w55 w49 w54 w46 w5 w46 w29 w40 w42 w44 w22 w54 w4 w50 w34 w25 w13 w27 w52 w13 w31 w17 w20 w53 w18 w21",
+   "r1": "w36 w8 w36 w54 w31 w50 w21 w57 w43 w48 w3 w2 w6 w40 w50 w53 w29",
+   "r2": ""
+  },
+  "hyp": {
+   "h0": "w59 w54 w10",
+   "h1": "w29 w0 w27 w12 w44 w58 w8 w56 w41 w19 w10 w55 w59 w56",
+   "h2": "w5 w41 w23 w16 w5 w23 w42 w57",
+   "h3": "w10 w3 w25 w40 w19 w46 w44 w48 w14 w27 w41 w5 w45 w6 w0 w13 w30 w4 w8 w37"
+  },
+  "errors": 55,
+  "length": 47,
+  "error_rate": 1.1702127659574468,
+  "missed_speaker": 0,
+  "falarm_speaker": 1,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "s0": "w43 w28 w0 w0 w44 w21 w52 w7 w55 w27 w44 w8 w30 w4 w14 w24 w5 w46 w51 w6 w6 w20 w23 w56 w19 w8 w24 w49 w52 w48 w55 w8 w41 w43 w9 w4 w33 w36",
+   "s1": "w39 w41 w10 w28 w22",
+   "s2": "w40 w47 w9 w58 w26 w39 w43 w28 w55 w13 w5 w57 w6 w8 w48 w7 w37 w46"
+  },
+  "hyp": {
+   "h1": "w40 w47 w9 w58 w26 w39 w43 w5 w55 w13 w5 w57 w6 w8 w48 w7 w37 w44",
+   "h2": "w39 w41 w10 w28 w22"
+  },
+  "errors": 40,
+  "length": 61,
+  "error_rate": 0.6557377049180327,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "s0": "w19 w42 w47 w42 w47 w11 w7 w0",
+   "s1": "w44 w0 w10 w31 w22 w33 w33 w50 w52 w46 w16 w10 w23",
+   "s2": "w47 w49 w55 w17 w46 w56 w7 w49 w57 w1 w21 w51 w27",
+   "s3": "w33 w4 w16 w45 w36 w40 w4 w31 w29 w32 w23 w3 w31 w54 w36 w10 w23 w10 w16 w49 w6 w57",
+   "s4": "w14 w47 w32 w0 w2 w54 w55 w0 w15 w2 w30 w23",
+   "s5": "w58 w9 w11 w59 w54 w2 w35 w51 w58 w45 w47 w41 w26 w14 w20 w15 w26 w58 w46 w20 w17 w52 w4 w36 w23 w7 w32 w43 w57"
+  },
+  "hyp": {
+   "h0": "w33 w29 w16 w45 w36 w29 w12 w31 w29 w32 w23 w3 w31 w54 w36 w10 w23 w10 w59 w49 w6 w57",
+   "h1": "w58 w9 w11 w42 w54 w2 w35 w51 w58 w45 w47 w41 w17 w58 w20 w15 w26 w58 w46 w20 w17 w52 w4 w36 w23 w42 w32 w43 w57",
+   "h2": "w47 w49 w55 w17 w46 w56 w12 w49 w57 w10 w21 w51 w22",
+   "h3": "w14 w47 w32 w0 w10 w54 w55 w0 w15 w2 w30 w45",
+   "h4": "w44 w0 w10 w31 w22 w33 w25 w50 w52 w46 w6 w10 w0",
+   "h5": "w49 w42 w52 w42 w47 w11 w37 w0"
+  },
+  "errors": 19,
+  "length": 97,
+  "error_rate": 0.1958762886597938,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "s0": "w12 w57 w41 w28 w51 w8 w5 w57 w54",
+   "s1": "w7 w2 w29 w3 w10 w59 w36 w27 w52 w46 w25 w31 w1 w24 w43 w27 w11 w22 w13 w58 w11 w17 w17 w28 w56 w9"
+  },
+  "hyp": {
+   "h0": "w7 w2 w29 w3 w10 w59 w24 w12 w52 w46 w25 w31 w1 w24 w43 w27 w11 w22 w13 w58 w11 w20 w17 w51 w56 w30",
+   "h1": "w12 w57 w41 w28 w42 w8 w5 w57 w54"
+  },
+  "errors": 6,
+  "length": 35,
+  "error_rate": 0.17142857142857143,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "s0": "w22 w59 w53 w54 w11 w11 w15 w37 w20 w51 w47 w44 w22 w58 w37 w1 w45 w44 w22 w36 w36 w9 w36 w12 w53 w51 w56 w31 w34",
+   "s1": "w11 w31 w2 w5 w3 w14 w38 w14 w1 w33 w30 w0 w21 w58 w39 w12 w51 w8 w21 w45 w11 w58 w51 w54",
+   "s2": "w3 w1 w9 w37 w45 w58 w9 w49 w7 w54 w33 w55 w23 w4 w23 w45 w42 w25 w37 w6 w21 w19 w20 w8 w10"
+  },
+  "hyp": {
+   "h0": "w22 w59 w53 w35 w11 w11 w15 w37 w20 w19 w47 w44 w0 w58 w37 w1 w45 w44 w38 w36 w36 w9 w36 w31 w47 w22 w56 w56 w34",
+   "h1": "w11 w31 w2 w5 w13 w14 w16 w14 w1 w28 w30 w0 w21 w58 w39 w12 w30 w8 w21 w45 w11 w58 w51 w1",
+   "h2": "w3 w1 w10 w37 w4 w58 w9 w38 w7 w54 w33 w55 w23 w4 w23 w21 w42 w44 w37 w6 w21 w19 w20 w25 w10"
+  },
+  "errors": 19,
+  "length": 78,
+  "error_rate": 0.24358974358974358,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "s0": "w23 w0 w27 w5 w18 w52 w42 w40",
+   "s1": "w12 w6 w1 w13 w10 w40 w18 w5 w30 w54 w7 w19 w50 w25 w30 w31 w57 w42 w16 w5 w41 w34 w24 w11 w23 w56 w24 w23 w11 w28 w2 w16 w28 w29 w16",
+   "s2": "w53 w17 w36 w3 w9 w48 w44 w42 w6 w5 w42 w22 w51 w34 w26 w48 w37 w14 w35"
+  },
+  "hyp": {
+   "h1": "w27 w43 w1 w13 w10 w40 w18 w5 w30 w24 w7 w19 w50 w25 w30 w44 w57 w42 w16 w5 w37 w34 w24 w6 w23 w18 w24 w23 w11 w28 w2 w16 w28 w25 w38",
+   "h2": "w23 w0 w27 w5 w18 w30 w42 w40"
+  },
+  "errors": 29,
+  "length": 62,
+  "error_rate": 0.46774193548387094,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "s0": "w17 w53 w31 w54 w44 w43 w6 w55 w14 w8 w19 w47 w28 w49 w52 w20 w17 w46 w26 w38 w41 w5 w12 w28",
+   "s1": "w58 w52 w26 w47 w31 w48 w33 w55 w23 w52 w3 w32 w50 w10 w4 w19 w45 w32",
+   "s2": "w8 w49 w54 w33 w56 w36 w1 w11 w12 w56 w53 w12 w53 w3 w15 w2 w29 w3 w58 w23 w45 w12 w17 w23 w52 w29 w32 w25 w40 w59",
+   "s3": "w43 w1 w15 w23 w31 w38 w28 w11 w55 w30 w37 w35"
+  },
+  "hyp": {
+   "h1": "w17 w53 w31 w54 w44 w11 w6 w16 w14 w8 w19 w47 w28 w49 w52 w20 w17 w46 w26 w38 w41 w42 w12 w28",
+   "h2": "w58 w52 w26 w47 w31 w48 w33 w55 w23 w52 w3 w32 w33 w10 w4 w19 w45 w32",
+   "h3": "w8 w49 w54 w33 w56 w36 w1 w11 w45 w56 w53 w12 w53 w3 w15 w2 w29 w3 w58 w42 w45 w6 w17 w23 w52 w29 w32 w25 w40 w59"
+  },
+  "errors": 19,
+  "length": 84,
+  "error_rate": 0.2261904761904762,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "s0": "w26 w50 w56 w21 w23 w16 w37 w18 w29 w54 w7 w30 w3 w55 w40 w37 w37 w39 w4 w30 w56 w12 w32 w7",
+   "s1": "w33 w19 w26 w3 w55 w54 w9 w8 w12 w21 w26 w36 w57 w58 w29 w9 w20 w55 w45 w11 w49 w5 w31 w21 w40 w11 w20 w40 w3",
+   "s2": "w28 w17 w13 w48 w49"
+  },
+  "hyp": {
+   "h0": "w33 w19 w39 w3 w55 w54 w9 w34 w23 w21 w26 w36 w57 w0 w29 w9 w20 w55 w24 w11 w49 w2 w31 w21 w40 w11 w20 w40 w3",
+   "h1": "w28 w17 w13 w58 w49",
+   "h2": "w26 w50 w56 w46 w32 w23 w37 w18 w29 w54 w7 w30 w3 w6 w40 w44 w28 w39 w4 w30 w44 w12 w26 w7"
+  },
+  "errors": 15,
+  "length": 58,
+  "error_rate": 0.25862068965517243,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "s0": "w26 w53 w57 w6 w32 w46 w39 w7 w18 w7 w50 w6 w31",
+   "s1": "w38 w12 w49 w16 w53 w33 w12 w22 w45 w26 w18 w10 w2 w35 w31 w58 w13",
+   "s2": "w21 w15 w0 w0 w42 w5 w58 w7 w53 w36 w42 w31 w9 w5 w49 w32 w4 w46 w46 w6 w57 w16 w41 w14 w29 w18 w16 w29 w3 w6 w52 w11 w55 w2 w54",
+   "s3": "w23 w51 w43 w20 w27 w47 w7 w6 w54 w48 w56 w2 w0 w54 w8 w42 w41 w10 w21 w22 w57 w28 w39"
+  },
+  "hyp": {
+   "h0": "w38 w12 w25 w16 w53 w33 w12 w22 w45 w26 w44 w10 w2 w35 w58 w58 w13",
+   "h1": "w26 w24 w57 w6 w32 w46 w39 w7 w18 w7 w50 w6 w41",
+   "h2": "w23 w51 w43 w20 w27 w47 w7 w6 w54 w48 w56 w42 w0 w54 w8 w42 w52 w10 w21 w41 w57 w28 w39",
+   "h3": "w21 w48 w0 w0 w42 w14 w58 w7 w53 w28 w42 w31 w9 w5 w31 w32 w25 w46 w46 w5 w57 w16 w41 w14 w29 w18 w16 w29 w3 w6 w52 w11 w55 w2 w54"
+  },
+  "errors": 14,
+  "length": 88,
+  "error_rate": 0.1590909090909091,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "s0": "w6 w48 w42 w14 w0 w21 w22 w53 w40 w51 w18 w35",
+   "s1": "w23 w44 w6 w2 w57 w10 w31 w8 w52 w45 w47 w46 w26 w6 w16 w39 w12 w12 w7 w59 w54 w25 w13 w29 w52 w50 w12 w45 w21 w6 w48 w26 w2 w59 w40 w53 w43 w37",
+   "s2": "w49 w57 w28 w29 w42 w37 w32 w8 w31 w0 w33 w47",
+   "s3": "w35 w59 w27 w53 w37 w30 w59 w32",
+   "s4": "w44 w37 w11 w46 w52 w8 w6 w24 w42 w38 w38 w56 w20 w32 w56 w24"
+  },
+  "hyp": {
+   "h1": "w49 w57 w28 w29 w42 w45 w32 w8 w31 w0 w33 w22",
+   "h2": "w44 w37 w11 w46 w52 w8 w6 w24 w42 w6 w9 w3 w48 w32 w56 w24",
+   "h3": "w3 w44 w6 w2 w52 w10 w31 w8 w52 w45 w47 w46 w26 w6 w16 w39 w24 w12 w7 w59 w54 w25 w16 w29 w52 w50 w12 w45 w21 w6 w48 w26 w2 w46 w40 w53 w43 w11",
+   "h4": "w35 w2 w27 w53 w37 w30 w29 w32"
+  },
+  "errors": 26,
+  "length": 86,
+  "error_rate": 0.3023255813953488,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "s0": "w38 w3 w49 w59 w40 w39 w53 w42 w19 w31 w50 w36 w35 w22 w4 w50 w45 w20 w33 w14 w11 w33 w4 w50 w32",
+   "s1": "w26 w34 w34 w25 w5 w22 w14 w56 w13 w42 w21 w21 w23 w18 w13",
+   "s2": "w30 w35 w52 w48 w41 w0 w7 w42 w22 w28 w15 w57 w41 w39 w58 w39 w15 w2 w43 w56 w20 w24 w58 w50 w7 w24 w16 w34 w46 w18 w1 w58 w33 w52 w49 w23 w32 w51"
+  },
+  "hyp": {
+   "h0": "w38 w3 w49 w59 w6 w49 w53 w4 w19 w31 w50 w36 w35 w22 w4 w50 w45 w20 w33 w43 w29 w33 w4 w50 w32",
+   "h1": "w52 w34 w34 w25 w5 w22 w43 w0 w13 w42 w21 w21 w23 w59 w13",
+   "h2": "w30 w35 w52 w48 w41 w0 w7 w10 w22 w25 w15 w57 w41 w39 w58 w39 w15 w2 w43 w56 w55 w24 w0 w50 w7 w24 w13 w34 w46 w18 w1 w58 w33 w14 w49 w23 w42 w51"
+  },
+  "errors": 16,
+  "length": 78,
+  "error_rate": 0.20512820512820512,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "s0": "w41 w35 w4 w18 w42 w4 w16 w6 w12 w46 w37 w31 w21 w22 w8 w42 w41 w15 w6 w18 w39 w4 w57 w12 w20 w31 w28 w21 w39 w42 w19 w44 w37 w9",
+   "s1": "w51 w20 w27 w10 w0 w20 w15 w50 w14 w45 w47 w41 w27 w17 w53 w23 w8 w43 w46 w21 w56 w30 w29 w28 w22 w49 w19 w31",
+   "s2": "w6 w11 w41 w38 w5 w53 w17 w54 w52 w8 w57 w34 w12 w16 w46 w56 w40 w4 w46 w4 w57 w1 w54 w32 w40 w1 w52 w37 w37 w25 w49 w37 w13 w58 w2 w35 w16 w34 w57 w34",
+   "s3": "w41 w49 w9 w23 w25 w14 w57 w49 w37 w46 w54 w18 w8 w29 w32 w32 w5 w25 w23 w32 w0 w42 w15 w54 w51 w39 w43 w10 w48 w32 w8 w28 w10 w11 w36",
+   "s4": "w47 w46 w30 w22 w2 w14 w48 w31 w14 w4 w16 w23 w14 w2",
+   "s5": "w33 w58 w50 w23 w24 w30 w58 w29 w56 w2 w2 w41 w20 w6 w45 w33 w40 w53"
+  },
+  "hyp": {
+   "h0": "w41 w35 w4 w18 w42 w4 w16 w6 w12 w46 w37 w31 w21 w10 w8 w42 w41 w10 w6 w18 w14 w4 w57 w43 w20 w31 w53 w21 w39 w37 w40 w44 w37 w10",
+   "h1": "w47 w25 w30 w22 w46 w14 w48 w31 w14 w4 w16 w23 w14 w2",
+   "h2": "w37 w49 w42 w23 w43 w14 w57 w49 w37 w46 w12 w18 w8 w29 w32 w32 w57 w25 w50 w32 w0 w42 w38 w54 w49 w39 w43 w10 w48 w32 w8 w28 w10 w11 w36",
+   "h3": "w51 w20 w27 w10 w0 w20 w15 w50 w38 w45 w47 w45 w27 w33 w0 w23 w8 w43 w46 w27 w56 w30 w29 w28 w22 w49 w19 w31",
+   "h4": "w33 w58 w50 w23 w24 w30 w58 w29 w56 w2 w2 w41 w20 w6 w45 w13 w40 w53",
+   "h5": "w6 w11 w41 w24 w5 w5 w17 w54 w52 w16 w57 w2 w12 w16 w46 w56 w40 w4 w49 w4 w57 w1 w54 w32 w40 w1 w38 w37 w37 w25 w49 w37 w13 w58 w17 w35 w16 w34 w57 w34"
+  },
+  "errors": 31,
+  "length": 169,
+  "error_rate": 0.1834319526627219,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "s0": "w35 w18 w46 w53 w35 w58 w37 w22 w22 w52",
+   "s1": "w14 w38 w12 w29 w59 w25 w36 w0 w16 w11 w26 w32 w6 w35 w4 w32 w18 w21 w7 w51 w32 w16"
+  },
+  "hyp": {
+   "h0": "w35 w18 w46 w53 w35 w58 w37 w22 w22 w7",
+   "h1": "w14 w38 w12 w29 w59 w25 w36 w0 w16 w11 w26 w32 w6 w35 w4 w32 w20 w21 w7 w51 w32 w16"
+  },
+  "errors": 2,
+  "length": 32,
+  "error_rate": 0.0625,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "s0": "w15 w47 w15 w55 w16 w13 w14 w12 w53 w15 w53 w39 w22 w9 w49 w6 w7",
+   "s1": "w43 w42 w31 w39 w0 w48 w54 w34 w2 w54",
+   "s2": "w23 w39 w20 w31 w57 w56 w57 w36 w55 w17 w31 w11 w48 w58 w32 w17 w25 w14 w48 w36 w8 w3 w33 w51 w27 w30 w34 w2 w32 w22 w25 w55 w43 w49 w11",
+   "s3": "w7 w44 w33 w29 w20 w44 w0 w0 w43 w13 w24 w37 w6 w20 w23 w39 w55 w16 w11 w35 w16 w15 w17 w30 w39 w21 w23 w11 w31 w27 w13 w26 w44 w48",
+   "s4": "w23 w54 w25 w17 w28 w11 w36 w8 w36 w43 w14 w52 w6 w46 w17 w51 w15 w35 w27 w54 w24 w12 w9 w51 w47 w9 w30 w51"
+  },
+  "hyp": {
+   "h0": "w57 w54 w25 w17 w28 w11 w36 w8 w36 w43 w52 w52 w6 w47 w17 w51 w15 w35 w27 w7 w24 w12 w9 w51 w47 w9 w30 w51",
+   "h1": "w23 w39 w20 w31 w39 w56 w57 w10 w55 w17 w31 w11 w48 w58 w21 w17 w25 w14 w48 w36 w8 w3 w33 w51 w27 w30 w34 w1 w15 w22 w25 w55 w10 w49 w59",
+   "h2": "w7 w44 w25 w29 w20 w39 w41 w0 w43 w13 w24 w37 w33 w20 w42 w39 w55 w16 w11 w35 w16 w15 w44 w30 w39 w21 w23 w11 w31 w27 w13 w26 w44 w48",
+   "h3": "w19 w42 w31 w39 w52 w48 w18 w34 w59 w54",
+   "h4": "w15 w47 w15 w55 w16 w13 w14 w56 w53 w15 w47 w39 w22 w9 w40 w6 w7"
+  },
+  "errors": 24,
+  "length": 124,
+  "error_rate": 0.1935483870967742,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "s0": "w41 w47 w34 w51 w17 w26 w12 w54 w4 w11 w8 w18 w7 w40 w29 w39 w28 w17 w44 w39 w31 w12 w20",
+   "s1": "w9 w3 w34 w1 w11 w6",
+   "s2": "w17 w8 w45 w28 w46 w0 w14 w5 w9 w0 w31 w13 w21 w26 w19 w50 w51 w31 w23 w29 w44 w50 w2",
+   "s3": "w5 w53 w48 w9 w3 w17 w49 w25 w4 w34 w30 w11 w12 w57 w53 w16 w52 w24 w53 w0 w7 w49 w45 w15 w24 w49"
+  },
+  "hyp": {
+   "h0": "w47 w3 w34 w1 w11 w6",
+   "h1": "w17 w8 w45 w59 w46 w30 w14 w56 w42 w0 w40 w13 w50 w26 w50 w50 w51 w31 w23 w29 w49 w10 w2",
+   "h2": "w41 w47 w34 w51 w22 w26 w12 w54 w14 w11 w8 w18 w7 w40 w29 w24 w28 w57 w45 w39 w31 w12 w11",
+   "h3": "w5 w53 w48 w9 w3 w17 w33 w18 w4 w34 w30 w11 w12 w57 w53 w16 w52 w24 w53 w34 w7 w43 w45 w15 w24 w49"
+  },
+  "errors": 20,
+  "length": 78,
+  "error_rate": 0.2564102564102564,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "s0": "w33 w42 w4 w2 w53 w8 w11 w55 w2 w12 w6",
+   "s1": "w12 w6 w2 w36 w41 w53 w24 w42 w31 w33 w39 w44 w37 w16 w3 w23 w14 w38 w45 w4 w0 w59 w58 w13 w41 w31 w59 w56 w53 w5 w29 w51 w40 w3 w23 w35"
+  },
+  "hyp": {
+   "h0": "w33 w42 w39 w2 w4 w8 w13 w55 w46 w12 w6",
+   "h1": "w42 w6 w2 w47 w41 w53 w24 w42 w31 w33 w39 w50 w25 w16 w3 w23 w14 w38 w45 w4 w0 w59 w58 w13 w41 w31 w59 w56 w53 w5 w29 w51 w40 w3 w2 w35"
+  },
+  "errors": 9,
+  "length": 47,
+  "error_rate": 0.19148936170212766,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "s0": "w56 w19 w0 w19 w14 w13 w54 w20 w1 w49 w52 w44 w52",
+   "s1": "w58 w35 w32 w35 w36 w59 w36 w9 w6 w2 w29 w22 w9 w8 w16 w23 w56 w37 w15 w14 w16 w51",
+   "s2": "w5 w36 w25 w36 w58 w13 w46 w4 w46 w20 w50 w30 w11 w31 w52 w57 w44 w44 w36 w52 w58 w6 w38 w41",
+   "s3": "w2 w46 w51 w36 w24 w5 w49 w3 w58 w49 w21 w22 w56 w52 w27 w26 w59 w55 w7 w55 w49 w14 w47 w41",
+   "s4": "w40 w49 w40 w24 w3",
+   "s5": "w33 w2 w20 w34 w36 w9 w20 w32 w44 w14 w9 w3 w43 w46 w25 w28 w48 w38 w36 w32 w5 w14 w27 w18"
+  },
+  "hyp": {
+   "h0": "w5 w36 w25 w36 w58 w13 w46 w4 w46 w25 w50 w39 w11 w31 w52 w57 w44 w44 w36 w26 w58 w6 w38 w41",
+   "h1": "w19 w22 w0 w19 w14 w2 w54 w20 w1 w46 w52 w3 w52",
+   "h2": "w33 w53 w20 w44 w36 w9 w20 w32 w44 w14 w9 w3 w43 w46 w25 w28 w48 w38 w36 w32 w5 w12 w27 w18",
+   "h3": "w41 w49 w42 w24 w3",
+   "h4": "w58 w35 w55 w35 w36 w59 w36 w9 w6 w2 w29 w12 w9 w8 w16 w15 w56 w37 w15 w14 w43 w51",
+   "h5": "w2 w46 w51 w36 w24 w5 w49 w3 w58 w35 w21 w22 w56 w52 w46 w26 w59 w55 w7 w55 w49 w19 w47 w41"
+  },
+  "errors": 20,
+  "length": 112,
+  "error_rate": 0.17857142857142858,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "s0": "w37 w34 w43 w51 w12 w55 w8 w19 w44 w45 w57 w33 w58",
+   "s1": "w27 w58 w49 w9 w41 w59 w36 w58 w10 w20 w4 w35 w34",
+   "s2": "w11 w20 w53 w56 w9 w46 w1 w48 w20 w56 w26 w26"
+  },
+  "hyp": {
+   "h1": "w11 w20 w53 w56 w9 w46 w1 w48 w12 w56 w26 w26",
+   "h2": "w27 w58 w49 w9 w41 w59 w28 w58 w10 w20 w4 w35 w34"
+  },
+  "errors": 15,
+  "length": 38,
+  "error_rate": 0.39473684210526316,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "s0": "w25 w39 w47 w36 w38 w34 w33 w41 w56 w45 w50 w2 w33 w6 w28 w29 w52 w56 w2 w56 w15 w33 w34 w25 w47",
+   "s1": "w35 w24 w33 w48 w40 w3 w12",
+   "s2": "w28 w25 w56 w19 w49 w52 w18 w29 w10 w27 w18 w39 w58 w3 w44 w33 w57 w9 w29 w53 w41 w28 w5",
+   "s3": "w7 w11 w49 w37 w57 w44 w34 w8 w25 w26 w20 w28 w1 w11 w29 w37 w57 w45 w57 w12 w56 w29 w5 w16 w20 w44 w41 w58 w45 w50 w10 w45 w46 w7 w5 w7 w45",
+   "s4": "w40 w23 w5 w33 w45 w24 w46 w50 w32 w39 w10 w24 w35 w24 w2 w49 w10 w58 w21 w36 w55 w42 w55 w9 w10 w55 w9 w11 w49 w45 w3 w26 w19"
+  },
+  "hyp": {
+   "h0": "w8 w23 w48 w33 w45 w24 w46 w56 w32 w39 w10 w24 w35 w24 w56 w49 w10 w58 w21 w9 w22 w54 w36 w9 w10 w55 w26 w11 w18 w45 w3 w26 w19",
+   "h1": "w29 w39 w47 w49 w38 w34 w33 w27 w56 w30 w44 w2 w33 w6 w28 w29 w36 w56 w2 w56 w15 w33 w34 w25 w47",
+   "h2": "w35 w24 w33 w48 w40 w36 w12",
+   "h3": "w7 w11 w49 w37 w57 w44 w7 w40 w25 w26 w20 w28 w1 w22 w29 w37 w12 w45 w57 w19 w56 w29 w43 w16 w20 w44 w41 w58 w53 w50 w10 w45 w46 w7 w5 w7 w45",
+   "h4": "w28 w25 w56 w19 w49 w52 w18 w29 w10 w27 w18 w39 w58 w3 w44 w33 w57 w24 w29 w53 w41 w28 w5"
+  },
+  "errors": 25,
+  "length": 125,
+  "error_rate": 0.2,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "s0": "w45 w2 w17 w26 w5 w31 w56 w15 w23 w28 w53 w19 w13 w33 w19 w11 w7 w23 w50 w2 w49 w12 w58 w5 w28",
+   "s1": "w1 w51 w30 w57 w32 w9 w12 w21 w59 w30 w46 w55 w33 w19 w49 w20 w9 w49 w55 w6 w52 w33 w43 w8 w13 w46 w2 w29 w24 w45 w55 w33 w7 w0 w19 w59 w2",
+   "s2": "w21 w29 w56 w2 w6 w33 w49 w42 w47 w19",
+   "s3": "w36 w48 w19 w40 w57 w13"
+  },
+  "hyp": {
+   "h0": "w1 w51 w30 w57 w32 w7 w39 w21 w34 w30 w46 w45 w33 w19 w19 w20 w9 w49 w30 w6 w24 w27 w43 w8 w13 w46 w2 w29 w24 w45 w48 w33 w7 w0 w19 w59 w52",
+   "h1": "w36 w48 w19 w40 w57 w13",
+   "h2": "w45 w2 w17 w26 w5 w31 w56 w15 w23 w28 w53 w30 w30 w33 w49 w11 w7 w23 w50 w2 w35 w12 w58 w5 w28",
+   "h3": "w21 w29 w56 w2 w6 w33 w49 w42 w47 w19"
+  },
+  "errors": 14,
+  "length": 78,
+  "error_rate": 0.1794871794871795,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "s0": "w11 w42 w42 w4 w47 w59 w45 w36 w53 w31 w7 w37 w38 w29 w20 w35 w6 w52 w28 w11",
+   "s1": "w25 w4 w38 w6 w43 w52 w38 w49 w52 w24 w20 w31 w41 w42 w3 w5 w13 w52 w8 w56 w37 w57 w48 w40",
+   "s2": "w48 w9 w42 w9 w28",
+   "s3": "w18 w24 w39 w36 w28 w12 w13 w43 w56 w20 w19 w36 w50 w58 w43 w19 w58 w59 w27 w45 w58 w22 w5 w37 w0 w39 w32 w25 w54 w8 w54 w18 w3 w23 w57 w35 w3 w0 w45",
+   "s4": "w52 w22 w7 w55 w18 w55 w1 w15 w27 w44 w37 w25 w40 w20 w45 w24 w25 w24 w27 w34 w13 w42 w11 w30 w8 w12 w35 w24 w53 w59 w23 w53 w26 w9 w18 w55 w42 w8 w8 w0",
+   "s5": "w41 w1 w9 w46 w56 w31 w42 w27 w8"
+  },
+  "hyp": {
+   "h0": "w41 w1 w9 w46 w56 w31 w42 w31 w8",
+   "h1": "w48 w9 w42 w9 w28",
+   "h2": "w52 w22 w7 w30 w18 w46 w1 w15 w27 w44 w37 w56 w40 w20 w45 w24 w25 w24 w27 w34 w13 w42 w11 w29 w8 w12 w35 w24 w53 w59 w23 w59 w26 w9 w18 w55 w42 w8 w8 w0",
+   "h3": "w18 w24 w31 w32 w50 w12 w17 w43 w56 w20 w19 w36 w50 w58 w43 w50 w58 w59 w27 w45 w58 w9 w5 w37 w0 w39 w32 w25 w54 w8 w36 w18 w3 w23 w57 w10 w3 w0 w45",
+   "h4": "w25 w4 w38 w6 w43 w52 w38 w49 w52 w24 w20 w31 w41 w42 w34 w5 w13 w52 w8 w56 w37 w57 w41 w40",
+   "h5": "w11 w42 w42 w4 w47 w59 w45 w36 w53 w0 w7 w6 w38 w29 w20 w35 w6 w39 w38 w11"
+  },
+  "errors": 20,
+  "length": 137,
+  "error_rate": 0.145985401459854,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "s0": "w45 w7 w5 w54 w38 w8 w24 w42 w48 w57 w41 w36",
+   "s1": "w57 w7 w44 w11 w16 w18 w29 w42 w59 w4 w40 w29 w59 w17 w49 w27",
+   "s2": "w16 w10 w49 w4 w17 w49 w3 w24 w24 w21 w3 w16 w52 w16 w11 w28 w4 w31 w59 w12 w39 w25 w11 w41 w31",
+   "s3": "w9 w34 w49 w27 w13 w39 w41 w6 w58 w28 w45",
+   "s4": "w6 w2 w4 w4 w36 w46 w16 w49 w28 w1 w57 w31 w9 w41 w40 w0 w59 w2 w42 w24 w17",
+   "s5": "w44 w21 w57 w25 w36 w0 w32 w45 w49 w31 w30 w27 w25 w54"
+  },
+  "hyp": {
+   "h0": "w16 w10 w49 w4 w17 w49 w3 w24 w24 w21 w34 w16 w52 w16 w11 w28 w4 w31 w59 w12 w39 w25 w44 w41 w40",
+   "h1": "w9 w2 w46 w27 w13 w39 w41 w6 w58 w28 w45",
+   "h2": "w6 w21 w50 w4 w36 w46 w16 w49 w28 w1 w57 w31 w9 w47 w41 w58 w59 w44 w42 w40 w19",
+   "h3": "w57 w39 w37 w52 w31 w18 w29 w12 w59 w4 w40 w29 w59 w17 w49 w53",
+   "h4": "w45 w7 w11 w54 w9 w8 w23 w42 w48 w57 w6 w36",
+   "h5": "w44 w21 w56 w25 w11 w0 w32 w45 w49 w31 w30 w27 w9 w54"
+  },
+  "errors": 26,
+  "length": 99,
+  "error_rate": 0.26262626262626265,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "s0": "w11 w39 w44 w2 w38 w11 w45 w31 w39 w5 w40 w52 w50 w19 w22 w26 w0 w35 w15 w12",
+   "s1": "w33 w6 w39 w23 w55 w48 w34 w32 w14 w29 w49 w40",
+   "s2": "w17 w3 w12 w7 w50 w9 w43 w54 w58 w30 w31 w11 w10 w42 w59 w2 w3 w41",
+   "s3": "w18 w13 w27 w16 w21 w39 w51 w56 w48 w29 w2 w6 w47 w3 w59 w34 w11 w10 w50 w1 w31 w32 w7 w4 w57 w15 w46 w28",
+   "s4": "w26 w12 w47 w43 w57 w20 w14 w49 w7 w20 w14 w6 w15 w47 w26 w55 w12 w24 w57 w14 w4 w30 w37 w31 w3"
+  },
+  "hyp": {
+   "h0": "w23 w46 w22 w7 w50 w44 w43 w54 w29 w30 w21 w11 w10 w50 w59 w2 w35 w41",
+   "h1": "w54 w12 w47 w43 w57 w20 w27 w49 w7 w20 w14 w6 w15 w36 w26 w55 w30 w24 w57 w14 w4 w30 w37 w31 w3",
+   "h2": "w11 w46 w44 w2 w38 w11 w45 w42 w39 w5 w40 w52 w29 w19 w45 w26 w0 w35 w15 w12",
+   "h3": "w33 w57 w39 w23 w55 w48 w34 w32 w14 w29 w49 w40",
+   "h4": "w18 w13 w27 w16 w21 w24 w51 w56 w48 w35 w2 w6 w47 w21 w59 w30 w11 w10 w50 w1 w31 w32 w7 w4 w57 w15 w23 w28"
+  },
+  "errors": 22,
+  "length": 103,
+  "error_rate": 0.21359223300970873,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "s0": "w30 w45 w34 w43 w52 w34 w57 w18 w28 w39 w23 w51",
+   "s1": "w12 w57 w56 w29 w5 w5 w25 w57 w11",
+   "s2": "w4 w6 w10 w17 w7 w44 w9 w31 w9 w55 w13 w33 w40 w1 w18 w26 w43 w34 w59 w8 w30 w22 w26",
+   "s3": "w47 w41 w1 w18 w12 w4 w1 w55 w51 w14 w53 w33 w41 w21 w26 w37 w21 w41 w41 w50 w20 w31 w37 w42 w44 w33 w53 w35 w28 w29 w19 w36 w8",
+   "s4": "w10 w50 w16 w14 w30 w23 w18 w49 w54 w3 w9 w22 w18 w29 w10 w39 w59 w10 w45 w34 w18 w11 w11 w53",
+   "s5": "w10 w15 w7 w2 w20 w36 w8 w28 w16 w23 w11 w13 w35 w45"
+  },
+  "hyp": {
+   "h1": "w12 w57 w34 w29 w5 w5 w25 w57 w11",
+   "h2": "w10 w15 w42 w2 w54 w36 w8 w22 w16 w23 w11 w46 w35 w45",
+   "h3": "w10 w50 w46 w14 w30 w23 w37 w49 w19 w3 w9 w22 w37 w29 w26 w39 w59 w29 w45 w34 w11 w11 w11 w53",
+   "h4": "w4 w6 w10 w17 w7 w44 w9 w19 w9 w55 w13 w33 w40 w1 w18 w26 w43 w17 w59 w8 w30 w22 w26",
+   "h5": "w30 w45 w34 w43 w52 w34 w57 w16 w3 w29 w23 w10"
+  },
+  "errors": 51,
+  "length": 115,
+  "error_rate": 0.4434782608695652,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "s0": "w40 w58 w22 w3 w18 w18 w33 w40 w59 w4 w32 w12 w49 w40 w11 w48 w6 w38 w48 w10 w34 w20 w55 w20 w52 w54 w43 w51 w19 w17 w43",
+   "s1": "w6 w34 w37 w22 w52 w9 w0 w8 w33 w18 w23 w49 w31 w26 w21 w58 w58 w10 w6 w13 w9 w32 w14 w53 w12 w50 w57 w35",
+   "s2": "w54 w34 w45 w35 w44 w48 w51 w7 w26 w29 w58 w4 w7 w52 w8 w59 w1 w30 w22 w19 w44 w23 w8 w52 w28 w56 w38 w33 w48 w21 w11 w45 w19 w1 w47 w52 w7 w14",
+   "s3": "w54 w44 w9 w44 w14 w19 w8 w13 w8 w5 w27 w44 w48"
+  },
+  "hyp": {
+   "h0": "w6 w34 w6 w42 w52 w7 w0 w19 w33 w18 w23 w49 w31 w26 w22 w9 w58 w10 w6 w13 w32 w32 w14 w53 w52 w50 w13 w35",
+   "h1": "w54 w48 w45 w35 w13 w48 w51 w7 w26 w43 w58 w22 w7 w52 w8 w59 w1 w30 w22 w19 w44 w23 w8 w52 w31 w18 w38 w33 w48 w21 w11 w45 w19 w1 w47 w52 w7 w14",
+   "h2": "w54 w43 w9 w28 w14 w19 w25 w13 w8 w59 w27 w23 w48",
+   "h3": "w40 w58 w22 w53 w18 w18 w33 w40 w59 w4 w32 w12 w49 w40 w11 w48 w6 w29 w16 w10 w34 w20 w47 w4 w52 w11 w43 w51 w39 w17 w43"
+  },
+  "errors": 27,
+  "length": 110,
+  "error_rate": 0.24545454545454545,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 4
+ },
+ {
+  "ref": {
+   "s0": "w50 w29 w12 w18 w42 w31 w31 w32 w16 w34 w21 w51 w55 w34 w34 w1 w48 w2 w27 w56 w58 w7 w24 w28 w20 w54 w24 w28 w29 w2 w2 w11 w35 w42 w55 w49",
+   "s1": "w56 w45 w10 w31 w27 w8 w19 w45 w24 w31 w48 w7 w36 w43 w31 w42 w35 w43 w34 w36 w30 w30 w35 w54",
+   "s2": "w32 w3 w25 w16 w31 w37 w24 w39 w43 w22 w49 w18 w20 w3 w1",
+   "s3": "w8 w53 w23 w22 w51 w47 w37",
+   "s4": "w48 w57 w40 w21 w24 w6",
+   "s5": "w22 w22 w26 w22 w3 w42 w15 w15 w15 w41 w19 w37 w5 w58 w44 w4 w55 w19 w7 w21 w10 w1 w34 w20 w2 w29 w42 w55 w27 w36 w32 w57"
+  },
+  "hyp": {
+   "h1": "w52 w45 w10 w31 w27 w8 w19 w45 w24 w31 w1 w7 w36 w31 w31 w42 w35 w43 w34 w36 w30 w30 w35 w54",
+   "h2": "w48 w57 w40 w9 w24 w6",
+   "h3": "w50 w29 w12 w18 w42 w31 w31 w32 w43 w34 w21 w12 w51 w34 w34 w1 w48 w2 w10 w56 w50 w7 w24 w54 w46 w54 w55 w28 w29 w2 w26 w11 w35 w42 w55 w49",
+   "h4": "w32 w3 w25 w16 w42 w37 w24 w39 w43 w22 w49 w51 w20 w3 w1",
+   "h5": "w8 w53 w23 w22 w13 w47 w37"
+  },
+  "errors": 48,
+  "length": 120,
+  "error_rate": 0.4,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "s0": "w31 w34 w23 w44 w7 w20 w34 w27",
+   "s1": "w43 w15 w17 w56 w50 w59 w9 w23 w30 w45 w23 w52 w19 w1 w41 w57 w38 w2 w53 w47 w42 w51 w3 w44 w58 w50 w42 w15 w16 w35 w24 w19 w40 w44 w23",
+   "s2": "w34 w55 w15 w54 w28 w24 w0 w58 w25 w59 w58 w16",
+   "s3": "w5 w59 w52 w48 w15 w19 w13 w55 w56 w10 w58 w28 w40 w20 w56 w51 w49 w41 w26 w50 w2 w17 w55 w5",
+   "s4": "w30 w47 w26 w59 w53 w21 w45 w27 w56 w58 w52 w6 w52 w10 w44 w16 w32 w4 w22 w26 w38 w46 w52 w35 w47 w20 w29 w44 w1 w48 w3 w41 w41 w11 w40 w28",
+   "s5": "w0 w25 w12 w40 w19 w20 w36 w5 w7 w10 w15 w33 w45"
+  },
+  "hyp": {
+   "h0": "w31 w34 w23 w44 w7 w20 w26 w27",
+   "h1": "w34 w55 w15 w54 w1 w24 w0 w58 w25 w59 w44 w16",
+   "h2": "w39 w47 w26 w23 w36 w45 w45 w27 w56 w58 w52 w6 w52 w10 w44 w16 w32 w4 w22 w26 w38 w46 w52 w11 w47 w18 w29 w44 w1 w48 w3 w41 w30 w20 w40 w28",
+   "h3": "w5 w59 w52 w48 w35 w21 w13 w55 w56 w10 w58 w28 w40 w20 w32 w51 w49 w41 w26 w50 w2 w17 w55 w5",
+   "h4": "w43 w15 w20 w56 w50 w59 w9 w23 w30 w45 w23 w52 w19 w1 w41 w57 w38 w2 w53 w47 w42 w51 w54 w44 w58 w50 w3 w15 w16 w29 w24 w19 w40 w22 w23",
+   "h5": "w0 w25 w46 w40 w5 w20 w36 w5 w7 w10 w15 w33 w45"
+  },
+  "errors": 21,
+  "length": 128,
+  "error_rate": 0.1640625,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "s0": "w49 w36 w11 w26 w58 w4 w15 w49 w31 w43 w6 w56 w21 w1 w18 w43 w43 w7 w25 w23 w37 w59 w6 w53 w20 w9 w1 w5 w29 w53 w45 w42 w30 w29 w40 w17 w38 w42",
+   "s1": "w21 w2 w41 w39 w28"
+  },
+  "hyp": {
+   "h0": "w49 w36 w11 w26 w55 w41 w15 w49 w31 w43 w6 w16 w49 w1 w54 w43 w43 w7 w25 w23 w19 w59 w6 w53 w20 w9 w42 w23 w29 w53 w45 w42 w30 w29 w40 w17 w38 w42",
+   "h1": "w21 w21 w41 w39 w28"
+  },
+  "errors": 9,
+  "length": 43,
+  "error_rate": 0.20930232558139536,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "s0": "w40 w41 w33 w5 w18 w29 w27 w5 w58 w51 w30 w19 w9 w8 w43 w57 w19 w53 w15 w33 w27 w18 w36 w3 w35 w4 w58 w2 w32 w6 w32 w27 w26 w6 w29 w42 w46 w36",
+   "s1": "w22 w16 w37 w5 w49 w32 w1 w7 w47 w42 w29 w11 w50 w11 w53 w25 w2 w5 w26 w56 w45",
+   "s2": "w20 w37 w46 w29 w48 w42 w28 w39 w51 w16 w21 w58 w55 w51 w11 w13 w11 w5 w47 w38 w16 w55 w43 w6",
+   "s3": "w34 w1 w0 w25 w7 w0 w10 w41 w30 w29 w44 w25 w55 w42 w47 w38 w46 w31 w19 w39 w52 w39 w23 w44 w43 w44 w43 w25 w51 w19 w5 w8",
+   "s4": "w0 w12 w7 w52 w1 w44 w12 w54 w1 w13 w30 w41 w9"
+  },
+  "hyp": {
+   "h1": "w0 w54 w33 w5 w18 w29 w27 w5 w58 w51 w30 w19 w9 w8 w43 w57 w19 w53 w15 w33 w57 w18 w36 w39 w35 w4 w58 w18 w32 w6 w32 w27 w26 w6 w29 w42 w46 w36",
+   "h2": "w20 w37 w46 w29 w48 w42 w28 w39 w51 w13 w21 w58 w55 w12 w31 w26 w11 w5 w47 w38 w16 w55 w43 w6",
+   "h3": "w55 w1 w4 w25 w14 w14 w10 w41 w30 w29 w44 w25 w55 w42 w47 w38 w3 w31 w19 w39 w52 w6 w23 w44 w43 w35 w6 w7 w51 w19 w18 w8",
+   "h4": "w22 w16 w37 w23 w49 w54 w1 w7 w47 w53 w29 w11 w50 w23 w53 w25 w2 w5 w26 w56 w45"
+  },
+  "errors": 36,
+  "length": 128,
+  "error_rate": 0.28125,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "s0": "w58 w26 w57 w29 w54 w33 w50 w43 w23 w1 w28 w9 w49 w0 w45 w51 w33 w4 w5 w21 w20 w25 w49 w10 w27 w3 w25 w48 w2 w42 w59",
+   "s1": "w57 w36 w3 w40 w45 w51 w42 w56 w33 w18 w26 w25 w56 w43",
+   "s2": "w55 w19 w46 w47 w20 w58 w22 w0 w52 w17 w57 w33 w39 w58 w9 w44 w25 w28 w41 w13 w56 w34 w39 w50 w39 w41 w28 w44 w22 w56 w51 w50 w41 w25 w49 w12 w56 w19 w5 w2",
+   "s3": "w21 w24 w46 w46 w47 w56 w8 w33 w34 w18 w13 w5 w32 w35 w19 w33 w21 w48 w40 w10 w1 w1 w56 w50 w34 w37 w16 w15 w53 w49 w19 w46 w27 w32 w7 w46 w3 w53 w23",
+   "s4": "w40 w32 w22 w7 w3 w48 w41 w7 w28 w19 w36 w47 w0 w29 w21 w15 w51 w47 w37 w36 w45"
+  },
+  "hyp": {
+   "h0": "w58 w26 w57 w29 w54 w33 w50 w43 w23 w1 w28 w45 w49 w0 w27 w51 w33 w4 w5 w21 w20 w25 w49 w10 w27 w3 w25 w48 w2 w42 w59",
+   "h1": "w8 w19 w46 w47 w20 w58 w22 w0 w10 w17 w57 w33 w39 w58 w36 w44 w25 w19 w41 w13 w56 w34 w37 w50 w39 w41 w28 w47 w22 w22 w2 w50 w41 w25 w49 w12 w56 w19 w5 w2",
+   "h2": "w21 w24 w46 w46 w47 w56 w8 w33 w34 w18 w13 w5 w32 w35 w19 w33 w21 w48 w40 w10 w1 w1 w35 w39 w34 w37 w16 w15 w53 w49 w42 w46 w1 w32 w7 w46 w3 w53 w34",
+   "h3": "w57 w36 w55 w40 w45 w1 w42 w56 w33 w6 w26 w25 w49 w19",
+   "h4": "w40 w32 w20 w45 w24 w9 w41 w7 w28 w19 w12 w47 w0 w29 w21 w15 w51 w47 w37 w36 w1"
+  },
+  "errors": 26,
+  "length": 145,
+  "error_rate": 0.1793103448275862,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "s0": "w17 w35 w37 w43 w6 w15",
+   "s1": "w41 w50 w8 w19 w36 w26 w28 w5 w54 w40 w32 w13 w50 w9 w23 w34 w10 w50 w15 w34 w27 w58 w35 w28 w2 w0 w52 w29 w53 w39 w18 w41 w10 w0 w3 w59 w58 w30 w17 w38",
+   "s2": "w53 w43 w24 w22 w53 w40 w13 w37 w53 w32 w18 w2 w10 w47 w34 w36 w4 w19 w5 w25 w44"
+  },
+  "hyp": {
+   "h0": "w41 w50 w8 w19 w36 w26 w28 w5 w54 w40 w32 w13 w50 w9 w23 w34 w10 w50 w59 w30 w0 w58 w35 w28 w2 w0 w52 w29 w53 w1 w18 w41 w10 w52 w3 w59 w58 w30 w17 w38",
+   "h1": "w23 w43 w24 w22 w17 w40 w13 w52 w53 w32 w18 w2 w10 w47 w34 w36 w4 w19 w52 w25 w17",
+   "h2": "w17 w35 w37 w43 w6 w15"
+  },
+  "errors": 10,
+  "length": 67,
+  "error_rate": 0.14925373134328357,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 3
+ },
+ {
+  "ref": {
+   "s0": "w47 w4 w8 w16 w59 w36 w54 w14 w56 w33 w46 w50 w17",
+   "s1": "w54 w43 w1 w44 w43 w34 w39 w16 w43 w35 w56 w29 w0 w27 w41 w43 w41"
+  },
+  "hyp": {
+   "h1": "w47 w4 w8 w16 w59 w21 w54 w14 w30 w33 w51 w50 w17"
+  },
+  "errors": 20,
+  "length": 30,
+  "error_rate": 0.6666666666666666,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "s0": "w15 w21 w53 w3 w52 w21 w33 w50 w15 w4 w49 w38 w39 w28 w48 w6 w40 w28 w37 w7 w5 w3 w58 w2 w24 w20 w56 w54 w44 w4 w50 w8 w3 w58 w51",
+   "s1": "w3 w19 w39 w40 w27 w4 w6 w43 w3 w35 w3 w18 w54 w24 w25 w6 w39 w48 w26 w14 w55 w38 w50 w42 w39 w0 w29 w24 w29 w50 w27 w56 w39"
+  },
+  "hyp": {
+   "h1": "w15 w21 w12 w3 w52 w12 w33 w50 w15 w4 w49 w38 w39 w28 w48 w29 w40 w28 w37 w7 w5 w3 w58 w2 w24 w20 w56 w54 w44 w4 w50 w0 w1 w58 w28"
+  },
+  "errors": 39,
+  "length": 68,
+  "error_rate": 0.5735294117647058,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "s0": "w2 w1 w12 w12 w18 w11 w14 w56 w16 w46 w11 w21 w54 w35 w15 w11 w12 w1 w11 w53 w16 w58 w6 w1 w53 w43 w8 w24",
+   "s1": "w21 w59 w13 w19 w29 w15 w23 w51 w23 w42 w10 w33",
+   "s2": "w56 w45 w4 w7 w9 w56 w59 w8 w50 w12 w12 w34 w24 w44 w23 w20 w38 w27 w40 w15 w58 w2 w48 w39 w37 w12 w54 w34 w18 w50 w9 w20",
+   "s3": "w3 w40 w50 w17 w55 w8 w54 w32 w37 w56 w31 w13 w46 w5 w50 w30 w50 w42 w39 w4",
+   "s4": "w32 w24 w48 w56 w41 w48 w32 w23 w31 w33 w29 w11 w20 w45 w23",
+   "s5": "w44 w30 w45 w31 w30 w17 w37 w25 w40 w58 w50 w37 w41 w2 w13 w14 w57 w12 w28 w55 w15 w25 w13 w19 w27 w56 w24 w36 w10 w59 w53 w23 w16 w35 w5 w8 w48 w5"
+  },
+  "hyp": {
+   "h1": "w32 w24 w17 w56 w4 w48 w32 w23 w31 w33 w29 w11 w20 w38 w23",
+   "h2": "w2 w1 w12 w12 w19 w11 w14 w56 w16 w46 w11 w41 w54 w35 w25 w11 w12 w1 w11 w53 w16 w58 w6 w1 w54 w49 w8 w24",
+   "h3": "w44 w30 w8 w31 w47 w51 w37 w25 w40 w58 w50 w37 w41 w2 w13 w14 w8 w21 w28 w55 w15 w25 w13 w19 w27 w24 w6 w36 w10 w59 w53 w43 w16 w44 w5 w12 w24 w5",
+   "h4": "w3 w40 w3 w17 w20 w8 w54 w7 w26 w56 w57 w13 w13 w5 w50 w30 w36 w42 w39 w4",
+   "h5": "w56 w45 w9 w7 w9 w56 w59 w8 w50 w12 w12 w5 w24 w44 w23 w20 w38 w27 w40 w15 w15 w39 w48 w39 w37 w36 w44 w34 w18 w50 w9 w20"
+  },
+  "errors": 44,
+  "length": 145,
+  "error_rate": 0.30344827586206896,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 6
+ },
+ {
+  "ref": {
+   "s0": "w58 w31 w26 w48 w35 w7 w23 w4 w48 w6 w32 w49 w49 w20 w26 w28 w10 w16",
+   "s1": "w32 w2 w29 w1 w4 w40 w44 w43 w47 w29 w24 w21 w47 w25 w54 w12 w25 w2"
+  },
+  "hyp": {
+   "h1": "w22 w45 w43 w48 w35 w40 w23 w4 w48 w6 w32 w49 w0 w24 w26 w28 w10 w16"
+  },
+  "errors": 24,
+  "length": 36,
+  "error_rate": 0.6666666666666666,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "s0": "w0 w21 w52 w12 w43 w42",
+   "s1": "w14 w56 w6 w51 w53 w53 w42 w10 w46",
+   "s2": "w2 w26 w32 w6 w52 w20 w20 w35 w40 w12 w39 w13 w59 w34 w25",
+   "s3": "w7 w14 w13 w6 w22 w20 w11 w0 w25 w41 w20 w0 w24 w13 w29 w14 w4 w42 w52 w17 w41 w39 w23 w2 w4 w56 w13 w26 w19 w49 w38 w31",
+   "s4": "w45 w34 w50 w59 w54 w36 w10 w16 w6 w38 w20"
+  },
+  "hyp": {
+   "h0": "w2 w26 w32 w6 w52 w20 w20 w35 w40 w12 w39 w13 w59 w34 w25",
+   "h1": "w0 w21 w52 w12 w43 w23",
+   "h2": "w45 w34 w50 w59 w54 w36 w10 w16 w6 w20 w20",
+   "h3": "w14 w56 w6 w51 w53 w54 w42 w10 w46",
+   "h4": "w58 w14 w13 w6 w22 w20 w11 w0 w25 w55 w20 w0 w9 w13 w11 w14 w4 w42 w52 w46 w41 w12 w23 w15 w4 w56 w13 w26 w19 w49 w38 w31"
+  },
+  "errors": 10,
+  "length": 73,
+  "error_rate": 0.136986301369863,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "s0": "w27 w32 w39 w47 w27 w48 w9 w52 w50 w30 w1 w48 w24 w27 w54 w5 w48 w58 w58 w19 w38 w34 w9 w35 w46 w11 w16 w24 w29 w19 w29 w18 w24",
+   "s1": "w38 w30 w4 w21 w8 w45 w30 w12 w9 w58 w12 w0 w0 w55 w32 w46 w46 w23 w31 w25 w59 w26 w25 w47 w23 w24 w31 w19 w41 w37 w4 w26 w56 w2 w58 w7 w24 w59 w36 w10",
+   "s2": "w48 w27 w16 w49 w58 w48 w46 w22 w32 w45 w31 w40 w44 w23 w44 w3 w41",
+   "s3": "w59 w27 w47 w15 w15 w30 w2 w58 w52 w23 w40 w45 w43 w1 w44 w42 w41 w9 w16 w38 w29 w43 w9 w16 w15 w38 w37 w42 w53",
+   "s4": "w0 w7 w49 w5 w41 w45 w58 w24 w25 w45 w37 w57 w5 w33 w58"
+  },
+  "hyp": {
+   "h0": "w48 w27 w16 w49 w58 w48 w46 w22 w32 w40 w31 w40 w44 w23 w44 w3 w41",
+   "h1": "w10 w7 w4 w5 w41 w45 w58 w24 w11 w45 w11 w57 w36 w33 w3",
+   "h2": "w27 w32 w57 w47 w27 w48 w40 w18 w7 w30 w1 w48 w24 w27 w3 w5 w48 w58 w58 w13 w38 w38 w9 w35 w46 w11 w16 w24 w29 w19 w29 w18 w24",
+   "h3": "w59 w27 w47 w15 w15 w30 w55 w58 w52 w23 w38 w33 w43 w1 w44 w42 w41 w9 w16 w38 w40 w43 w9 w23 w15 w38 w37 w42 w53",
+   "h4": "w38 w30 w4 w21 w8 w45 w30 w12 w9 w24 w12 w9 w0 w55 w32 w46 w31 w23 w31 w25 w59 w26 w28 w47 w23 w24 w31 w42 w41 w45 w59 w26 w56 w2 w58 w7 w24 w59 w8 w10"
+  },
+  "errors": 27,
+  "length": 134,
+  "error_rate": 0.20149253731343283,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "s0": "w50 w44 w21 w55 w14 w59 w36 w49 w59 w38",
+   "s1": "w41 w21 w24 w58 w45 w47 w47 w46 w24",
+   "s2": "w54 w27 w51 w14 w14 w16 w7 w18 w5 w7 w5 w21 w47 w37 w59 w12 w47 w7 w36 w23 w8 w54 w20 w24 w36 w47 w0 w19 w3 w37 w34 w12 w54 w24 w27 w20 w49 w23 w51 w43",
+   "s3": "w33 w42 w38 w37 w14 w6 w25 w0 w34 w54 w29 w20 w9",
+   "s4": "w53 w14 w31 w43 w29 w9 w38 w18 w9 w47 w42 w54 w51 w52 w44 w2 w38 w20 w19 w32 w44 w7 w17"
+  },
+  "hyp": {
+   "h0": "w41 w21 w24 w58 w45 w47 w47 w46 w24",
+   "h1": "w50 w55 w21 w55 w14 w59 w36 w49 w1 w38",
+   "h2": "w54 w27 w51 w14 w14 w16 w7 w18 w54 w7 w20 w21 w47 w37 w59 w12 w47 w8 w36 w23 w8 w54 w20 w41 w46 w47 w50 w19 w27 w37 w3 w30 w3 w32 w27 w20 w49 w23 w51 w15",
+   "h3": "w33 w42 w38 w47 w14 w6 w25 w0 w34 w54 w29 w20 w9",
+   "h4": "w53 w5 w41 w43 w29 w36 w38 w18 w9 w37 w30 w54 w51 w52 w20 w58 w38 w20 w19 w32 w44 w7 w17"
+  },
+  "errors": 22,
+  "length": 95,
+  "error_rate": 0.23157894736842105,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "s0": "w53 w37 w34 w45 w52 w50 w41 w7 w48 w48 w13 w42 w57 w7 w11 w55 w38 w44 w11 w0 w35 w28 w51 w20 w7 w2 w8 w36 w13 w41 w10 w5 w35 w16 w54 w48 w2 w5",
+   "s1": "w32 w19 w23 w34 w10 w27 w42 w0 w15 w19 w2 w33"
+  },
+  "hyp": {
+   "h1": "w38 w19 w23 w34 w10 w27 w42 w58 w15 w19 w2 w33"
+  },
+  "errors": 40,
+  "length": 50,
+  "error_rate": 0.8,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 2
+ },
+ {
+  "ref": {
+   "s0": "w24 w6 w50 w59 w7 w11 w33 w46 w56 w19 w37 w52 w51 w31 w6 w33 w22 w44 w36",
+   "s1": "w35 w17 w38 w6 w57 w3 w10 w20 w48 w24 w11 w22 w51 w47 w43 w50 w34 w35 w38 w56 w54 w25 w30",
+   "s2": "w16 w0 w43 w32 w45 w9 w42 w8 w9 w24 w36 w47 w17",
+   "s3": "w58 w46 w40 w23 w45 w49 w15 w43",
+   "s4": "w45 w29 w11 w28 w22 w51 w29 w32 w18 w17 w27 w33 w45 w56 w59 w52 w14 w19 w40 w54 w5 w19 w26 w49 w20 w54 w5 w40 w5 w4 w46"
+  },
+  "hyp": {
+   "h1": "w16 w0 w53 w22 w45 w9 w42 w8 w58 w24 w36 w47 w17",
+   "h2": "w58 w46 w40 w40 w45 w49 w15 w43",
+   "h3": "w24 w6 w29 w59 w7 w0 w33 w46 w56 w56 w37 w52 w27 w31 w32 w33 w22 w44 w49",
+   "h4": "w35 w17 w38 w6 w57 w51 w10 w20 w48 w24 w47 w22 w51 w47 w12 w50 w26 w35 w38 w12 w54 w25 w30"
+  },
+  "errors": 46,
+  "length": 94,
+  "error_rate": 0.48936170212765956,
+  "missed_speaker": 1,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ },
+ {
+  "ref": {
+   "s0": "w31 w51 w43 w45 w8 w20 w48 w48 w49 w56 w25 w32 w46 w59 w47 w53 w52 w24 w8 w7 w6 w50 w1 w8 w9 w22 w32 w0 w49 w43 w15 w3 w43 w53 w21 w27 w38 w47 w0 w27",
+   "s1": "w18 w18 w31 w5 w48 w27 w15 w39 w9 w46 w32 w11 w15 w17 w49 w7 w55 w16 w44 w15 w42 w52 w27 w12 w30 w45 w50 w51 w6 w44 w46 w32 w39 w11 w12",
+   "s2": "w14 w7 w8 w25 w2 w17 w12 w59 w9 w27 w1 w39 w12 w5",
+   "s3": "w24 w26 w33 w19 w44 w40 w14 w14",
+   "s4": "w27 w30 w3 w32 w27 w41 w3 w19 w7 w17 w23 w17 w22 w45 w26 w15 w20 w57 w3 w11 w2 w0 w3 w42 w47 w20"
+  },
+  "hyp": {
+   "h0": "w31 w11 w43 w45 w8 w42 w35 w48 w23 w56 w25 w32 w46 w59 w47 w53 w52 w24 w47 w7 w58 w50 w1 w28 w9 w34 w32 w0 w49 w43 w15 w8 w35 w53 w21 w27 w38 w47 w0 w27",
+   "h1": "w24 w27 w26 w19 w44 w40 w17 w14",
+   "h2": "w2 w30 w44 w52 w27 w41 w3 w19 w48 w17 w23 w17 w22 w45 w36 w15 w20 w57 w3 w11 w2 w0 w3 w42 w47 w20",
+   "h3": "w2 w7 w8 w25 w2 w17 w55 w59 w9 w27 w1 w39 w22 w5",
+   "h4": "w18 w18 w31 w5 w48 w57 w15 w39 w52 w22 w32 w11 w1 w17 w49 w7 w55 w47 w44 w15 w42 w52 w27 w12 w30 w45 w50 w51 w6 w44 w46 w32 w39 w30 w11"
+  },
+  "errors": 28,
+  "length": 123,
+  "error_rate": 0.22764227642276422,
+  "missed_speaker": 0,
+  "falarm_speaker": 0,
+  "scored_speaker": 5
+ }
+]

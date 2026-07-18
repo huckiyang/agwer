@@ -17,6 +17,7 @@ agwer supports the classic ASR similarity measures and the agentic ones:
 4. harmful edit rate (HER)
 5. named entity F1 score (NF1)
 6. word hallucination rate (WHR)
+7. concatenated minimum-permutation word error rate (cpWER) for multi-speaker ASR
 
 The agentic measures (3 and 4) evaluate systems that read *n*-best hypotheses
 and decide *when to edit and when to abstain*, such as LLM error correctors
@@ -187,6 +188,28 @@ the formal per-edit definition. A sentence where the corrector fixes one
 token and breaks another is *neutral* at utterance granularity but
 *helpful=1, harmful=1* at token granularity, so report which one you used.
 
+### Multi-speaker ASR: cpWER
+
+Meeting and conversation transcripts come speaker-attributed, and the
+speaker labels a system assigns are arbitrary. `cpwer` concatenates each
+speaker's utterances and finds the label permutation with the fewest word
+errors (the MeetEval definition, validated against it):
+
+```python
+ref = {"alice": "let us start with the quarterly numbers",
+       "bob": "sounds good i will share my screen"}
+hyp = {"spk0": "sounds good i will share my screen",
+       "spk1": "let us start with the quality numbers"}
+
+agwer.cpwer(ref, hyp)                      # 0.0714, labels permuted, one word wrong
+agwer.cp_statistics(ref, hyp)["assignment"]  # [('alice', 'spk1'), ('bob', 'spk0')]
+```
+
+Values may be single strings or lists of utterances (concatenated in the
+given order). A missed speaker counts all its words as deletions, an extra
+hypothesis speaker all its words as insertions; `cp_statistics` reports the
+missed and false-alarm speaker counts.
+
 ### Normalization
 
 Normalization is the main reason WER numbers are incomparable across papers.
@@ -278,6 +301,10 @@ agwer gratefully builds on and learns from these projects:
 * [NVIDIA NeMo text processing](https://github.com/NVIDIA/NeMo-text-processing)
   sets the bar for full text normalization across languages. Its semiotic
   class taxonomy guides our normalization roadmap.
+* [MeetEval](https://github.com/fgnt/meeteval) defined the cpWER reference
+  implementation for multi-speaker ASR. agwer's `cpwer` matches it on a
+  golden set of 87 pinned cases; for time-constrained metrics (tcpWER) and
+  ORC/MIMO variants, use MeetEval itself.
 
 ## License
 
