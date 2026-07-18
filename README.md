@@ -7,11 +7,9 @@
 [![Docs](https://img.shields.io/badge/docs-huckiyang.github.io%2Fagwer-8A2BE2)](https://huckiyang.github.io/agwer/)
 
 **agwer** is a simple and fast Python package to evaluate speech recognition
-and voice agents. It is **self-contained**: one dependency
-([RapidFuzz](https://github.com/rapidfuzz/RapidFuzz), C++ edit distance), a
-40 KB wheel, and it imports in under 20 ms.
+and voice agents. A 40 KB wheel, and it imports in under 20 ms with fast CPU and native Apple Silicon supports for M-Chips.
 
-It supports the classic ASR similarity measures and the agentic ones:
+agwer supports the classic ASR similarity measures and the agentic ones:
 
 1. word error rate (WER), plus match error rate (MER), word information
    lost/preserved (WIL/WIP), and sentence error rate (SER)
@@ -269,6 +267,8 @@ Measure semantics match [jiwer](https://github.com/jitsi/jiwer), validated
 bit-identical on a 600-corpus golden set pinned in `tests/`.
 
 agwer gratefully builds on three projects:
+
+* [RapidFuzz](https://github.com/rapidfuzz/RapidFuzz), C++ / [FuzzyMatch](https://github.com/ordo-one/FuzzyMatch) swift edit distance
 
 * [jiwer](https://github.com/jitsi/jiwer) defined the measure semantics and
   the easy, friendly API style this package follows.
