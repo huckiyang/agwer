@@ -14,8 +14,8 @@ jobs:
       id-token: write      # OIDC — PyPI Trusted Publishing, no API token
       contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v8
       - name: run tests before publishing
         run: |
           uv venv --python 3.12

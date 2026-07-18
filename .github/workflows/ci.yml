@@ -13,8 +13,8 @@ jobs:
         python-version: ["3.9", "3.12"]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v8
       - name: create venv
         run: uv venv --python ${{ matrix.python-version }}
       - name: install package + test deps
@@ -25,8 +25,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v5
+      - uses: actions/checkout@v7
+      - uses: astral-sh/setup-uv@v8
       - name: build sdist + wheel
         run: uv build
       - name: smoke-test installed wheel
@@ -35,7 +35,7 @@ jobs:
           VIRTUAL_ENV=smokevenv uv pip install dist/*.whl pytest
           smokevenv/bin/python -c "import agwer; o=agwer.evaluate(['a b'],['a b'],nbest=[['a x','a b']]); assert o.rir==1.0 and o.wer_compositional==0.0; print('wheel smoke OK', agwer.__version__)"
           smokevenv/bin/python -m pytest --pyargs agwer -q
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v6
         with:
           name: dist
           path: dist/
