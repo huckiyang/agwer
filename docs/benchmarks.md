@@ -40,6 +40,41 @@ Three observations:
    slightly ahead at the 1k-utterance scale). Long context is where the
    engine choice matters.
 
+## Extreme case: one voice-coding dictation session (1k to 64k words)
+
+Dictating to a coding agent produces the hardest scoring workload: one
+continuous session-length document instead of many short utterances. This
+benchmark scores a single seeded synthetic session (package names and
+commands mixed with English glue, technical terms split into heard words,
+~20% WER) as one document. Versions here: agwer 0.4.1, jiwer 4.0.0; WER
+agreement between agwer and jiwer is asserted bit-identical before any
+timing; median of 5 runs on the same M-series machine.
+
+| session length | fastwer (C++ DP) | jiwer | **agwer** | vs jiwer | vs fastwer |
+|---|---|---|---|---|---|
+| 1,000 words | 1.3 ms | 0.35 ms | **0.11 ms** | 3.2× | 12× |
+| 4,000 words | 21.2 ms | 1.94 ms | **0.83 ms** | 2.3× | 26× |
+| 16,000 words | 498 ms | 15.7 ms | **9.9 ms** | 1.6× | 50× |
+| 64,000 words | 9,181 ms | 185 ms | **153 ms** | 1.2× | 60× |
+
+Three observations:
+
+1. **Quadratic DP is disqualified at session length.** A long dictation
+   session (64,000 words) costs fastwer 9.2 seconds per scoring call, 60×
+   agwer; the bit-parallel engines stay well under 200 ms. If your
+   evaluation loop rescores after every agent edit, that difference is the
+   difference between interactive and not.
+2. **agwer's fast path is why it leads jiwer.** Since 0.4.1, `wer()`
+   computes the C-level bit-parallel distance directly and never
+   materializes an alignment; jiwer builds one per call. The lead is
+   largest at interactive lengths (3.2× at 1,000 words) and converges as
+   the shared C kernel dominates (1.2× at 64,000).
+3. **Fleets of sessions scale across Apple Silicon cores.** Scoring 2,000
+   such sessions (2M words) with `evaluate()`: 611 ms single worker,
+   **155 ms with `workers=8`** (3.9×), against 1,049 ms for jiwer on the
+   same corpus — 6.8× end to end. The count-additive design merges chunk
+   results exactly, so the parallel numbers are bit-identical to serial.
+
 ## agwer on CPU and Apple Silicon
 
 The single-worker column is the portable CPU path: pure RapidFuzz, the same
