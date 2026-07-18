@@ -1,26 +1,26 @@
-# agwer — agentic WER
+# AgWER: Agent-oriented Word Error Rate
 
 **agwer** is a simple and fast Python package to evaluate speech recognition
 and voice agents. It is **self-contained**: one dependency
 ([RapidFuzz](https://github.com/rapidfuzz/RapidFuzz), C++ edit distance), a
 40 KB wheel, sub-20 ms import.
 
-It supports the classic ASR similarity measures:
+It supports the classic ASR similarity measures and the agentic ones:
 
-1. word error rate (WER)
-2. match error rate (MER)
-3. word information lost (WIL)
-4. word information preserved (WIP)
-5. character error rate (CER)
+1. word error rate (WER) — also match error rate (MER), word information
+   lost/preserved (WIL/WIP)
+2. character error rate (CER)
+3. Recoverable Information Ratio (RIR, the paper's ρ)
+4. Harmful Edit Rate (HER)
 
-plus the **agentic** measures for systems that read $n$-best hypotheses and
+The agentic measures (3–4) evaluate systems that read $n$-best hypotheses and
 decide *when to edit and when to abstain* (LLM error correctors, dictation
-agents), introduced in the *Voice Memory* paper:
+agents):
 
 | measure | question it answers |
 |---|---|
-| **RIR** (ρ) | *How much of the 1-best→oracle gap did the correction close?* ρ>1 beats the n-best oracle; ρ<0 is the damage regime. |
-| **HER** | *Of the edits actually made, what fraction broke a correct token?* Isolates over-correction. |
+| **RIR** — Recoverable Information Ratio (ρ) | *How much of the 1-best→oracle gap did the correction close?* ρ>1 beats the n-best oracle; ρ<0 is the damage regime. |
+| **HER** — Harmful Edit Rate | *Of the edits actually made, what fraction broke a correct token?* Isolates over-correction. |
 | **o_nb / o_cp** | The two HyPoradise oracles: best single hypothesis (reranking bound) / best token recombination (correction bound). |
 
 ## Installation
