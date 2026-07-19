@@ -1,6 +1,6 @@
 [project]
 name = "agwer"
-version = "0.4.7"
+version = "0.4.8"
 description = "Agent-oriented word error rate, named entity F1 score, and hallucination error metrics package."
 readme = "README.md"
 authors = [

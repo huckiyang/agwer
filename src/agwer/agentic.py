@@ -100,28 +100,32 @@ def _item_wer(errors: int, ref_len: int) -> float:
 
 
 def _oracle_pick(
-    refs_tok: list, nbest_norm: list
+    refs_tok: list, nbest_tok: list
 ) -> tuple:
-    """Per-utterance minimum-error hypothesis; one flat batch call for all
-    (ref, candidate) pairs so ragged n-best lists are fine."""
+    """(best_index, best_errors, first_errors) per utterance; one flat batch
+    call for all (ref, candidate) pairs so ragged n-best lists are fine.
+
+    The DP against the shared reference is computed once per candidate:
+    ``first_errors`` (the 1-best distances) come from the same pass, so the
+    caller never recomputes them.
+    """
     flat_refs, flat_hyps = [], []
-    for ref_tok, hyps in zip(refs_tok, nbest_norm):
+    for ref_tok, hyps in zip(refs_tok, nbest_tok):
         flat_refs.extend([ref_tok] * len(hyps))
-        flat_hyps.append(hyps)
-    flat_err = pair_errors(
-        flat_refs, tokenize_all([h for hs in flat_hyps for h in hs])
-    )
-    picked, picked_err, pos = [], [], 0
-    for hyps in nbest_norm:
+        flat_hyps.extend(hyps)
+    flat_err = pair_errors(flat_refs, flat_hyps)
+    best_idx, picked_err, first_err, pos = [], [], [], 0
+    for hyps in nbest_tok:
         errs = flat_err[pos:pos + len(hyps)]
         pos += len(hyps)
-        best = min(range(len(hyps)), key=errs.__getitem__)  # first-min tie-break
-        picked.append(hyps[best])
+        best = min(range(len(errs)), key=errs.__getitem__)  # first-min tie-break
+        best_idx.append(best)
         picked_err.append(errs[best])
-    return picked, picked_err
+        first_err.append(errs[0])
+    return best_idx, picked_err, first_err
 
 
-def _compositional_errors(refs_tok: list, nbest_norm: list) -> list:
+def _compositional_errors(refs_tok: list, nbest_tok: list) -> list:
     """Per-utterance minimum errors when composing ANY sequence from the
     tokens occurring in the n-best list (HyPoradise o_cp): each reference
     token whose word appears in no hypothesis costs exactly one error
@@ -129,8 +133,8 @@ def _compositional_errors(refs_tok: list, nbest_norm: list) -> list:
     free. Token inventory is type-level (unlimited reuse), which makes
     o_cp <= o_nb by construction."""
     errors = []
-    for ref_tok, hyps in zip(refs_tok, nbest_norm):
-        vocab = {tok for hyp in hyps for tok in hyp.split(" ") if tok}
+    for ref_tok, hyps in zip(refs_tok, nbest_tok):
+        vocab = {tok for hyp_tok in hyps for tok in hyp_tok}
         errors.append(sum(1 for tok in ref_tok if tok not in vocab))
     return errors
 
@@ -154,8 +158,10 @@ def oracle_select(
         raise ValueError("every n-best list must contain at least one hypothesis")
     refs_tok = tokenize_all(apply_normalize(references, normalize))
     nbest_norm = [apply_normalize(hyps, normalize) for hyps in nbest]
-    picked, _ = _oracle_pick(refs_tok, nbest_norm)
-    return picked
+    best_idx, _, _ = _oracle_pick(
+        refs_tok, [tokenize_all(hyps) for hyps in nbest_norm]
+    )
+    return [hyps[i] for hyps, i in zip(nbest_norm, best_idx)]
 
 
 # --------------------------------------------------------- chunk computation
@@ -171,24 +177,38 @@ def _chunk_sums(args: tuple) -> dict:
     n = len(references)
     refs_n = apply_normalize(references, normalize)
     corr_n = apply_normalize(corrected, normalize)
-    ob_raw = onebest if onebest is not None else [h[0] for h in nbest]
-    ob_n = apply_normalize(ob_raw, normalize)
-
     refs_tok = tokenize_all(refs_n)
     ref_lens = [len(t) for t in refs_tok]
-    err_ob = pair_errors(refs_tok, tokenize_all(ob_n))
     err_co = pair_errors(refs_tok, tokenize_all(corr_n))
 
-    err_or = err_cp = None
+    # normalize + tokenize the n-best exactly once; the 1-best strings,
+    # 1-best distances (shared-reference DP), oracle pick, and o_cp
+    # vocabulary are all views over these
+    nbest_tok = None
     if nbest is not None:
         nbest_norm = [apply_normalize(hyps, normalize) for hyps in nbest]
-        err_cp = sum(_compositional_errors(refs_tok, nbest_norm))
+        nbest_tok = [tokenize_all(hyps) for hyps in nbest_norm]
+
+    if onebest is not None:
+        ob_n = apply_normalize(onebest, normalize)
+        err_ob = pair_errors(refs_tok, tokenize_all(ob_n))
+    else:
+        ob_n = [hyps[0] for hyps in nbest_norm]
+        err_ob = None                        # comes free from the oracle pass
+
+    err_or = err_cp = None
+    if nbest_tok is not None:
+        err_cp = sum(_compositional_errors(refs_tok, nbest_tok))
     if oracle is not None:
         oracle_n = apply_normalize(oracle, normalize)
         err_or = sum(pair_errors(refs_tok, tokenize_all(oracle_n)))
-    elif nbest is not None:
-        _, picked_err = _oracle_pick(refs_tok, nbest_norm)
+    elif nbest_tok is not None:
+        _, picked_err, first_err = _oracle_pick(refs_tok, nbest_tok)
         err_or = sum(picked_err)
+        if err_ob is None:
+            err_ob = first_err
+    if err_ob is None:                       # nbest given + explicit oracle
+        err_ob = pair_errors(refs_tok, [g[0] for g in nbest_tok])
 
     counts = EditCounts(granularity=her_granularity)
     items = [] if return_items else None
