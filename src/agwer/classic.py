@@ -36,6 +36,36 @@ def _prep(reference: Strings, hypothesis: Strings,
     return apply_normalize(refs, normalize), apply_normalize(hyps, normalize)
 
 
+def _is_tokens(x) -> bool:
+    """A pre-tokenized batch: a sequence whose entries are token lists."""
+    return not isinstance(x, str) and len(x) > 0 and not isinstance(x[0], str)
+
+
+def _prep_tokens(reference, hypothesis,
+                 normalize: Optional[Callable[[str], str]]) -> tuple:
+    """Token lists for the word-level measures.
+
+    Accepts strings / lists of strings (normalized then tokenized here) or
+    pre-tokenized ``list[list[str]]`` batches, which skip both steps — the
+    fast path for repeated batch scoring (tokenize once, score many times).
+    """
+    if _is_tokens(reference) or _is_tokens(hypothesis):
+        if normalize is not None:
+            raise ValueError(
+                "pre-tokenized input requires normalize=None; "
+                "normalize the strings before tokenizing them"
+            )
+        refs, hyps = list(reference), list(hypothesis)
+        if len(refs) != len(hyps):
+            raise ValueError(
+                f"reference ({len(refs)}) and hypothesis ({len(hyps)}) "
+                "must have the same length"
+            )
+        return refs, hyps
+    refs, hyps = _prep(reference, hypothesis, normalize)
+    return tokenize_all(refs), tokenize_all(hyps)
+
+
 def _error_rate(errors: int, n_ref: int) -> float:
     if n_ref == 0:
         return 0.0 if errors == 0 else float("inf")
@@ -44,16 +74,22 @@ def _error_rate(errors: int, n_ref: int) -> float:
 
 def wer(reference: Strings, hypothesis: Strings,
         normalize: Optional[Callable[[str], str]] = None) -> float:
-    """Word error rate: (S + D + I) / reference words. 0 when both empty."""
-    refs, hyps = _prep(reference, hypothesis, normalize)
-    refs_tok = tokenize_all(refs)
-    errors = sum(pair_errors(refs_tok, tokenize_all(hyps)))
+    """Word error rate: (S + D + I) / reference words. 0 when both empty.
+
+    Batch fast path: pass pre-tokenized ``list[list[str]]`` for both sides
+    (with ``normalize=None``) to skip per-call tokenization — tokenize a
+    corpus once, score it many times.
+    """
+    refs_tok, hyps_tok = _prep_tokens(reference, hypothesis, normalize)
+    errors = sum(pair_errors(refs_tok, hyps_tok))
     return _error_rate(errors, sum(map(len, refs_tok)))
 
 
 def cer(reference: Strings, hypothesis: Strings,
         normalize: Optional[Callable[[str], str]] = None) -> float:
     """Character error rate (spaces count as characters). 0 when both empty."""
+    if _is_tokens(reference) or _is_tokens(hypothesis):
+        raise ValueError("cer scores characters; pass strings, not token lists")
     refs, hyps = _prep(reference, hypothesis, normalize)
     errors = sum(pair_errors(refs, hyps))
     return _error_rate(errors, sum(map(len, refs)))
@@ -62,7 +98,7 @@ def cer(reference: Strings, hypothesis: Strings,
 def mer(reference: Strings, hypothesis: Strings,
         normalize: Optional[Callable[[str], str]] = None) -> float:
     """Match error rate: (S + D + I) / (H + S + D + I)."""
-    refs, hyps = _prep(reference, hypothesis, normalize)
+    refs, hyps = _prep_tokens(reference, hypothesis, normalize)
     h, s, d, i = pooled_counts(refs, hyps)
     total = h + s + d + i
     return (s + d + i) / total if total else 0.0
@@ -71,7 +107,7 @@ def mer(reference: Strings, hypothesis: Strings,
 def wip(reference: Strings, hypothesis: Strings,
         normalize: Optional[Callable[[str], str]] = None) -> float:
     """Word information preserved: (H/N_ref) * (H/N_hyp)."""
-    refs, hyps = _prep(reference, hypothesis, normalize)
+    refs, hyps = _prep_tokens(reference, hypothesis, normalize)
     h, s, d, i = pooled_counts(refs, hyps)
     n_ref, n_hyp = h + s + d, h + s + i
     if n_ref == 0 or n_hyp == 0:
@@ -90,8 +126,6 @@ def ser(reference: Strings, hypothesis: Strings,
     """Sentence (utterance) error rate: the fraction of utterances whose
     token sequence differs from the reference at all. The strictest
     utterance-level measure; standard in ASR reporting."""
-    refs, hyps = _prep(reference, hypothesis, normalize)
-    wrong = sum(
-        1 for r, h in zip(tokenize_all(refs), tokenize_all(hyps)) if r != h
-    )
-    return wrong / len(refs) if refs else 0.0
+    refs_tok, hyps_tok = _prep_tokens(reference, hypothesis, normalize)
+    wrong = sum(1 for r, h in zip(refs_tok, hyps_tok) if r != h)
+    return wrong / len(refs_tok) if refs_tok else 0.0

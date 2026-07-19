@@ -84,6 +84,50 @@ Three observations:
    corpus — 7.5× end to end. The count-additive design merges chunk
    results exactly, so the parallel numbers are bit-identical to serial.
 
+## Large-batch evaluation: many entries
+
+The complementary axis to document length: entry count. The workload is
+the real 30-session WSJ corrector batch (the same records as the
+[example dataset](https://huggingface.co/datasets/huckiyang/agwer_asr_batch_test_v0))
+replicated to size — short utterances, many entries, the LLM-output batch
+regime. WER agreement across all engines and both agwer paths is asserted
+before timing; agwer 0.4.7, median of 3, M-series.
+
+| entries | fastwer | jiwer | agwer (strings) | **agwer (pre-tokenized)** | agwer `workers=8` |
+|---|---|---|---|---|---|
+| 10,020 | 12 ms | 56 ms | 16 ms | **3 ms** | 67 ms |
+| 100,020 | 118 ms | 859 ms | 288 ms | **33 ms** | 118 ms |
+| 1,000,020 | 1,194 ms | 8,690 ms | 2,844 ms | **335 ms** | 658 ms |
+
+On short entries the per-call cost is tokenization, not edit distance:
+materializing a million Python token lists dwarfs the C-level alignment
+(fastwer avoids it by fusing tokenize+DP inside C++, which is why it
+leads the plain string column at scale). agwer's answer, new in 0.4.7,
+is to let you pay that cost **once**: every word-level measure accepts
+pre-tokenized `list[list[str]]` input directly.
+
+```python
+import agwer
+
+refs_tok = [agwer.tokenize(s) for s in refs]   # once per corpus
+hyps_tok = [agwer.tokenize(s) for s in hyps]
+
+agwer.wer(refs_tok, hyps_tok)   # identical value, no per-call tokenization
+agwer.ser(refs_tok, hyps_tok)   # mer / wil / wip work the same way
+```
+
+Tokenize once and every subsequent scoring call runs 3.6 to 4x faster
+than fastwer at every scale, single-threaded — the alignment engine was
+never the bottleneck. This is exactly the shape of an agent evaluation
+loop: the corpus is fixed, the outputs change, and rescoring should not
+re-pay tokenization. (Normalize before tokenizing; the fast path
+requires `normalize=None` so the two can never silently disagree.)
+
+The number the comparison cannot show: the **full agentic evaluation**
+(three WERs, both oracles, RIR, HER) over the same 1M entries × 5-best
+runs in **5.6 s** with `workers=8`. No other engine computes those
+quantities at all.
+
 ## agwer on CPU and Apple Silicon
 
 The single-worker column is the portable CPU path: pure RapidFuzz, the same

@@ -31,6 +31,16 @@ By default strings are scored exactly as given. Pass any
 agwer.wer("Hello, World!", "hello world", normalize=agwer.default_normalize)  # 0.0
 ```
 
+For repeated batch scoring, tokenize once with `agwer.tokenize` and pass
+pre-tokenized `list[list[str]]` batches — identical values, no per-call
+tokenization (see the [benchmarks](benchmarks.md) for the numbers):
+
+```python
+refs_tok = [agwer.tokenize(s) for s in refs]
+hyps_tok = [agwer.tokenize(s) for s in hyps]
+agwer.wer(refs_tok, hyps_tok)
+```
+
 ## Agentic evaluation
 
 The agentic measures evaluate systems that read *n*-best hypotheses and

@@ -31,6 +31,7 @@ from agwer.agentic import (
     rho,
     rir,
 )
+from agwer.align import tokenize
 from agwer.classic import cer, mer, ser, wer, wil, wip
 from agwer.edits import EditCounts, classify_tokens, classify_utterance
 from agwer.entity import entity_f1, numeric_tokens
@@ -39,7 +40,7 @@ from agwer.multispeaker import cp_statistics, cpwer
 from agwer.normalizers import BasicTextNormalizer, EnglishTextNormalizer
 from agwer.text import default_normalize
 
-__version__ = "0.4.6"
+__version__ = "0.4.7"
 
 __all__ = [
     "wer",
@@ -49,6 +50,7 @@ __all__ = [
     "cer",
     "ser",
     "cpwer",
+    "tokenize",
     "cp_statistics",
     "entity_f1",
     "numeric_tokens",

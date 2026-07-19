@@ -74,13 +74,19 @@ def pair_errors(refs, hyps) -> list:
     return [_distance(r, h) for r, h in zip(refs, hyps)]
 
 
-def pooled_counts(refs: Sequence[str], hyps: Sequence[str],
-                  chars: bool = False) -> tuple:
-    """Corpus-pooled (hits, substitutions, deletions, insertions)."""
+def pooled_counts(refs, hyps, chars: bool = False) -> tuple:
+    """Corpus-pooled (hits, substitutions, deletions, insertions).
+
+    Word-level entries may be strings (tokenized here) or pre-tokenized
+    token lists (used as given).
+    """
     hits = subs = dels = ins = 0
     for r, h in zip(refs, hyps):
         if not chars:
-            r, h = tokenize(r), tokenize(h)
+            if isinstance(r, str):
+                r = tokenize(r)
+            if isinstance(h, str):
+                h = tokenize(h)
         for op in Levenshtein.opcodes(r, h):
             n_src = op.src_end - op.src_start
             if op.tag == "equal":
