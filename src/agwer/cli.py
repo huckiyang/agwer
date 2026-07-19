@@ -79,7 +79,9 @@ def main(argv=None) -> int:
         return 0
 
     def pct(x):
-        return f"{x * 100:.2f}%" if x is not None else "n/a"
+        # standard ASR reporting convention: one decimal (xx.x%).
+        # --json keeps full-precision floats for machines.
+        return f"{x * 100:.1f}%" if x is not None else "n/a"
 
     def num(x):
         return f"{x:.3f}" if x is not None else "n/a"

@@ -16,6 +16,11 @@ Each JSONL line is one utterance:
 `nbest[0]` must be the 1-best. `"onebest": "..."` may replace `nbest`
 (RIR and the oracles then unavailable; HER + WERs still reported).
 
+The human-readable report rounds error rates to the standard ASR
+convention, one decimal (`xx.x%`). `--json` always emits full-precision
+floats, and the Python API never rounds; round only at the reporting
+step.
+
 Benchmark your install:
 
 ```bash

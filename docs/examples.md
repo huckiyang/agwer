@@ -149,14 +149,16 @@ report. With the three utterances above:
 ```console
 $ agwer results.jsonl
 n utterances     : 3
-WER 1-best       : 22.64%
-WER corrected    : 3.77%
-WER oracle (o_nb): 18.87%
-WER compos.(o_cp): 3.77%
+WER 1-best       : 22.6%
+WER corrected    : 3.8%
+WER oracle (o_nb): 18.9%
+WER compos.(o_cp): 3.8%
 RIR (rho)        : 5.000   [>1 beats the n-best oracle]
 HER (utterance): 0.333
 edits            : helpful=2 harmful=1 neutral=0 missed=0 no_edit=0
 ```
 
-`--her-granularity token` switches to the formal per-edit accounting,
-`--raw` skips normalization, and `--json` emits machine-readable output.
+Error rates in the report follow the standard ASR convention, one decimal
+(`xx.x%`). `--her-granularity token` switches to the formal per-edit
+accounting, `--raw` skips normalization, and `--json` emits full-precision
+machine-readable output (the Python API never rounds either).
