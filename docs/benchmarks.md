@@ -84,35 +84,6 @@ Three observations:
    corpus — 7.5× end to end. The count-additive design merges chunk
    results exactly, so the parallel numbers are bit-identical to serial.
 
-## Large-batch evaluation: many entries
-
-The complementary axis to document length: entry count. The workload is
-the real 30-session WSJ corrector batch (the same records as the
-[example dataset](https://huggingface.co/datasets/huckiyang/agwer_asr_batch_test_v0))
-replicated to size — short utterances, many entries, the LLM-output batch
-regime the CLI formats serve. Corpus WER agreement between agwer and
-jiwer is asserted before timing; agwer 0.4.5, median of 3, M-series.
-
-| entries | fastwer | jiwer | agwer | **agwer `workers=8`** |
-|---|---|---|---|---|
-| 10,020 | 12 ms | 54 ms | **15 ms** | 67 ms |
-| 100,020 | 117 ms | 741 ms | 203 ms | **110 ms** |
-| 1,000,020 | 1,169 ms | 8,465 ms | 3,054 ms | **678 ms** |
-
-Read honestly: on short entries, plain corpus WER is fastwer's best
-regime — its single C++ call loops over the whole list with no per-pair
-Python overhead, and it leads the single-threaded column at scale. agwer
-stays 2.8× ahead of jiwer everywhere, and from 100k entries up
-`workers=8` takes the overall lead (1.7× fastwer, 12× jiwer at 1M),
-because count-additive merging parallelizes exactly. Below ~100k entries
-the worker startup outweighs the gain — use the single-worker default
-there, as the docs have always said.
-
-The number the comparison cannot show: the **full agentic evaluation**
-(three WERs, both oracles, RIR, HER) over the same 1M entries × 5-best
-runs in **5.1 s** with `workers=8`. No other engine computes those
-quantities at all.
-
 ## agwer on CPU and Apple Silicon
 
 The single-worker column is the portable CPU path: pure RapidFuzz, the same

@@ -39,7 +39,7 @@ from agwer.multispeaker import cp_statistics, cpwer
 from agwer.normalizers import BasicTextNormalizer, EnglishTextNormalizer
 from agwer.text import default_normalize
 
-__version__ = "0.4.5"
+__version__ = "0.4.6"
 
 __all__ = [
     "wer",
