@@ -1,6 +1,6 @@
 [project]
 name = "agwer"
-version = "0.4.4"
+version = "0.4.5"
 description = "Agentic WER: WER/MER/WIL/WIP/CER plus RIR, HER, and n-best oracles for evaluating ASR error correctors and voice agents. Self-contained, single dependency (RapidFuzz)."
 readme = "README.md"
 authors = [
@@ -27,6 +27,7 @@ classifiers = [
 
 [project.optional-dependencies]
 test = ["pytest>=8.0"]
+parquet = ["pyarrow>=14"]
 
 [project.urls]
 Repository = "https://github.com/huckiyang/agwer"

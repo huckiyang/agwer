@@ -19,7 +19,7 @@ jobs:
       - name: create venv
         run: uv venv --python ${{ matrix.python-version }}
       - name: install package + test deps
-        run: uv pip install -e . pytest
+        run: uv pip install -e . pytest pyarrow
       - name: run tests (no project re-sync)
         run: uv run --no-sync pytest --pyargs agwer -q
 
@@ -34,7 +34,7 @@ jobs:
       - name: smoke-test installed wheel
         run: |
           uv venv --python 3.12 smokevenv
-          VIRTUAL_ENV=smokevenv uv pip install dist/*.whl pytest
+          VIRTUAL_ENV=smokevenv uv pip install dist/*.whl pytest pyarrow
           smokevenv/bin/python -c "import agwer; o=agwer.evaluate(['a b'],['a b'],nbest=[['a x','a b']]); assert o.rir==1.0 and o.wer_compositional==0.0; print('wheel smoke OK', agwer.__version__)"
           smokevenv/bin/python -m pytest --pyargs agwer -q
       - uses: actions/upload-artifact@v6

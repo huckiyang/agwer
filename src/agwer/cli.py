@@ -7,9 +7,15 @@ Each JSONL line is one utterance with fields:
 ``nbest[0]`` must be the 1-best. ``"onebest": "..."`` may replace ``nbest``
 (then RIR is unavailable and only HER + WERs are reported).
 
+LLM output logs are accepted directly via ``--format`` (auto-detected by
+default): OpenAI chat sessions, Anthropic Messages/structured outputs,
+ShareGPT conversations, and parquet batches — see :mod:`agwer.formats`.
+
 Example::
 
     agwer results.jsonl
+    agwer sessions.openai.jsonl        # format sniffed from the records
+    agwer batch.parquet --format parquet
     agwer results.jsonl --her-granularity token --raw --json
 """
 
@@ -20,23 +26,8 @@ import json
 import sys
 
 from agwer.agentic import evaluate
+from agwer.formats import FORMATS, load_records
 from agwer.text import default_normalize
-
-
-def _load_jsonl(path: str) -> list[dict]:
-    rows = []
-    with open(path, "r", encoding="utf-8") as f:
-        for lineno, line in enumerate(f, 1):
-            line = line.strip()
-            if not line:
-                continue
-            try:
-                rows.append(json.loads(line))
-            except json.JSONDecodeError as e:
-                raise SystemExit(f"{path}:{lineno}: invalid JSON ({e})") from e
-    if not rows:
-        raise SystemExit(f"{path}: no records")
-    return rows
 
 
 def main(argv=None) -> int:
@@ -44,7 +35,12 @@ def main(argv=None) -> int:
         prog="agwer",
         description="Agentic WER metrics (RIR / HER) for ASR error correction.",
     )
-    ap.add_argument("jsonl", help="JSONL file: {reference, corrected, nbest|onebest}")
+    ap.add_argument("jsonl", help="input file: {reference, corrected, nbest|onebest}")
+    ap.add_argument(
+        "--format", choices=FORMATS, default="auto",
+        help="input format: native jsonl, openai/anthropic/sharegpt chat "
+             "logs, or parquet (default: auto-detect)",
+    )
     ap.add_argument(
         "--her-granularity", choices=["utterance", "token"], default="utterance",
         help="HER accounting granularity (default: utterance, as reported in the paper)",
@@ -56,17 +52,11 @@ def main(argv=None) -> int:
     ap.add_argument("--json", action="store_true", help="print metrics as JSON")
     args = ap.parse_args(argv)
 
-    rows = _load_jsonl(args.jsonl)
-    missing = [k for k in ("reference", "corrected") if k not in rows[0]]
-    if missing:
-        raise SystemExit(f"records must contain fields: {missing}")
-
+    rows = load_records(args.jsonl, args.format)
     refs = [r["reference"] for r in rows]
     corr = [r["corrected"] for r in rows]
     nbest = [r["nbest"] for r in rows] if "nbest" in rows[0] else None
     onebest = [r["onebest"] for r in rows] if nbest is None else None
-    if nbest is None and onebest is None:
-        raise SystemExit("records must contain 'nbest' (list) or 'onebest' (string)")
 
     out = evaluate(
         refs, corr, nbest=nbest, onebest=onebest,
