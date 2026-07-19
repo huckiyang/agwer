@@ -46,7 +46,7 @@ The test suite ships inside the package, so any install can verify itself:
 
 ```bash
 pip install "agwer[test]"
-python -m pytest --pyargs agwer     # 101 tests, a few seconds
+python -m pytest --pyargs agwer     # 116 tests, a few seconds
 ```
 
 ## Usage

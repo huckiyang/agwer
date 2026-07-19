@@ -11,7 +11,7 @@ do is prove itself correct:
 ```console
 $ pip install "agwer[test]"
 $ python -m pytest --pyargs agwer -q
-101 passed in 0.38s
+116 passed in 0.41s
 ```
 
 ## 2. First measurements
