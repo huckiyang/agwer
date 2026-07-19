@@ -128,6 +128,28 @@ The number the comparison cannot show: the **full agentic evaluation**
 runs in **5.6 s** with `workers=8`. No other engine computes those
 quantities at all.
 
+## Shared-reference DP reuse: 0.4.7 vs 0.4.8
+
+In the agentic pipeline every quantity aligns against the same reference,
+so 0.4.8 computes the n-best normalization, tokenization, and the flat
+alignment pass once and derives the 1-best distances, oracle pick, and
+compositional-oracle vocabulary from it — bit-identical outputs, pinned
+by an A/B harness over every code path before release. Measured on the
+published PyPI wheels, same machine, same replicated WSJ data (median of
+5 at 10k, 3 at 100k):
+
+| tier (10k / 100k entries) | 0.4.7 | 0.4.8 | change |
+|---|---|---|---|
+| single measure: corpus `wer()` | 17.6 / 298.0 ms | 16.0 / 299.1 ms | unchanged (not touched) |
+| single measure, pre-tokenized | 3.2 / 32.3 ms | 3.1 / 33.1 ms | unchanged (not touched) |
+| n-best measure: `oracle_wer()` | 300.7 / 3,687.7 ms | **248.4 / 3,104.8 ms** | 17% / 16% faster |
+| full metrics: `evaluate()` | 298.4 / 3,610.3 ms | **248.6 / 3,095.6 ms** | 17% / 14% faster |
+| full JSONL pipeline: `agwer file.jsonl` | 368.9 / 3,820.8 ms | **321.6 / 3,221.5 ms** | 13% / 16% faster |
+
+The single-measure rows are the honest control: `wer()` never had the
+duplication, so it does not move. Everything that touches an n-best list
+gets the 14 to 17%, end to end through the CLI.
+
 ## agwer on CPU and Apple Silicon
 
 The single-worker column is the portable CPU path: pure RapidFuzz, the same
