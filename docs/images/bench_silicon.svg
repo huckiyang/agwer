@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-07-18T11:24:17.790466</dc:date>
+    <dc:date>2026-07-18T23:39:04.890741</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -70,35 +70,35 @@ L 89.851482 224.94
 L 89.851482 79.268 
 L 25.418732 79.268 
 z
-" clip-path="url(#pca84585a5d)" style="fill: #86868b"/>
+" clip-path="url(#p885683bb4b)" style="fill: #86868b"/>
    </g>
    <g id="patch_5">
     <path d="M 136.50968 224.94 
 L 200.94243 224.94 
-L 200.94243 158.295408 
-L 136.50968 158.295408 
+L 200.94243 159.360218 
+L 136.50968 159.360218 
 z
-" clip-path="url(#pca84585a5d)" style="fill: #0071e3"/>
+" clip-path="url(#p885683bb4b)" style="fill: #0071e3"/>
    </g>
    <g id="patch_6">
     <path d="M 247.600628 224.94 
 L 312.033378 224.94 
-L 312.033378 205.461414 
-L 247.600628 205.461414 
+L 312.033378 205.224992 
+L 247.600628 205.224992 
 z
-" clip-path="url(#pca84585a5d)" style="fill: #0051a2"/>
+" clip-path="url(#p885683bb4b)" style="fill: #0051a2"/>
    </g>
    <g id="text_4">
     <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #86868b" x="168.726055" y="31.9246" transform="rotate(-0 168.726055 31.9246)">corpus word error rate</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="57.635107" y="74.0315" transform="rotate(-0 57.635107 74.0315)">1,047 ms</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="57.635107" y="74.0315" transform="rotate(-0 57.635107 74.0315)">1,064 ms</text>
    </g>
    <g id="text_6">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="168.726055" y="153.058908" transform="rotate(-0 168.726055 153.058908)">479 ms</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="168.726055" y="154.123718" transform="rotate(-0 168.726055 154.123718)">479 ms</text>
    </g>
    <g id="text_7">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="279.817003" y="200.224914" transform="rotate(-0 279.817003 200.224914)">140 ms</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="279.817003" y="199.988492" transform="rotate(-0 279.817003 199.988492)">144 ms</text>
    </g>
    <g id="text_8">
     <text style="font-weight: 700; font-size: 14px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="168.726055" y="20.85" transform="rotate(-0 168.726055 20.85)">2,000 agent sessions (2M words)</text>
@@ -140,24 +140,24 @@ L 454.31939 224.94
 L 454.31939 79.268 
 L 369.546044 79.268 
 z
-" clip-path="url(#p8962c3f384)" style="fill: #0071e3"/>
+" clip-path="url(#pb9abe37ff1)" style="fill: #0071e3"/>
    </g>
    <g id="patch_10">
     <path d="M 571.387344 224.94 
 L 656.16069 224.94 
-L 656.16069 197.789663 
-L 571.387344 197.789663 
+L 656.16069 193.945957 
+L 571.387344 193.945957 
 z
-" clip-path="url(#p8962c3f384)" style="fill: #0051a2"/>
+" clip-path="url(#pb9abe37ff1)" style="fill: #0051a2"/>
    </g>
    <g id="text_11">
     <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #86868b" x="512.853367" y="31.9246" transform="rotate(-0 512.853367 31.9246)">WER ×3 + oracle + RIR + HER in one call</text>
    </g>
    <g id="text_12">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="411.932717" y="74.0315" transform="rotate(-0 411.932717 74.0315)">27.9 s</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="411.932717" y="74.0315" transform="rotate(-0 411.932717 74.0315)">18.8 s</text>
    </g>
    <g id="text_13">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="613.774017" y="192.553163" transform="rotate(-0 613.774017 192.553163)">5.2 s</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="613.774017" y="188.709457" transform="rotate(-0 613.774017 188.709457)">4.0 s</text>
    </g>
    <g id="text_14">
     <text style="font-weight: 700; font-size: 14px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="512.853367" y="20.85" transform="rotate(-0 512.853367 20.85)">1M utterances, full agentic evaluate()</text>
@@ -168,10 +168,10 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pca84585a5d">
+  <clipPath id="p885683bb4b">
    <rect x="11.088" y="42.85" width="315.27611" height="182.09"/>
   </clipPath>
-  <clipPath id="p8962c3f384">
+  <clipPath id="pb9abe37ff1">
    <rect x="355.215312" y="42.85" width="315.27611" height="182.09"/>
   </clipPath>
  </defs>

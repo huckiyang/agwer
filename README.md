@@ -268,11 +268,11 @@ corpora:
 
 | scenario | time |
 |---|---|
-| 10k utterances (single-threaded) | ~0.2 s |
-| 100k utterances (single-threaded) | 2.6 s |
-| 100k utterances (8 workers) | **0.48 s** (5.5×) |
-| 1M utterances (single-threaded) | 27.9 s |
-| 1M utterances (8 workers) | **5.2 s** (5.4×) |
+| 10k utterances (single-threaded) | 0.15 s |
+| 100k utterances (single-threaded) | 1.79 s |
+| 100k utterances (8 workers) | **0.38 s** (4.7×) |
+| 1M utterances (single-threaded) | 18.8 s |
+| 1M utterances (8 workers) | **4.0 s** (4.7×) |
 
 Workers pay process startup, so they win from roughly 100k utterances up. On
 macOS and Windows, call from a `if __name__ == "__main__"` guard, as with any
@@ -284,7 +284,7 @@ python -m agwer.bench --workers 8
 
 ### Apple Silicon
 
-[![Speed](https://img.shields.io/badge/1M%20utterances-5.2s%20on%20M--series-brightgreen)](#performance)
+[![Speed](https://img.shields.io/badge/1M%20utterances-4.0s%20on%20M--series-brightgreen)](#performance)
 
 agwer is **native on Apple Silicon**, with no separate
 install: pip and uv select the arm64 wheel automatically, and RapidFuzz

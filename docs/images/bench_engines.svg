@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-07-18T11:24:17.732526</dc:date>
+    <dc:date>2026-07-18T23:39:04.821887</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -65,10 +65,10 @@ L 340.488 237.18
    <g id="patch_4">
     <path d="M 26.060727 237.18 
 L 93.379966 237.18 
-L 93.379966 188.767369 
-L 26.060727 188.767369 
+L 93.379966 187.636527 
+L 26.060727 187.636527 
 z
-" clip-path="url(#pba4c6a9fb7)" style="fill: #d2d2d7"/>
+" clip-path="url(#pae2ce43b83)" style="fill: #d2d2d7"/>
    </g>
    <g id="patch_5">
     <path d="M 142.128381 237.18 
@@ -76,27 +76,27 @@ L 209.447619 237.18
 L 209.447619 87.695385 
 L 142.128381 87.695385 
 z
-" clip-path="url(#pba4c6a9fb7)" style="fill: #86868b"/>
+" clip-path="url(#pae2ce43b83)" style="fill: #86868b"/>
    </g>
    <g id="patch_6">
     <path d="M 258.196034 237.18 
 L 325.515273 237.18 
-L 325.515273 191.315402 
-L 258.196034 191.315402 
+L 325.515273 195.324308 
+L 258.196034 195.324308 
 z
-" clip-path="url(#pba4c6a9fb7)" style="fill: #0071e3"/>
+" clip-path="url(#pae2ce43b83)" style="fill: #0071e3"/>
    </g>
    <g id="text_4">
     <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #86868b" x="175.788" y="31.1902" transform="rotate(-0 175.788 31.1902)">11,966 real AMI sentences (~400k words)</text>
    </g>
    <g id="text_5">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="59.720347" y="183.530869" transform="rotate(-0 59.720347 183.530869)">57 ms</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="59.720347" y="182.400027" transform="rotate(-0 59.720347 182.400027)">58 ms</text>
    </g>
    <g id="text_6">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="175.788" y="82.458885" transform="rotate(-0 175.788 82.458885)">176 ms</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="175.788" y="82.458885" transform="rotate(-0 175.788 82.458885)">175 ms</text>
    </g>
    <g id="text_7">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="291.855653" y="186.078902" transform="rotate(-0 291.855653 186.078902)">54 ms</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="291.855653" y="190.087808" transform="rotate(-0 291.855653 190.087808)">49 ms</text>
    </g>
    <g id="text_8">
     <text style="font-weight: 700; font-size: 14px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="175.788" y="20.85" transform="rotate(-0 175.788 20.85)">Normal sentences</text>
@@ -137,40 +137,40 @@ L 680.688 237.18
 " style="fill: none; stroke: #d2d2d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
    </g>
    <g id="patch_9">
-    <path d="M 366.260727 54816.023674 
-L 433.579966 54816.023674 
-L 433.579966 75.676911 
-L 366.260727 75.676911 
+    <path d="M 366.260727 54821.10674 
+L 433.579966 54821.10674 
+L 433.579966 75.679968 
+L 366.260727 75.679968 
 z
-" clip-path="url(#p1328eb949b)" style="fill: #d2d2d7"/>
+" clip-path="url(#p8f550a53da)" style="fill: #d2d2d7"/>
    </g>
    <g id="patch_10">
-    <path d="M 482.328381 54816.023674 
-L 549.647619 54816.023674 
-L 549.647619 167.707411 
-L 482.328381 167.707411 
+    <path d="M 482.328381 54821.10674 
+L 549.647619 54821.10674 
+L 549.647619 167.827244 
+L 482.328381 167.827244 
 z
-" clip-path="url(#p1328eb949b)" style="fill: #86868b"/>
+" clip-path="url(#p8f550a53da)" style="fill: #86868b"/>
    </g>
    <g id="patch_11">
-    <path d="M 598.396034 54816.023674 
-L 665.715273 54816.023674 
-L 665.715273 206.263273 
-L 598.396034 206.263273 
+    <path d="M 598.396034 54821.10674 
+L 665.715273 54821.10674 
+L 665.715273 206.005062 
+L 598.396034 206.005062 
 z
-" clip-path="url(#p1328eb949b)" style="fill: #0071e3"/>
+" clip-path="url(#p8f550a53da)" style="fill: #0071e3"/>
    </g>
    <g id="text_12">
     <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #86868b" x="515.988" y="31.1902" transform="rotate(-0 515.988 31.1902)">one 64,000-word voice-coding session</text>
    </g>
    <g id="text_13">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="399.920347" y="70.440411" transform="rotate(-0 399.920347 70.440411)">9,163 ms</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="399.920347" y="70.443468" transform="rotate(-0 399.920347 70.443468)">9,156 ms</text>
    </g>
    <g id="text_14">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="515.988" y="162.470911" transform="rotate(-0 515.988 162.470911)">188 ms</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="515.988" y="162.590744" transform="rotate(-0 515.988 162.590744)">187 ms</text>
    </g>
    <g id="text_15">
-    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="632.055653" y="201.026773" transform="rotate(-0 632.055653 201.026773)">37 ms</text>
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="632.055653" y="200.768562" transform="rotate(-0 632.055653 200.768562)">37 ms</text>
    </g>
    <g id="text_16">
     <text style="font-weight: 700; font-size: 14px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="515.988" y="20.85" transform="rotate(-0 515.988 20.85)">Agent dictation session</text>
@@ -181,10 +181,10 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="pba4c6a9fb7">
+  <clipPath id="pae2ce43b83">
    <rect x="11.088" y="42.85" width="329.4" height="194.33"/>
   </clipPath>
-  <clipPath id="p1328eb949b">
+  <clipPath id="p8f550a53da">
    <rect x="351.288" y="42.85" width="329.4" height="194.33"/>
   </clipPath>
  </defs>

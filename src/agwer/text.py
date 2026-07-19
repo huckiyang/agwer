@@ -20,12 +20,22 @@ __all__ = ["default_normalize", "apply_normalize"]
 
 _PUNCT = re.compile(r"[^\w\s']")
 _WS = re.compile(r"\s+")
+# ASCII fast path: C-level translate + split/join replaces the two regex
+# passes. The table is derived from _PUNCT itself, so the fast path
+# replaces exactly the characters the regex would (underscores and
+# apostrophes survive, control characters do not); byte-identical output
+# is pinned by tests. Unicode text falls back to the regexes.
+_ASCII_PUNCT = str.maketrans(
+    {c: " " for c in map(chr, range(128)) if _PUNCT.match(c)}
+)
 
 
 def default_normalize(text: str) -> str:
     """Lowercase, strip punctuation except apostrophes, collapse whitespace."""
-    text = text.lower().strip()
-    text = _PUNCT.sub(" ", text)
+    text = text.lower()
+    if text.isascii():
+        return " ".join(text.translate(_ASCII_PUNCT).split())
+    text = _PUNCT.sub(" ", text.strip())
     return _WS.sub(" ", text).strip()
 
 
