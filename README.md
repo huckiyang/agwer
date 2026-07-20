@@ -8,7 +8,9 @@
 
 **agwer** is a simple and efficient Python package to evaluate speech recognition
 and voice agents. A 40 KB wheel that imports in under 20 ms, fast on CPU and
-native on Apple Silicon M-series.
+native on Apple Silicon M-series. 
+
+- note: this PyPI package was developed organically by a human programmer together with Fable. 🙂 (this sentence is 100% human progammer.)
 
 agwer supports the classic ASR similarity measures and the agentic ones:
 
