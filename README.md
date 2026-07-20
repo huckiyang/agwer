@@ -10,7 +10,7 @@
 and voice agents. A 40 KB wheel that imports in under 20 ms, fast on CPU and
 native on Apple Silicon M-series. 
 
-- note: this PyPI package was developed organically by a human programmer since 2025. We work together with the great Fable. 🙂
+- note: this PyPI package was developed organically by a human programmer since 2025. We work together with the great Fable since 2026. 🙂
   - we welcome contributions from the community.
 
 agwer supports the classic ASR similarity measures and the agentic ones:
