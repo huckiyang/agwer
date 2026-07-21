@@ -1,7 +1,7 @@
 # Benchmarks
 
 All numbers on this page are measured, not estimated, on the current
-release: **agwer 0.4.9**, against jiwer 4.0.0 and fastwer 0.1.3, on an
+release: **agwer 0.4.10**, against jiwer 4.0.0 and fastwer 0.1.3, on an
 Apple Silicon M-series machine (14 cores). The harnesses live in our
 development repository, every engine receives identical strings, and WER
 agreement across engines is asserted before any timing. The page always
@@ -113,6 +113,28 @@ The number the comparison cannot show: the **full agentic evaluation**
 (three WERs, both oracles, RIR, HER) over the same 1M entries × 5-best
 runs in **4.0 s** with `workers=8`. No other engine computes those
 quantities at all.
+
+## Multi-speaker: cpWER and tcpWER vs MeetEval
+
+Speaker-attributed metrics against the reference implementation, results
+asserted identical before timing (median of 5). cpWER on
+speakers x words-per-speaker meetings; tcpWER (collar 5 s) on timestamped
+meeting sessions:
+
+| workload | MeetEval | **agwer** | speedup |
+|---|---|---|---|
+| cpWER, 8 spk × 8k words | 4,500 ms | **294 ms** | 15× |
+| cpWER, 16 spk × 8k words | 15,244 ms | **1,133 ms** | 13× |
+| tcpWER, 8 spk, 8,982 words | 152 ms | **43 ms** | 3.5× |
+| tcpWER, 8 spk, 36,267 words | 1,387 ms | **185 ms** | 7.5× |
+
+The tcpWER kernel is a pure-Python time-windowed DP: only hypothesis
+words whose collar-expanded interval can still interact with the current
+or a later reference word are active, which plays the role of MeetEval's
+C-level pruning; overlapping speech and timing jitter only widen the
+window instead of falling off a cliff. Exactness is pinned by an
+8,000-case fuzz against the naive DP (including deliberately disordered
+timings) plus the meeteval golden fixture.
 
 ## agwer on CPU and Apple Silicon
 

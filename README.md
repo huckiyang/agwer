@@ -3,7 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/agwer)](https://pypi.org/project/agwer/)
 [![ci](https://img.shields.io/github/actions/workflow/status/huckiyang/agwer/ci.yml?branch=main&label=ci)](https://github.com/huckiyang/agwer/actions/workflows/ci.yml)
 [![Platforms](https://img.shields.io/badge/platforms-CPU%20%7C%20Apple%20Silicon%20native-blue)](#apple-silicon)
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Docs](https://img.shields.io/badge/docs-huckiyang.github.io%2Fagwer-8A2BE2)](https://huckiyang.github.io/agwer/)
 
 **agwer** is a simple and efficient Python package to evaluate speech recognition
@@ -21,7 +21,8 @@ agwer supports the classic ASR similarity measures and the agentic ones:
 4. harmful edit rate (HER)
 5. named entity F1 score (NF1)
 6. word hallucination rate (WHR)
-7. concatenated minimum-permutation word error rate (cpWER) for multi-speaker ASR
+7. concatenated minimum-permutation word error rate (cpWER) and its
+   time-constrained variant (tcpWER) for multi-speaker ASR
 
 The agentic measures (3 and 4) evaluate systems that read *n*-best hypotheses
 and decide *when to edit and when to abstain*, such as LLM error correctors
@@ -49,7 +50,7 @@ The test suite ships inside the package, so any install can verify itself:
 
 ```bash
 pip install "agwer[test]"
-python -m pytest --pyargs agwer     # 116 tests, a few seconds
+python -m pytest --pyargs agwer     # 121 tests, a few seconds
 ```
 
 ## Usage
@@ -224,6 +225,28 @@ given order). A missed speaker counts all its words as deletions, an extra
 hypothesis speaker all its words as insertions; `cp_statistics` reports the
 missed and false-alarm speaker counts.
 
+With timestamped segments, `tcpwer` adds the time constraint of the
+CHiME-7/8 official metric: words may only match when their time intervals
+overlap (reference words get character-based intervals within their
+segment; hypothesis words get their interval center expanded by a collar,
+5 seconds by default). Semantics match MeetEval's `tcp_word_error_rate`,
+pinned by a golden fixture, and the pure-Python time-windowed
+implementation measures 2.6 to 7.5 times faster on meeting-sized inputs:
+
+```python
+ref = [{"speaker": "alice", "words": "let us start with the quarterly numbers",
+        "start_time": 0.0, "end_time": 3.5},
+       {"speaker": "bob", "words": "sounds good i will share my screen",
+        "start_time": 3.5, "end_time": 6.5}]
+hyp = [{"speaker": "spk0", "words": "sounds good i will share my screen",
+        "start_time": 3.6, "end_time": 6.6},
+       {"speaker": "spk1", "words": "let us start with the quality numbers",
+        "start_time": 0.1, "end_time": 3.6}]
+
+agwer.tcpwer(ref, hyp, collar=5)   # 0.0714, same value with correct timing
+agwer.tcp_statistics(ref, hyp)     # adds assignment and speaker counts
+```
+
 ### Normalization
 
 Normalization is the main reason WER numbers are incomparable across papers.
@@ -317,12 +340,16 @@ agwer gratefully builds on and learns from these projects:
 * [NVIDIA NeMo text processing](https://github.com/NVIDIA/NeMo-text-processing)
   sets the bar for full text normalization across languages. Its semiotic
   class taxonomy guides our normalization roadmap.
-* [MeetEval](https://github.com/fgnt/meeteval) defined the cpWER reference
-  implementation for multi-speaker ASR. agwer's `cpwer` matches it on a
-  golden set of 87 pinned cases; for time-constrained metrics (tcpWER) and
-  ORC/MIMO variants, use MeetEval itself.
+* [MeetEval](https://github.com/fgnt/meeteval) defined the cpWER and tcpWER
+  reference implementations for multi-speaker ASR. agwer matches it on
+  golden sets of 87 (cpWER) and 53 (tcpWER) pinned cases; for ORC/MIMO
+  variants and DER, use MeetEval itself.
 
-## License
+## License & contact
 
-Apache-2.0. Vendored Whisper normalizers: MIT (see
+MIT. If you use or redistribute substantial portions of agwer, please
+acknowledge the project rather than republishing it under a different
+name. Vendored Whisper normalizers: MIT (see
 `src/agwer/normalizers/LICENSE_WHISPER`).
+
+Contact: Huck Yang <huckiyang@ieee.org>

@@ -1,0 +1,5577 @@
+[
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w23 w37",
+    "start_time": 1.184,
+    "end_time": 1.95
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4 w15 w5 w35 w27 w3 w36",
+    "start_time": 2.386,
+    "end_time": 3.358
+   },
+   {
+    "speaker": "spk2",
+    "words": "w36",
+    "start_time": 5.015,
+    "end_time": 8.721
+   },
+   {
+    "speaker": "spk2",
+    "words": "w18 w26 w9",
+    "start_time": 9.12,
+    "end_time": 9.876
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w23 w37",
+    "start_time": 1.243,
+    "end_time": 2.009
+   },
+   {
+    "speaker": "h0",
+    "words": "w3 w15 w5 w35 w27 w3 w36",
+    "start_time": 2.076,
+    "end_time": 3.048
+   },
+   {
+    "speaker": "h1",
+    "words": "w15",
+    "start_time": 4.769,
+    "end_time": 8.475
+   },
+   {
+    "speaker": "h1",
+    "words": "w18 w26 w9",
+    "start_time": 8.593,
+    "end_time": 9.349
+   }
+  ],
+  "collar": 1,
+  "errors": 2,
+  "length": 13,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk1",
+    "words": "w35 w36",
+    "start_time": 2.8,
+    "end_time": 5.619
+   },
+   {
+    "speaker": "spk2",
+    "words": "w4 w5 w17 w30 w4 w3 w19 w36",
+    "start_time": 4.617,
+    "end_time": 7.849
+   },
+   {
+    "speaker": "spk1",
+    "words": "w1 w29 w22 w10 w39 w7",
+    "start_time": 7.596,
+    "end_time": 10.218
+   },
+   {
+    "speaker": "spk0",
+    "words": "w25 w25 w31 w5",
+    "start_time": 10.025,
+    "end_time": 11.236
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w35 w36",
+    "start_time": 2.208,
+    "end_time": 5.027
+   },
+   {
+    "speaker": "h1",
+    "words": "w9 w14 w37 w18 w26 w3 w19 w8",
+    "start_time": 4.651,
+    "end_time": 7.883
+   },
+   {
+    "speaker": "h0",
+    "words": "w1 w29 w35 w10 w39 w25",
+    "start_time": 6.645,
+    "end_time": 9.267
+   },
+   {
+    "speaker": "h2",
+    "words": "w10 w38 w0 w5",
+    "start_time": 11.012,
+    "end_time": 12.223
+   }
+  ],
+  "collar": 0.5,
+  "errors": 19,
+  "length": 20,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk1",
+    "words": "w38 w23 w30 w7 w7 w31",
+    "start_time": 1.129,
+    "end_time": 5.118
+   },
+   {
+    "speaker": "spk1",
+    "words": "w16 w30 w10 w33 w1 w13",
+    "start_time": 3.597,
+    "end_time": 4.89
+   },
+   {
+    "speaker": "spk1",
+    "words": "w5 w16 w33 w23 w10",
+    "start_time": 5.379,
+    "end_time": 6.027
+   },
+   {
+    "speaker": "spk0",
+    "words": "w14 w39 w12 w15 w25 w14",
+    "start_time": 7.377,
+    "end_time": 12.162
+   },
+   {
+    "speaker": "spk1",
+    "words": "w17",
+    "start_time": 10.425,
+    "end_time": 11.084
+   },
+   {
+    "speaker": "spk1",
+    "words": "w22 w23 w5 w14 w6 w14 w30 w12",
+    "start_time": 12.639,
+    "end_time": 18.4
+   },
+   {
+    "speaker": "spk1",
+    "words": "w30",
+    "start_time": 15.453,
+    "end_time": 20.905
+   },
+   {
+    "speaker": "spk1",
+    "words": "w12 w30 w11 w27 w21 w5 w25",
+    "start_time": 19.195,
+    "end_time": 23.328
+   },
+   {
+    "speaker": "spk1",
+    "words": "w8 w1 w9",
+    "start_time": 23.363,
+    "end_time": 27.849
+   },
+   {
+    "speaker": "spk0",
+    "words": "w22 w9 w35 w35 w8 w1 w0 w6",
+    "start_time": 26.696,
+    "end_time": 31.742
+   },
+   {
+    "speaker": "spk0",
+    "words": "w1 w16 w13 w18",
+    "start_time": 31.062,
+    "end_time": 36.106
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w38 w23 w30 w7 w7 w31",
+    "start_time": 1.131,
+    "end_time": 5.12
+   },
+   {
+    "speaker": "h1",
+    "words": "w16 w30 w28 w33 w1 w13",
+    "start_time": 3.13,
+    "end_time": 4.423
+   },
+   {
+    "speaker": "h1",
+    "words": "w5 w3 w33 w23 w10",
+    "start_time": 4.865,
+    "end_time": 5.513
+   },
+   {
+    "speaker": "h0",
+    "words": "w14 w39 w12 w15 w25 w14",
+    "start_time": 7.915,
+    "end_time": 12.7
+   },
+   {
+    "speaker": "h1",
+    "words": "w17",
+    "start_time": 10.432,
+    "end_time": 11.091
+   },
+   {
+    "speaker": "h1",
+    "words": "w22 w23 w5 w14 w6 w14 w30 w12",
+    "start_time": 12.326,
+    "end_time": 18.087
+   },
+   {
+    "speaker": "h1",
+    "words": "w30",
+    "start_time": 15.896,
+    "end_time": 21.348
+   },
+   {
+    "speaker": "h1",
+    "words": "w7 w30 w11 w27 w21 w19 w25",
+    "start_time": 18.744,
+    "end_time": 22.877
+   },
+   {
+    "speaker": "h1",
+    "words": "w8 w1 w8",
+    "start_time": 22.997,
+    "end_time": 27.483
+   },
+   {
+    "speaker": "h0",
+    "words": "w22 w9 w35 w35 w8 w27 w0 w6",
+    "start_time": 26.509,
+    "end_time": 31.555
+   },
+   {
+    "speaker": "h0",
+    "words": "w23 w35 w13 w18",
+    "start_time": 31.085,
+    "end_time": 36.129
+   }
+  ],
+  "collar": 0.5,
+  "errors": 8,
+  "length": 55,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w16 w17",
+    "start_time": 0.686,
+    "end_time": 6.006
+   },
+   {
+    "speaker": "spk0",
+    "words": "w16 w25 w9 w34 w32 w36 w31",
+    "start_time": 5.086,
+    "end_time": 9.743
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4 w17 w1 w5 w16 w5 w38",
+    "start_time": 5.592,
+    "end_time": 9.877
+   },
+   {
+    "speaker": "spk0",
+    "words": "w35 w26 w17 w39 w8 w2",
+    "start_time": 8.409,
+    "end_time": 11.404
+   },
+   {
+    "speaker": "spk0",
+    "words": "w12 w19 w19",
+    "start_time": 13.564,
+    "end_time": 15.505
+   },
+   {
+    "speaker": "spk0",
+    "words": "w1 w16 w2 w0 w1 w32",
+    "start_time": 15.515,
+    "end_time": 16.993
+   },
+   {
+    "speaker": "spk0",
+    "words": "w31 w34 w25 w32 w19 w13 w14",
+    "start_time": 16.86,
+    "end_time": 19.819
+   },
+   {
+    "speaker": "spk0",
+    "words": "w25 w22 w3",
+    "start_time": 19.976,
+    "end_time": 24.485
+   },
+   {
+    "speaker": "spk0",
+    "words": "w10 w3 w5 w24 w32 w18 w38",
+    "start_time": 21.904,
+    "end_time": 27.243
+   },
+   {
+    "speaker": "spk0",
+    "words": "w28 w0 w16 w23 w21",
+    "start_time": 24.998,
+    "end_time": 26.518
+   },
+   {
+    "speaker": "spk0",
+    "words": "w11 w0 w21 w24 w5 w30",
+    "start_time": 28.192,
+    "end_time": 30.395
+   },
+   {
+    "speaker": "spk0",
+    "words": "w5",
+    "start_time": 29.681,
+    "end_time": 32.957
+   },
+   {
+    "speaker": "spk0",
+    "words": "w1 w19 w19 w14 w5 w37 w33",
+    "start_time": 32.254,
+    "end_time": 35.982
+   },
+   {
+    "speaker": "spk0",
+    "words": "w20 w31 w9 w18 w39 w9 w2",
+    "start_time": 36.363,
+    "end_time": 41.698
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w16 w17",
+    "start_time": 1.28,
+    "end_time": 6.6
+   },
+   {
+    "speaker": "h0",
+    "words": "w16 w25 w8 w34 w32 w36 w31",
+    "start_time": 3.523,
+    "end_time": 8.18
+   },
+   {
+    "speaker": "h0",
+    "words": "w4 w17 w1 w5 w16 w5 w38",
+    "start_time": 5.676,
+    "end_time": 9.961
+   },
+   {
+    "speaker": "h0",
+    "words": "w35 w26 w17 w39 w8 w2",
+    "start_time": 8.896,
+    "end_time": 11.891
+   },
+   {
+    "speaker": "h0",
+    "words": "w12 w19 w19",
+    "start_time": 12.873,
+    "end_time": 14.814
+   },
+   {
+    "speaker": "h0",
+    "words": "w12 w16 w2 w0 w1 w32",
+    "start_time": 13.931,
+    "end_time": 15.409
+   },
+   {
+    "speaker": "h0",
+    "words": "w31 w34 w25 w32 w19 w13 w14",
+    "start_time": 16.751,
+    "end_time": 19.71
+   },
+   {
+    "speaker": "h0",
+    "words": "w25 w22 w3",
+    "start_time": 21.393,
+    "end_time": 25.902
+   },
+   {
+    "speaker": "h0",
+    "words": "w29 w3 w5 w24 w32 w18 w38",
+    "start_time": 20.522,
+    "end_time": 25.861
+   },
+   {
+    "speaker": "h0",
+    "words": "w28 w0 w16 w23 w21",
+    "start_time": 24.282,
+    "end_time": 25.802
+   },
+   {
+    "speaker": "h0",
+    "words": "w11 w0 w21 w24 w5 w30",
+    "start_time": 28.782,
+    "end_time": 30.985
+   },
+   {
+    "speaker": "h0",
+    "words": "w5",
+    "start_time": 29.409,
+    "end_time": 32.685
+   },
+   {
+    "speaker": "h0",
+    "words": "w1 w19 w19 w14 w5 w37 w33",
+    "start_time": 30.668,
+    "end_time": 34.396
+   },
+   {
+    "speaker": "h0",
+    "words": "w20 w31 w9 w18 w39 w9 w2",
+    "start_time": 37.514,
+    "end_time": 42.849
+   }
+  ],
+  "collar": 0.5,
+  "errors": 55,
+  "length": 74,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk1",
+    "words": "w27 w32 w20 w12 w23",
+    "start_time": 2.807,
+    "end_time": 4.678
+   },
+   {
+    "speaker": "spk2",
+    "words": "w5 w3 w26 w28",
+    "start_time": 6.566,
+    "end_time": 10.536
+   },
+   {
+    "speaker": "spk0",
+    "words": "w35",
+    "start_time": 10.89,
+    "end_time": 12.964
+   },
+   {
+    "speaker": "spk2",
+    "words": "w16 w25 w15 w19 w30",
+    "start_time": 12.418,
+    "end_time": 14.468
+   },
+   {
+    "speaker": "spk1",
+    "words": "w13 w32",
+    "start_time": 13.874,
+    "end_time": 17.912
+   },
+   {
+    "speaker": "spk2",
+    "words": "w27 w8 w35 w12 w15 w5 w11 w21",
+    "start_time": 17.011,
+    "end_time": 19.342
+   },
+   {
+    "speaker": "spk2",
+    "words": "w1 w26 w24 w26",
+    "start_time": 17.898,
+    "end_time": 19.819
+   },
+   {
+    "speaker": "spk1",
+    "words": "w31",
+    "start_time": 19.834,
+    "end_time": 22.194
+   },
+   {
+    "speaker": "spk1",
+    "words": "w5 w17 w15 w24",
+    "start_time": 21.999,
+    "end_time": 26.276
+   },
+   {
+    "speaker": "spk0",
+    "words": "w8",
+    "start_time": 25.504,
+    "end_time": 27.72
+   },
+   {
+    "speaker": "spk0",
+    "words": "w0 w4 w25 w33 w29 w28 w15 w6",
+    "start_time": 28.549,
+    "end_time": 33.473
+   },
+   {
+    "speaker": "spk2",
+    "words": "w5 w35 w2 w0 w8 w14 w36 w2",
+    "start_time": 30.724,
+    "end_time": 34.976
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w5 w3 w26 w28",
+    "start_time": 5.574,
+    "end_time": 9.544
+   },
+   {
+    "speaker": "h2",
+    "words": "w35",
+    "start_time": 9.078,
+    "end_time": 11.152
+   },
+   {
+    "speaker": "h0",
+    "words": "w16 w25 w12 w19 w30",
+    "start_time": 11.483,
+    "end_time": 13.533
+   },
+   {
+    "speaker": "h1",
+    "words": "w13 w32",
+    "start_time": 12.08,
+    "end_time": 16.118
+   },
+   {
+    "speaker": "h0",
+    "words": "w27 w8 w35 w18 w15 w5 w12 w21",
+    "start_time": 15.975,
+    "end_time": 18.306
+   },
+   {
+    "speaker": "h0",
+    "words": "w18 w39 w24 w14",
+    "start_time": 19.478,
+    "end_time": 21.399
+   },
+   {
+    "speaker": "h1",
+    "words": "w38",
+    "start_time": 19.424,
+    "end_time": 21.784
+   },
+   {
+    "speaker": "h1",
+    "words": "w38 w3 w15 w28",
+    "start_time": 23.476,
+    "end_time": 27.753
+   },
+   {
+    "speaker": "h2",
+    "words": "w8",
+    "start_time": 27.166,
+    "end_time": 29.382
+   },
+   {
+    "speaker": "h2",
+    "words": "w0 w33 w25 w24 w29 w28 w15 w5",
+    "start_time": 27.977,
+    "end_time": 32.901
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w13 w2 w0 w8 w14 w30 w34",
+    "start_time": 29.542,
+    "end_time": 33.794
+   }
+  ],
+  "collar": 5,
+  "errors": 21,
+  "length": 51,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w2 w24 w2 w29 w4 w3 w16",
+    "start_time": 1.232,
+    "end_time": 6.197
+   },
+   {
+    "speaker": "spk0",
+    "words": "w21 w39 w2 w16 w20",
+    "start_time": 6.896,
+    "end_time": 9.261
+   },
+   {
+    "speaker": "spk0",
+    "words": "w1 w14",
+    "start_time": 9.624,
+    "end_time": 13.399
+   },
+   {
+    "speaker": "spk0",
+    "words": "w16 w27 w31 w8 w31 w11 w0",
+    "start_time": 13.929,
+    "end_time": 19.676
+   },
+   {
+    "speaker": "spk0",
+    "words": "w20 w29 w23 w38 w5 w32",
+    "start_time": 20.03,
+    "end_time": 23.87
+   },
+   {
+    "speaker": "spk0",
+    "words": "w30",
+    "start_time": 21.713,
+    "end_time": 24.456
+   },
+   {
+    "speaker": "spk0",
+    "words": "w16 w39",
+    "start_time": 23.345,
+    "end_time": 24.424
+   },
+   {
+    "speaker": "spk0",
+    "words": "w11 w14 w8 w26 w29 w39 w15 w34",
+    "start_time": 24.788,
+    "end_time": 30.725
+   },
+   {
+    "speaker": "spk0",
+    "words": "w23 w16 w16 w12 w28",
+    "start_time": 29.373,
+    "end_time": 31.41
+   },
+   {
+    "speaker": "spk0",
+    "words": "w20 w4 w25 w16",
+    "start_time": 30.382,
+    "end_time": 32.43
+   },
+   {
+    "speaker": "spk0",
+    "words": "w2 w6 w0 w30 w14 w28 w23 w2",
+    "start_time": 31.908,
+    "end_time": 36.854
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4 w23 w32 w11",
+    "start_time": 32.98,
+    "end_time": 36.783
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w38 w24 w2 w21 w13 w3 w13",
+    "start_time": 2.22,
+    "end_time": 7.185
+   },
+   {
+    "speaker": "h0",
+    "words": "w21 w39 w2 w2 w20",
+    "start_time": 5.542,
+    "end_time": 7.907
+   },
+   {
+    "speaker": "h0",
+    "words": "w25 w14",
+    "start_time": 9.729,
+    "end_time": 13.504
+   },
+   {
+    "speaker": "h0",
+    "words": "w16 w27 w31 w8 w31 w11 w36",
+    "start_time": 13.663,
+    "end_time": 19.41
+   },
+   {
+    "speaker": "h0",
+    "words": "w23 w29 w23 w38 w5 w32",
+    "start_time": 18.832,
+    "end_time": 22.672
+   },
+   {
+    "speaker": "h0",
+    "words": "w36",
+    "start_time": 21.592,
+    "end_time": 24.335
+   },
+   {
+    "speaker": "h0",
+    "words": "w0 w9",
+    "start_time": 24.615,
+    "end_time": 25.694
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w14 w8 w22 w29 w39 w15 w31",
+    "start_time": 25.694,
+    "end_time": 31.631
+   },
+   {
+    "speaker": "h0",
+    "words": "w23 w16 w16 w30 w28",
+    "start_time": 29.796,
+    "end_time": 31.833
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w4 w25 w16",
+    "start_time": 30.757,
+    "end_time": 32.805
+   },
+   {
+    "speaker": "h0",
+    "words": "w2 w30 w13 w33 w22 w15 w23 w2",
+    "start_time": 33.098,
+    "end_time": 38.044
+   },
+   {
+    "speaker": "h0",
+    "words": "w4 w23 w32 w11",
+    "start_time": 32.843,
+    "end_time": 36.646
+   }
+  ],
+  "collar": 2,
+  "errors": 29,
+  "length": 59,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk3",
+    "words": "w28 w32 w28 w11 w1 w0",
+    "start_time": 1.748,
+    "end_time": 4.589
+   },
+   {
+    "speaker": "spk2",
+    "words": "w11 w30 w25 w6 w4 w8 w22 w27",
+    "start_time": 4.146,
+    "end_time": 8.048
+   },
+   {
+    "speaker": "spk1",
+    "words": "w2",
+    "start_time": 5.758,
+    "end_time": 9.064
+   },
+   {
+    "speaker": "spk3",
+    "words": "w3 w32",
+    "start_time": 8.176,
+    "end_time": 12.953
+   },
+   {
+    "speaker": "spk1",
+    "words": "w39 w7",
+    "start_time": 13.023,
+    "end_time": 13.666
+   },
+   {
+    "speaker": "spk2",
+    "words": "w14 w4 w22",
+    "start_time": 15.748,
+    "end_time": 17.831
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w11 w30 w25 w6 w4 w8 w22 w27",
+    "start_time": 4.635,
+    "end_time": 8.537
+   },
+   {
+    "speaker": "h1",
+    "words": "w2",
+    "start_time": 5.956,
+    "end_time": 9.262
+   },
+   {
+    "speaker": "h1",
+    "words": "w39 w7",
+    "start_time": 12.179,
+    "end_time": 12.822
+   },
+   {
+    "speaker": "h0",
+    "words": "w14 w4 w22",
+    "start_time": 15.541,
+    "end_time": 17.624
+   }
+  ],
+  "collar": 0.5,
+  "errors": 11,
+  "length": 22,
+  "missed_speaker": 1,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk2",
+    "words": "w0 w2 w14 w9 w18 w39",
+    "start_time": 1.548,
+    "end_time": 3.754
+   },
+   {
+    "speaker": "spk2",
+    "words": "w31 w14 w39",
+    "start_time": 3.849,
+    "end_time": 9.274
+   },
+   {
+    "speaker": "spk1",
+    "words": "w6 w33 w22 w34 w14",
+    "start_time": 4.21,
+    "end_time": 7.829
+   },
+   {
+    "speaker": "spk2",
+    "words": "w10 w8 w0 w15 w9 w28 w6 w4",
+    "start_time": 7.667,
+    "end_time": 9.29
+   },
+   {
+    "speaker": "spk2",
+    "words": "w0 w3 w35 w22 w38",
+    "start_time": 9.851,
+    "end_time": 11.835
+   },
+   {
+    "speaker": "spk0",
+    "words": "w15 w10 w0 w2 w3 w34 w1 w25",
+    "start_time": 12.575,
+    "end_time": 15.922
+   },
+   {
+    "speaker": "spk2",
+    "words": "w39",
+    "start_time": 13.386,
+    "end_time": 18.17
+   },
+   {
+    "speaker": "spk2",
+    "words": "w39 w11 w32 w19 w4 w19 w3",
+    "start_time": 16.492,
+    "end_time": 19.264
+   },
+   {
+    "speaker": "spk0",
+    "words": "w29 w5 w28 w11 w14 w6 w16",
+    "start_time": 20.375,
+    "end_time": 20.909
+   },
+   {
+    "speaker": "spk1",
+    "words": "w3 w17 w35 w27 w33",
+    "start_time": 21.02,
+    "end_time": 26.422
+   },
+   {
+    "speaker": "spk0",
+    "words": "w32 w0",
+    "start_time": 25.083,
+    "end_time": 30.501
+   },
+   {
+    "speaker": "spk1",
+    "words": "w20 w12 w24",
+    "start_time": 26.92,
+    "end_time": 31.511
+   },
+   {
+    "speaker": "spk0",
+    "words": "w30 w33 w0 w1 w27 w14 w36 w19",
+    "start_time": 30.267,
+    "end_time": 35.452
+   },
+   {
+    "speaker": "spk0",
+    "words": "w9 w2 w1",
+    "start_time": 33.647,
+    "end_time": 37.256
+   },
+   {
+    "speaker": "spk0",
+    "words": "w1 w1 w2",
+    "start_time": 36.742,
+    "end_time": 39.139
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h2",
+    "words": "w6 w33 w13 w34 w14",
+    "start_time": 3.832,
+    "end_time": 7.451
+   },
+   {
+    "speaker": "h1",
+    "words": "w15 w10 w0 w2 w22 w34 w1 w25",
+    "start_time": 12.561,
+    "end_time": 15.908
+   },
+   {
+    "speaker": "h1",
+    "words": "w29 w25 w28 w11 w14 w6 w16",
+    "start_time": 20.193,
+    "end_time": 20.727
+   },
+   {
+    "speaker": "h2",
+    "words": "w3 w14 w35 w38 w33",
+    "start_time": 21.391,
+    "end_time": 26.793
+   },
+   {
+    "speaker": "h1",
+    "words": "w32 w0",
+    "start_time": 25.953,
+    "end_time": 31.371
+   },
+   {
+    "speaker": "h2",
+    "words": "w20 w12 w28",
+    "start_time": 26.304,
+    "end_time": 30.895
+   },
+   {
+    "speaker": "h1",
+    "words": "w21 w33 w0 w12 w39 w9 w36 w19",
+    "start_time": 29.883,
+    "end_time": 35.068
+   },
+   {
+    "speaker": "h1",
+    "words": "w12 w6 w6",
+    "start_time": 32.762,
+    "end_time": 36.371
+   },
+   {
+    "speaker": "h1",
+    "words": "w19 w1 w2",
+    "start_time": 37.092,
+    "end_time": 39.489
+   }
+  ],
+  "collar": 5,
+  "errors": 44,
+  "length": 74,
+  "missed_speaker": 1,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk3",
+    "words": "w14 w32 w18 w29 w1 w9 w16",
+    "start_time": 0.038,
+    "end_time": 5.237
+   },
+   {
+    "speaker": "spk2",
+    "words": "w14 w37 w14 w11 w7 w29 w27",
+    "start_time": 0.788,
+    "end_time": 5.979
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w14 w32 w27 w29 w26 w9 w16",
+    "start_time": 1.144,
+    "end_time": 6.343
+   },
+   {
+    "speaker": "h0",
+    "words": "w0 w37 w14 w11 w34 w12 w27",
+    "start_time": 0.997,
+    "end_time": 6.188
+   }
+  ],
+  "collar": 5,
+  "errors": 5,
+  "length": 14,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w26 w29 w13 w11 w25 w32",
+    "start_time": 1.918,
+    "end_time": 6.977
+   },
+   {
+    "speaker": "spk0",
+    "words": "w17 w24 w25 w3 w0",
+    "start_time": 6.711,
+    "end_time": 10.718
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w26 w19 w13 w11 w25 w25",
+    "start_time": 1.354,
+    "end_time": 6.413
+   },
+   {
+    "speaker": "h0",
+    "words": "w17 w12 w25 w3 w9",
+    "start_time": 6.944,
+    "end_time": 10.951
+   }
+  ],
+  "collar": 5,
+  "errors": 4,
+  "length": 11,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w22 w14 w17 w24 w16 w27 w11 w30",
+    "start_time": 2.28,
+    "end_time": 6.353
+   },
+   {
+    "speaker": "spk0",
+    "words": "w20 w30 w31 w27 w39",
+    "start_time": 7.301,
+    "end_time": 9.77
+   },
+   {
+    "speaker": "spk0",
+    "words": "w3 w5 w36 w20 w8 w33 w22",
+    "start_time": 9.69,
+    "end_time": 15.298
+   },
+   {
+    "speaker": "spk1",
+    "words": "w16 w38 w6 w37 w9",
+    "start_time": 13.268,
+    "end_time": 14.164
+   },
+   {
+    "speaker": "spk0",
+    "words": "w25 w34 w10 w39",
+    "start_time": 14.757,
+    "end_time": 19.574
+   },
+   {
+    "speaker": "spk3",
+    "words": "w12 w31 w13 w33 w5",
+    "start_time": 20.015,
+    "end_time": 24.849
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w22 w14 w17 w24 w16 w27 w11 w30",
+    "start_time": 2.121,
+    "end_time": 6.194
+   },
+   {
+    "speaker": "h1",
+    "words": "w20 w30 w31 w27 w39",
+    "start_time": 7.535,
+    "end_time": 10.004
+   },
+   {
+    "speaker": "h1",
+    "words": "w3 w5 w36 w20 w2 w33 w22",
+    "start_time": 9.915,
+    "end_time": 15.523
+   },
+   {
+    "speaker": "h0",
+    "words": "w16 w38 w6 w26 w9",
+    "start_time": 13.437,
+    "end_time": 14.333
+   },
+   {
+    "speaker": "h1",
+    "words": "w25 w34 w10 w39",
+    "start_time": 14.727,
+    "end_time": 19.544
+   },
+   {
+    "speaker": "h2",
+    "words": "w12 w31 w13 w33 w5",
+    "start_time": 20.017,
+    "end_time": 24.851
+   }
+  ],
+  "collar": 2,
+  "errors": 2,
+  "length": 34,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w20 w19 w8 w37",
+    "start_time": 1.477,
+    "end_time": 2.625
+   },
+   {
+    "speaker": "spk0",
+    "words": "w34 w36 w3 w25 w19 w6 w0",
+    "start_time": 2.317,
+    "end_time": 6.792
+   },
+   {
+    "speaker": "spk1",
+    "words": "w32",
+    "start_time": 5.762,
+    "end_time": 9.609
+   },
+   {
+    "speaker": "spk1",
+    "words": "w13 w2",
+    "start_time": 9.54,
+    "end_time": 13.871
+   },
+   {
+    "speaker": "spk0",
+    "words": "w26",
+    "start_time": 12.228,
+    "end_time": 16.378
+   },
+   {
+    "speaker": "spk1",
+    "words": "w19 w35 w16",
+    "start_time": 17.23,
+    "end_time": 19.759
+   },
+   {
+    "speaker": "spk0",
+    "words": "w31",
+    "start_time": 17.707,
+    "end_time": 18.319
+   },
+   {
+    "speaker": "spk1",
+    "words": "w28 w4 w0 w24 w38 w37 w9",
+    "start_time": 20.432,
+    "end_time": 23.248
+   },
+   {
+    "speaker": "spk0",
+    "words": "w13 w9 w0 w27 w0 w0 w7 w5",
+    "start_time": 23.812,
+    "end_time": 24.769
+   },
+   {
+    "speaker": "spk0",
+    "words": "w28 w11 w3 w23",
+    "start_time": 24.864,
+    "end_time": 25.462
+   },
+   {
+    "speaker": "spk0",
+    "words": "w29 w16 w3 w2 w0 w3 w0 w39",
+    "start_time": 25.466,
+    "end_time": 29.424
+   },
+   {
+    "speaker": "spk0",
+    "words": "w38 w3 w20 w23 w36 w28 w30 w10",
+    "start_time": 27.635,
+    "end_time": 31.436
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w20 w19 w8 w36",
+    "start_time": 1.374,
+    "end_time": 2.522
+   },
+   {
+    "speaker": "h0",
+    "words": "w34 w36 w3 w25 w19 w6 w9",
+    "start_time": 2.228,
+    "end_time": 6.703
+   },
+   {
+    "speaker": "h1",
+    "words": "w32",
+    "start_time": 5.704,
+    "end_time": 9.551
+   },
+   {
+    "speaker": "h1",
+    "words": "w13 w2",
+    "start_time": 9.684,
+    "end_time": 14.015
+   },
+   {
+    "speaker": "h0",
+    "words": "w0",
+    "start_time": 12.12,
+    "end_time": 16.27
+   },
+   {
+    "speaker": "h1",
+    "words": "w2 w9 w16",
+    "start_time": 17.264,
+    "end_time": 19.793
+   },
+   {
+    "speaker": "h0",
+    "words": "w35",
+    "start_time": 17.9,
+    "end_time": 18.512
+   },
+   {
+    "speaker": "h1",
+    "words": "w5 w4 w0 w24 w38 w37 w9",
+    "start_time": 20.225,
+    "end_time": 23.041
+   },
+   {
+    "speaker": "h0",
+    "words": "w13 w9 w0 w27 w24 w0 w22 w5",
+    "start_time": 23.849,
+    "end_time": 24.806
+   },
+   {
+    "speaker": "h0",
+    "words": "w28 w11 w3 w23",
+    "start_time": 24.719,
+    "end_time": 25.317
+   },
+   {
+    "speaker": "h0",
+    "words": "w11 w16 w36 w2 w0 w3 w2 w39",
+    "start_time": 25.637,
+    "end_time": 29.595
+   },
+   {
+    "speaker": "h0",
+    "words": "w29 w3 w38 w17 w36 w2 w36 w10",
+    "start_time": 27.524,
+    "end_time": 31.325
+   }
+  ],
+  "collar": 5,
+  "errors": 17,
+  "length": 54,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w16 w2 w21",
+    "start_time": 2.302,
+    "end_time": 7.305
+   },
+   {
+    "speaker": "spk0",
+    "words": "w35",
+    "start_time": 7.418,
+    "end_time": 8.069
+   },
+   {
+    "speaker": "spk0",
+    "words": "w38 w25",
+    "start_time": 9.246,
+    "end_time": 14.956
+   },
+   {
+    "speaker": "spk0",
+    "words": "w5 w32 w25 w11",
+    "start_time": 12.743,
+    "end_time": 14.995
+   },
+   {
+    "speaker": "spk0",
+    "words": "w11 w2 w16 w22",
+    "start_time": 15.387,
+    "end_time": 17.18
+   },
+   {
+    "speaker": "spk0",
+    "words": "w16",
+    "start_time": 19.396,
+    "end_time": 24.5
+   },
+   {
+    "speaker": "spk0",
+    "words": "w19 w37 w37 w28",
+    "start_time": 20.058,
+    "end_time": 24.71
+   },
+   {
+    "speaker": "spk0",
+    "words": "w30 w24 w10 w28 w15 w9",
+    "start_time": 22.925,
+    "end_time": 25.57
+   },
+   {
+    "speaker": "spk0",
+    "words": "w14 w4 w39",
+    "start_time": 26.653,
+    "end_time": 31.546
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w16 w2 w4",
+    "start_time": 2.212,
+    "end_time": 7.215
+   },
+   {
+    "speaker": "h0",
+    "words": "w35",
+    "start_time": 7.49,
+    "end_time": 8.141
+   },
+   {
+    "speaker": "h0",
+    "words": "w14 w25",
+    "start_time": 9.219,
+    "end_time": 14.929
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w32 w26 w11",
+    "start_time": 12.615,
+    "end_time": 14.867
+   },
+   {
+    "speaker": "h0",
+    "words": "w11 w2 w31 w29",
+    "start_time": 15.171,
+    "end_time": 16.964
+   },
+   {
+    "speaker": "h0",
+    "words": "w16",
+    "start_time": 19.617,
+    "end_time": 24.721
+   },
+   {
+    "speaker": "h0",
+    "words": "w19 w37 w37 w28",
+    "start_time": 19.891,
+    "end_time": 24.543
+   },
+   {
+    "speaker": "h0",
+    "words": "w30 w24 w10 w28 w18 w9",
+    "start_time": 23.111,
+    "end_time": 25.756
+   },
+   {
+    "speaker": "h0",
+    "words": "w14 w1 w39",
+    "start_time": 26.659,
+    "end_time": 31.552
+   }
+  ],
+  "collar": 2,
+  "errors": 7,
+  "length": 28,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w17 w36 w11 w8",
+    "start_time": 1.306,
+    "end_time": 6.822
+   },
+   {
+    "speaker": "spk1",
+    "words": "w5 w38",
+    "start_time": 4.299,
+    "end_time": 5.765
+   },
+   {
+    "speaker": "spk0",
+    "words": "w37 w19 w12 w0",
+    "start_time": 5.718,
+    "end_time": 6.971
+   },
+   {
+    "speaker": "spk1",
+    "words": "w33",
+    "start_time": 7.971,
+    "end_time": 13.097
+   },
+   {
+    "speaker": "spk1",
+    "words": "w5 w0 w26 w30 w8 w17 w15 w11",
+    "start_time": 11.871,
+    "end_time": 17.126
+   },
+   {
+    "speaker": "spk1",
+    "words": "w22",
+    "start_time": 14.132,
+    "end_time": 17.794
+   },
+   {
+    "speaker": "spk1",
+    "words": "w20 w24 w36 w3",
+    "start_time": 17.184,
+    "end_time": 19.646
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w5 w36 w6 w8",
+    "start_time": 3.044,
+    "end_time": 8.56
+   },
+   {
+    "speaker": "h1",
+    "words": "w12 w38",
+    "start_time": 4.821,
+    "end_time": 6.287
+   },
+   {
+    "speaker": "h0",
+    "words": "w37 w19 w12 w0",
+    "start_time": 4.493,
+    "end_time": 5.746
+   },
+   {
+    "speaker": "h1",
+    "words": "w33",
+    "start_time": 8.299,
+    "end_time": 13.425
+   },
+   {
+    "speaker": "h1",
+    "words": "w5 w7 w26 w37 w8 w17 w15 w11",
+    "start_time": 13.581,
+    "end_time": 18.836
+   },
+   {
+    "speaker": "h1",
+    "words": "w24",
+    "start_time": 14.502,
+    "end_time": 18.164
+   },
+   {
+    "speaker": "h1",
+    "words": "w20 w3 w36 w3",
+    "start_time": 16.555,
+    "end_time": 19.017
+   }
+  ],
+  "collar": 2,
+  "errors": 7,
+  "length": 24,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w22 w15 w27",
+    "start_time": 1.683,
+    "end_time": 3.97
+   },
+   {
+    "speaker": "spk3",
+    "words": "w12 w32 w1 w14 w8 w26 w25",
+    "start_time": 3.942,
+    "end_time": 4.823
+   },
+   {
+    "speaker": "spk2",
+    "words": "w2",
+    "start_time": 6.816,
+    "end_time": 12.18
+   },
+   {
+    "speaker": "spk0",
+    "words": "w39",
+    "start_time": 12.626,
+    "end_time": 16.581
+   },
+   {
+    "speaker": "spk0",
+    "words": "w18",
+    "start_time": 14.98,
+    "end_time": 17.865
+   },
+   {
+    "speaker": "spk3",
+    "words": "w5 w29 w37 w34 w9",
+    "start_time": 17.627,
+    "end_time": 18.789
+   },
+   {
+    "speaker": "spk3",
+    "words": "w36 w18 w17 w15 w5 w34 w18",
+    "start_time": 18.137,
+    "end_time": 20.251
+   },
+   {
+    "speaker": "spk2",
+    "words": "w35 w23 w29 w35",
+    "start_time": 20.879,
+    "end_time": 24.956
+   },
+   {
+    "speaker": "spk3",
+    "words": "w21 w14 w12 w32",
+    "start_time": 24.285,
+    "end_time": 26.492
+   },
+   {
+    "speaker": "spk2",
+    "words": "w15 w20 w35",
+    "start_time": 27.187,
+    "end_time": 32.77
+   },
+   {
+    "speaker": "spk2",
+    "words": "w3 w1 w10 w35 w4",
+    "start_time": 30.236,
+    "end_time": 36.167
+   },
+   {
+    "speaker": "spk1",
+    "words": "w22 w6 w33 w14 w9 w26 w21 w22",
+    "start_time": 32.51,
+    "end_time": 35.143
+   },
+   {
+    "speaker": "spk1",
+    "words": "w30 w17",
+    "start_time": 35.781,
+    "end_time": 40.956
+   },
+   {
+    "speaker": "spk1",
+    "words": "w31 w25",
+    "start_time": 37.801,
+    "end_time": 40.559
+   },
+   {
+    "speaker": "spk3",
+    "words": "w24 w28",
+    "start_time": 41.074,
+    "end_time": 46.374
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h3",
+    "words": "w22 w15 w27",
+    "start_time": 1.238,
+    "end_time": 3.525
+   },
+   {
+    "speaker": "h0",
+    "words": "w12 w32 w1 w14 w21 w26 w25",
+    "start_time": 4.589,
+    "end_time": 5.47
+   },
+   {
+    "speaker": "h1",
+    "words": "w2",
+    "start_time": 7.395,
+    "end_time": 12.759
+   },
+   {
+    "speaker": "h3",
+    "words": "w3",
+    "start_time": 13.184,
+    "end_time": 17.139
+   },
+   {
+    "speaker": "h3",
+    "words": "w18",
+    "start_time": 14.715,
+    "end_time": 17.6
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w29 w37 w34 w9",
+    "start_time": 16.979,
+    "end_time": 18.141
+   },
+   {
+    "speaker": "h0",
+    "words": "w36 w18 w4 w15 w23 w34 w18",
+    "start_time": 17.649,
+    "end_time": 19.763
+   },
+   {
+    "speaker": "h1",
+    "words": "w35 w23 w29 w35",
+    "start_time": 21.002,
+    "end_time": 25.079
+   },
+   {
+    "speaker": "h0",
+    "words": "w21 w14 w23 w32",
+    "start_time": 24.745,
+    "end_time": 26.952
+   },
+   {
+    "speaker": "h1",
+    "words": "w15 w18 w35",
+    "start_time": 27.878,
+    "end_time": 33.461
+   },
+   {
+    "speaker": "h1",
+    "words": "w3 w1 w10 w35 w4",
+    "start_time": 29.796,
+    "end_time": 35.727
+   },
+   {
+    "speaker": "h2",
+    "words": "w22 w6 w33 w14 w9 w26 w26 w0",
+    "start_time": 32.779,
+    "end_time": 35.412
+   },
+   {
+    "speaker": "h2",
+    "words": "w19 w17",
+    "start_time": 35.098,
+    "end_time": 40.273
+   },
+   {
+    "speaker": "h2",
+    "words": "w11 w25",
+    "start_time": 37.471,
+    "end_time": 40.229
+   },
+   {
+    "speaker": "h0",
+    "words": "w24 w28",
+    "start_time": 41.179,
+    "end_time": 46.479
+   }
+  ],
+  "collar": 0.5,
+  "errors": 23,
+  "length": 55,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w6",
+    "start_time": 1.555,
+    "end_time": 4.857
+   },
+   {
+    "speaker": "spk1",
+    "words": "w3 w0 w37 w20 w9 w15 w22",
+    "start_time": 3.573,
+    "end_time": 8.601
+   },
+   {
+    "speaker": "spk1",
+    "words": "w22 w12",
+    "start_time": 5.054,
+    "end_time": 6.101
+   },
+   {
+    "speaker": "spk0",
+    "words": "w37 w2 w28 w3 w39 w15 w15",
+    "start_time": 5.636,
+    "end_time": 7.346
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w6",
+    "start_time": 0.824,
+    "end_time": 4.126
+   },
+   {
+    "speaker": "h0",
+    "words": "w3 w0 w37 w20 w24 w15 w22",
+    "start_time": 3.195,
+    "end_time": 8.223
+   },
+   {
+    "speaker": "h0",
+    "words": "w22 w15",
+    "start_time": 3.825,
+    "end_time": 4.872
+   },
+   {
+    "speaker": "h1",
+    "words": "w37 w18 w28 w3 w24 w4 w15",
+    "start_time": 7.174,
+    "end_time": 8.884
+   }
+  ],
+  "collar": 5,
+  "errors": 5,
+  "length": 17,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w17",
+    "start_time": 0.851,
+    "end_time": 2.655
+   },
+   {
+    "speaker": "spk0",
+    "words": "w12 w17",
+    "start_time": 1.811,
+    "end_time": 6.194
+   },
+   {
+    "speaker": "spk1",
+    "words": "w10 w23 w22 w13",
+    "start_time": 5.158,
+    "end_time": 10.03
+   },
+   {
+    "speaker": "spk1",
+    "words": "w32 w13 w14 w28 w8 w16 w38 w28",
+    "start_time": 9.502,
+    "end_time": 11.147
+   },
+   {
+    "speaker": "spk1",
+    "words": "w7 w32 w5",
+    "start_time": 11.418,
+    "end_time": 14.724
+   },
+   {
+    "speaker": "spk0",
+    "words": "w19 w0 w24",
+    "start_time": 15.659,
+    "end_time": 16.317
+   },
+   {
+    "speaker": "spk1",
+    "words": "w6 w4 w35 w23",
+    "start_time": 18.353,
+    "end_time": 20.127
+   },
+   {
+    "speaker": "spk1",
+    "words": "w8 w25 w18 w22 w25",
+    "start_time": 20.783,
+    "end_time": 21.766
+   },
+   {
+    "speaker": "spk1",
+    "words": "w17 w11 w1",
+    "start_time": 24.041,
+    "end_time": 29.278
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w17",
+    "start_time": 0.183,
+    "end_time": 1.987
+   },
+   {
+    "speaker": "h1",
+    "words": "w12 w17",
+    "start_time": 0.966,
+    "end_time": 5.349
+   },
+   {
+    "speaker": "h0",
+    "words": "w38 w23 w22 w2",
+    "start_time": 4.974,
+    "end_time": 9.846
+   },
+   {
+    "speaker": "h0",
+    "words": "w32 w13 w14 w28 w8 w16 w38 w28",
+    "start_time": 9.557,
+    "end_time": 11.202
+   },
+   {
+    "speaker": "h0",
+    "words": "w7 w32 w5",
+    "start_time": 10.388,
+    "end_time": 13.694
+   },
+   {
+    "speaker": "h1",
+    "words": "w19 w0 w24",
+    "start_time": 15.885,
+    "end_time": 16.543
+   },
+   {
+    "speaker": "h0",
+    "words": "w6 w4 w35 w20",
+    "start_time": 19.453,
+    "end_time": 21.227
+   },
+   {
+    "speaker": "h0",
+    "words": "w8 w25 w18 w22 w25",
+    "start_time": 20.382,
+    "end_time": 21.365
+   },
+   {
+    "speaker": "h0",
+    "words": "w17 w11 w1",
+    "start_time": 24.541,
+    "end_time": 29.778
+   }
+  ],
+  "collar": 5,
+  "errors": 3,
+  "length": 33,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk4",
+    "words": "w31 w12 w2",
+    "start_time": 2.03,
+    "end_time": 3.663
+   },
+   {
+    "speaker": "spk1",
+    "words": "w34 w16 w15 w3",
+    "start_time": 4.01,
+    "end_time": 9.842
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w34 w16 w15 w3",
+    "start_time": 4.643,
+    "end_time": 10.475
+   }
+  ],
+  "collar": 2,
+  "errors": 3,
+  "length": 7,
+  "missed_speaker": 1,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w38 w29 w25",
+    "start_time": 1.274,
+    "end_time": 6.951
+   },
+   {
+    "speaker": "spk0",
+    "words": "w2 w3 w17 w19",
+    "start_time": 2.662,
+    "end_time": 5.144
+   },
+   {
+    "speaker": "spk0",
+    "words": "w20 w28 w29",
+    "start_time": 3.808,
+    "end_time": 9.604
+   },
+   {
+    "speaker": "spk0",
+    "words": "w31 w5 w21 w36 w16 w6 w31 w27",
+    "start_time": 6.823,
+    "end_time": 7.574
+   },
+   {
+    "speaker": "spk0",
+    "words": "w18 w39",
+    "start_time": 8.566,
+    "end_time": 9.112
+   },
+   {
+    "speaker": "spk0",
+    "words": "w25",
+    "start_time": 9.086,
+    "end_time": 13.697
+   },
+   {
+    "speaker": "spk0",
+    "words": "w6 w19 w39",
+    "start_time": 10.736,
+    "end_time": 14.746
+   },
+   {
+    "speaker": "spk0",
+    "words": "w23 w8 w35 w23",
+    "start_time": 13.895,
+    "end_time": 16.354
+   },
+   {
+    "speaker": "spk0",
+    "words": "w3 w13 w31 w27 w31 w10 w19",
+    "start_time": 14.49,
+    "end_time": 18.107
+   },
+   {
+    "speaker": "spk0",
+    "words": "w5 w2 w28 w30 w12 w13 w23",
+    "start_time": 15.583,
+    "end_time": 16.843
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w4 w29 w25",
+    "start_time": 0.88,
+    "end_time": 6.557
+   },
+   {
+    "speaker": "h0",
+    "words": "w2 w3 w17 w19",
+    "start_time": 2.163,
+    "end_time": 4.645
+   },
+   {
+    "speaker": "h0",
+    "words": "w20 w28 w29",
+    "start_time": 2.794,
+    "end_time": 8.59
+   },
+   {
+    "speaker": "h0",
+    "words": "w29 w5 w21 w36 w25 w6 w31 w27",
+    "start_time": 7.254,
+    "end_time": 8.005
+   },
+   {
+    "speaker": "h0",
+    "words": "w18 w36",
+    "start_time": 8.245,
+    "end_time": 8.791
+   },
+   {
+    "speaker": "h0",
+    "words": "w25",
+    "start_time": 9.978,
+    "end_time": 14.589
+   },
+   {
+    "speaker": "h0",
+    "words": "w6 w19 w39",
+    "start_time": 11.322,
+    "end_time": 15.332
+   },
+   {
+    "speaker": "h0",
+    "words": "w23 w37 w35 w23",
+    "start_time": 13.968,
+    "end_time": 16.427
+   },
+   {
+    "speaker": "h0",
+    "words": "w3 w13 w11 w27 w7 w16 w19",
+    "start_time": 14.906,
+    "end_time": 18.523
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w29 w36 w30 w12 w13 w23",
+    "start_time": 16.021,
+    "end_time": 17.281
+   }
+  ],
+  "collar": 1,
+  "errors": 10,
+  "length": 42,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk3",
+    "words": "w32 w6",
+    "start_time": 1.522,
+    "end_time": 6.634
+   },
+   {
+    "speaker": "spk2",
+    "words": "w36 w30 w5 w8",
+    "start_time": 6.093,
+    "end_time": 7.535
+   },
+   {
+    "speaker": "spk0",
+    "words": "w2 w0 w38 w13 w29 w19",
+    "start_time": 7.161,
+    "end_time": 8.964
+   },
+   {
+    "speaker": "spk2",
+    "words": "w36 w7 w22 w10",
+    "start_time": 9.459,
+    "end_time": 14.847
+   },
+   {
+    "speaker": "spk0",
+    "words": "w16",
+    "start_time": 13.696,
+    "end_time": 18.396
+   },
+   {
+    "speaker": "spk4",
+    "words": "w31 w2 w38 w22 w6 w22",
+    "start_time": 16.135,
+    "end_time": 19.521
+   },
+   {
+    "speaker": "spk0",
+    "words": "w16 w22 w12 w28",
+    "start_time": 18.831,
+    "end_time": 19.519
+   },
+   {
+    "speaker": "spk0",
+    "words": "w31",
+    "start_time": 21.037,
+    "end_time": 22.161
+   },
+   {
+    "speaker": "spk2",
+    "words": "w24 w9 w37 w16 w34",
+    "start_time": 21.878,
+    "end_time": 23.205
+   },
+   {
+    "speaker": "spk0",
+    "words": "w31 w32 w30",
+    "start_time": 22.926,
+    "end_time": 25.309
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h3",
+    "words": "w32 w6",
+    "start_time": 1.462,
+    "end_time": 6.574
+   },
+   {
+    "speaker": "h1",
+    "words": "w36 w7 w29 w10",
+    "start_time": 9.478,
+    "end_time": 14.866
+   },
+   {
+    "speaker": "h2",
+    "words": "w16",
+    "start_time": 13.68,
+    "end_time": 18.38
+   },
+   {
+    "speaker": "h0",
+    "words": "w16 w2 w38 w22 w6 w22",
+    "start_time": 16.192,
+    "end_time": 19.578
+   },
+   {
+    "speaker": "h2",
+    "words": "w16 w22 w12 w28",
+    "start_time": 18.872,
+    "end_time": 19.56
+   },
+   {
+    "speaker": "h2",
+    "words": "w31",
+    "start_time": 21.079,
+    "end_time": 22.203
+   },
+   {
+    "speaker": "h1",
+    "words": "w24 w21 w37 w16 w34",
+    "start_time": 21.885,
+    "end_time": 23.212
+   },
+   {
+    "speaker": "h2",
+    "words": "w31 w21 w30",
+    "start_time": 22.966,
+    "end_time": 25.349
+   }
+  ],
+  "collar": 1,
+  "errors": 14,
+  "length": 36,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w25 w28 w25 w36 w19 w10 w37 w4",
+    "start_time": 0.452,
+    "end_time": 2.082
+   },
+   {
+    "speaker": "spk1",
+    "words": "w4 w12 w37 w5 w37 w11",
+    "start_time": 1.771,
+    "end_time": 6.268
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4 w31 w20 w11 w17 w16 w34",
+    "start_time": 6.821,
+    "end_time": 9.285
+   },
+   {
+    "speaker": "spk0",
+    "words": "w13",
+    "start_time": 10.196,
+    "end_time": 11.999
+   },
+   {
+    "speaker": "spk0",
+    "words": "w12 w15",
+    "start_time": 11.373,
+    "end_time": 15.189
+   },
+   {
+    "speaker": "spk1",
+    "words": "w8 w0 w12 w17 w34 w0",
+    "start_time": 16.116,
+    "end_time": 17.052
+   },
+   {
+    "speaker": "spk1",
+    "words": "w31",
+    "start_time": 17.444,
+    "end_time": 19.741
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w25 w28 w25 w36 w19 w10 w37 w20",
+    "start_time": 2.013,
+    "end_time": 3.643
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w12 w37 w5 w13 w11",
+    "start_time": 0.458,
+    "end_time": 4.955
+   },
+   {
+    "speaker": "h1",
+    "words": "w4 w31 w20 w11 w17 w16 w34",
+    "start_time": 7.593,
+    "end_time": 10.057
+   },
+   {
+    "speaker": "h1",
+    "words": "w13",
+    "start_time": 11.039,
+    "end_time": 12.842
+   },
+   {
+    "speaker": "h1",
+    "words": "w12 w15",
+    "start_time": 12.901,
+    "end_time": 16.717
+   },
+   {
+    "speaker": "h0",
+    "words": "w8 w0 w12 w17 w34 w30",
+    "start_time": 17.106,
+    "end_time": 18.042
+   },
+   {
+    "speaker": "h0",
+    "words": "w31",
+    "start_time": 17.857,
+    "end_time": 20.154
+   }
+  ],
+  "collar": 0.5,
+  "errors": 40,
+  "length": 31,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w35 w11 w16 w38",
+    "start_time": 0.402,
+    "end_time": 1.233
+   },
+   {
+    "speaker": "spk0",
+    "words": "w33 w1 w22",
+    "start_time": 3.601,
+    "end_time": 8.891
+   },
+   {
+    "speaker": "spk0",
+    "words": "w24 w29 w13 w20 w1 w6",
+    "start_time": 8.049,
+    "end_time": 9.722
+   },
+   {
+    "speaker": "spk0",
+    "words": "w3 w14 w36 w24 w26 w24",
+    "start_time": 10.073,
+    "end_time": 12.783
+   },
+   {
+    "speaker": "spk0",
+    "words": "w14 w22 w13 w20",
+    "start_time": 10.202,
+    "end_time": 14.603
+   },
+   {
+    "speaker": "spk0",
+    "words": "w36 w10 w30 w17",
+    "start_time": 13.36,
+    "end_time": 19.329
+   },
+   {
+    "speaker": "spk0",
+    "words": "w15 w10 w20 w39 w38 w28 w13 w37",
+    "start_time": 18.137,
+    "end_time": 20.46
+   },
+   {
+    "speaker": "spk0",
+    "words": "w2 w28 w11 w27 w8 w19",
+    "start_time": 20.407,
+    "end_time": 25.767
+   },
+   {
+    "speaker": "spk0",
+    "words": "w19 w9 w32",
+    "start_time": 24.315,
+    "end_time": 29.835
+   },
+   {
+    "speaker": "spk0",
+    "words": "w26 w21",
+    "start_time": 25.252,
+    "end_time": 29.507
+   },
+   {
+    "speaker": "spk0",
+    "words": "w12 w0 w2 w8",
+    "start_time": 31.193,
+    "end_time": 31.874
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w35 w11 w16 w31",
+    "start_time": 0.473,
+    "end_time": 1.304
+   },
+   {
+    "speaker": "h0",
+    "words": "w14 w1 w34",
+    "start_time": 2.518,
+    "end_time": 7.808
+   },
+   {
+    "speaker": "h0",
+    "words": "w24 w29 w13 w20 w14 w6",
+    "start_time": 7.147,
+    "end_time": 8.82
+   },
+   {
+    "speaker": "h0",
+    "words": "w14 w22 w13 w20",
+    "start_time": 11.55,
+    "end_time": 15.951
+   },
+   {
+    "speaker": "h0",
+    "words": "w36 w10 w30 w17",
+    "start_time": 14.681,
+    "end_time": 20.65
+   },
+   {
+    "speaker": "h0",
+    "words": "w15 w10 w20 w0 w32 w28 w39 w37",
+    "start_time": 19.047,
+    "end_time": 21.37
+   },
+   {
+    "speaker": "h0",
+    "words": "w2 w39 w11 w27 w35 w19",
+    "start_time": 20.544,
+    "end_time": 25.904
+   },
+   {
+    "speaker": "h0",
+    "words": "w19 w9 w30",
+    "start_time": 24.573,
+    "end_time": 30.093
+   },
+   {
+    "speaker": "h0",
+    "words": "w26 w24",
+    "start_time": 24.034,
+    "end_time": 28.289
+   },
+   {
+    "speaker": "h0",
+    "words": "w12 w20 w34 w8",
+    "start_time": 31.934,
+    "end_time": 32.615
+   }
+  ],
+  "collar": 5,
+  "errors": 22,
+  "length": 50,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk2",
+    "words": "w4 w33 w23",
+    "start_time": 1.768,
+    "end_time": 5.407
+   },
+   {
+    "speaker": "spk2",
+    "words": "w9 w29 w11",
+    "start_time": 2.872,
+    "end_time": 5.384
+   },
+   {
+    "speaker": "spk1",
+    "words": "w20",
+    "start_time": 7.343,
+    "end_time": 11.43
+   },
+   {
+    "speaker": "spk2",
+    "words": "w9 w16 w24 w6 w23 w22 w33",
+    "start_time": 11.117,
+    "end_time": 13.971
+   },
+   {
+    "speaker": "spk2",
+    "words": "w28 w7 w28 w30 w11",
+    "start_time": 13.794,
+    "end_time": 15.807
+   },
+   {
+    "speaker": "spk1",
+    "words": "w39 w23 w33 w21",
+    "start_time": 16.076,
+    "end_time": 18.594
+   },
+   {
+    "speaker": "spk1",
+    "words": "w3 w37 w11 w19 w34",
+    "start_time": 18.254,
+    "end_time": 18.758
+   },
+   {
+    "speaker": "spk2",
+    "words": "w5 w33 w31 w5 w12 w8 w27 w18",
+    "start_time": 19.391,
+    "end_time": 21.351
+   },
+   {
+    "speaker": "spk1",
+    "words": "w23 w2 w18 w26 w27 w38 w16",
+    "start_time": 23.377,
+    "end_time": 27.823
+   },
+   {
+    "speaker": "spk1",
+    "words": "w37 w23 w4 w13",
+    "start_time": 26.775,
+    "end_time": 27.987
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w9 w29 w11",
+    "start_time": 2.845,
+    "end_time": 5.357
+   },
+   {
+    "speaker": "h1",
+    "words": "w20",
+    "start_time": 7.324,
+    "end_time": 11.411
+   },
+   {
+    "speaker": "h0",
+    "words": "w9 w16 w24 w6 w23 w22 w18",
+    "start_time": 11.203,
+    "end_time": 14.057
+   },
+   {
+    "speaker": "h0",
+    "words": "w28 w14 w28 w30 w31",
+    "start_time": 13.875,
+    "end_time": 15.888
+   },
+   {
+    "speaker": "h1",
+    "words": "w39 w12 w33 w21",
+    "start_time": 16.137,
+    "end_time": 18.655
+   },
+   {
+    "speaker": "h1",
+    "words": "w3 w37 w11 w19 w34",
+    "start_time": 18.201,
+    "end_time": 18.705
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w34 w31 w5 w12 w8 w27 w18",
+    "start_time": 19.365,
+    "end_time": 21.325
+   },
+   {
+    "speaker": "h1",
+    "words": "w19 w2 w18 w26 w27 w38 w13",
+    "start_time": 23.337,
+    "end_time": 27.783
+   },
+   {
+    "speaker": "h1",
+    "words": "w37 w23 w4 w13",
+    "start_time": 26.679,
+    "end_time": 27.891
+   }
+  ],
+  "collar": 0.5,
+  "errors": 10,
+  "length": 47,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk2",
+    "words": "w2 w17 w14 w28 w18 w12",
+    "start_time": 1.599,
+    "end_time": 4.348
+   },
+   {
+    "speaker": "spk0",
+    "words": "w28 w13 w13 w3 w11 w27 w7",
+    "start_time": 4.979,
+    "end_time": 8.838
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w35 w17 w14 w28 w18 w13",
+    "start_time": 0.399,
+    "end_time": 3.148
+   },
+   {
+    "speaker": "h1",
+    "words": "w28 w13 w13 w3 w5 w27 w7",
+    "start_time": 4.126,
+    "end_time": 7.985
+   }
+  ],
+  "collar": 5,
+  "errors": 3,
+  "length": 13,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk1",
+    "words": "w10",
+    "start_time": 0.17,
+    "end_time": 4.496
+   },
+   {
+    "speaker": "spk0",
+    "words": "w35 w9 w19 w16 w20 w35",
+    "start_time": 1.884,
+    "end_time": 5.586
+   },
+   {
+    "speaker": "spk0",
+    "words": "w2 w20 w24 w9 w18 w14 w34",
+    "start_time": 4.732,
+    "end_time": 10.623
+   },
+   {
+    "speaker": "spk0",
+    "words": "w25 w7 w2 w22 w7 w13",
+    "start_time": 6.113,
+    "end_time": 7.624
+   },
+   {
+    "speaker": "spk0",
+    "words": "w5 w12 w31 w17 w19 w38 w37 w34",
+    "start_time": 7.508,
+    "end_time": 12.135
+   },
+   {
+    "speaker": "spk0",
+    "words": "w37 w19 w2 w37",
+    "start_time": 9.665,
+    "end_time": 14.388
+   },
+   {
+    "speaker": "spk1",
+    "words": "w3 w11 w21 w22 w28",
+    "start_time": 14.353,
+    "end_time": 20.047
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4 w35 w29 w6 w35",
+    "start_time": 17.707,
+    "end_time": 19.19
+   },
+   {
+    "speaker": "spk0",
+    "words": "w2",
+    "start_time": 20.429,
+    "end_time": 23.466
+   },
+   {
+    "speaker": "spk1",
+    "words": "w4 w23 w10 w23 w10 w5",
+    "start_time": 23.522,
+    "end_time": 26.306
+   },
+   {
+    "speaker": "spk0",
+    "words": "w9 w16 w6 w6 w15",
+    "start_time": 25.467,
+    "end_time": 30.57
+   },
+   {
+    "speaker": "spk1",
+    "words": "w29 w15 w10 w36 w34 w2",
+    "start_time": 26.903,
+    "end_time": 30.379
+   },
+   {
+    "speaker": "spk0",
+    "words": "w8 w15 w34 w32",
+    "start_time": 28.517,
+    "end_time": 31.237
+   },
+   {
+    "speaker": "spk1",
+    "words": "w36 w13 w14 w5 w10 w9 w16 w1",
+    "start_time": 30.5,
+    "end_time": 36.189
+   },
+   {
+    "speaker": "spk0",
+    "words": "w5 w37",
+    "start_time": 33.844,
+    "end_time": 35.95
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w21",
+    "start_time": -0.922,
+    "end_time": 3.404
+   },
+   {
+    "speaker": "h0",
+    "words": "w35 w9 w19 w16 w20 w35",
+    "start_time": 0.719,
+    "end_time": 4.421
+   },
+   {
+    "speaker": "h0",
+    "words": "w2 w20 w24 w15 w32 w14 w22",
+    "start_time": 4.027,
+    "end_time": 9.918
+   },
+   {
+    "speaker": "h0",
+    "words": "w25 w7 w2 w0 w7 w13",
+    "start_time": 6.778,
+    "end_time": 8.289
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w12 w31 w3 w19 w38 w22 w34",
+    "start_time": 7.49,
+    "end_time": 12.117
+   },
+   {
+    "speaker": "h0",
+    "words": "w37 w19 w19 w37",
+    "start_time": 10.457,
+    "end_time": 15.18
+   },
+   {
+    "speaker": "h1",
+    "words": "w3 w11 w21 w22 w28",
+    "start_time": 13.874,
+    "end_time": 19.568
+   },
+   {
+    "speaker": "h0",
+    "words": "w4 w35 w29 w16 w35",
+    "start_time": 17.088,
+    "end_time": 18.571
+   },
+   {
+    "speaker": "h0",
+    "words": "w2",
+    "start_time": 21.328,
+    "end_time": 24.365
+   },
+   {
+    "speaker": "h1",
+    "words": "w4 w23 w10 w25 w10 w5",
+    "start_time": 24.298,
+    "end_time": 27.082
+   },
+   {
+    "speaker": "h0",
+    "words": "w9 w21 w6 w6 w15",
+    "start_time": 24.992,
+    "end_time": 30.095
+   },
+   {
+    "speaker": "h1",
+    "words": "w29 w15 w10 w36 w34 w9",
+    "start_time": 26.221,
+    "end_time": 29.697
+   },
+   {
+    "speaker": "h0",
+    "words": "w8 w15 w34 w5",
+    "start_time": 27.772,
+    "end_time": 30.492
+   },
+   {
+    "speaker": "h1",
+    "words": "w36 w13 w14 w13 w10 w11 w16 w1",
+    "start_time": 29.708,
+    "end_time": 35.397
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w37",
+    "start_time": 34.941,
+    "end_time": 37.047
+   }
+  ],
+  "collar": 2,
+  "errors": 15,
+  "length": 74,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w25 w33 w0",
+    "start_time": 2.966,
+    "end_time": 4.508
+   },
+   {
+    "speaker": "spk1",
+    "words": "w22 w6 w35 w32 w24",
+    "start_time": 4.33,
+    "end_time": 6.182
+   },
+   {
+    "speaker": "spk2",
+    "words": "w32 w39",
+    "start_time": 8.387,
+    "end_time": 12.552
+   },
+   {
+    "speaker": "spk0",
+    "words": "w33 w3 w31 w31 w23 w1 w3",
+    "start_time": 12.74,
+    "end_time": 15.23
+   },
+   {
+    "speaker": "spk2",
+    "words": "w38 w29 w2",
+    "start_time": 15.194,
+    "end_time": 19.825
+   },
+   {
+    "speaker": "spk0",
+    "words": "w9 w12 w37 w36 w32",
+    "start_time": 17.003,
+    "end_time": 22.654
+   },
+   {
+    "speaker": "spk4",
+    "words": "w15 w18 w34 w1 w26",
+    "start_time": 22.034,
+    "end_time": 25.776
+   },
+   {
+    "speaker": "spk0",
+    "words": "w31 w23 w17 w20 w10 w36 w31",
+    "start_time": 26.909,
+    "end_time": 31.836
+   },
+   {
+    "speaker": "spk2",
+    "words": "w10",
+    "start_time": 31.079,
+    "end_time": 32.348
+   },
+   {
+    "speaker": "spk2",
+    "words": "w37",
+    "start_time": 32.341,
+    "end_time": 34.557
+   },
+   {
+    "speaker": "spk1",
+    "words": "w17 w19 w30",
+    "start_time": 36.394,
+    "end_time": 38.875
+   },
+   {
+    "speaker": "spk2",
+    "words": "w23 w25 w20 w24 w30",
+    "start_time": 40.41,
+    "end_time": 43.127
+   },
+   {
+    "speaker": "spk4",
+    "words": "w10 w20 w2 w9 w17 w34 w30",
+    "start_time": 43.432,
+    "end_time": 47.357
+   },
+   {
+    "speaker": "spk0",
+    "words": "w23 w25 w33 w18 w7 w16 w28",
+    "start_time": 47.33,
+    "end_time": 48.251
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h3",
+    "words": "w25 w33 w0",
+    "start_time": 3.306,
+    "end_time": 4.848
+   },
+   {
+    "speaker": "h2",
+    "words": "w22 w6 w35 w32 w11",
+    "start_time": 4.773,
+    "end_time": 6.625
+   },
+   {
+    "speaker": "h0",
+    "words": "w32 w39",
+    "start_time": 9.843,
+    "end_time": 14.008
+   },
+   {
+    "speaker": "h3",
+    "words": "w33 w3 w31 w31 w23 w9 w3",
+    "start_time": 13.3,
+    "end_time": 15.79
+   },
+   {
+    "speaker": "h0",
+    "words": "w38 w21 w2",
+    "start_time": 13.762,
+    "end_time": 18.393
+   },
+   {
+    "speaker": "h3",
+    "words": "w36 w12 w37 w36 w32",
+    "start_time": 18.143,
+    "end_time": 23.794
+   },
+   {
+    "speaker": "h1",
+    "words": "w15 w18 w15 w1 w26",
+    "start_time": 22.838,
+    "end_time": 26.58
+   },
+   {
+    "speaker": "h3",
+    "words": "w31 w23 w17 w24 w10 w36 w38",
+    "start_time": 26.939,
+    "end_time": 31.866
+   },
+   {
+    "speaker": "h0",
+    "words": "w10",
+    "start_time": 30.448,
+    "end_time": 31.717
+   },
+   {
+    "speaker": "h0",
+    "words": "w37",
+    "start_time": 33.625,
+    "end_time": 35.841
+   },
+   {
+    "speaker": "h2",
+    "words": "w1 w19 w20",
+    "start_time": 36.254,
+    "end_time": 38.735
+   },
+   {
+    "speaker": "h0",
+    "words": "w23 w25 w20 w24 w30",
+    "start_time": 38.863,
+    "end_time": 41.58
+   },
+   {
+    "speaker": "h1",
+    "words": "w10 w20 w2 w9 w17 w34 w30",
+    "start_time": 43.619,
+    "end_time": 47.544
+   },
+   {
+    "speaker": "h3",
+    "words": "w23 w25 w33 w18 w7 w11 w32",
+    "start_time": 46.915,
+    "end_time": 47.836
+   }
+  ],
+  "collar": 2,
+  "errors": 11,
+  "length": 61,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w14 w3 w23 w34 w21 w16 w4",
+    "start_time": 0.337,
+    "end_time": 2.984
+   },
+   {
+    "speaker": "spk0",
+    "words": "w12 w21 w39 w12 w7 w25 w10 w18",
+    "start_time": 2.85,
+    "end_time": 8.68
+   },
+   {
+    "speaker": "spk0",
+    "words": "w12 w16 w12 w35",
+    "start_time": 5.899,
+    "end_time": 6.49
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4",
+    "start_time": 9.097,
+    "end_time": 14.657
+   },
+   {
+    "speaker": "spk0",
+    "words": "w35 w22 w10 w36 w20",
+    "start_time": 10.051,
+    "end_time": 15.3
+   },
+   {
+    "speaker": "spk0",
+    "words": "w26 w1 w29 w6 w21 w6",
+    "start_time": 11.468,
+    "end_time": 12.931
+   },
+   {
+    "speaker": "spk0",
+    "words": "w21 w20",
+    "start_time": 14.546,
+    "end_time": 17.719
+   },
+   {
+    "speaker": "spk0",
+    "words": "w32 w24 w13 w22 w16",
+    "start_time": 19.753,
+    "end_time": 24.928
+   },
+   {
+    "speaker": "spk0",
+    "words": "w24 w10 w27 w8 w8 w0 w7",
+    "start_time": 24.213,
+    "end_time": 26.244
+   },
+   {
+    "speaker": "spk0",
+    "words": "w29 w2",
+    "start_time": 26.99,
+    "end_time": 27.641
+   },
+   {
+    "speaker": "spk0",
+    "words": "w21 w39 w35 w29 w31 w13",
+    "start_time": 29.056,
+    "end_time": 29.946
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w8 w3 w23 w34 w21 w16 w4",
+    "start_time": 0.591,
+    "end_time": 3.238
+   },
+   {
+    "speaker": "h0",
+    "words": "w12 w21 w39 w12 w7 w25 w10 w18",
+    "start_time": 3.234,
+    "end_time": 9.064
+   },
+   {
+    "speaker": "h0",
+    "words": "w31 w16 w15 w35",
+    "start_time": 4.105,
+    "end_time": 4.696
+   },
+   {
+    "speaker": "h0",
+    "words": "w4",
+    "start_time": 8.098,
+    "end_time": 13.658
+   },
+   {
+    "speaker": "h0",
+    "words": "w26 w1 w29 w6 w21 w35",
+    "start_time": 12.987,
+    "end_time": 14.45
+   },
+   {
+    "speaker": "h0",
+    "words": "w32 w6 w13 w22 w16",
+    "start_time": 18.325,
+    "end_time": 23.5
+   },
+   {
+    "speaker": "h0",
+    "words": "w24 w10 w27 w1 w8 w0 w7",
+    "start_time": 24.556,
+    "end_time": 26.587
+   },
+   {
+    "speaker": "h0",
+    "words": "w29 w3",
+    "start_time": 27.407,
+    "end_time": 28.058
+   },
+   {
+    "speaker": "h0",
+    "words": "w21 w39 w35 w29 w31 w13",
+    "start_time": 28.001,
+    "end_time": 28.891
+   }
+  ],
+  "collar": 1,
+  "errors": 27,
+  "length": 53,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk2",
+    "words": "w6 w5 w15 w6 w5 w23",
+    "start_time": 1.838,
+    "end_time": 2.813
+   },
+   {
+    "speaker": "spk1",
+    "words": "w12 w0 w5 w4 w2 w7",
+    "start_time": 4.361,
+    "end_time": 5.674
+   },
+   {
+    "speaker": "spk1",
+    "words": "w5 w1 w3 w1",
+    "start_time": 6.275,
+    "end_time": 9.015
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w6 w5 w19 w6 w24 w28",
+    "start_time": 2.608,
+    "end_time": 3.583
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w34 w3 w1",
+    "start_time": 6.741,
+    "end_time": 9.481
+   }
+  ],
+  "collar": 2,
+  "errors": 10,
+  "length": 16,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w27 w21 w23 w4 w34 w7",
+    "start_time": 0.484,
+    "end_time": 1.179
+   },
+   {
+    "speaker": "spk0",
+    "words": "w26 w33 w5 w13",
+    "start_time": 2.166,
+    "end_time": 6.241
+   },
+   {
+    "speaker": "spk0",
+    "words": "w27 w7 w11 w39 w28",
+    "start_time": 5.823,
+    "end_time": 6.398
+   },
+   {
+    "speaker": "spk0",
+    "words": "w21 w16 w1 w5",
+    "start_time": 8.378,
+    "end_time": 13.021
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4 w38 w4",
+    "start_time": 12.614,
+    "end_time": 16.722
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4",
+    "start_time": 13.805,
+    "end_time": 14.673
+   },
+   {
+    "speaker": "spk0",
+    "words": "w28 w11 w6 w16 w19",
+    "start_time": 15.528,
+    "end_time": 20.002
+   },
+   {
+    "speaker": "spk0",
+    "words": "w29 w21",
+    "start_time": 19.06,
+    "end_time": 22.008
+   },
+   {
+    "speaker": "spk0",
+    "words": "w6 w13 w22 w21",
+    "start_time": 21.115,
+    "end_time": 26.173
+   },
+   {
+    "speaker": "spk0",
+    "words": "w10 w37",
+    "start_time": 26.18,
+    "end_time": 27.08
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w26 w33 w5 w13",
+    "start_time": 1.905,
+    "end_time": 5.98
+   },
+   {
+    "speaker": "h0",
+    "words": "w27 w7 w11 w39 w28",
+    "start_time": 6.037,
+    "end_time": 6.612
+   },
+   {
+    "speaker": "h0",
+    "words": "w21 w16 w1 w5",
+    "start_time": 8.175,
+    "end_time": 12.818
+   },
+   {
+    "speaker": "h0",
+    "words": "w4 w38 w4",
+    "start_time": 12.881,
+    "end_time": 16.989
+   },
+   {
+    "speaker": "h0",
+    "words": "w24",
+    "start_time": 13.613,
+    "end_time": 14.481
+   },
+   {
+    "speaker": "h0",
+    "words": "w28 w11 w6 w16 w19",
+    "start_time": 15.517,
+    "end_time": 19.991
+   },
+   {
+    "speaker": "h0",
+    "words": "w29 w21",
+    "start_time": 18.743,
+    "end_time": 21.691
+   },
+   {
+    "speaker": "h0",
+    "words": "w6 w13 w22 w21",
+    "start_time": 20.795,
+    "end_time": 25.853
+   },
+   {
+    "speaker": "h0",
+    "words": "w10 w37",
+    "start_time": 26.26,
+    "end_time": 27.16
+   }
+  ],
+  "collar": 5,
+  "errors": 7,
+  "length": 36,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w33 w10 w32 w20",
+    "start_time": 2.831,
+    "end_time": 6.218
+   },
+   {
+    "speaker": "spk0",
+    "words": "w8 w4 w28 w20 w6 w13 w17 w23",
+    "start_time": 4.538,
+    "end_time": 7.615
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w33 w10 w32 w20",
+    "start_time": 3.567,
+    "end_time": 6.954
+   },
+   {
+    "speaker": "h0",
+    "words": "w14 w4 w28 w23 w20 w13 w17 w23",
+    "start_time": 3.285,
+    "end_time": 6.362
+   }
+  ],
+  "collar": 5,
+  "errors": 11,
+  "length": 12,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w8 w12 w19 w20 w37 w12 w4 w25",
+    "start_time": 0.651,
+    "end_time": 1.348
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4 w30 w23 w32",
+    "start_time": 1.068,
+    "end_time": 6.784
+   },
+   {
+    "speaker": "spk0",
+    "words": "w30 w12 w19 w29",
+    "start_time": 4.78,
+    "end_time": 10.263
+   },
+   {
+    "speaker": "spk0",
+    "words": "w11 w21 w26 w1 w36 w23 w10",
+    "start_time": 8.656,
+    "end_time": 10.926
+   },
+   {
+    "speaker": "spk0",
+    "words": "w38 w29 w30 w35 w35",
+    "start_time": 10.16,
+    "end_time": 14.002
+   },
+   {
+    "speaker": "spk0",
+    "words": "w9 w8 w33 w8 w37 w20 w3",
+    "start_time": 11.305,
+    "end_time": 12.468
+   },
+   {
+    "speaker": "spk0",
+    "words": "w26 w16 w36 w14 w9 w17 w26 w6",
+    "start_time": 12.025,
+    "end_time": 15.746
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4 w18 w11 w8 w26",
+    "start_time": 15.781,
+    "end_time": 21.602
+   },
+   {
+    "speaker": "spk0",
+    "words": "w28 w15",
+    "start_time": 20.792,
+    "end_time": 25.731
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w8 w12 w24 w16 w37 w12 w4 w4",
+    "start_time": -0.388,
+    "end_time": 0.309
+   },
+   {
+    "speaker": "h0",
+    "words": "w4 w20 w23 w30",
+    "start_time": 1.68,
+    "end_time": 7.396
+   },
+   {
+    "speaker": "h0",
+    "words": "w30 w12 w19 w29",
+    "start_time": 5.901,
+    "end_time": 11.384
+   },
+   {
+    "speaker": "h0",
+    "words": "w13 w21 w26 w14 w36 w23 w10",
+    "start_time": 8.339,
+    "end_time": 10.609
+   },
+   {
+    "speaker": "h0",
+    "words": "w38 w29 w30 w32 w25",
+    "start_time": 10.503,
+    "end_time": 14.345
+   },
+   {
+    "speaker": "h0",
+    "words": "w9 w8 w33 w8 w37 w20 w30",
+    "start_time": 11.719,
+    "end_time": 12.882
+   },
+   {
+    "speaker": "h0",
+    "words": "w26 w16 w18 w14 w9 w17 w26 w6",
+    "start_time": 12.649,
+    "end_time": 16.37
+   },
+   {
+    "speaker": "h0",
+    "words": "w16 w4 w11 w8 w26",
+    "start_time": 15.074,
+    "end_time": 20.895
+   },
+   {
+    "speaker": "h0",
+    "words": "w34 w15",
+    "start_time": 19.688,
+    "end_time": 24.627
+   }
+  ],
+  "collar": 1,
+  "errors": 16,
+  "length": 50,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w16 w15 w1",
+    "start_time": 0.747,
+    "end_time": 2.201
+   },
+   {
+    "speaker": "spk0",
+    "words": "w30 w21 w4",
+    "start_time": 3.684,
+    "end_time": 9.518
+   },
+   {
+    "speaker": "spk0",
+    "words": "w21 w3 w5 w16 w10",
+    "start_time": 6.43,
+    "end_time": 9.564
+   },
+   {
+    "speaker": "spk0",
+    "words": "w8 w21 w21 w32 w31",
+    "start_time": 8.531,
+    "end_time": 12.863
+   },
+   {
+    "speaker": "spk0",
+    "words": "w9",
+    "start_time": 11.971,
+    "end_time": 15.553
+   },
+   {
+    "speaker": "spk0",
+    "words": "w30 w6",
+    "start_time": 15.226,
+    "end_time": 16.988
+   },
+   {
+    "speaker": "spk0",
+    "words": "w14 w39 w5 w30 w36 w27 w8 w0",
+    "start_time": 16.626,
+    "end_time": 21.019
+   },
+   {
+    "speaker": "spk0",
+    "words": "w15 w16 w32 w27 w33 w34 w21 w3",
+    "start_time": 20.554,
+    "end_time": 25.674
+   },
+   {
+    "speaker": "spk0",
+    "words": "w29 w39 w12 w11",
+    "start_time": 21.562,
+    "end_time": 24.882
+   },
+   {
+    "speaker": "spk0",
+    "words": "w10 w3 w14",
+    "start_time": 27.168,
+    "end_time": 32.61
+   },
+   {
+    "speaker": "spk0",
+    "words": "w25 w20 w33 w19 w3",
+    "start_time": 33.007,
+    "end_time": 37.446
+   },
+   {
+    "speaker": "spk0",
+    "words": "w11 w15 w29",
+    "start_time": 33.471,
+    "end_time": 36.796
+   },
+   {
+    "speaker": "spk0",
+    "words": "w30 w33 w19 w4 w6 w4",
+    "start_time": 34.355,
+    "end_time": 37.643
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w16 w15 w1",
+    "start_time": 0.802,
+    "end_time": 2.256
+   },
+   {
+    "speaker": "h0",
+    "words": "w30 w21 w4",
+    "start_time": 3.564,
+    "end_time": 9.398
+   },
+   {
+    "speaker": "h0",
+    "words": "w8 w21 w21 w32 w31",
+    "start_time": 8.584,
+    "end_time": 12.916
+   },
+   {
+    "speaker": "h0",
+    "words": "w9",
+    "start_time": 11.846,
+    "end_time": 15.428
+   },
+   {
+    "speaker": "h0",
+    "words": "w30 w6",
+    "start_time": 15.279,
+    "end_time": 17.041
+   },
+   {
+    "speaker": "h0",
+    "words": "w34 w39 w5 w24 w36 w27 w8 w15",
+    "start_time": 16.64,
+    "end_time": 21.033
+   },
+   {
+    "speaker": "h0",
+    "words": "w24 w16 w32 w27 w29 w34 w8 w3",
+    "start_time": 20.552,
+    "end_time": 25.672
+   },
+   {
+    "speaker": "h0",
+    "words": "w29 w39 w12 w32",
+    "start_time": 21.693,
+    "end_time": 25.013
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w11 w14",
+    "start_time": 27.217,
+    "end_time": 32.659
+   },
+   {
+    "speaker": "h0",
+    "words": "w25 w0 w33 w19 w16",
+    "start_time": 33.114,
+    "end_time": 37.553
+   },
+   {
+    "speaker": "h0",
+    "words": "w11 w15 w29",
+    "start_time": 33.409,
+    "end_time": 36.734
+   },
+   {
+    "speaker": "h0",
+    "words": "w30 w33 w19 w4 w14 w26",
+    "start_time": 34.427,
+    "end_time": 37.715
+   }
+  ],
+  "collar": 1,
+  "errors": 18,
+  "length": 56,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w16 w32 w20 w24 w27",
+    "start_time": 0.514,
+    "end_time": 1.842
+   },
+   {
+    "speaker": "spk0",
+    "words": "w22",
+    "start_time": 2.274,
+    "end_time": 4.624
+   },
+   {
+    "speaker": "spk0",
+    "words": "w35",
+    "start_time": 6.504,
+    "end_time": 7.769
+   },
+   {
+    "speaker": "spk0",
+    "words": "w21 w23 w15 w4",
+    "start_time": 8.872,
+    "end_time": 11.912
+   },
+   {
+    "speaker": "spk0",
+    "words": "w14",
+    "start_time": 11.82,
+    "end_time": 17.287
+   },
+   {
+    "speaker": "spk0",
+    "words": "w29 w25 w19 w30",
+    "start_time": 12.332,
+    "end_time": 16.908
+   },
+   {
+    "speaker": "spk0",
+    "words": "w20 w22 w19 w22 w36 w6 w38 w37",
+    "start_time": 15.363,
+    "end_time": 20.784
+   },
+   {
+    "speaker": "spk0",
+    "words": "w13 w13 w23 w34",
+    "start_time": 18.712,
+    "end_time": 24.054
+   },
+   {
+    "speaker": "spk0",
+    "words": "w29",
+    "start_time": 24.653,
+    "end_time": 29.9
+   },
+   {
+    "speaker": "spk0",
+    "words": "w33 w18 w32",
+    "start_time": 25.145,
+    "end_time": 31.138
+   },
+   {
+    "speaker": "spk0",
+    "words": "w14",
+    "start_time": 28.014,
+    "end_time": 31.834
+   },
+   {
+    "speaker": "spk0",
+    "words": "w4 w26 w12 w20 w19 w21 w32",
+    "start_time": 33.69,
+    "end_time": 36.574
+   },
+   {
+    "speaker": "spk0",
+    "words": "w38 w24 w35",
+    "start_time": 37.08,
+    "end_time": 37.64
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w16 w32 w20 w1 w27",
+    "start_time": 1.294,
+    "end_time": 2.622
+   },
+   {
+    "speaker": "h0",
+    "words": "w22",
+    "start_time": 2.137,
+    "end_time": 4.487
+   },
+   {
+    "speaker": "h0",
+    "words": "w13",
+    "start_time": 6.981,
+    "end_time": 8.246
+   },
+   {
+    "speaker": "h0",
+    "words": "w21 w23 w15 w4",
+    "start_time": 8.582,
+    "end_time": 11.622
+   },
+   {
+    "speaker": "h0",
+    "words": "w14",
+    "start_time": 10.336,
+    "end_time": 15.803
+   },
+   {
+    "speaker": "h0",
+    "words": "w21 w25 w15 w30",
+    "start_time": 13.504,
+    "end_time": 18.08
+   },
+   {
+    "speaker": "h0",
+    "words": "w20 w12 w19 w22 w29 w6 w38 w37",
+    "start_time": 16.911,
+    "end_time": 22.332
+   },
+   {
+    "speaker": "h0",
+    "words": "w0 w13 w4 w34",
+    "start_time": 18.403,
+    "end_time": 23.745
+   },
+   {
+    "speaker": "h0",
+    "words": "w29",
+    "start_time": 23.621,
+    "end_time": 28.868
+   },
+   {
+    "speaker": "h0",
+    "words": "w33 w18 w32",
+    "start_time": 24.154,
+    "end_time": 30.147
+   },
+   {
+    "speaker": "h0",
+    "words": "w14",
+    "start_time": 27.781,
+    "end_time": 31.601
+   },
+   {
+    "speaker": "h0",
+    "words": "w4 w26 w12 w37 w19 w21 w30",
+    "start_time": 34.668,
+    "end_time": 37.552
+   },
+   {
+    "speaker": "h0",
+    "words": "w38 w24 w35",
+    "start_time": 36.977,
+    "end_time": 37.537
+   }
+  ],
+  "collar": 1,
+  "errors": 17,
+  "length": 43,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk1",
+    "words": "w25 w6",
+    "start_time": 1.055,
+    "end_time": 3.664
+   },
+   {
+    "speaker": "spk1",
+    "words": "w9 w29 w36 w35 w0 w2 w30",
+    "start_time": 3.594,
+    "end_time": 7.971
+   },
+   {
+    "speaker": "spk1",
+    "words": "w39 w19 w10 w35 w0 w9 w23",
+    "start_time": 7.513,
+    "end_time": 11.744
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w25 w35",
+    "start_time": 0.305,
+    "end_time": 2.914
+   },
+   {
+    "speaker": "h0",
+    "words": "w1 w29 w36 w35 w0 w2 w35",
+    "start_time": 4.607,
+    "end_time": 8.984
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w19 w10 w35 w0 w9 w23",
+    "start_time": 6.492,
+    "end_time": 10.723
+   }
+  ],
+  "collar": 0.5,
+  "errors": 17,
+  "length": 16,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk1",
+    "words": "w1 w4 w12 w13 w3 w8 w9",
+    "start_time": 0.864,
+    "end_time": 4.087
+   },
+   {
+    "speaker": "spk2",
+    "words": "w9 w35",
+    "start_time": 1.624,
+    "end_time": 3.575
+   },
+   {
+    "speaker": "spk2",
+    "words": "w12 w2 w31 w24 w27 w5 w11",
+    "start_time": 3.332,
+    "end_time": 8.92
+   },
+   {
+    "speaker": "spk1",
+    "words": "w7 w2 w1",
+    "start_time": 4.802,
+    "end_time": 5.765
+   },
+   {
+    "speaker": "spk2",
+    "words": "w6 w11 w12",
+    "start_time": 7.238,
+    "end_time": 8.356
+   },
+   {
+    "speaker": "spk1",
+    "words": "w27 w20",
+    "start_time": 10.381,
+    "end_time": 11.971
+   },
+   {
+    "speaker": "spk0",
+    "words": "w11",
+    "start_time": 12.24,
+    "end_time": 15.397
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h2",
+    "words": "w1 w4 w28 w13 w3 w28 w9",
+    "start_time": 0.765,
+    "end_time": 3.988
+   },
+   {
+    "speaker": "h0",
+    "words": "w9 w35",
+    "start_time": 1.877,
+    "end_time": 3.828
+   },
+   {
+    "speaker": "h0",
+    "words": "w12 w2 w31 w24 w27 w32 w11",
+    "start_time": 3.248,
+    "end_time": 8.836
+   },
+   {
+    "speaker": "h2",
+    "words": "w7 w2 w1",
+    "start_time": 4.701,
+    "end_time": 5.664
+   },
+   {
+    "speaker": "h0",
+    "words": "w6 w11 w12",
+    "start_time": 7.479,
+    "end_time": 8.597
+   },
+   {
+    "speaker": "h2",
+    "words": "w27 w20",
+    "start_time": 10.481,
+    "end_time": 12.071
+   }
+  ],
+  "collar": 2,
+  "errors": 4,
+  "length": 25,
+  "missed_speaker": 1,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk1",
+    "words": "w10 w36 w34 w31 w17 w5",
+    "start_time": 2.273,
+    "end_time": 4.215
+   },
+   {
+    "speaker": "spk1",
+    "words": "w36 w26",
+    "start_time": 5.989,
+    "end_time": 7.309
+   },
+   {
+    "speaker": "spk0",
+    "words": "w37 w8",
+    "start_time": 7.89,
+    "end_time": 13.524
+   },
+   {
+    "speaker": "spk1",
+    "words": "w28 w16 w5 w28 w23 w6 w2",
+    "start_time": 12.216,
+    "end_time": 16.05
+   },
+   {
+    "speaker": "spk2",
+    "words": "w17 w23 w13 w32 w32",
+    "start_time": 15.673,
+    "end_time": 16.531
+   },
+   {
+    "speaker": "spk0",
+    "words": "w29 w20 w25 w30 w7",
+    "start_time": 17.681,
+    "end_time": 22.628
+   },
+   {
+    "speaker": "spk2",
+    "words": "w38",
+    "start_time": 21.081,
+    "end_time": 25.318
+   },
+   {
+    "speaker": "spk0",
+    "words": "w15 w16 w32 w2 w28 w30 w1",
+    "start_time": 26.392,
+    "end_time": 28.825
+   },
+   {
+    "speaker": "spk2",
+    "words": "w29 w38 w30 w5",
+    "start_time": 28.924,
+    "end_time": 34.283
+   },
+   {
+    "speaker": "spk1",
+    "words": "w7 w11 w32",
+    "start_time": 32.691,
+    "end_time": 36.539
+   },
+   {
+    "speaker": "spk0",
+    "words": "w14 w16 w16 w3 w14 w10 w39 w19",
+    "start_time": 34.218,
+    "end_time": 39.833
+   },
+   {
+    "speaker": "spk2",
+    "words": "w13 w6 w26 w30 w20 w3 w24 w14",
+    "start_time": 38.65,
+    "end_time": 43.852
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w10 w36 w8 w31 w17 w5",
+    "start_time": 0.953,
+    "end_time": 2.895
+   },
+   {
+    "speaker": "h0",
+    "words": "w36 w26",
+    "start_time": 5.472,
+    "end_time": 6.792
+   },
+   {
+    "speaker": "h1",
+    "words": "w24 w8",
+    "start_time": 6.706,
+    "end_time": 12.34
+   },
+   {
+    "speaker": "h0",
+    "words": "w28 w16 w5 w28 w1 w29 w18",
+    "start_time": 11.786,
+    "end_time": 15.62
+   },
+   {
+    "speaker": "h2",
+    "words": "w17 w23 w13 w32 w32",
+    "start_time": 17.181,
+    "end_time": 18.039
+   },
+   {
+    "speaker": "h1",
+    "words": "w29 w12 w25 w15 w7",
+    "start_time": 17.419,
+    "end_time": 22.366
+   },
+   {
+    "speaker": "h2",
+    "words": "w4",
+    "start_time": 21.106,
+    "end_time": 25.343
+   },
+   {
+    "speaker": "h2",
+    "words": "w27 w17 w36 w5",
+    "start_time": 28.43,
+    "end_time": 33.789
+   },
+   {
+    "speaker": "h0",
+    "words": "w7 w11 w36",
+    "start_time": 31.635,
+    "end_time": 35.483
+   },
+   {
+    "speaker": "h1",
+    "words": "w14 w7 w32 w3 w14 w1 w27 w17",
+    "start_time": 33.98,
+    "end_time": 39.595
+   },
+   {
+    "speaker": "h2",
+    "words": "w13 w1 w26 w30 w20 w3 w23 w14",
+    "start_time": 39.967,
+    "end_time": 45.169
+   }
+  ],
+  "collar": 1,
+  "errors": 43,
+  "length": 58,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w10 w19",
+    "start_time": 0.455,
+    "end_time": 1.562
+   },
+   {
+    "speaker": "spk0",
+    "words": "w3",
+    "start_time": 2.19,
+    "end_time": 5.679
+   },
+   {
+    "speaker": "spk1",
+    "words": "w22 w15 w5 w30",
+    "start_time": 4.08,
+    "end_time": 8.742
+   },
+   {
+    "speaker": "spk0",
+    "words": "w28",
+    "start_time": 7.11,
+    "end_time": 7.839
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w22 w15 w5 w30",
+    "start_time": 5.07,
+    "end_time": 9.732
+   }
+  ],
+  "collar": 1,
+  "errors": 4,
+  "length": 8,
+  "missed_speaker": 1,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w33 w12",
+    "start_time": 1.521,
+    "end_time": 3.865
+   },
+   {
+    "speaker": "spk0",
+    "words": "w5 w15 w29 w0 w14 w25 w6 w12",
+    "start_time": 3.845,
+    "end_time": 6.728
+   },
+   {
+    "speaker": "spk0",
+    "words": "w15 w17 w21 w14 w2 w25",
+    "start_time": 6.11,
+    "end_time": 12.076
+   },
+   {
+    "speaker": "spk0",
+    "words": "w3 w34",
+    "start_time": 10.688,
+    "end_time": 12.044
+   },
+   {
+    "speaker": "spk0",
+    "words": "w16 w12 w6 w31 w36 w28 w18 w4",
+    "start_time": 14.522,
+    "end_time": 15.572
+   },
+   {
+    "speaker": "spk0",
+    "words": "w11",
+    "start_time": 14.83,
+    "end_time": 17.736
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w33 w12",
+    "start_time": 0.788,
+    "end_time": 3.132
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w15 w29 w0 w14 w25 w6 w12",
+    "start_time": 3.626,
+    "end_time": 6.509
+   },
+   {
+    "speaker": "h0",
+    "words": "w15 w17 w21 w14 w2 w25",
+    "start_time": 5.228,
+    "end_time": 11.194
+   },
+   {
+    "speaker": "h0",
+    "words": "w3 w34",
+    "start_time": 10.075,
+    "end_time": 11.431
+   },
+   {
+    "speaker": "h0",
+    "words": "w16 w12 w6 w31 w36 w28 w18 w4",
+    "start_time": 14.627,
+    "end_time": 15.677
+   },
+   {
+    "speaker": "h0",
+    "words": "w11",
+    "start_time": 15.549,
+    "end_time": 18.455
+   }
+  ],
+  "collar": 2,
+  "errors": 0,
+  "length": 27,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk3",
+    "words": "w32 w8 w32 w1 w26",
+    "start_time": 1.764,
+    "end_time": 3.488
+   },
+   {
+    "speaker": "spk1",
+    "words": "w7 w28 w23 w33 w30",
+    "start_time": 3.236,
+    "end_time": 6.661
+   },
+   {
+    "speaker": "spk2",
+    "words": "w18 w25 w2 w16 w30",
+    "start_time": 7.781,
+    "end_time": 11.265
+   },
+   {
+    "speaker": "spk1",
+    "words": "w19 w29 w23 w5 w23 w13",
+    "start_time": 10.458,
+    "end_time": 13.444
+   },
+   {
+    "speaker": "spk2",
+    "words": "w23 w1 w17 w35 w3",
+    "start_time": 14.104,
+    "end_time": 18.646
+   },
+   {
+    "speaker": "spk1",
+    "words": "w14 w21 w21 w30 w6",
+    "start_time": 15.511,
+    "end_time": 21.302
+   },
+   {
+    "speaker": "spk2",
+    "words": "w2 w8 w21 w26 w28 w18 w26 w9",
+    "start_time": 18.878,
+    "end_time": 20.862
+   },
+   {
+    "speaker": "spk0",
+    "words": "w17 w3 w15 w21 w2 w11",
+    "start_time": 21.047,
+    "end_time": 25.467
+   },
+   {
+    "speaker": "spk3",
+    "words": "w32 w7 w7 w17 w28 w32",
+    "start_time": 23.134,
+    "end_time": 27.884
+   },
+   {
+    "speaker": "spk2",
+    "words": "w24 w11 w24 w0 w23 w7 w20",
+    "start_time": 29.881,
+    "end_time": 35.809
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h3",
+    "words": "w15 w37 w32 w1 w36",
+    "start_time": 1.784,
+    "end_time": 3.508
+   },
+   {
+    "speaker": "h0",
+    "words": "w7 w28 w13 w33 w30",
+    "start_time": 3.168,
+    "end_time": 6.593
+   },
+   {
+    "speaker": "h2",
+    "words": "w21 w25 w27 w37 w2",
+    "start_time": 7.788,
+    "end_time": 11.272
+   },
+   {
+    "speaker": "h0",
+    "words": "w19 w29 w23 w5 w24 w13",
+    "start_time": 10.412,
+    "end_time": 13.398
+   },
+   {
+    "speaker": "h2",
+    "words": "w23 w1 w17 w6 w3",
+    "start_time": 14.139,
+    "end_time": 18.681
+   },
+   {
+    "speaker": "h0",
+    "words": "w14 w21 w21 w30 w6",
+    "start_time": 15.568,
+    "end_time": 21.359
+   },
+   {
+    "speaker": "h2",
+    "words": "w0 w8 w21 w26 w28 w18 w26 w32",
+    "start_time": 18.824,
+    "end_time": 20.808
+   },
+   {
+    "speaker": "h1",
+    "words": "w17 w3 w24 w21 w2 w11",
+    "start_time": 21.017,
+    "end_time": 25.437
+   },
+   {
+    "speaker": "h3",
+    "words": "w23 w7 w7 w17 w28 w7",
+    "start_time": 23.122,
+    "end_time": 27.872
+   },
+   {
+    "speaker": "h2",
+    "words": "w24 w11 w24 w12 w23 w7 w20",
+    "start_time": 29.922,
+    "end_time": 35.85
+   }
+  ],
+  "collar": 2,
+  "errors": 16,
+  "length": 58,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w25 w2 w31 w34 w30 w12",
+    "start_time": 1.13,
+    "end_time": 6.511
+   },
+   {
+    "speaker": "spk0",
+    "words": "w39 w10 w32",
+    "start_time": 1.944,
+    "end_time": 3.468
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w19 w2 w39 w34 w30 w12",
+    "start_time": 1.649,
+    "end_time": 7.03
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w23 w32",
+    "start_time": 1.226,
+    "end_time": 2.75
+   }
+  ],
+  "collar": 0.5,
+  "errors": 8,
+  "length": 9,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w17 w4 w11",
+    "start_time": 1.874,
+    "end_time": 5.63
+   },
+   {
+    "speaker": "spk0",
+    "words": "w34 w15 w11 w12 w20 w21 w38 w1",
+    "start_time": 4.592,
+    "end_time": 7.512
+   },
+   {
+    "speaker": "spk0",
+    "words": "w3 w10",
+    "start_time": 5.577,
+    "end_time": 6.473
+   },
+   {
+    "speaker": "spk0",
+    "words": "w13 w28",
+    "start_time": 6.961,
+    "end_time": 11.5
+   },
+   {
+    "speaker": "spk0",
+    "words": "w14 w19 w5 w35 w30",
+    "start_time": 8.986,
+    "end_time": 9.81
+   },
+   {
+    "speaker": "spk0",
+    "words": "w12 w14 w17 w17 w32 w15 w8 w19",
+    "start_time": 10.866,
+    "end_time": 13.438
+   },
+   {
+    "speaker": "spk0",
+    "words": "w29 w32 w22 w32 w31 w1",
+    "start_time": 11.245,
+    "end_time": 14.163
+   },
+   {
+    "speaker": "spk0",
+    "words": "w10 w33 w9 w27 w11 w30 w32",
+    "start_time": 12.661,
+    "end_time": 15.891
+   },
+   {
+    "speaker": "spk0",
+    "words": "w36 w6 w16 w17 w22 w7",
+    "start_time": 15.288,
+    "end_time": 19.762
+   },
+   {
+    "speaker": "spk0",
+    "words": "w27 w0 w19 w16 w8 w35",
+    "start_time": 18.077,
+    "end_time": 23.206
+   },
+   {
+    "speaker": "spk0",
+    "words": "w27 w29",
+    "start_time": 21.462,
+    "end_time": 25.659
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w11 w4 w14",
+    "start_time": 1.686,
+    "end_time": 5.442
+   },
+   {
+    "speaker": "h0",
+    "words": "w13 w28",
+    "start_time": 6.155,
+    "end_time": 10.694
+   },
+   {
+    "speaker": "h0",
+    "words": "w14 w19 w5 w35 w30",
+    "start_time": 8.62,
+    "end_time": 9.444
+   },
+   {
+    "speaker": "h0",
+    "words": "w12 w10 w17 w35 w32 w15 w36 w19",
+    "start_time": 10.148,
+    "end_time": 12.72
+   },
+   {
+    "speaker": "h0",
+    "words": "w16 w32 w22 w32 w29 w1",
+    "start_time": 12.325,
+    "end_time": 15.243
+   },
+   {
+    "speaker": "h0",
+    "words": "w10 w33 w9 w6 w11 w30 w14",
+    "start_time": 11.339,
+    "end_time": 14.569
+   },
+   {
+    "speaker": "h0",
+    "words": "w36 w6 w16 w17 w22 w32",
+    "start_time": 15.792,
+    "end_time": 20.266
+   },
+   {
+    "speaker": "h0",
+    "words": "w27 w0 w19 w16 w8 w35",
+    "start_time": 17.253,
+    "end_time": 22.382
+   },
+   {
+    "speaker": "h0",
+    "words": "w13 w29",
+    "start_time": 20.735,
+    "end_time": 24.932
+   }
+  ],
+  "collar": 0.5,
+  "errors": 41,
+  "length": 55,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w0",
+    "start_time": 1.107,
+    "end_time": 6.45
+   },
+   {
+    "speaker": "spk0",
+    "words": "w8 w19 w27 w13 w9 w25 w0 w18",
+    "start_time": 5.683,
+    "end_time": 10.82
+   },
+   {
+    "speaker": "spk0",
+    "words": "w21 w4 w8 w3",
+    "start_time": 9.414,
+    "end_time": 12.773
+   },
+   {
+    "speaker": "spk0",
+    "words": "w7 w5 w4",
+    "start_time": 12.557,
+    "end_time": 14.738
+   },
+   {
+    "speaker": "spk0",
+    "words": "w39 w25 w32",
+    "start_time": 14.773,
+    "end_time": 17.301
+   },
+   {
+    "speaker": "spk0",
+    "words": "w28 w24 w6 w27 w14 w24 w12 w20",
+    "start_time": 16.936,
+    "end_time": 19.988
+   },
+   {
+    "speaker": "spk0",
+    "words": "w7 w37 w2 w28 w16",
+    "start_time": 21.012,
+    "end_time": 23.674
+   },
+   {
+    "speaker": "spk0",
+    "words": "w9 w38 w33 w10 w27 w9",
+    "start_time": 22.508,
+    "end_time": 26.36
+   },
+   {
+    "speaker": "spk0",
+    "words": "w5 w2 w39 w28 w19 w37 w28",
+    "start_time": 25.988,
+    "end_time": 29.572
+   },
+   {
+    "speaker": "spk0",
+    "words": "w24",
+    "start_time": 28.682,
+    "end_time": 31.41
+   },
+   {
+    "speaker": "spk0",
+    "words": "w32 w14 w5",
+    "start_time": 30.378,
+    "end_time": 30.965
+   },
+   {
+    "speaker": "spk0",
+    "words": "w26 w28 w16 w37 w15",
+    "start_time": 32.451,
+    "end_time": 33.339
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w0",
+    "start_time": 1.07,
+    "end_time": 6.413
+   },
+   {
+    "speaker": "h0",
+    "words": "w7 w4 w27 w17 w9 w36 w0 w37",
+    "start_time": 5.692,
+    "end_time": 10.829
+   },
+   {
+    "speaker": "h0",
+    "words": "w21 w4 w33 w3",
+    "start_time": 9.342,
+    "end_time": 12.701
+   },
+   {
+    "speaker": "h0",
+    "words": "w7 w5 w4",
+    "start_time": 12.541,
+    "end_time": 14.722
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w38 w32",
+    "start_time": 14.856,
+    "end_time": 17.384
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w24 w35 w27 w14 w24 w11 w20",
+    "start_time": 17.017,
+    "end_time": 20.069
+   },
+   {
+    "speaker": "h0",
+    "words": "w7 w6 w2 w28 w33",
+    "start_time": 20.926,
+    "end_time": 23.588
+   },
+   {
+    "speaker": "h0",
+    "words": "w25 w38 w33 w10 w27 w9",
+    "start_time": 22.49,
+    "end_time": 26.342
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w2 w9 w28 w19 w37 w28",
+    "start_time": 25.939,
+    "end_time": 29.523
+   },
+   {
+    "speaker": "h0",
+    "words": "w24",
+    "start_time": 28.764,
+    "end_time": 31.492
+   },
+   {
+    "speaker": "h0",
+    "words": "w32 w14 w29",
+    "start_time": 30.343,
+    "end_time": 30.93
+   },
+   {
+    "speaker": "h0",
+    "words": "w26 w28 w16 w37 w15",
+    "start_time": 32.386,
+    "end_time": 33.274
+   }
+  ],
+  "collar": 1,
+  "errors": 15,
+  "length": 54,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk2",
+    "words": "w35 w14 w21",
+    "start_time": 2.594,
+    "end_time": 5.98
+   },
+   {
+    "speaker": "spk1",
+    "words": "w27",
+    "start_time": 4.217,
+    "end_time": 6.888
+   },
+   {
+    "speaker": "spk0",
+    "words": "w0 w6 w14 w25 w16 w15 w1",
+    "start_time": 5.066,
+    "end_time": 10.305
+   },
+   {
+    "speaker": "spk2",
+    "words": "w15 w28",
+    "start_time": 8.261,
+    "end_time": 12.428
+   },
+   {
+    "speaker": "spk0",
+    "words": "w7",
+    "start_time": 9.146,
+    "end_time": 12.803
+   },
+   {
+    "speaker": "spk3",
+    "words": "w35 w9 w25 w9 w34 w29 w17 w22",
+    "start_time": 12.745,
+    "end_time": 18.109
+   },
+   {
+    "speaker": "spk0",
+    "words": "w38 w27 w12 w18 w36 w20",
+    "start_time": 13.705,
+    "end_time": 19.616
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w35 w14 w21",
+    "start_time": 2.979,
+    "end_time": 6.365
+   },
+   {
+    "speaker": "h1",
+    "words": "w27",
+    "start_time": 4.395,
+    "end_time": 7.066
+   },
+   {
+    "speaker": "h3",
+    "words": "w0 w6 w14 w25 w16 w15 w1",
+    "start_time": 5.733,
+    "end_time": 10.972
+   },
+   {
+    "speaker": "h0",
+    "words": "w15 w28",
+    "start_time": 8.457,
+    "end_time": 12.624
+   },
+   {
+    "speaker": "h3",
+    "words": "w7",
+    "start_time": 8.663,
+    "end_time": 12.32
+   },
+   {
+    "speaker": "h2",
+    "words": "w35 w9 w30 w9 w34 w29 w17 w22",
+    "start_time": 12.613,
+    "end_time": 17.977
+   },
+   {
+    "speaker": "h3",
+    "words": "w38 w27 w12 w18 w36 w2",
+    "start_time": 14.442,
+    "end_time": 20.353
+   }
+  ],
+  "collar": 2,
+  "errors": 2,
+  "length": 28,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w31 w31 w23 w6 w37 w24 w37",
+    "start_time": 0.281,
+    "end_time": 1.086
+   },
+   {
+    "speaker": "spk0",
+    "words": "w31 w34",
+    "start_time": 1.44,
+    "end_time": 3.379
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w31 w31 w23 w38 w37 w24 w37",
+    "start_time": 0.322,
+    "end_time": 1.127
+   },
+   {
+    "speaker": "h0",
+    "words": "w31 w34",
+    "start_time": 1.245,
+    "end_time": 3.184
+   }
+  ],
+  "collar": 1,
+  "errors": 1,
+  "length": 9,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk1",
+    "words": "w21",
+    "start_time": 1.406,
+    "end_time": 2.475
+   },
+   {
+    "speaker": "spk1",
+    "words": "w27",
+    "start_time": 4.655,
+    "end_time": 8.272
+   },
+   {
+    "speaker": "spk2",
+    "words": "w39 w30 w19",
+    "start_time": 9.113,
+    "end_time": 12.805
+   },
+   {
+    "speaker": "spk1",
+    "words": "w9",
+    "start_time": 11.914,
+    "end_time": 14.006
+   },
+   {
+    "speaker": "spk2",
+    "words": "w1 w10 w16 w15",
+    "start_time": 15.205,
+    "end_time": 19.914
+   },
+   {
+    "speaker": "spk2",
+    "words": "w39 w37 w9 w6 w15 w28",
+    "start_time": 17.32,
+    "end_time": 21.697
+   },
+   {
+    "speaker": "spk0",
+    "words": "w11 w35 w18 w23 w1 w33 w17 w31",
+    "start_time": 23.279,
+    "end_time": 24.623
+   },
+   {
+    "speaker": "spk0",
+    "words": "w35 w4 w20 w21 w4 w9 w24",
+    "start_time": 24.775,
+    "end_time": 29.9
+   },
+   {
+    "speaker": "spk0",
+    "words": "w29 w32",
+    "start_time": 30.216,
+    "end_time": 30.938
+   },
+   {
+    "speaker": "spk0",
+    "words": "w19 w14 w0",
+    "start_time": 33.008,
+    "end_time": 34.173
+   },
+   {
+    "speaker": "spk0",
+    "words": "w28 w33 w20",
+    "start_time": 36.294,
+    "end_time": 37.331
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h2",
+    "words": "w21",
+    "start_time": 1.46,
+    "end_time": 2.529
+   },
+   {
+    "speaker": "h2",
+    "words": "w23",
+    "start_time": 4.332,
+    "end_time": 7.949
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w30 w19",
+    "start_time": 8.87,
+    "end_time": 12.562
+   },
+   {
+    "speaker": "h2",
+    "words": "w18",
+    "start_time": 12.138,
+    "end_time": 14.23
+   },
+   {
+    "speaker": "h0",
+    "words": "w1 w10 w16 w25",
+    "start_time": 14.781,
+    "end_time": 19.49
+   },
+   {
+    "speaker": "h0",
+    "words": "w0 w25 w15 w6 w26 w28",
+    "start_time": 17.191,
+    "end_time": 21.568
+   },
+   {
+    "speaker": "h1",
+    "words": "w37 w35 w18 w23 w1 w33 w24 w26",
+    "start_time": 23.579,
+    "end_time": 24.923
+   },
+   {
+    "speaker": "h1",
+    "words": "w20 w4 w30 w21 w4 w7 w24",
+    "start_time": 25.23,
+    "end_time": 30.355
+   },
+   {
+    "speaker": "h1",
+    "words": "w16 w32",
+    "start_time": 30.468,
+    "end_time": 31.19
+   },
+   {
+    "speaker": "h1",
+    "words": "w19 w14 w0",
+    "start_time": 32.86,
+    "end_time": 34.025
+   },
+   {
+    "speaker": "h1",
+    "words": "w28 w33 w20",
+    "start_time": 36.465,
+    "end_time": 37.502
+   }
+  ],
+  "collar": 5,
+  "errors": 14,
+  "length": 39,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w28 w29 w18 w37 w30 w39",
+    "start_time": 1.231,
+    "end_time": 2.436
+   },
+   {
+    "speaker": "spk0",
+    "words": "w26",
+    "start_time": 2.16,
+    "end_time": 5.411
+   },
+   {
+    "speaker": "spk0",
+    "words": "w27 w1 w29 w26",
+    "start_time": 4.483,
+    "end_time": 7.716
+   },
+   {
+    "speaker": "spk1",
+    "words": "w19 w24 w12 w26",
+    "start_time": 8.335,
+    "end_time": 9.345
+   },
+   {
+    "speaker": "spk0",
+    "words": "w23 w24 w6 w14 w4 w19 w33",
+    "start_time": 11.472,
+    "end_time": 17.17
+   },
+   {
+    "speaker": "spk1",
+    "words": "w22 w36 w26 w10 w15 w37 w32",
+    "start_time": 15.472,
+    "end_time": 21.376
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w28 w29 w3 w37 w19 w39",
+    "start_time": 0.824,
+    "end_time": 2.029
+   },
+   {
+    "speaker": "h1",
+    "words": "w26",
+    "start_time": 2.218,
+    "end_time": 5.469
+   },
+   {
+    "speaker": "h1",
+    "words": "w27 w4 w13 w26",
+    "start_time": 5.129,
+    "end_time": 8.362
+   },
+   {
+    "speaker": "h0",
+    "words": "w19 w4 w20 w26",
+    "start_time": 7.632,
+    "end_time": 8.642
+   },
+   {
+    "speaker": "h1",
+    "words": "w23 w25 w6 w28 w4 w29 w29",
+    "start_time": 12.09,
+    "end_time": 17.788
+   },
+   {
+    "speaker": "h0",
+    "words": "w22 w25 w26 w19 w15 w37 w32",
+    "start_time": 14.855,
+    "end_time": 20.759
+   }
+  ],
+  "collar": 1,
+  "errors": 12,
+  "length": 29,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk1",
+    "words": "w23 w19 w31 w14 w36 w14 w19",
+    "start_time": 0.957,
+    "end_time": 1.509
+   },
+   {
+    "speaker": "spk4",
+    "words": "w24 w5 w0 w36 w1 w37",
+    "start_time": 2.326,
+    "end_time": 7.01
+   },
+   {
+    "speaker": "spk1",
+    "words": "w13 w27 w35 w38 w13 w31 w2 w30",
+    "start_time": 6.812,
+    "end_time": 10.873
+   },
+   {
+    "speaker": "spk4",
+    "words": "w8 w28 w39 w13 w18",
+    "start_time": 10.204,
+    "end_time": 14.528
+   },
+   {
+    "speaker": "spk2",
+    "words": "w25 w21 w1 w6 w18",
+    "start_time": 12.456,
+    "end_time": 17.95
+   },
+   {
+    "speaker": "spk2",
+    "words": "w18 w7 w23 w37 w9 w6 w19",
+    "start_time": 17.059,
+    "end_time": 18.366
+   },
+   {
+    "speaker": "spk2",
+    "words": "w18 w35 w21 w16 w0 w14 w21 w14",
+    "start_time": 19.094,
+    "end_time": 23.127
+   },
+   {
+    "speaker": "spk1",
+    "words": "w1 w19 w18 w0 w32 w17",
+    "start_time": 24.001,
+    "end_time": 25.948
+   },
+   {
+    "speaker": "spk3",
+    "words": "w32 w11",
+    "start_time": 24.682,
+    "end_time": 27.201
+   },
+   {
+    "speaker": "spk3",
+    "words": "w23 w33 w33 w2 w21",
+    "start_time": 26.921,
+    "end_time": 29.875
+   },
+   {
+    "speaker": "spk1",
+    "words": "w31 w21 w8 w15 w16 w38 w6 w15",
+    "start_time": 31.464,
+    "end_time": 35.054
+   },
+   {
+    "speaker": "spk3",
+    "words": "w8 w34 w31 w22",
+    "start_time": 34.112,
+    "end_time": 38.466
+   },
+   {
+    "speaker": "spk0",
+    "words": "w27 w33 w30 w12",
+    "start_time": 35.586,
+    "end_time": 39.745
+   },
+   {
+    "speaker": "spk4",
+    "words": "w31 w9",
+    "start_time": 38.075,
+    "end_time": 40.083
+   },
+   {
+    "speaker": "spk1",
+    "words": "w33 w39",
+    "start_time": 39.447,
+    "end_time": 44.318
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h3",
+    "words": "w23 w19 w31 w31 w36 w14 w19",
+    "start_time": 0.763,
+    "end_time": 1.315
+   },
+   {
+    "speaker": "h4",
+    "words": "w24 w5 w0 w36 w1 w37",
+    "start_time": 2.47,
+    "end_time": 7.154
+   },
+   {
+    "speaker": "h3",
+    "words": "w13 w27 w35 w38 w13 w24 w2 w30",
+    "start_time": 6.732,
+    "end_time": 10.793
+   },
+   {
+    "speaker": "h4",
+    "words": "w8 w28 w39 w13 w18",
+    "start_time": 10.245,
+    "end_time": 14.569
+   },
+   {
+    "speaker": "h0",
+    "words": "w18 w7 w23 w37 w9 w6 w19",
+    "start_time": 17.092,
+    "end_time": 18.399
+   },
+   {
+    "speaker": "h0",
+    "words": "w18 w35 w21 w16 w0 w14 w37 w14",
+    "start_time": 19.024,
+    "end_time": 23.057
+   },
+   {
+    "speaker": "h3",
+    "words": "w1 w19 w18 w0 w32 w17",
+    "start_time": 24.177,
+    "end_time": 26.124
+   },
+   {
+    "speaker": "h1",
+    "words": "w32 w11",
+    "start_time": 24.819,
+    "end_time": 27.338
+   },
+   {
+    "speaker": "h1",
+    "words": "w23 w33 w33 w2 w21",
+    "start_time": 26.809,
+    "end_time": 29.763
+   },
+   {
+    "speaker": "h3",
+    "words": "w7 w21 w8 w15 w16 w38 w6 w15",
+    "start_time": 31.219,
+    "end_time": 34.809
+   },
+   {
+    "speaker": "h2",
+    "words": "w27 w33 w30 w12",
+    "start_time": 35.717,
+    "end_time": 39.876
+   },
+   {
+    "speaker": "h4",
+    "words": "w31 w9",
+    "start_time": 38.103,
+    "end_time": 40.111
+   },
+   {
+    "speaker": "h3",
+    "words": "w33 w39",
+    "start_time": 39.368,
+    "end_time": 44.239
+   }
+  ],
+  "collar": 2,
+  "errors": 13,
+  "length": 79,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk0",
+    "words": "w33 w33 w37 w35 w9 w3",
+    "start_time": 0.63,
+    "end_time": 1.717
+   },
+   {
+    "speaker": "spk0",
+    "words": "w8",
+    "start_time": 2.624,
+    "end_time": 7.287
+   },
+   {
+    "speaker": "spk0",
+    "words": "w33 w25 w9 w27 w16 w23",
+    "start_time": 5.476,
+    "end_time": 8.354
+   },
+   {
+    "speaker": "spk0",
+    "words": "w25 w31",
+    "start_time": 7.985,
+    "end_time": 8.578
+   },
+   {
+    "speaker": "spk0",
+    "words": "w9",
+    "start_time": 8.428,
+    "end_time": 9.131
+   },
+   {
+    "speaker": "spk0",
+    "words": "w3 w15 w15 w28 w16 w30",
+    "start_time": 9.813,
+    "end_time": 12.872
+   },
+   {
+    "speaker": "spk0",
+    "words": "w7 w22 w37 w29 w9 w3",
+    "start_time": 11.462,
+    "end_time": 16.353
+   },
+   {
+    "speaker": "spk0",
+    "words": "w39 w8 w6 w37 w0 w26 w26 w15",
+    "start_time": 14.531,
+    "end_time": 19.48
+   },
+   {
+    "speaker": "spk0",
+    "words": "w5 w28 w39 w11 w33 w21",
+    "start_time": 18.176,
+    "end_time": 19.871
+   },
+   {
+    "speaker": "spk0",
+    "words": "w39 w11 w32 w21 w2 w28 w7",
+    "start_time": 20.438,
+    "end_time": 21.548
+   },
+   {
+    "speaker": "spk0",
+    "words": "w32 w17 w16",
+    "start_time": 21.449,
+    "end_time": 23.633
+   },
+   {
+    "speaker": "spk0",
+    "words": "w13 w38 w10 w37 w12 w28 w8 w13",
+    "start_time": 24.407,
+    "end_time": 26.519
+   },
+   {
+    "speaker": "spk0",
+    "words": "w25 w9 w23 w3 w27 w16 w11 w33",
+    "start_time": 27.156,
+    "end_time": 29.333
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w33 w33 w37 w35 w9 w3",
+    "start_time": 0.85,
+    "end_time": 1.937
+   },
+   {
+    "speaker": "h0",
+    "words": "w8",
+    "start_time": 2.266,
+    "end_time": 6.929
+   },
+   {
+    "speaker": "h0",
+    "words": "w33 w25 w9 w27 w6 w23",
+    "start_time": 5.212,
+    "end_time": 8.09
+   },
+   {
+    "speaker": "h0",
+    "words": "w25 w31",
+    "start_time": 7.751,
+    "end_time": 8.344
+   },
+   {
+    "speaker": "h0",
+    "words": "w9",
+    "start_time": 8.73,
+    "end_time": 9.433
+   },
+   {
+    "speaker": "h0",
+    "words": "w3 w15 w15 w10 w16 w30",
+    "start_time": 10.01,
+    "end_time": 13.069
+   },
+   {
+    "speaker": "h0",
+    "words": "w7 w22 w37 w29 w9 w3",
+    "start_time": 11.165,
+    "end_time": 16.056
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w8 w6 w37 w0 w26 w26 w15",
+    "start_time": 15.068,
+    "end_time": 20.017
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w28 w39 w11 w33 w21",
+    "start_time": 17.543,
+    "end_time": 19.238
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w11 w32 w21 w2 w28 w7",
+    "start_time": 20.463,
+    "end_time": 21.573
+   },
+   {
+    "speaker": "h0",
+    "words": "w32 w17 w16",
+    "start_time": 20.733,
+    "end_time": 22.917
+   },
+   {
+    "speaker": "h0",
+    "words": "w13 w38 w10 w37 w12 w28 w8 w13",
+    "start_time": 24.636,
+    "end_time": 26.748
+   },
+   {
+    "speaker": "h0",
+    "words": "w25 w3 w23 w3 w27 w16 w11 w10",
+    "start_time": 27.017,
+    "end_time": 29.194
+   }
+  ],
+  "collar": 2,
+  "errors": 4,
+  "length": 68,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk2",
+    "words": "w11 w8 w19 w24 w8 w35 w20",
+    "start_time": 0.401,
+    "end_time": 1.807
+   },
+   {
+    "speaker": "spk0",
+    "words": "w38 w29 w6 w34 w35 w36",
+    "start_time": 1.781,
+    "end_time": 6.618
+   },
+   {
+    "speaker": "spk0",
+    "words": "w20 w26 w1 w34 w6 w6",
+    "start_time": 5.805,
+    "end_time": 7.141
+   },
+   {
+    "speaker": "spk1",
+    "words": "w20 w3 w9 w17 w7",
+    "start_time": 8.946,
+    "end_time": 13.825
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h1",
+    "words": "w20 w8 w20 w24 w33 w35 w20",
+    "start_time": 0.545,
+    "end_time": 1.951
+   },
+   {
+    "speaker": "h2",
+    "words": "w17 w4 w6 w5 w35 w36",
+    "start_time": 0.583,
+    "end_time": 5.42
+   },
+   {
+    "speaker": "h2",
+    "words": "w20 w34 w35 w34 w15 w8",
+    "start_time": 5.654,
+    "end_time": 6.99
+   },
+   {
+    "speaker": "h0",
+    "words": "w20 w3 w15 w0 w7",
+    "start_time": 10.062,
+    "end_time": 14.941
+   }
+  ],
+  "collar": 1,
+  "errors": 12,
+  "length": 24,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "spk1",
+    "words": "w30 w17 w0 w14 w20 w19 w35",
+    "start_time": 1.582,
+    "end_time": 7.037
+   },
+   {
+    "speaker": "spk1",
+    "words": "w39 w28 w8",
+    "start_time": 5.72,
+    "end_time": 8.619
+   },
+   {
+    "speaker": "spk0",
+    "words": "w35 w35 w9 w0 w21 w30 w25 w23",
+    "start_time": 7.968,
+    "end_time": 13.403
+   },
+   {
+    "speaker": "spk1",
+    "words": "w5 w36",
+    "start_time": 10.924,
+    "end_time": 12.102
+   },
+   {
+    "speaker": "spk1",
+    "words": "w28 w34",
+    "start_time": 12.011,
+    "end_time": 14.973
+   },
+   {
+    "speaker": "spk1",
+    "words": "w13 w27 w4 w26 w7 w32 w22 w8",
+    "start_time": 14.976,
+    "end_time": 18.443
+   },
+   {
+    "speaker": "spk0",
+    "words": "w14 w15 w14 w21",
+    "start_time": 19.525,
+    "end_time": 21.172
+   },
+   {
+    "speaker": "spk1",
+    "words": "w19 w35 w24 w38 w19 w36 w10",
+    "start_time": 20.913,
+    "end_time": 21.496
+   },
+   {
+    "speaker": "spk1",
+    "words": "w29 w39",
+    "start_time": 23.696,
+    "end_time": 26.402
+   },
+   {
+    "speaker": "spk0",
+    "words": "w11 w14 w17 w23 w39 w38 w7 w21",
+    "start_time": 26.679,
+    "end_time": 32.013
+   },
+   {
+    "speaker": "spk1",
+    "words": "w21 w21",
+    "start_time": 31.907,
+    "end_time": 34.538
+   },
+   {
+    "speaker": "spk0",
+    "words": "w37",
+    "start_time": 34.051,
+    "end_time": 38.9
+   },
+   {
+    "speaker": "spk0",
+    "words": "w32 w6 w0 w23",
+    "start_time": 38.791,
+    "end_time": 41.017
+   },
+   {
+    "speaker": "spk1",
+    "words": "w34 w1 w4 w34 w16",
+    "start_time": 42.174,
+    "end_time": 47.937
+   },
+   {
+    "speaker": "spk1",
+    "words": "w36 w16 w1 w22 w26 w1 w18",
+    "start_time": 44.178,
+    "end_time": 48.582
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "h0",
+    "words": "w30 w17 w0 w14 w20 w19 w35",
+    "start_time": 1.651,
+    "end_time": 7.106
+   },
+   {
+    "speaker": "h0",
+    "words": "w39 w28 w8",
+    "start_time": 5.781,
+    "end_time": 8.68
+   },
+   {
+    "speaker": "h1",
+    "words": "w35 w35 w9 w0 w21 w30 w25 w23",
+    "start_time": 7.886,
+    "end_time": 13.321
+   },
+   {
+    "speaker": "h0",
+    "words": "w5 w36",
+    "start_time": 10.837,
+    "end_time": 12.015
+   },
+   {
+    "speaker": "h0",
+    "words": "w28 w34",
+    "start_time": 11.993,
+    "end_time": 14.955
+   },
+   {
+    "speaker": "h0",
+    "words": "w13 w27 w4 w26 w7 w32 w22 w8",
+    "start_time": 15.011,
+    "end_time": 18.478
+   },
+   {
+    "speaker": "h1",
+    "words": "w14 w15 w14 w21",
+    "start_time": 19.489,
+    "end_time": 21.136
+   },
+   {
+    "speaker": "h0",
+    "words": "w19 w35 w24 w38 w19 w36 w10",
+    "start_time": 20.86,
+    "end_time": 21.443
+   },
+   {
+    "speaker": "h0",
+    "words": "w29 w39",
+    "start_time": 23.683,
+    "end_time": 26.389
+   },
+   {
+    "speaker": "h1",
+    "words": "w11 w14 w17 w23 w39 w38 w7 w21",
+    "start_time": 26.599,
+    "end_time": 31.933
+   },
+   {
+    "speaker": "h0",
+    "words": "w21 w21",
+    "start_time": 31.856,
+    "end_time": 34.487
+   },
+   {
+    "speaker": "h1",
+    "words": "w37",
+    "start_time": 33.969,
+    "end_time": 38.818
+   },
+   {
+    "speaker": "h1",
+    "words": "w32 w6 w0 w23",
+    "start_time": 38.863,
+    "end_time": 41.089
+   },
+   {
+    "speaker": "h0",
+    "words": "w34 w1 w4 w34 w16",
+    "start_time": 42.107,
+    "end_time": 47.87
+   },
+   {
+    "speaker": "h0",
+    "words": "w36 w16 w1 w22 w26 w1 w18",
+    "start_time": 44.177,
+    "end_time": 48.581
+   }
+  ],
+  "collar": 1,
+  "errors": 0,
+  "length": 70,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "A",
+    "words": "a b",
+    "start_time": 0,
+    "end_time": 2
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "1",
+    "words": "a b",
+    "start_time": 4,
+    "end_time": 6
+   }
+  ],
+  "collar": 5,
+  "errors": 0,
+  "length": 2,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "A",
+    "words": "a b",
+    "start_time": 0,
+    "end_time": 2
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "1",
+    "words": "a b",
+    "start_time": 4,
+    "end_time": 6
+   }
+  ],
+  "collar": 1,
+  "errors": 4,
+  "length": 2,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ },
+ {
+  "ref": [
+   {
+    "speaker": "A",
+    "words": "a b c d e",
+    "start_time": 0,
+    "end_time": 5
+   },
+   {
+    "speaker": "B",
+    "words": "x y",
+    "start_time": 5,
+    "end_time": 7
+   }
+  ],
+  "hyp": [
+   {
+    "speaker": "1",
+    "words": "x y",
+    "start_time": 5.2,
+    "end_time": 7.2
+   },
+   {
+    "speaker": "2",
+    "words": "a b q d e",
+    "start_time": 0.1,
+    "end_time": 5.1
+   }
+  ],
+  "collar": 2,
+  "errors": 1,
+  "length": 7,
+  "missed_speaker": 0,
+  "falarm_speaker": 0
+ }
+]

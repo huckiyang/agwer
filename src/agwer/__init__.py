@@ -36,11 +36,11 @@ from agwer.classic import cer, mer, ser, wer, wil, wip
 from agwer.edits import EditCounts, classify_tokens, classify_utterance
 from agwer.entity import entity_f1, numeric_tokens
 from agwer.hallucination import word_hallucination_rate
-from agwer.multispeaker import cp_statistics, cpwer
+from agwer.multispeaker import cp_statistics, cpwer, tcp_statistics, tcpwer
 from agwer.normalizers import BasicTextNormalizer, EnglishTextNormalizer
 from agwer.text import default_normalize
 
-__version__ = "0.4.9"
+__version__ = "0.4.10"
 
 __all__ = [
     "wer",
@@ -52,6 +52,8 @@ __all__ = [
     "cpwer",
     "tokenize",
     "cp_statistics",
+    "tcpwer",
+    "tcp_statistics",
     "entity_f1",
     "numeric_tokens",
     "word_hallucination_rate",

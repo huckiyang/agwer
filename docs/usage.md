@@ -100,9 +100,14 @@ permutation with the fewest word errors is solved exactly. Inputs are
 No timestamps are needed; order utterances by start time upstream if
 needed. `cp_statistics()` adds the full accounting: errors, reference
 words, the speaker `assignment`, and missed / false-alarm / scored speaker
-counts. Validated against meeteval on an 87-case golden fixture and 13 to
-16 times faster on meeting-sized inputs; for time-constrained variants
-(tcpWER) and ORC / MIMO, use [MeetEval](https://github.com/fgnt/meeteval).
+counts. With timestamped segments (`{"speaker", "words", "start_time",
+"end_time"}` dicts), `tcpwer(reference, hypothesis, collar=5.0)` adds the
+time constraint of the CHiME-7/8 official metric (MeetEval's tcpWER
+defaults: character-based reference intervals, hypothesis interval centers
+expanded by the collar, strict overlap). Both are validated against
+meeteval on golden fixtures (87 cpWER + 53 tcpWER cases) and measure
+faster on meeting-sized inputs (13-16x for cpWER, 2.6-7.5x for tcpWER);
+for ORC / MIMO and DER, use [MeetEval](https://github.com/fgnt/meeteval).
 
 ## Entity F1 and Word Hallucination Rate
 

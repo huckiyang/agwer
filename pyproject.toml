@@ -1,16 +1,16 @@
 [project]
 name = "agwer"
-version = "0.4.9"
-description = "Agent-oriented word error rate, named entity F1 score, and hallucination error metrics package."
+version = "0.4.10"
+description = "Agent-oriented word error rate, named entity F1 score, hallucination, and multi-speaker cpWER/tcpWER error metrics package."
 readme = "README.md"
 authors = [
-    { name = "Huck Yang" },
+    { name = "Huck Yang", email = "huckiyang@ieee.org" },
 ]
 requires-python = ">=3.9"
 dependencies = [
     "rapidfuzz>=3.6",
 ]
-license = "Apache-2.0"
+license = "MIT"
 keywords = [
     "speech recognition",
     "WER",
