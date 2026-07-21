@@ -10,8 +10,7 @@
 and voice agents. A 40 KB wheel that imports in under 20 ms, fast on CPU and
 native on Apple Silicon M-series. 
 
-- note: this useful `pip install agwer` was developed organically by a human programmer since 2025. We work together with great personal Fable since 2026. 🙂
-  - we welcome contributions from the community.
+- note: this useful `pip install agwer` was developed organically by a human programmer since 2025. We work together with great personal Fable since 2026; 🙂 we welcome contributions from the open community.
 
 agwer supports the classic ASR similarity measures and the agentic ones:
 
