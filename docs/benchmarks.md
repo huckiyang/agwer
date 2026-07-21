@@ -123,10 +123,12 @@ meeting sessions:
 
 | workload | MeetEval | **agwer** | speedup |
 |---|---|---|---|
-| cpWER, 8 spk × 8k words | 4,500 ms | **294 ms** | 15× |
-| cpWER, 16 spk × 8k words | 15,244 ms | **1,133 ms** | 13× |
-| tcpWER, 8 spk, 8,982 words | 152 ms | **43 ms** | 3.5× |
-| tcpWER, 8 spk, 36,267 words | 1,387 ms | **185 ms** | 7.5× |
+| cpWER, 4 spk × 2k words | 93 ms | **5.8 ms** | 16× |
+| cpWER, 8 spk × 2k words | 289 ms | **21.7 ms** | 13× |
+| cpWER, 8 spk × 8k words | 4,504 ms | **290 ms** | 15.5× |
+| cpWER, 16 spk × 8k words | 15,300 ms | **1,160 ms** | 13.2× |
+| tcpWER (collar 5), 8 spk, 8,982 words | 152 ms | **43 ms** | 3.5× |
+| tcpWER (collar 5), 8 spk, 36,267 words | 1,387 ms | **185 ms** | 7.5× |
 
 The tcpWER kernel is a pure-Python time-windowed DP: only hypothesis
 words whose collar-expanded interval can still interact with the current
