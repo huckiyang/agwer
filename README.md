@@ -24,12 +24,6 @@ agwer supports the classic ASR similarity measures and the agentic ones:
 7. concatenated minimum-permutation word error rate (cpWER) and its
    time-constrained variant (tcpWER) for multi-speaker ASR
 
-The agentic measures (3 and 4) evaluate systems that read *n*-best hypotheses
-and decide *when to edit and when to abstain*, such as LLM error correctors
-and dictation agents. The [metric guide](https://huckiyang.github.io/agwer/usage/)
-explains what question each measure answers, and the
-[example session](https://huckiyang.github.io/agwer/examples/) walks through a
-complete evaluation from install to CLI.
 
 ## Installation
 
@@ -82,6 +76,13 @@ hyps = ["send the revised contract to the legal team before the bored meeting on
 agwer.wer(refs, hyps)     # 0.0345, corpus WER
 agwer.cer(refs, hyps)     # 0.0116, corpus CER
 ```
+
+- The agentic measures (3 and 4) evaluate systems that read *n*-best hypotheses
+and decide *when to edit and when to abstain*, such as LLM error correctors
+and dictation agents. The [metric guide](https://huckiyang.github.io/agwer/usage/)
+explains what question each measure answers, and the
+[example session](https://huckiyang.github.io/agwer/examples/) walks through a
+complete evaluation from install to CLI.
 
 ### Evaluating a corrector or voice agent
 
