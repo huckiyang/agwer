@@ -1,0 +1,1257 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Agentic WER metrics for speech recognition and voice agents">
+      
+      
+      
+        <link rel="canonical" href="https://huckiyang.github.io/agwer/">
+      
+      
+      
+        <link rel="next" href="usage/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>agwer</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#agwer-agent-oriented-word-error-rate" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="agwer" class="md-header__button md-logo" aria-label="agwer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            agwer
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="blue"  aria-label="dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="blue"  aria-label="light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/huckiyang/agwer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    huckiyang/agwer
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="usage/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Usage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Example session
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="benchmarks/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Benchmarks
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="cli/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  CLI
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="agwer" class="md-nav__button md-logo" aria-label="agwer" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    agwer
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/huckiyang/agwer" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    huckiyang/agwer
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluating-a-corrector-or-voice-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluating a corrector or voice agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-corrector-beats-every-hypothesis-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the corrector beats every hypothesis (ρ &gt; 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entity-f1-and-word-hallucination-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity F1 and Word Hallucination Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-speaker-asr-cpwer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-speaker ASR: cpWER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apple-silicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apple Silicon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibility-reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatibility &amp; reproducibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License &amp; contact
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="usage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Usage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Example session
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="benchmarks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Benchmarks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Usage
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#evaluating-a-corrector-or-voice-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evaluating a corrector or voice agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-the-corrector-beats-every-hypothesis-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When the corrector beats every hypothesis (ρ &gt; 1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entity-f1-and-word-hallucination-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity F1 and Word Hallucination Rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-speaker-asr-cpwer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-speaker ASR: cpWER
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#normalization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normalization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Performance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apple-silicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apple Silicon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibility-reproducibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compatibility &amp; reproducibility
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#license-contact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        License &amp; contact
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="agwer-agent-oriented-word-error-rate">AgWER: Agent-oriented Word Error Rate</h1>
+<p><a href="https://pypi.org/project/agwer/"><img alt="PyPI" src="https://img.shields.io/pypi/v/agwer" /></a>
+<a href="https://github.com/huckiyang/agwer/actions/workflows/ci.yml"><img alt="ci" src="https://img.shields.io/github/actions/workflow/status/huckiyang/agwer/ci.yml?branch=main&amp;label=ci" /></a>
+<a href="#apple-silicon"><img alt="Platforms" src="https://img.shields.io/badge/platforms-CPU%20%7C%20Apple%20Silicon%20native-blue" /></a>
+<a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
+<a href="https://huckiyang.github.io/agwer/"><img alt="Docs" src="https://img.shields.io/badge/docs-huckiyang.github.io%2Fagwer-8A2BE2" /></a></p>
+<p><strong>agwer</strong> is a simple and efficient Python package to evaluate speech recognition
+and voice agents. A 40 KB wheel that imports in under 20 ms, fast on CPU and
+native on Apple Silicon M-series. </p>
+<ul>
+<li>note: this useful <code>pip install agwer</code> was developed organically by a human programmer since 2025. We work together with great personal Fable since 2026; 🙂 we welcome contributions from the open community.</li>
+</ul>
+<p>agwer supports the inference-efficient ASR similarity measures and the agentic ones for reward signals:</p>
+<ol>
+<li>word error rate (WER) and sentence error rate (SER)</li>
+<li>character error rate (CER)</li>
+<li>recoverable information ratio (RIR)</li>
+<li>harmful edit rate (HER)</li>
+<li>named entity F1 score (NF1)</li>
+<li>word hallucination rate (WHR)</li>
+<li>concatenated minimum-permutation word error rate (cpWER) and its
+   time-constrained variant (tcpWER) for multi-speaker ASR</li>
+</ol>
+<h2 id="installation">Installation</h2>
+<p>With <a href="https://docs.astral.sh/uv/">uv</a>:</p>
+<div class="highlight"><pre><span></span><code>uv<span class="w"> </span>add<span class="w"> </span>agwer<span class="w">             </span><span class="c1"># as a project dependency</span>
+uv<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>agwer<span class="w">     </span><span class="c1"># into the active environment</span>
+</code></pre></div>
+<p>Or with pip (Python &gt;= 3.9):</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>agwer
+</code></pre></div>
+<p>The test suite ships inside the package, so any install can verify itself:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">&quot;agwer[test]&quot;</span>
+python<span class="w"> </span>-m<span class="w"> </span>pytest<span class="w"> </span>--pyargs<span class="w"> </span>agwer<span class="w">     </span><span class="c1"># 121 tests, a few seconds</span>
+</code></pre></div>
+<h2 id="usage">Usage</h2>
+<p>The simplest use case is computing the word error rate of a dictated
+utterance:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">agwer</span>
+
+<span class="n">ref</span>  <span class="o">=</span> <span class="s2">&quot;please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the design team&quot;</span>
+<span class="n">asr_decoded</span> <span class="o">=</span> <span class="s2">&quot;please schedule the quarterly budget review for tuesday march twenty first at nine thirty and invite the desire team&quot;</span>
+
+<span class="n">agwer</span><span class="o">.</span><span class="n">wer</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">asr_decoded</span><span class="p">)</span>   <span class="c1"># 0.0526, one broken word in nineteen</span>
+</code></pre></div>
+<p>All measures accept a single string or a list of strings. Lists are pooled
+corpus-level (total errors over total reference words), and <code>mer</code>, <code>wil</code>,
+<code>wip</code>, <code>cer</code>, <code>ser</code> work the same way:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">agwer</span>
+
+<span class="n">refs</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;send the revised contract to the legal team before the board meeting on friday afternoon&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;remind me to pick up the prescription from the pharmacy after the dentist appointment&quot;</span><span class="p">]</span>
+<span class="n">hyps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;send the revised contract to the legal team before the bored meeting on friday afternoon&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;remind me to pick up the prescription from the pharmacy after the dentist appointment&quot;</span><span class="p">]</span>
+
+<span class="n">agwer</span><span class="o">.</span><span class="n">wer</span><span class="p">(</span><span class="n">refs</span><span class="p">,</span> <span class="n">hyps</span><span class="p">)</span>     <span class="c1"># 0.0345, corpus WER</span>
+<span class="n">agwer</span><span class="o">.</span><span class="n">cer</span><span class="p">(</span><span class="n">refs</span><span class="p">,</span> <span class="n">hyps</span><span class="p">)</span>     <span class="c1"># 0.0116, corpus CER</span>
+</code></pre></div>
+<ul>
+<li>The agentic measures (3 and 4) evaluate systems that read <em>n</em>-best hypotheses
+and decide <em>when to edit and when to abstain</em>, such as LLM error correctors
+and dictation agents. The <a href="https://huckiyang.github.io/agwer/usage/">metric guide</a>
+explains what question each measure answers, and the
+<a href="https://huckiyang.github.io/agwer/examples/">example session</a> walks through a
+complete evaluation from install to CLI.</li>
+</ul>
+<h3 id="evaluating-a-corrector-or-voice-agent">Evaluating a corrector or voice agent</h3>
+<p>With <em>n</em>-best input, one call computes everything. Real data end to end:
+three <strong>real Whisper 5-best decodes</strong> from the MIT-licensed HyPoradise
+benchmark (WSJ), each with the <strong>verbatim output of a real LLM corrector</strong>.
+The three utterances show the three things a corrector can do: restore a
+word from another hypothesis, fix a reading that every hypothesis got wrong,
+and break a name that was already right.</p>
+<div class="highlight"><pre><span></span><code><span class="n">refs</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;quote obviously we were disappointed we did not get a larger award&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;he retired as a partner in nineteen eighty three and as counsel in nineteen eighty six&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;a senior painewebber official said the firm hopes the job can be cut through attrition since the turnover in such positions tends to be high&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">year</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;he retired as a partner in one thousand, nine hundred and eighty-three &quot;</span>
+        <span class="s2">&quot;and as counsel in one thousand, nine hundred and eighty-six&quot;</span><span class="p">)</span>
+<span class="n">firm</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;official said the firm hopes the job can be cut through attrition &quot;</span>
+        <span class="s2">&quot;since the turnover in such positions tends to be high&quot;</span><span class="p">)</span>
+<span class="n">nbest</span> <span class="o">=</span> <span class="p">[</span>   <span class="c1"># real Whisper 5-best lists; nbest[i][0] is the 1-best</span>
+    <span class="p">[</span><span class="s2">&quot;obviously we were disappointed if we did not get a larger award&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;quote obviously we were disappointed we did not get a larger award&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;obviously we were disappointed if we did not get a larger award&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;quote obviously we were disappointed we did not get a larger award&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;quote obviously we were disappointed we did not get a larger award&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="n">year</span><span class="p">]</span> <span class="o">*</span> <span class="mi">5</span><span class="p">,</span>   <span class="c1"># all five hypotheses agree on the wrong year reading</span>
+    <span class="p">[</span><span class="sa">f</span><span class="s2">&quot;a senior </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">firm</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span>
+     <span class="p">[</span><span class="s2">&quot;painewebber&quot;</span><span class="p">,</span> <span class="s2">&quot;payne weber&quot;</span><span class="p">,</span> <span class="s2">&quot;payne weber&quot;</span><span class="p">,</span> <span class="s2">&quot;paine webber&quot;</span><span class="p">,</span> <span class="s2">&quot;pain weber&quot;</span><span class="p">]],</span>
+<span class="p">]</span>
+
+<span class="n">lm_corrected</span> <span class="o">=</span> <span class="p">[</span>   <span class="c1"># the LLM corrector&#39;s verbatim outputs</span>
+    <span class="s2">&quot;quote obviously we were disappointed we did not get a larger award&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;he retired as a partner in nineteen eighty three and as counsel in nineteen eighty six&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;a senior paine webber official said the firm hopes the job can be cut through attrition since the turnover in such positions tends to be high&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">out</span> <span class="o">=</span> <span class="n">agwer</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span><span class="n">refs</span><span class="p">,</span> <span class="n">lm_corrected</span><span class="p">,</span> <span class="n">nbest</span><span class="o">=</span><span class="n">nbest</span><span class="p">)</span>
+<span class="n">out</span><span class="o">.</span><span class="n">wer_1best</span>            <span class="c1"># 0.2264  the raw ASR</span>
+<span class="n">out</span><span class="o">.</span><span class="n">wer_oracle</span>           <span class="c1"># 0.1887  o_nb: the best any reranker could reach</span>
+<span class="n">out</span><span class="o">.</span><span class="n">wer_compositional</span>    <span class="c1"># 0.0377  o_cp: recombining n-best tokens cannot write &quot;nineteen&quot;</span>
+<span class="n">out</span><span class="o">.</span><span class="n">wer_corrected</span>        <span class="c1"># 0.0377</span>
+<span class="n">out</span><span class="o">.</span><span class="n">rir</span>                  <span class="c1"># 5.0     five times the reranking headroom: generative correction</span>
+<span class="n">out</span><span class="o">.</span><span class="n">her</span>                  <span class="c1"># 0.3333  one of the three consequential edits broke a correct name</span>
+</code></pre></div>
+<p>Real decodes also show why reranking alone cannot save a voice agent. In
+another HyPoradise utterance, the command <em>"leaving </em><em>after noon</em><em>"</em> comes
+back as <em>"leaving </em><em>afternoon</em><em>"</em> in <strong>all five</strong> hypotheses. The query's
+meaning flips, every reranker is helpless, and only a corrector (and agwer's
+oracles) can see it.</p>
+<h3 id="when-the-corrector-beats-every-hypothesis-1">When the corrector beats every hypothesis (ρ &gt; 1)</h3>
+<p>Look at the second utterance above. All five hypotheses read the year the
+same wrong way, so the reranking oracle equals the 1-best and offers zero
+headroom. Recombining <em>n</em>-best tokens cannot help either, because the word
+<em>"nineteen"</em> appears nowhere in the list. The corrector still writes
+<em>"nineteen eighty three"</em>, the dictation convention it knows from context.
+Supplying truth that exists in no hypothesis is <em>generative</em> correction. It
+is why ρ can exceed 1, and it is exactly what plain WER, reranking metrics,
+and oracle bounds cannot see. RIR was built to measure it.</p>
+<p>Dictating to a coding agent has the same structure: package names and code
+terms (<code>uv</code>, <code>pytest</code>, <code>agwer</code>) are exactly the tokens ASR breaks and
+exactly the ones the agent can restore from context.</p>
+<p>On the full 30-utterance WSJ set these corrections come from, the corrector
+scores ρ = 2.0 with HER = 0.29: it recovers twice the <em>n</em>-best headroom, and
+roughly two of every seven consequential edits still break something. That
+pair of numbers, not WER alone, is the act/abstain profile agwer exists to
+report.</p>
+<h3 id="entity-f1-and-word-hallucination-rate">Entity F1 and Word Hallucination Rate</h3>
+<p>Two failure modes that plain WER cannot name. First, entity errors hide
+inside acceptable WER: one substituted amount in a 21-word transfer request
+is a comfortable 4.8% WER and a broken transaction. <code>entity_f1</code> scores an
+explicit token subset with the same alignment engine as WER:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ref</span> <span class="o">=</span> <span class="s2">&quot;okay so please transfer five hundred dollars to the savings account before friday and send me a confirmation text right away&quot;</span>
+<span class="n">hyp</span> <span class="o">=</span> <span class="s2">&quot;okay so please transfer nine hundred dollars to the savings account before friday and send me a confirmation text right away&quot;</span>
+
+<span class="n">agwer</span><span class="o">.</span><span class="n">wer</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">hyp</span><span class="p">)</span>                                   <span class="c1"># 0.0476, looks fine</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">agwer</span><span class="o">.</span><span class="n">entity_f1</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">hyp</span><span class="p">,</span> <span class="n">entities</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;five&quot;</span><span class="p">,</span> <span class="s2">&quot;hundred&quot;</span><span class="p">})</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;recall&quot;</span><span class="p">],</span> <span class="n">m</span><span class="p">[</span><span class="s2">&quot;entity_wer&quot;</span><span class="p">]</span>                          <span class="c1"># 0.5, 0.5: it is not fine</span>
+<span class="n">agwer</span><span class="o">.</span><span class="n">entity_f1</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">hyp</span><span class="p">,</span> <span class="n">predicate</span><span class="o">=</span><span class="n">agwer</span><span class="o">.</span><span class="n">numeric_tokens</span><span class="p">)</span>  <span class="c1"># ready-made subset: digits and spelled numbers</span>
+</code></pre></div>
+<p>Second, LLM correctors make text up, and the two mechanisms differ. A
+corrector can invent a word the ASR never produced, or it can loop
+autoregressively and repeat words it really heard (one system in
+<a href="https://arxiv.org/abs/2408.16180">arXiv:2408.16180</a> repeats a real segment
+eleven times, so a vocabulary check sees nothing wrong).
+<code>word_hallucination_rate</code> uses occurrence-bounded attribution to catch both,
+works with a single 1-best or a full n-best list, and never penalizes
+copying an ASR error or a correct generative recovery:</p>
+<div class="highlight"><pre><span></span><code><span class="n">m</span> <span class="o">=</span> <span class="n">agwer</span><span class="o">.</span><span class="n">word_hallucination_rate</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;cancel my nine a m meeting&quot;</span><span class="p">],</span>                   <span class="c1"># references</span>
+    <span class="p">[</span><span class="s2">&quot;cancel my nine a m meeting meeting meeting&quot;</span><span class="p">],</span>   <span class="c1"># corrector outputs</span>
+    <span class="p">[</span><span class="s2">&quot;cancel my nine a m meeting&quot;</span><span class="p">])</span>                   <span class="c1"># hypotheses (1-best or n-best)</span>
+
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;whr&quot;</span><span class="p">]</span>                          <span class="c1"># 0.25: two of eight output tokens hallucinated</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;repetition_hallucinations&quot;</span><span class="p">]</span>    <span class="c1"># 2, an autoregressive loop over a heard word</span>
+<span class="n">m</span><span class="p">[</span><span class="s2">&quot;novel_hallucinations&quot;</span><span class="p">]</span>         <span class="c1"># 0, nothing invented outright</span>
+</code></pre></div>
+<p>The decomposition also reports <code>passed_through_errors</code> (copied ASR errors,
+not hallucination) and <code>generative_tokens</code> (correct words no hypothesis
+contained, the ρ &gt; 1 mechanism).</p>
+<p>HER comes in two granularities. <code>her_granularity="utterance"</code> (the default)
+is the accounting behind the paper's reported values, and <code>"token"</code> follows
+the formal per-edit definition. A sentence where the corrector fixes one
+token and breaks another is <em>neutral</em> at utterance granularity but
+<em>helpful=1, harmful=1</em> at token granularity, so report which one you used.</p>
+<h3 id="multi-speaker-asr-cpwer">Multi-speaker ASR: cpWER</h3>
+<p>Meeting and conversation transcripts come speaker-attributed, and the
+speaker labels a system assigns are arbitrary. <code>cpwer</code> concatenates each
+speaker's utterances and finds the label permutation with the fewest word
+errors (the MeetEval definition, validated against it):</p>
+<div class="highlight"><pre><span></span><code><span class="n">ref</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;alice&quot;</span><span class="p">:</span> <span class="s2">&quot;let us start with the quarterly numbers&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;bob&quot;</span><span class="p">:</span> <span class="s2">&quot;sounds good i will share my screen&quot;</span><span class="p">}</span>
+<span class="n">hyp</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;spk0&quot;</span><span class="p">:</span> <span class="s2">&quot;sounds good i will share my screen&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;spk1&quot;</span><span class="p">:</span> <span class="s2">&quot;let us start with the quality numbers&quot;</span><span class="p">}</span>
+
+<span class="n">agwer</span><span class="o">.</span><span class="n">cpwer</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">hyp</span><span class="p">)</span>                      <span class="c1"># 0.0714, labels permuted, one word wrong</span>
+<span class="n">agwer</span><span class="o">.</span><span class="n">cp_statistics</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">hyp</span><span class="p">)[</span><span class="s2">&quot;assignment&quot;</span><span class="p">]</span>  <span class="c1"># [(&#39;alice&#39;, &#39;spk1&#39;), (&#39;bob&#39;, &#39;spk0&#39;)]</span>
+</code></pre></div>
+<p>Values may be single strings or lists of utterances (concatenated in the
+given order). A missed speaker counts all its words as deletions, an extra
+hypothesis speaker all its words as insertions; <code>cp_statistics</code> reports the
+missed and false-alarm speaker counts.</p>
+<p>With timestamped segments, <code>tcpwer</code> adds the time constraint of the
+CHiME-7/8 official metric: words may only match when their time intervals
+overlap (reference words get character-based intervals within their
+segment; hypothesis words get their interval center expanded by a collar,
+5 seconds by default). Semantics match MeetEval's <code>tcp_word_error_rate</code>,
+pinned by a golden fixture, and the pure-Python time-windowed
+implementation measures 2.6 to 7.5 times faster on meeting-sized inputs:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ref</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;speaker&quot;</span><span class="p">:</span> <span class="s2">&quot;alice&quot;</span><span class="p">,</span> <span class="s2">&quot;words&quot;</span><span class="p">:</span> <span class="s2">&quot;let us start with the quarterly numbers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="mf">3.5</span><span class="p">},</span>
+       <span class="p">{</span><span class="s2">&quot;speaker&quot;</span><span class="p">:</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="s2">&quot;words&quot;</span><span class="p">:</span> <span class="s2">&quot;sounds good i will share my screen&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="mf">3.5</span><span class="p">,</span> <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="mf">6.5</span><span class="p">}]</span>
+<span class="n">hyp</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;speaker&quot;</span><span class="p">:</span> <span class="s2">&quot;spk0&quot;</span><span class="p">,</span> <span class="s2">&quot;words&quot;</span><span class="p">:</span> <span class="s2">&quot;sounds good i will share my screen&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="mf">3.6</span><span class="p">,</span> <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="mf">6.6</span><span class="p">},</span>
+       <span class="p">{</span><span class="s2">&quot;speaker&quot;</span><span class="p">:</span> <span class="s2">&quot;spk1&quot;</span><span class="p">,</span> <span class="s2">&quot;words&quot;</span><span class="p">:</span> <span class="s2">&quot;let us start with the quality numbers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;start_time&quot;</span><span class="p">:</span> <span class="mf">0.1</span><span class="p">,</span> <span class="s2">&quot;end_time&quot;</span><span class="p">:</span> <span class="mf">3.6</span><span class="p">}]</span>
+
+<span class="n">agwer</span><span class="o">.</span><span class="n">tcpwer</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">hyp</span><span class="p">,</span> <span class="n">collar</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>   <span class="c1"># 0.0714, same value with correct timing</span>
+<span class="n">agwer</span><span class="o">.</span><span class="n">tcp_statistics</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">hyp</span><span class="p">)</span>     <span class="c1"># adds assignment and speaker counts</span>
+</code></pre></div>
+<h3 id="normalization">Normalization</h3>
+<p>Normalization is the main reason WER numbers are incomparable across papers.
+Every entry point takes <code>normalize=</code> (any <code>Callable[[str], str]</code>), and agwer
+ships the standards.</p>
+<p>A dictation agent that says amounts out loud looks 87% wrong against the
+written form, until you normalize:</p>
+<div class="highlight"><pre><span></span><code><span class="n">ref</span> <span class="o">=</span> <span class="s2">&quot;the invoice total came to $1,250.75 after the 15</span><span class="si">% d</span><span class="s2">iscount was applied on march 3rd&quot;</span>
+<span class="n">hyp</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;the invoice total came to one thousand two hundred fifty dollars &quot;</span>
+       <span class="s2">&quot;and seventy five cents after the fifteen percent discount was applied on march third&quot;</span><span class="p">)</span>
+
+<span class="n">agwer</span><span class="o">.</span><span class="n">wer</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">hyp</span><span class="p">)</span>                                          <span class="c1"># 0.867 (!)</span>
+<span class="n">agwer</span><span class="o">.</span><span class="n">wer</span><span class="p">(</span><span class="n">ref</span><span class="p">,</span> <span class="n">hyp</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="n">agwer</span><span class="o">.</span><span class="n">EnglishTextNormalizer</span><span class="p">())</span>  <span class="c1"># 0.0</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>normalizer</th>
+<th>what it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>None</code> (the general measures' default)</td>
+<td>scores strings exactly as given</td>
+</tr>
+<tr>
+<td><code>agwer.default_normalize</code> (the agentic default)</td>
+<td>conservative: lowercase, keep apostrophes, strip other punctuation</td>
+</tr>
+<tr>
+<td><code>BasicTextNormalizer()</code></td>
+<td>language-agnostic: symbols, brackets, optional diacritic folding</td>
+</tr>
+<tr>
+<td><code>EnglishTextNormalizer()</code></td>
+<td>the Whisper English normalizer: spelled numbers to digits, currency, contractions, British to American spelling; <code>cached=True</code> adds an LRU for agent loops</td>
+</tr>
+</tbody>
+</table>
+<p>The Whisper normalizers have their behavior pinned <strong>byte-identical</strong> to the original by golden
+tests. Report which normalizer you used; it is part of the metric.</p>
+<h3 id="cli">CLI</h3>
+<div class="highlight"><pre><span></span><code>agwer<span class="w"> </span>results.jsonl<span class="w">                 </span><span class="c1"># {&quot;reference&quot;,&quot;corrected&quot;,&quot;nbest&quot;} per line</span>
+agwer<span class="w"> </span>results.jsonl<span class="w"> </span>--json<span class="w"> </span>--her-granularity<span class="w"> </span>token
+</code></pre></div>
+<h2 id="performance">Performance</h2>
+<p>The hot path is batched RapidFuzz, and every aggregate agwer computes is
+<strong>count-additive</strong>, so large corpora parallelize <em>exactly</em>. Results are
+identical for any worker count: <code>evaluate(..., workers=8)</code>.</p>
+<p>Typical performance on Apple Silicon (M-series, 14 cores) for the full
+agentic evaluation (three WERs, both oracles, RIR, and HER) of 5-best
+corpora:</p>
+<table>
+<thead>
+<tr>
+<th>scenario</th>
+<th>time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10k utterances (single-threaded)</td>
+<td>0.15 s</td>
+</tr>
+<tr>
+<td>100k utterances (single-threaded)</td>
+<td>1.79 s</td>
+</tr>
+<tr>
+<td>100k utterances (8 workers)</td>
+<td><strong>0.38 s</strong> (4.7×)</td>
+</tr>
+<tr>
+<td>1M utterances (single-threaded)</td>
+<td>18.8 s</td>
+</tr>
+<tr>
+<td>1M utterances (8 workers)</td>
+<td><strong>4.0 s</strong> (4.7×)</td>
+</tr>
+</tbody>
+</table>
+<p>Workers pay process startup, so they win from roughly 100k utterances up. On
+macOS and Windows, call from a <code>if __name__ == "__main__"</code> guard, as with any
+multiprocessing. Reproduce on your machine:</p>
+<div class="highlight"><pre><span></span><code>python<span class="w"> </span>-m<span class="w"> </span>agwer.bench<span class="w"> </span>--workers<span class="w"> </span><span class="m">8</span>
+</code></pre></div>
+<h3 id="apple-silicon">Apple Silicon</h3>
+<p><a href="#performance"><img alt="Speed" src="https://img.shields.io/badge/1M%20utterances-4.0s%20on%20M--series-brightgreen" /></a></p>
+<p>agwer is <strong>native on Apple Silicon</strong>, with no separate
+install: pip and uv select the arm64 wheel automatically, and RapidFuzz
+ships compiled <code>arm64-darwin</code> extensions, so the C++ edit-distance core runs
+natively on M-series machines. <code>workers=</code> then scales the whole pipeline
+across performance cores (see the table above).</p>
+<ul>
+<li>Planned next is an optional <code>agwer[mlx]</code> extra for embedding-based <em>semantic</em> metrics on the Apple GPU
+via <a href="https://github.com/ml-explore/mlx">MLX</a>: semantic inference is the one place extra hardware genuinely helps; edit distance does not need it.</li>
+</ul>
+<h2 id="compatibility-reproducibility">Compatibility &amp; reproducibility</h2>
+<p>Measure semantics match <a href="https://github.com/jitsi/jiwer">jiwer</a>, validated
+bit-identical on a 600-corpus golden set pinned in the package test suite.</p>
+<p>agwer gratefully builds on and learns from these projects:</p>
+<ul>
+<li><a href="https://github.com/rapidfuzz/RapidFuzz">RapidFuzz</a> provides the C++
+  bit-parallel edit-distance engine, agwer's only dependency;
+  <a href="https://github.com/ordo-one/FuzzyMatch">FuzzyMatch</a> shows the same
+  design done right in Swift.</li>
+<li><a href="https://github.com/jitsi/jiwer">jiwer</a> defined the measure semantics and
+  the easy, friendly API style this package follows.</li>
+<li><a href="https://github.com/openai/whisper">OpenAI Whisper</a> created the English
+  text normalizer that became the community standard for ASR evaluation. We
+  vendor it faithfully under its MIT license, with attribution.</li>
+<li><a href="https://github.com/NVIDIA/NeMo-text-processing">NVIDIA NeMo text processing</a>
+  sets the bar for full text normalization across languages. Its semiotic
+  class taxonomy guides our normalization roadmap.</li>
+<li><a href="https://github.com/fgnt/meeteval">MeetEval</a> defined the cpWER and tcpWER
+  reference implementations for multi-speaker ASR. agwer matches it on
+  golden sets of 87 (cpWER) and 53 (tcpWER) pinned cases; for ORC/MIMO
+  variants and DER, use MeetEval itself.</li>
+</ul>
+<h2 id="license-contact">License &amp; contact</h2>
+<p>MIT. If you use or redistribute substantial portions of agwer, please
+acknowledge the project rather than republishing it under a different
+name. Vendored Whisper normalizers: MIT (see
+<code>src/agwer/normalizers/LICENSE_WHISPER</code>).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.tabs", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

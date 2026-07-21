@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="677.691422pt" height="282.105pt" viewBox="0 0 677.691422 282.105" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-07-18T23:39:04.890741</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.1, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 282.105 
+L 677.691422 282.105 
+L 677.691422 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 11.088 224.94 
+L 326.36411 224.94 
+L 326.36411 42.85 
+L 11.088 42.85 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="57.635107" y="237.96" transform="rotate(-0 57.635107 237.96)">jiwer</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #1d1d1f" transform="translate(155.030743 238.1)">agwer</text>
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #1d1d1f" transform="translate(136.046368 250.03)">CPU, 1 worker</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #1d1d1f" transform="translate(266.121691 238.1)">agwer</text>
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #1d1d1f" transform="translate(225.837316 250.03)">Apple Silicon, 8 workers</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 11.088 224.94 
+L 326.36411 224.94 
+" style="fill: none; stroke: #d2d2d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 25.418732 224.94 
+L 89.851482 224.94 
+L 89.851482 79.268 
+L 25.418732 79.268 
+z
+" clip-path="url(#p885683bb4b)" style="fill: #86868b"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 136.50968 224.94 
+L 200.94243 224.94 
+L 200.94243 159.360218 
+L 136.50968 159.360218 
+z
+" clip-path="url(#p885683bb4b)" style="fill: #0071e3"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 247.600628 224.94 
+L 312.033378 224.94 
+L 312.033378 205.224992 
+L 247.600628 205.224992 
+z
+" clip-path="url(#p885683bb4b)" style="fill: #0051a2"/>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #86868b" x="168.726055" y="31.9246" transform="rotate(-0 168.726055 31.9246)">corpus word error rate</text>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="57.635107" y="74.0315" transform="rotate(-0 57.635107 74.0315)">1,064 ms</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="168.726055" y="154.123718" transform="rotate(-0 168.726055 154.123718)">479 ms</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="279.817003" y="199.988492" transform="rotate(-0 279.817003 199.988492)">144 ms</text>
+   </g>
+   <g id="text_8">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="168.726055" y="20.85" transform="rotate(-0 168.726055 20.85)">2,000 agent sessions (2M words)</text>
+   </g>
+  </g>
+  <g id="axes_2">
+   <g id="patch_7">
+    <path d="M 355.215312 224.94 
+L 670.491422 224.94 
+L 670.491422 42.85 
+L 355.215312 42.85 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #1d1d1f" transform="translate(398.237404 238.1)">agwer</text>
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #1d1d1f" transform="translate(379.253029 250.03)">CPU, 1 worker</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_10">
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #1d1d1f" transform="translate(600.078704 238.1)">agwer</text>
+      <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; fill: #1d1d1f" transform="translate(559.794329 250.03)">Apple Silicon, 8 workers</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_8">
+    <path d="M 355.215312 224.94 
+L 670.491422 224.94 
+" style="fill: none; stroke: #d2d2d7; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 369.546044 224.94 
+L 454.31939 224.94 
+L 454.31939 79.268 
+L 369.546044 79.268 
+z
+" clip-path="url(#pb9abe37ff1)" style="fill: #0071e3"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 571.387344 224.94 
+L 656.16069 224.94 
+L 656.16069 193.945957 
+L 571.387344 193.945957 
+z
+" clip-path="url(#pb9abe37ff1)" style="fill: #0051a2"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #86868b" x="512.853367" y="31.9246" transform="rotate(-0 512.853367 31.9246)">WER ×3 + oracle + RIR + HER in one call</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="411.932717" y="74.0315" transform="rotate(-0 411.932717 74.0315)">18.8 s</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10.5px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="613.774017" y="188.709457" transform="rotate(-0 613.774017 188.709457)">4.0 s</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 14px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: middle; fill: #1d1d1f" x="512.853367" y="20.85" transform="rotate(-0 512.853367 20.85)">1M utterances, full agentic evaluate()</text>
+   </g>
+  </g>
+  <g id="text_15">
+   <text style="font-size: 9px; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'DejaVu Sans', sans-serif; text-anchor: start; fill: #86868b" x="7.2" y="272.988" transform="rotate(-0 7.2 272.988)">Same code path; workers=N merges count-additive chunks, so parallel results are bit-identical to serial. M-series (14 cores).</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p885683bb4b">
+   <rect x="11.088" y="42.85" width="315.27611" height="182.09"/>
+  </clipPath>
+  <clipPath id="pb9abe37ff1">
+   <rect x="355.215312" y="42.85" width="315.27611" height="182.09"/>
+  </clipPath>
+ </defs>
+</svg>
