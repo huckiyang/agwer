@@ -12,7 +12,7 @@ native on Apple Silicon M-series.
 
 - note: this useful `pip install agwer` was developed organically by a human programmer since 2025. We work together with great personal Fable since 2026; 🙂 we welcome contributions from the open community.
 
-agwer supports the inference-efficient ASR similarity measures and the agentic ones:
+agwer supports the inference-efficient ASR similarity measures and the agentic ones for reward signals:
 
 1. word error rate (WER) and sentence error rate (SER)
 2. character error rate (CER)
