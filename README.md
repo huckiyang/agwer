@@ -353,4 +353,3 @@ acknowledge the project rather than republishing it under a different
 name. Vendored Whisper normalizers: MIT (see
 `src/agwer/normalizers/LICENSE_WHISPER`).
 
-Contact: Huck Yang <huckiyang@ieee.org>
